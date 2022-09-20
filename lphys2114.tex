@@ -1,0 +1,56 @@
+%& -shell-escape
+\documentclass[fleqn]{mc}
+\definecolor{auburn}{rgb}{0.43, 0.21, 0.1}
+\hypersetup{colorlinks = true,anchorcolor=blue,linkcolor=auburn}
+\newtagform{auburn}{\color{auburn}(}{)}
+\usetagform{auburn}
+\setlength{\mathindent}{0cm}
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usetikzlibrary{arrows}
+\tikzstyle{axis}=[>=latex,thick]
+\usepackage{tabularx}
+\usepackage{amsfonts}
+\setlength\parskip{12pt}
+\def\cross{\times}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\curl}{\grad\cross}
+\newcommand{\lapl}{\nabla^2}
+\renewcommand{\u}{\ensuremath{\vec{u}}}
+\newcommand{\uh}{\ensuremath{\vec{u}_h}}
+\newcommand{\ua}{\ensuremath{\vec{u}_a}}
+\newcommand{\steady}[1]{{#1}_{r}}
+\newcommand{\rf}[1]{{{#1}_{r}}}
+\newcommand{\ez}{\ensuremath{\vec{e}_z}}
+\newcommand{\ex}{\ensuremath{\vec{e}_x}}
+\newcommand{\advec}{\boldsymbol{u}\cdot\nabla}
+\newcommand{\advech}{\boldsymbol{u}_h\cdot\nabla_h}
+\newcommand{\Dt}[1]{\frac{\Dif #1}{\Dif t}}
+\newcommand{\dt}[1]{\frac{\dif #1}{\dif t}}
+\newcommand{\Dtg}[1]{\left.\frac{\Dif #1}{\Dif t}\right|_g}
+%\newcommand{\pdt}[1]{\pd{#1}{t}}
+\newcommand{\pdx}[1]{\pd{#1}{x}}
+\def\vpot{\varphi}
+\def\grad{\boldsymbol{\nabla}}
+\def\gradh{\nabla_h}
+\def\div{\grad\cdot}
+\def\anom{\tilde}
+\def\ampl{\hat}
+\def\divh{\nabla_h\cdot}
+\newcommand{\pdt}[1]{\pd{#1}{t}}
+\newcommand{\pdtt}[1]{\pd[2]{#1}{t}}
+
+\usepackage{silence}
+\WarningFilter{hyperref}{removing}
+
+\graphicspath{{Figures/}}
+
+%\usepackage{siunitx}
+%\includeonly{Session_1_Elementary_Notions}
+%\includeonly{Session_2_Gravity_Waves}
+%\includeonly{Session_3_Poincare_and_Kelvin_Waves}
+\begin{document}
+% \raggedright
+\tableofcontents
+\include{Introduction}
+\end{document}
+

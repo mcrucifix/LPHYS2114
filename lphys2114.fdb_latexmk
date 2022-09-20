@@ -124,6 +124,7 @@
   "lphys2114.toc" 1662628883 0 d41d8cd98f00b204e9800998ecf8427e ""
   "mc.cls" 1662628881 1757 71a47706cbdab1934e9d5170ac192708 ""
   (generated)
+<<<<<<< HEAD
   "lphys2114.out"
   "lphys2114.toc"
   "lphys2114.dvi"
@@ -131,6 +132,15 @@
   "Introduction.aux"
   "lphys2114.aux"
 ["pdflatex"] 1663575056 "lphys2114.tex" "lphys2114.pdf" "lphys2114" 1663575056
+=======
+  "lphys2114.aux"
+  "lphys2114.dvi"
+  "lphys2114.toc"
+  "lphys2114.log"
+  "Introduction.aux"
+  "lphys2114.out"
+["pdflatex"] 1663280039 "lphys2114.tex" "lphys2114.pdf" "lphys2114" 1663280039
+>>>>>>> 20f6997308f4b17c3bfc16926c9bc5aac864273a
   "/etc/texmf/web2c/texmf.cnf" 1532557297 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/mcrucifix/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1480098816 1006 b103be0bfc8c1682ff1fa9760697a329 ""
   "/home/mcrucifix/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1480098816 43226 167a99346bfe2676e3efcdde2d81fe45 ""
@@ -280,6 +290,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1583186736 32487 5b6b853c66aab4004eb2554e1f2e0de5 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1570017228 2398229 18aaa1969dba04666bd5bb8f360309ae ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1570017234 833526 32f7500f330c9400179dd50cb76db87a ""
+<<<<<<< HEAD
   "Figures/lphys2114-figures.pdf" 1663574992 139062 be2dbf861920c5e594b012b4ee619503 ""
   "Introduction.aux" 1663575056 1089 0186df591d265eb4290b547b1b5cfe4d ""
   "Introduction.tex" 1662967676 181 d170a487d1690050aed3c044e97d1d73 ""
@@ -298,3 +309,23 @@
   "lphys2114.out"
   "lphys2114.log"
   "lphys2114.pdf"
+=======
+  "Figures/lphys2114-figures.pdf" 1663278839 131538 47751d3fb160cbef706921d681eadef1 ""
+  "Introduction.aux" 1663280039 1089 0186df591d265eb4290b547b1b5cfe4d ""
+  "Introduction.tex" 1662967676 181 d170a487d1690050aed3c044e97d1d73 ""
+  "evaluation.tex" 1663279808 359 1a73575a3f46f77ca6be1c6e8596c872 ""
+  "foreword.tex" 1663279808 2027 4857d113433403995eff336d241a874b ""
+  "icesheet.tex" 1663279808 8317 d2ff9dad8a31c011ceb99d23d73890d3 ""
+  "lphys2114.aux" 1663280039 688 f210d244b6ae5ba2fecddee1de79d23e ""
+  "lphys2114.out" 1663280039 253 5812e5b3676d06e5254dfae1c5850da9 ""
+  "lphys2114.tex" 1663279929 1671 d911bb2196dbedcd28e6737031a1cb68 ""
+  "lphys2114.toc" 1663280039 322 96f6ef4af72836735ac6a7b110fb7a32 ""
+  "mc.cls" 1663279804 2211 c6c559d1421d17f0c17b9293336f21f8 ""
+  (generated)
+  "Introduction.aux"
+  "lphys2114.log"
+  "lphys2114.pdf"
+  "lphys2114.out"
+  "lphys2114.aux"
+  "lphys2114.toc"
+>>>>>>> 20f6997308f4b17c3bfc16926c9bc5aac864273a

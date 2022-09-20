@@ -8,6 +8,7 @@ This equilibrium results from a balance between _accumulation_ of snow above the
 
 Intuitively, we may perceive that
 if climate warms  a little, the altitude of the ice sheet will decrease (implying less net accumulation), but the flow of ice towards the ice sheet will be reduced as well, so that a new balance will be reached. 
+
 However, we may already anticipate that if the climate warms _too much_, and the top surface of the ice sheet will drown under the snowline, at which point we expect a catastrophic meltdown of the icesheet.
 
 We witness here a non-linear phenomenon. There is what some might call a _tipping point_, a point of warming above which the qualitative behaviour of the object changes. In this course, we would like to use mathematical modelling and a mathematical language to describe this behaviour, and many others. We will be introduced to the theory and learn the techniques that allow us to describe the expected behaviour of such systems.

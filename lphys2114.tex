@@ -10,6 +10,8 @@
 \tikzstyle{axis}=[>=latex,thick]
 \usepackage{tabularx}
 \usepackage{amsfonts}
+\usepackage{natbib}
+\bibliographystyle{alpha}
 \setlength\parskip{12pt}
 \def\cross{\times}
 \renewcommand{\vec}[1]{\boldsymbol{#1}}
@@ -52,5 +54,13 @@
 % \raggedright
 \tableofcontents
 \include{Introduction}
+\section{Continuous Flows: existence and uniqueness}
+\input{Existence}
+
+\section{Vector fields on the line: bifurcations and normal forms}
+\input{Line}
+
+\bibliography{/Users/crucifix/Documents/BibDesk.bib}
+
 \end{document}
 

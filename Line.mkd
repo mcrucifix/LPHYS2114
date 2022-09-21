@@ -1,0 +1,98 @@
+We now consider the autonomous dynamical system on the line, with parametre $\psi$ which, for simplicity, we view as one-dimensional. 
+
+## Monotonous character of the trajectories
+
+\begin{equation}\label{eq:diff1d}
+\ddt x = f(x;\psi),\text{ with }x \in \mathbb{R}, \psi \in \mathbb{R},
+\end{equation}
+with $f$ continuous and differentiable over $x$ and $\psi$. 
+
+We start with a remarkable proporties of the trajectories:
+
+\bt{No local extrema.} Trajectories of \eqref{eq:diff1d} do not have local maxima and minima. \et
+
+Proof: If there was a local extremum at time $t$, $x(t)$ at that point would need to have a zero-derivative, it must therefore be a fixed point; thus the trajectory must be constant and it cannot have local extrema. \hfill$\square$
+
+It comes up that trajectories on the line must either be constant (fixed point), strictly increasing (towards infinity, or towards a fixed point), or strictly decreasing (ditto). 
+
+## The saddle-node bifurcation
+
+We now consider changes in $\psi$ that may affect the existence or the _nature_ of the fixed point. To this end, consider the following example: $f(x;\psi) = e^{-x} - x + \psi$. 
+
+The fixed point may be visalised graphically, with the equation $e^{-x} = x-\psi$. 
+
+\includegraphics[page=9, angle=90, scale=0.7, trim={2cm 0 0 0cm}, clip]{lphys2114-figures}
+
+As is clear from the figure, the number of fixed points changes for 2 hyperbolic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
+
+In this section we will learn to _detect_ bifurcation points in vector fields on the line and classify them. 
+
+To this end, let us continue with the example with have just started. The bifurcation occurs at $\psi=1$ and we would like to study the behaviour of $f$ near this bifurcation point. 
+
+To this end, we develop the function according to Taylor (recall that we have taken care of its differentiablity):
+
+\begin{displaymath}
+\begin{split}
+f(x;\psi) =& 
+f(x_0;\psi_0) + 
+\left.\pd{f}{\psi}\right|_{x_0,\psi_0} (\psi - \psi_0) + 
+\left.\pd{f}{x}\right|_{x_0,\psi_0} (x - x_0) + \\
+& \frac{1}{2} \left.\pd[2]{f}{x}\right|_{x_0,\psi_0} (x-x_0)^2 + \ldots \\
+=& \underbrace{\psi - 1 - \frac{1}{2} x^2}_{\text{normal form}} + \ldots
+\end{split}
+\end{displaymath}
+
+What we have found here, is that if we develop the vector field around the bifurcation point, we find that, to the second order, it takes a specific form that depends on the first and second-order derivatives on $x$ and $\psi$. This specific form is called a _normal form_, and the normal form characterises the bifurcation. 
+
+Specifically, the normal form $f(x,\psi)=\psi - 1 - \frac{1}{2} x^2$ is characteristic of the _saddle-node_ bifrucation: it is the collision of a stable and an unstable fixed point, with both vanishing beyond the bifurcation point. We have met this exact bifurcation in the motivating example. 
+
+\bt{Sufficient conditions for a  saddle-node bifurcation on the line.} A saddle-node bifurcation occurs on $x_0,\psi_0$ when:
+
+\begin{tabular}{ll}
+1. $f(x_0;\psi_0) = 0$; &
+3. $\pd[2]{f}{x}(x_0;\psi_0) \neq 0$;
+\\
+2. $\pd{f}{\psi}(x_0;\psi_0) = 0$; &
+4. $\pd{f}{\psi}(x_0;\psi_0) \neq 0$;
+\end{tabular}
+\et
+
+The intuition beyond this theorem is reasonably clear. The first condition imposes the existence of the fixed point; the second one is the non-asymptotic character of the fixed point (neither linear stable nor linearly unstable). The third and fourth condition set the locally parabolic character of the solutions near the bifurcation point. 
+
+More formally, from the implicit function theorem, (1) and (4) imply that there must exist a function $\psi(x)$ on an interval $I\subset\mathbb{R}$ such that $f(x,\psi(x)) = 0$ and $\psi(x_0)=\psi_0$.
+
+This is the curve of fixed points, as a function of $\psi$. Furthermore, its derviatives are:
+
+
+\begin{displaymath}
+\od{\psi}{x} = - \frac {\pd{f(x, \psi(x))}{x}}{\pd{f(x, \psi(x))}{\psi}};
+\end{displaymath}
+
+
+The assumptions (1) and (4) imply that $\od{\psi}{x}=0$.  And
+
+\begin{displaymath}
+\od[2]{\psi}{x} = - 
+\frac {
+\pd[2]{f(x, \psi(x))}{x} \pd{f\left(x; \psi\left(x\right)\right)}{\psi} + 
+\pd{f(x, \psi(x))}{x} \frac{\partial f(x; \psi(x))}{\partial \psi \partial x} }{ \left( \pd{f\left(x;\psi\left(x\right)\right)}{\psi}\right)^2}, 
+\end{displaymath}
+
+which then must be different from zero from (3) and (4). 
+Both indicate that the solution curve $\psi(x)$ has a minimum or a local maximum in $x=x_0$ and therefore must bear the characteristic of a saddle-node bifurcation, as shown on the following graph:
+
+
+\includegraphics[page=10, angle=90, scale=0.5, trim={2cm 2cm  2cm 2cmcm}, clip]{lphys2114-figures} \hfill$\square$
+
+## Summary of the bifurcations on the line
+ - saddle node: two fixed points collapsing and annihilating each other
+ - trans-critical: two fixed points exchanging stability
+ - fork : one fixed point losing stability, sending trajectories towards two adjacent fixed points. 
+
+
+
+\includegraphics[page=11, angle=90, scale=0.7, trim={0cm 0 0 0cm}, clip]{lphys2114-figures}
+
+\bcd
+Think of physical examples corresponding to these bifurcations. 
+\ecd

@@ -66,6 +66,7 @@
 
 \newcommand{\eqdef}{\stackrel{\rm def}{=}}
 \newcommand{\eqbdef}{\stackrel{.}{=}}
+\newcommand{\eqbnot}{\stackrel{\text{notation}}{=}}
 \renewcommand\vec[1]{\boldsymbol{#1}}
 
 \makeatletter
@@ -84,10 +85,26 @@
  }{\medskip \hrule \fill 4pt\end{parbox}}
  
 
+\newenvironment{definition}[1]
+{\smallskip\par\textbf{Definition (#1)\ }
+ }{\medskip}
+ 
+\newenvironment{theorem}[1]
+{\smallskip\par\textbf{Theorem (#1)\ }
+ }{\medskip}
+ 
+
 \newcommand{\ddt}[1]{\od{#1}{t}}
 
 \newcommand{\bcd}{\begin{cdiscussion}}
 \newcommand{\ecd}{\end{cdiscussion}}
+
+
+\newcommand{\bd}[1]{\begin{definition}{#1}}
+\newcommand{\ed}{\end{definition}}
+
+\newcommand{\bt}[1]{\begin{theorem}{#1}}
+\newcommand{\et}{\end{theorem}}
 
 \makeatother
 

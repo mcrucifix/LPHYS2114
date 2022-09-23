@@ -10,6 +10,7 @@
 \usepackage{hyperref}
  
 \RequirePackage{tikz}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage{calc}
 \RequirePackage{ifthen}
 

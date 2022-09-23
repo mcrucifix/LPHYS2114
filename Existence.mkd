@@ -30,12 +30,12 @@ We consider an _autonomous_ vector field
 
 A fixed point (also said: _equilibrium solution_) is a point $x_f \in \mathbb{R}^n$ such that $f(x_f)=0$. 
 
-We distinguish the Lyapunov stability from the asymptotic stability. Roughly speaky, $x_f$ is _stable_ (shorthand for _Lyapunov stable_) if solutions starting close enough to $x_f$ remain near it. It is _Asymptotically stable_ if these solutions eventually converge to $x_f$. 
+We distinguish the Lyapunov stability from the asymptotic stability. Roughly speaking, $x_f$ is _stable_ (shorthand for _Lyapunov stable_) if solutions starting close enough to $x_f$ remain near it. It is _asymptotically stable_ if these solutions eventually converge to $x_f$. 
 
-\bd{Lyapunov Stability} The fixed point $x_f$ is (Lyapunov) stable if, given $\varepsilon > 0$, there exists a $\delta > 0$ such that, for any other trajectory  $y(t)$ satisfying $|bar(x)-y(t_0)| < \delta$, then $|bar(x)-y(t_0)| < \varepsilon$ for $t>t_0$, $t_0 \in \mathbb{R}$. 
+\bd{Lyapunov Stability} The fixed point $x_f$ is (Lyapunov) stable if, given $\varepsilon > 0$, there exists a $\delta > 0$ such that, for any other trajectory  $y(t)$ satisfying $|x_f-y(t_0)| < \delta$, then $|x_f-y(t_0)| < \varepsilon$ for $t>t_0$, $t_0 \in \mathbb{R}$. 
 \ed
 
-\bd{Asmyptotic  Stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|bar(x)-y(t_0)| < 0$, then  $\lim_\infty |bar(x)-y(t_0)| =0$. 
+\bd{Asmyptotic  Stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|x_f-y(t_0)| < 0$, then  $\lim_{t \rightarrow \infty} |x_f-y(t)| = 0$. 
 \ed
 
 \bcd
@@ -54,9 +54,9 @@ We find that
 
 where the derivatives are evaluated in $x_f$, 
 which we more simply write 
-$$\ddt {\delta x}_j = \Dif f(x_f) \delta x + \mathcal{O}(|\delta x|^2)$$.
+$$\ddt {\delta x}_j = \Dif f(x_f) \delta x + \mathcal{O}(|\delta x|^2).$$
 
-The notation $\Dif f(x_f)$  refers to the Jacobian of $f$ evaluated in $x_f$. If $n=1$ (one-dimensional system), then $\Dif f$ is simply $\od{f}{x}$. 
+The notation $\Dif f(x_f)$  refers to the Jacobian of $f$ evaluated in $x_f$. If $n=1$ (one-dimensional system), then $\Dif f$ is simply $\od{f}{x}$, which corresponds to the example in the Motivation section. 
 
 Given that for the stability of fixed points we are only concerned with the behaviour of solutions arbitrarily colse to $x_f$, it seems reasonable to inspect the linear system: 
 
@@ -64,7 +64,7 @@ Given that for the stability of fixed points we are only concerned with the beha
 \ddt {\delta x}_j = \Dif f(x_f) \delta x,
 \end{displaymath}
 
-...of which we know the solution! We know that it will grow exponentially in the direction of eigenvectors of the Jacobian with positive eigenvalues, and decay exponentially in the direction of eigevectors with negative eigenvalues. 
+...of which we know the solution! We know that it will grow exponentially in the direction of eigenvectors of the Jacobian with positive eigenvalues, and decay exponentially in the direction of eigenvectors with negative eigenvalues. 
 
 \bd{Hyperbolic fixed point.} A fixed point is hyperbolic if all the eigenvalues of $\Dif f(x_f)$ have either a strictly positive or a strictly negative real part.
 \ed
@@ -107,7 +107,7 @@ There in another handy theorem, that says that if $f(x,t,\psi)$ is differentiabl
 
 ## Special properties of autonomous fields 
 
-We now consider two important propositions that apply to autonomous dynamical systmes, and that we will (at last!) be able to prove. For simplycity, we consider a dynamical system admitting solutions over all times.
+We now consider two important propositions that apply to autonomous dynamical systems, and that we will (at last!) be able to prove. For simplycity, we consider a dynamical system admitting solutions over all times.
 
 \bt{Time shifted trajectories are trajectories in autonomous fields.} 
 If $x(t)$ is a solution of $\ddt x = f(x)$, then so is $x(t+\tau)$ for any $\tau$. 
@@ -137,7 +137,7 @@ In other words,
 \et 
 
 \bcd
-Consider the following flow diagram. How would you that the intersection is necessarily a fixed point? What does it say about the time a trajectory will need to reach the fixed point? 
+Consider the following flow diagram. How would you prove that the intersection is necessarily a fixed point? What does it say about the time a trajectory will need to reach the fixed point? 
 
 \includegraphics[page=4, angle=90, scale=0.7, trim={0 0 0 3cm}, clip]{lphys2114-figures}
 
@@ -145,23 +145,23 @@ Consider the following flow diagram. How would you that the intersection is nece
 
 ## Flows
 
-At this point, we have understood (at least intuitively) that the future fate a point in the phase space, in an autonomous system, does not depend on the time at which the snapshot has been taken. In other words, for any point $(x_0,t_0)$, there will be a function $\phi^\tau(x_0)$ that points to the point of the orbit reached at time $t+\tau$ (as long as the trajectory has remained within the bounds of the domain, see above). This is the _flow function_, sometimes called the _phase flow_ function. 
+At this point, we have understood (at least intuitively) that the future fate a point in the phase space, in an autonomous system, does not depend on the time at which the snapshot has been taken. This is after all quite straightforward given the definition of an autonomous system (the evolution dictated by $f$ does not depend explicitly on time). In other words, for any point $(x_0,t_0)$, there will be a function $\phi^\tau(x_0)$ that points to the point of the orbit reached at time $t+\tau$,  as long as the trajectory has remained within the bounds of the domain. This function $\phi$ is the _flow function_, sometimes called the _phase flow_ function. 
 
 Given the uniqueness of solutions, we find that $\phi^{\tau_1+\tau_2} = \phi^{\tau_2} \circ \phi^{\tau_2}$ and $\phi^0 = \phi^{\tau_1-\tau_1} = Id.$. 
 
-From where it comes that the flom is an invertible function:
+From where it comes that the flow is an invertible function:
 
 $$\left(\phi^{\tau}\right )^{-1} = \phi^{-\tau}.$$
 
-In our notation we have been a little ambiguous about the domain of $\phi$, something programmers will not like (one should always specify the type of inputs in a function). Above we have applied $\phi^\tau$ to elements of the phase-space domain. However, we could also map the function on subsets $U$ of this domain, as illustrated on the figure below:
+In our notation we have been a little ambiguous about the domain of $\phi$, something programmers will not like (one should always specify the type of inputs of a function). Above we have applied $\phi^\tau$ to elements of the phase-space domain. However, we could also map the function on subsets $U$ of this domain, as illustrated on the figure below:
 
-$$\phi^{\tau_1+\tau_2}(U) = \phi^{\tau_2} \circ \phi^{\tau_2} (U).$$ Again, this flow function is invertible.
+$$\phi^{\tau_1+\tau_2}(U) = \phi^{\tau_2} \circ \phi^{\tau_1} (U).$$ Again, this flow function is invertible.
 
 \includegraphics[page=5, angle=90, scale=0.7]{lphys2114-figures}
 
-So the flow function provides an intuitive impression that is remeniscent of a fluid flow. It may be converging; diverging but streamlines never cross each other. At this point, we may already perceive that dynamical systems will fall in different categories. 
+So the flow function provides an intuitive impression that is reminiscent of a fluid flow. It may be converging; diverging but streamlines never cross each other. At this point, we may already perceive that dynamical systems will fall in different categories. 
 
-1. Those associated with flow functions that (on average) diverge. Trajectories tend to spread over. Such flows can be considered to be globally unstable because trajectories tend to grow towards the limit of the domain.
+1. Those associated with flow functions that (on average) diverge. Trajectories tend to spread over. Such flows can be considered to be globally unstable because trajectories tend to grow towards the limits of the domain.
 2. Those associated with flow functions that (on average) converge. Trajectories tend to cluster towards attracting regions (a notion that still needs to be formalised). These flows are called _dissipative_.
 3. Those associated with flow functions that neither diverge nor converge. The phase-space volume of $U$ is conserved through time. 
 
@@ -170,17 +170,17 @@ The latter category represents the class of _Hamiltonian flows_. Can you guess w
 \ecd 
 
 \bcd
-At this point we may already have some intuitions about how the eigenvectors and eigenvalues of the Jacobian of $f$ governs the properties of the flow.  Which conditions do we expect for a converging flow? What happens if at least one eigenvalue is positive? The eigenvalues of the Jacabian are the _Lypunov spectrum_ and the individual values are called the _Lypapunov exponents_. Why this term: "exponent". In non-linear dynamics we tend to pay attention to the _largest Lyapunov exponent_. Can you guess why ? 
+At this point we may already have some intuitions about how the eigenvectors and eigenvalues of the Jacobian of $f$ governs the properties of the flow.  Which conditions do we expect for a converging flow? What happens if at least one eigenvalue is positive? The eigenvalues of the Jacabian are the _Lyapunov spectrum_ and the individual values are called the _Lyapunov exponents_. Why this term: "exponent". In non-linear dynamics we tend to pay attention to the _largest Lyapunov exponent_. Can you guess why ? 
 \ecd
 
 As we will make it clear in the following, _dissipative flows_ are characterised by a _negative Jacobian trace_: the sum of eigenvalues is negative; $\sum\lambda_i < 0$.  
 
-The figure below represents a _dissipative_ flow that has at least one positive Lypanov exponent. The phase space volume is shrinking over time (meaning that the _sum_ of eigenvalues is negative, even though one is positive). However, because one eigenvalue is positive, the flow gets stretched in one direction, so that to initially close initial conditions get increasingly distant with each other as time grows. 
+The figure below represents a _dissipative_ flow that has at least one positive Lyapunov exponent. The phase space volume is shrinking over time (meaning that the _sum_ of eigenvalues is negative, even though one is positive). However, because one eigenvalue is positive, the flow gets stretched in one direction, so that to initially close initial conditions get increasingly distant with each other as time grows. 
 
 \includegraphics[page=6, angle=90, scale=0.7]{lphys2114-figures}
 
-This is the basis of chaotic dynamical systems. 
+This is the basic explanation to the possibility of sensitive dependence to initial conditions, that is, chaos. 
 
-One generally distinguishes dissipative chaos (in dissipative flows) from Hamiltonian chaos (in Hamiltonian flows). Poincar\'e first discovered sensitive dependence to initial conditions in the 3-body problem, which is characterised by a Hamiltonian flow. The meteorologist Edwar Lorenz is famous for having popularised the notion of dissipative chaos.   We will come back to these notions further on. 
+One generally distinguishes dissipative chaos (in dissipative flows) from Hamiltonian chaos (in Hamiltonian flows). Poincaré first discovered sensitive dependence to initial conditions in the 3-body problem, which is characterised by a Hamiltonian flow. The meteorologist Edwar Lorenz is famous for having popularised the notion of dissipative chaos.   We will come back to these notions later on. 
 
 

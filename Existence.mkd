@@ -9,7 +9,7 @@ Consider the following dynamical system:
 \end{equation}
 
 \bd{Autonomous dynamical system}
-The system is said to be _autonomous_ if there is no explit dependence of $f$ on $t$, and non-autonomous otherwise. 
+The system is said to be _autonomous_ if there is no explicit dependence of $f$ on $t$, and non-autonomous otherwise. 
 \ed
 
 For simplicity, we will admit that $\Omega = \mathbb{R}^n$, where $n$ is the phase-space dimension. 
@@ -20,7 +20,7 @@ For simplicity, we will admit that $\Omega = \mathbb{R}^n$, where $n$ is the pha
 
 ## Equilibrium solutions, stability and linearised stability
 
-In this section we briefly formalise and extend notions that have already been covered in the _Motivatig example_ section. 
+In this section we briefly formalise and extend notions that have already been covered in the _Motivating example_ section. 
 
 We consider an _autonomous_ vector field
 
@@ -58,7 +58,7 @@ $$\ddt {\delta x}_j = \Dif f(x_f) \delta x + \mathcal{O}(|\delta x|^2).$$
 
 The notation $\Dif f(x_f)$  refers to the Jacobian of $f$ evaluated in $x_f$. If $n=1$ (one-dimensional system), then $\Dif f$ is simply $\od{f}{x}$, which corresponds to the example in the Motivation section. 
 
-Given that for the stability of fixed points we are only concerned with the behaviour of solutions arbitrarily colse to $x_f$, it seems reasonable to inspect the linear system: 
+Given that for the stability of fixed points we are only concerned with the behaviour of solutions arbitrarily close to $x_f$, it seems reasonable to inspect the linear system: 
 
 \begin{displaymath}
 \ddt {\delta x}_j = \Dif f(x_f) \delta x,
@@ -71,9 +71,9 @@ Given that for the stability of fixed points we are only concerned with the beha
 
 We will be able to _prove_ that a fixed point with all _negative_ eigenvalues (said to be linearly stable) is asymptotically stable. But we leave it for later. At this point, we already know enough to understand the idea of sink and source:
 
-1. A hyperbolic fixed point is called a _sink_ if all eigenvalues of the Lypunov spectrum have negative real parts. 
-2. A hyperbolic fixed point is called a _source_ if all eigenvalues of the Lypunov specturm have positive real parts.
-3. A hyperbolic fixed point is called a _saddle_ if some but not all eigenvalues of the Lypunov specturm have positive real parts
+1. A hyperbolic fixed point is called a _sink_ if all eigenvalues of the Lyapunov spectrum have negative real parts. 
+2. A hyperbolic fixed point is called a _source_ if all eigenvalues of the Lyapunov spectrum have positive real parts.
+3. A hyperbolic fixed point is called a _saddle_ if some but not all eigenvalues of the Lyapunov spectrum have positive real parts
 4. A non-hyperbolic fixed point with purely imaginary eigenvalues, and non-zero is a _center_.
 
 
@@ -97,7 +97,7 @@ and, again, for simplicity, we will admit that $\Omega = \mathbb{R}^n$. Here, we
 
 The proof is available in specialised books (e.g. Hirsch and Smale, 1974). 
 
-It has also been proved that the  uniques solution can be (uniquely)  _extended_ to the boundaries of any closed, compact subset of $U$. However, this says nothing about what is going on once the solution has reached the boundaries ! 
+It has also been proved that the  unique solution can be (uniquely)  _extended_ to the boundaries of any closed, compact subset of $U$. However, this says nothing about what is going on once the solution has reached the boundaries ! 
 
 \bcd
 Consider the following example: $\ddt x = x^2,\quad x\in \mathbb{R}$. Find the analytical solution, and show that the solution blows up and that the interval of existence of solutions through $x_0$ at $t=0$ depends on $x_0$. Tip: use the methods of variable separation. 
@@ -107,7 +107,7 @@ There in another handy theorem, that says that if $f(x,t,\psi)$ is differentiabl
 
 ## Special properties of autonomous fields 
 
-We now consider two important propositions that apply to autonomous dynamical systems, and that we will (at last!) be able to prove. For simplycity, we consider a dynamical system admitting solutions over all times.
+We now consider two important propositions that apply to autonomous dynamical systems, and that we will (at last!) be able to prove. For simplicity, we consider a dynamical system admitting solutions over all times.
 
 \bt{Time shifted trajectories are trajectories in autonomous fields.} 
 If $x(t)$ is a solution of $\ddt x = f(x)$, then so is $x(t+\tau)$ for any $\tau$. 
@@ -170,7 +170,7 @@ The latter category represents the class of _Hamiltonian flows_. Can you guess w
 \ecd 
 
 \bcd
-At this point we may already have some intuitions about how the eigenvectors and eigenvalues of the Jacobian of $f$ governs the properties of the flow.  Which conditions do we expect for a converging flow? What happens if at least one eigenvalue is positive? The eigenvalues of the Jacabian are the _Lyapunov spectrum_ and the individual values are called the _Lyapunov exponents_. Why this term: "exponent". In non-linear dynamics we tend to pay attention to the _largest Lyapunov exponent_. Can you guess why ? 
+At this point we may already have some intuitions about how the eigenvectors and eigenvalues of the Jacobian of $f$ governs the properties of the flow.  Which conditions do we expect for a converging flow? What happens if at least one eigenvalue is positive? The eigenvalues of the Jacobian are the _Lyapunov spectrum_ and the individual values are called the _Lyapunov exponents_. Why this term: "exponent". In non-linear dynamics we tend to pay attention to the _largest Lyapunov exponent_. Can you guess why ? 
 \ecd
 
 As we will make it clear in the following, _dissipative flows_ are characterised by a _negative Jacobian trace_: the sum of eigenvalues is negative; $\sum\lambda_i < 0$.  

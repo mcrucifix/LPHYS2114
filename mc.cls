@@ -5,6 +5,7 @@
 \LoadClass{article}
 \RequirePackage{xcolor}
 \RequirePackage{geometry}
+\RequirePackage{amsmath}
 \usepackage{mathtools}
 \usepackage{bm}
 \usepackage{hyperref}
@@ -112,3 +113,7 @@
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+\newcommand\vectort[2]{\begin{pmatrix}#1 \\ #2\end{pmatrix}}

@@ -118,14 +118,14 @@ Proof: By definition, $\ddt {x(t)} = f\left( x \left(t\right) \right).$ Hence, w
 \begin{displaymath}
 \left. \ddt {x(t+\tau)}\right|_{t=t_0} = 
 \left. \ddt {x(t)}\right|_{t=t_0+\tau} = 
-f\left( x \left (x_0 + \tau \right) \right) =  
-\left. f\left( x \left (x_0 + \tau \right) \right) \right|_{t=t_0}.  
+f\left( x \left (t + \tau \right) \right) =  
+\left. f\left( x \left (t_0 + \tau \right) \right) \right|_{t=t_0}.  
 \end{displaymath}
 
 To pack this up: 
 
 $\left. \ddt {x(t+\tau)}\right|_{t=t_0} = 
-\left. f\left( x \left (x_0 + \tau \right) \right) \right|_{t=t_0}$ is true for any $t_0\in\mathbb{R}$. In other words, $x(t+\tau)$ is a solution of the dynamical system. \hfill $\square$ 
+\left. f\left( x \left (t + \tau \right) \right) \right|_{t=t_0}$ is true for any $t_0\in\mathbb{R}$. In other words, $x(t+\tau)$ is a solution of the dynamical system. \hfill $\square$ 
 
 The formal maths make it a bit confusing, but the intuition is reasonably  clear: two time-shifted trajectories that pass through the same point _correspond to the same orbit_ ! 
 

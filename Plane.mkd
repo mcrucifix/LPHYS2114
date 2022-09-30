@@ -1,0 +1,46 @@
+## Linear fields 
+
+### General solution
+
+We consider the vector field defined in $\mathbb{R}^2\rightarrow \mathbb{R}^2$, with $\vec{x} \in \mathbb{R}^2$. 
+In the particular case of a linear diffeomorphism, the vector field takes a matrix form, as follows:
+
+$$ \dot{\vec{x}}  = A \vec{x}.$$
+
+As we know, it admits as general solution $\vec{x} = C_1 e^{\lambda_1 t} \vec{u} +  C_2 e^{\lambda_2 t} \vec{v}$, where $\vec u$ and $\vec v$ are the eigenvectors, and $\lambda_1$ and $\lambda_2$ the respective eigenvalues. 
+
+### Real eigenvalues : invarant manifolds and linear transient growth
+
+We first consider the particular case that both eigenvalues are real, with no imaginary part. 
+
+It is immediately obvious that the fixed point $(0,0)$ is asymptotically attracting if it is a hyperbolic fixed point with $\lambda_{1,2} < 0$. Furtheromer, for an initial condition along the eigenvector $u$, that is, $\vec{x}_0 = \alpha \vec{u}$, the particular solution is $\vec{x} = \alpha e^{\lambda_1 t} \vec{u}$. In other words, in the particular case of an initial condition along an eigenvector, the orbit is a line. 
+
+In other words, the lines defined by $\alpha \vec{u}$ and $\beta \vec{v}$, $\alpha,\beta\in\mathbb{R}$ are invariant manifolds: if you are on the line, the flow keeps you on the line. We can already have some intuitive grasp on what is going on, and observe that the manifold might be unstable (the flow propels you to infinity), or stable (the flow asymptotically brings you to the fixed point $(0,0)$, depending on the eigenvalue. 
+
+In general, even if the eigenvalues are real, the orbit is _not_ a line. Consider the case of a hyperbolic sink ($\lambda_1,\lambda_2<0$). One can view that $-\lambda_1$ and $-\lambda_2$ act as the inverse of attracting time scales. For example,  $\lambda_1 \gg \lambda_2$ imply that the trajectory will be quickly attracted towards the $u-$component of the trajectory will vanish quickly, so that it will be quickly attracted towards the manifold associated with the second eigenvalue. The $\beta \vec{v}$ will act as a _slow manifold_. As it turns out, depending on the initial condition, an observer that would observe one component (say, the first component) may observe _transient growth_ before reaching the asymptotic limit $(0,0)$. 
+
+\includegraphics[page=12, angle=90, scale=0.7, trim={2cm 0 0 0cm}, clip]{lphys2114-figures}
+
+
+### Imaginary eigenvalues : spiral and center 
+
+The frictionless, linear harmonic oscillator is defined by (after a suitable choice of length and time units):
+
+$$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -1 & 0 \end{pmatrix} \vectort{q}{p}$$ is a typical example of linear vector field with purely imaginary eigenvalues $\lambda_{1,2}= \pm i$. 
+
+
+The general solution is $q = C_0 e^i(t+\phi_0)$ and $p=\dot q$. 
+
+\bcd
+Can you see that you now have an _infinity_ of invariant manifolds ? Which are they ? This situation is quite typical of Hamiltonian flows
+\ecd 
+
+Now consider the slightly more realistic case of a harmonic oscillator with friction coefficient $\nu$.
+
+$$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -1 & -\nu \end{pmatrix} \vectort{q}{p}  $$
+
+Now we need to find the eigenvectors and eigenvalues, which are found with the characterisic equation $\lambda^2+\lambda\nu-1=0$. The eigenvalues are thus $\lambda = \frac{1}{2} ( -\nu \pm \sqrt{\nu^2 - 4 })$. The weakly damped harmonic oscillator $\nu<2$ will thus be characterised by a damped oscillation, associated with two eigenvalues that are complex conjugate. 
+
+As we see it, the _conservative_ harmonic oscillator is associated with a non-hyperbolic fixed point that is a _center_. The more general damped oscillator is associated with a hyperbolic fixed point, asymptotically attracting, that is _spiraling_. 
+
+## Non-linear vector fields in the plane

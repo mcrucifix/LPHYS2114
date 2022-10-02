@@ -26,21 +26,140 @@ In general, even if the eigenvalues are real, the orbit is _not_ a line. Conside
 
 The frictionless, linear harmonic oscillator is defined by (after a suitable choice of length and time units):
 
-$$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -1 & 0 \end{pmatrix} \vectort{q}{p}$$ is a typical example of linear vector field with purely imaginary eigenvalues $\lambda_{1,2}= \pm i$. 
+$$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -1 & 0 \end{pmatrix} \vectort{q}{p}.$$ 
+This is a typical example of linear vector field with purely imaginary eigenvalues $\lambda_{1,2}= \pm i$. 
 
 
 The general solution is $q = C_0 e^i(t+\phi_0)$ and $p=\dot q$. 
 
 \bcd
-Can you see that you now have an _infinity_ of invariant manifolds ? Which are they ? This situation is quite typical of Hamiltonian flows
+Can you see that you now have an _infinity_ of invariant manifolds? Which are they? This situation is quite typical of Hamiltonian (conservative flows).
 \ecd 
 
 Now consider the slightly more realistic case of a harmonic oscillator with friction coefficient $\nu$.
 
 $$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -1 & -\nu \end{pmatrix} \vectort{q}{p}  $$
 
-Now we need to find the eigenvectors and eigenvalues, which are found with the characterisic equation $\lambda^2+\lambda\nu-1=0$. The eigenvalues are thus $\lambda = \frac{1}{2} ( -\nu \pm \sqrt{\nu^2 - 4 })$. The weakly damped harmonic oscillator $\nu<2$ will thus be characterised by a damped oscillation, associated with two eigenvalues that are complex conjugate. 
+The eigenvectors and eigenvalues are found with the characterisic equation $\lambda^2+\lambda\nu-1=0$. The eigenvalues are  $\lambda = \frac{1}{2} ( -\nu \pm \sqrt{\nu^2 - 4 })$. The weakly damped harmonic oscillator $\nu<2$ will thus be characterised by a damped oscillation, associated with two eigenvalues that are complex conjugate. 
 
 As we see it, the _conservative_ harmonic oscillator is associated with a non-hyperbolic fixed point that is a _center_. The more general damped oscillator is associated with a hyperbolic fixed point, asymptotically attracting, that is _spiraling_. 
 
+\bcd
+Can you see that for linear fields to generate bounded trajectories within $\mathbb{R}^2$, fixed points must be either hyperolic sinks, or centers. Sources will generate trajectores flowing to infinity.
+\ecd
+
 ## Non-linear vector fields in the plane
+
+As we see now, non-linear dynamics are needed to combine hyperbolic sources with bounded behaviour, which, in the plane, will typically generate attracting orbits. We will review at a later stage the dynamics of attracting orbits, but for the moment we would like to take advantage of what we have learned about hyperbolic sources and sinks in the linear regime. The theory allows us to show that _near_ a hyperbolic fixed point, the non-linear flows behaves _like_ a linear system with the same eigenspectrum. 
+
+To get there, we start with an example that, unusual fact, can be solved analytically. 
+
+\begin{align}
+\dot x &= x + y^2, \\
+\dot y &= -y. \\
+\end{align}
+
+The fixed point is $(x_0,y_0)=(0,0)$. Writing, more generically, the system as:
+
+\begin{align}
+\dot x &= f(x,y), \\
+\dot y &= g(x,y) \\
+\end{align}
+
+we find that we can _linearise_ the system as follows (writing $x^\prime = x - x_0 = x$):
+
+\begin{align}
+\dot x &= 
+     f(x_0,y_0) + 
+      \left.\pd{f}{x}\right|_{(x_0,y_0)} x^\prime + 
+      \left.\pd{f}{y}\right|_{(x_0,y_0)} y^\prime + 
+      N_x(x,y), \\
+\dot x &= 
+     g(x_0,y_0) + 
+      \left.\pd{g}{x}\right|_{(x_0,y_0)} x^\prime + 
+      \left.\pd{g}{y}\right|_{(x_0,y_0)} y^\prime + 
+      N_y(x,y), \\
+\end{align}
+
+where $N_{x,y}$ include all the non-linear term. The _tangent linear system is_, per definition: 
+
+\begin{align}
+\dot x &= 
+     f(x_0,y_0) + 
+      \left.\pd{f}{x}\right|_{(x_0,y_0)} x^\prime + 
+      \left.\pd{f}{y}\right|_{(x_0,y_0)} y^\prime,
+\dot y &= 
+     g(x_0,y_0) + 
+      \left.\pd{g}{x}\right|_{(x_0,y_0)} x^\prime + 
+      \left.\pd{g}{y}\right|_{(x_0,y_0)} y^\prime,
+\end{align}
+
+or, writen in a more compact form, and considering that, by definition of the fixed point, $f(x_0,y_0)$ and $g(x_0,y_0)=0$:
+
+$$\vectort{\dot x}{\dot y} = J \vectort{x}{y},$$
+
+with $J$ the Jacobian of $(f,g)$ evaluated at th efixed point. In the specific example chosen here, 
+$$J = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$. It is already diagonal, with eigenvectors along the $x$ and $y$ axes, and eigenvalues $\lambda_1=1$ and $\lambda_2\-1$.
+The phase portrait is thus fairly straigtforward: 
+
+
+\includegraphics[page=13, angle=90, scale=0.7, trim={0cm 0 0 0cm}, clip]{lphys2114-figures}
+
+You identify without much difficulty the stable and unstable manifolds. 
+
+Let us come back to our full system. The equation for $\dot y$ admits, as solution, $y(t)=C_2 e^{-t}$. Plugged into tho $\dot x$ equation, we have $\dot x= x + C_2^2 e^{-2t}$. The _homogenous_ equation $\dot x= x$ admits, as solution, $x^H(t) = C_1 e^t$. One approach for finding a particular solution to the inhomogeneous system is to make the constant variable, that is $C_1 \rightarrow C(t)$. Let's try this:
+
+
+\begin{align*}
+\dot C e^t  &= C_2^2 e^{-2t}, \\
+\Leftrightarrow  C(t)  &= -\frac{1}{3} C_2^2 e^{-3t}, \\
+\Leftrightarrow  x^I(t)  &= -\frac{1}{3} C_2^2 e^{-2t}.
+\end{align*}
+
+The general solution is thus $x(t)=C_1e^t - \frac{1}{3} C_2^2 e^{-2t}$. 
+
+Starting from any point $(x_0,y_0)$ at time $t=0$, we have $C_2=y_0$, $C_1 = x_0 - \frac{1}{3}y_0^2$. 
+
+In particular, if $y_0=0$, then $y_t=0$ and $x(t)=x_0e^t$. Hence, along the $x$ axis, the system behaves _exactly_ as the linear system (!). The line $y=0$ is the unstable (invariant) manifold. 
+
+Now, contrary to the linearised system, the line $x_0=0$ is _not_ an invariant manifold, as, from $x_0=0$, 
+
+$$x(t)= - \frac{1}{3} y_0^2 (  e^t + e^{-2t}).$$
+
+However, if we are a tiny bit smarter and arrange for $C_1$ to be $0$, that is, $x_0 + \frac{1}{3}y_0^2=0$, then the system evolves as:
+
+\begin{align*}
+ x(t) &= y_0^2 e^{-2t}, \\
+ y(t) &= y_0  e^{-t}, 
+\end{align*}
+
+on which the relationship $x_0 + \frac{1}{3}y_0^2=0$ is maintained. In other words, the curve defined by 
+$x_0 + \frac{1}{3}y_0^2=0$ is the stable invariant manifold. 
+
+
+\includegraphics[page=14, angle=90, scale=0.7, trim={0cm 0 0 0cm}, clip]{lphys2114-figures}
+
+
+With this particular non-linear system, about which we could find the analytical solution, we observe that the invariant manifolds of the linear system are _tangent_ and have the same stability characteristics as those of the linear tangent system. This is great news, because it suggests that we can learn quite a great deal about the non-linear system from inspeciton of the much simpler linear system, near the fixed point. 
+
+This is not _always_ the case, as demonstrated by the following example:
+
+\begin{align}
+\dot x &= -y + ax(x^2 + y^2), \\
+\dot y &= x + ay(x^2 + y^2). 
+\end{align}
+
+Lacking time, full inspection of the system is left as an exercise, but rushing bit through the lessons to be learned here, one would find that the the _non-linear_ system spirals downwards or upwards depending on the value of $a$ (negative or positive), while the _linear system_ is the Hamiltionian system that we have already studied above and admits circular orbits. 
+
+So what is the trouble here? The key for establish a qualitative equivalence between a linear and a non-linear system is the _hyperbolic_ character of the fixed points, as establisheb by the Hartman-Grobman theory (1959 and 1960):
+
+\bt{Hartman-Grobman theorem}
+Consider $p=(0,0)$ a _hyperbolic_ fixed point of the ordinary differential equation $\dot {\vec{x}} = \vec{f}(\vec{x})$, $\vec{x}\in\mathbb{R}^2$, 
+and $\vec{f}\in\mathbf{C}^k(\mathbb{R}^2), k\geq1$. Then, there is a neighborhood $B$ around $p=(0,0)$ and a homeomorphism $h:B\rightarrow R^2$ with $h(0,0)=(0,0)$ such that, $\forall \vec{x}\in B$, there is an interval $I\subset\mathbb{R}$ such that:
+$$h \circ \phi_t(\vec x) = \bar\phi_t \circ h(\vec x),\quad \forall t\in I, \vec{x}\in B,$$
+where $\phi_t$ is the flow of $\dot{ \vec{x}} = \vec{f}(\vec{x})$ and $\bar \phi_t$ is the flow of the linearised system $\dot {\vec{x}} = J \vec{x}$. 
+\et
+
+It is said that the flows $\phi_t$ and $\bar \phi_t$ are _topologically conjugate_. 
+
+

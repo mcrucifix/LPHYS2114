@@ -19,11 +19,11 @@ It comes up that trajectories on the line must either be constant (fixed point),
 
 We now consider changes in $\psi$ that may affect the existence or the _nature_ of the fixed point. To this end, consider the following example: $f(x;\psi) = e^{-x} - x + \psi$. 
 
-The fixed point may be visualised graphically, with the equation $e^{-x} = x-\psi$. 
+The fixed point may be visualised graphically, with the equation $e^{-x} = x-\psi$. This is the _phase portrait_. 
 
 \includegraphics[page=9, angle=90, scale=0.7, trim={2cm 0 0 0cm}, clip]{lphys2114-figures}
 
-As is clear from the figure, the number of fixed points changes for 2 hyperbolic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
+As is clear from the figure showing the phase portraits, the number of fixed points changes for 2 hyperbolic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
 
 In this section we will learn to _detect_ bifurcation points in vector fields on the line and classify them. 
 
@@ -52,12 +52,12 @@ Specifically, the normal form $f(x;\psi^\prime)=\psi^\prime - 1 - \frac{1}{2} x^
 1. $f(x_0;\psi_0) = 0$; &
 3. $\pd[2]{f}{x}(x_0;\psi_0) \neq 0$;
 \\
-2. $\pd{f}{\psi}(x_0;\psi_0) = 0$; &
+2. $\pd{f}{x}(x_0;\psi_0) = 0$; &
 4. $\pd{f}{\psi}(x_0;\psi_0) \neq 0$;
 \end{tabular}
 \et
 
-The intuition beyond this theorem is reasonably clear. The first condition imposes the existence of the fixed point; the second one is the non-asymptotic character of the fixed point (neither linear stable nor linearly unstable). The third and fourth condition set the locally parabolic character of the solutions near the bifurcation point. 
+The intuition beyond this theorem is reasonably clear. The first condition imposes the existence of the fixed point; the second one is the non-asymptotic character of the fixed point (neither linear stable nor linearly unstable). The third and fourth conditions set the locally parabolic character of the solutions near the bifurcation point. 
 
 More formally, from the implicit function theorem, (1) and (4) imply that there must exist a function $\psi(x)$ on an interval $I\subset\mathbb{R}$ such that $f(x,\psi(x)) = 0$ and $\psi(x_0)=\psi_0$.
 

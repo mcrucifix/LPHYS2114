@@ -35,7 +35,7 @@ We distinguish the Lyapunov stability from the asymptotic stability. Roughly spe
 \bd{Lyapunov Stability} The fixed point $x_f$ is (Lyapunov) stable if, given $\varepsilon > 0$, there exists a $\delta > 0$ such that, for any other trajectory  $y(t)$ satisfying $|x_f-y(t_0)| < \delta$, then $|x_f-y(t_0)| < \varepsilon$ for $t>t_0$, $t_0 \in \mathbb{R}$. 
 \ed
 
-\bd{Asmyptotic  Stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|x_f-y(t_0)| < 0$, then  $\lim_{t \rightarrow \infty} |x_f-y(t)| = 0$. 
+\bd{Asymptotic  Stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|x_f-y(t_0)| < 0$, then  $\lim_{t \rightarrow \infty} |x_f-y(t)| = 0$. 
 \ed
 
 \bcd
@@ -64,7 +64,7 @@ Given that for the stability of fixed points we are only concerned with the beha
 \ddt {\delta x}_j = \Dif f(x_f) \delta x,
 \end{displaymath}
 
-...of which we know the solution! We know that it will grow exponentially in the direction of eigenvectors of the Jacobian with positive eigenvalues, and decay exponentially in the direction of eigenvectors with negative eigenvalues. 
+We will inspect more carefully the solutions of this system in the plane in section \ref{sect:plane} but we may already anticipate that  solutions will grow exponentially in the direction of eigenvectors of the Jacobian with positive eigenvalues, and decay exponentially in the direction of eigenvectors with negative eigenvalues. 
 
 \bd{Hyperbolic fixed point.} A fixed point is hyperbolic if all the eigenvalues of $\Dif f(x_f)$ have either a strictly positive or a strictly negative real part.
 \ed

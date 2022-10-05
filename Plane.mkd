@@ -124,10 +124,10 @@ where $N_{x,y}$ include all the non-linear terms. The _tangent linear system is_
 
 or, writen in a more compact form, and considering that, by definition of the fixed point, $f(x_0,y_0)$ and $g(x_0,y_0)=0$:
 
-$$\vectort{\dot x}{\dot y} = J \vectort{x}{y},$$
+$$\vectort{\dot x}{\dot y} = \Dif(f,g)  \vectort{x}{y},$$
 
-with $J = \Dif(f,g)$ the Jacobian of $(f,g)$ evaluated at the fixed point. In the specific example chosen here, 
-$$J = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.$$ It is already diagonal, with eigenvectors along the $x$ and $y$ axes, and eigenvalues $\lambda_1=1$ and $\lambda_2\-1$.
+with $\Dif(f,g)$ the Jacobian of $(f,g)$ evaluated at the fixed point. In the specific example chosen here, 
+$$\Dif(f,g) = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.$$ It is already diagonal, with eigenvectors along the $x$ and $y$ axes, and eigenvalues $\lambda_1=1$ and $\lambda_2\-1$.
 The phase portrait is thus fairly straightforward: 
 
 
@@ -185,16 +185,16 @@ So what is the trouble here? The key for establishing a qualitative equivalence 
 Consider $p=(0,0)$ a _hyperbolic_ fixed point of the ordinary differential equation $\dot {\vec{x}} = \vec{f}(\vec{x})$, $\vec{x}\in\mathbb{R}^2$, 
 and $\vec{f}\in\mathbf{C}^k(\mathbb{R}^2), k\geq1$. Then, there is a neighborhood $B$ around $p=(0,0)$ and a homeomorphism $h:B\rightarrow R^2$ with $h(0,0)=(0,0)$ such that, $\forall \vec{x}\in B$, there is an interval $I\subset\mathbb{R}$ such that:
 $$h \circ \phi^t(\vec x) = \bar\phi^t \circ h(\vec x),\quad \forall t\in I, \vec{x}\in B,$$
-where $\phi^t$ is the flow of $\dot{ \vec{x}} = \vec{f}(\vec{x})$ and $\bar \phi^t$ is the flow of the linearised system $\dot {\vec{x}} = J \vec{x}$. 
+where $\phi^t$ is the flow of $\dot{ \vec{x}} = \vec{f}(\vec{x})$ and $\bar \phi^t$ is the flow of the linearised system $\dot {\vec{x}} = \Dif (f,g)  \vec{x}$. 
 \et
 
 It is said that the flows $\phi^t$ and $\bar \phi^t$ are _topologically conjugate_. 
 
 The topological equivalence between linearised systems and non-linear systems around the _hyperbolic_ fixed points imply that we can predict the existence of stable and unstable invariant manifolds and their tangent directions, from inspection of the eigenvalues and eigenvacteurs of the Jacobian. 
 
-We have a _sink_ if all eigenvalues are negative real parts, a _source_ if they  all have positive real parts, and a _saddle point_ if some are negative and negative, provided that non is null in which case the fixed point is no longer hyperbolic. This theory, including the Hartman-Grobman theorem,  works even if $n\geq 2$. 
+We have a _sink_ if all eigenvalues are negative real parts, a _source_ if they  all have positive real parts, and a _saddle point_ if some are negative and negative, provided that none is null in which case the fixed point is no longer hyperbolic. This theory, including the Hartman-Grobman theorem, works also for $n\geq 2$. 
 
-Specifically, we call define
+Specifically, we define:
 
 \bd{Stable local manifold}
 The stable local manifold around $p$ in the neighbourhood $B$ is $$S_B = \left\{ x \in B: \phi^t(x) \in B \forall t\geq 0\right\}.$$
@@ -206,4 +206,11 @@ Similarly,
 The unstable local manifold around $p$ in the neighbourhood $B$ is $$S_B = \left\{ x \in B: \phi^{-t}(x) \in B \forall t\geq 0\right\}.$$
 \ed
 
+At this point, we will use one important theorem, not formally demonstrated here, that will allow us to find out more about the shape of the flow around the fixed point in its neighbourhood. Before doing so, let us see one consequence of the Hartmant-Grobman theorem. 
+
+If $p$ is a (hyperbolic) 
+
+\bd{
+
+\ed
 

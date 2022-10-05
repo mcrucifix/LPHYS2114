@@ -17,9 +17,9 @@ It comes up that trajectories on the line must either be constant (fixed point),
 
 ## The saddle-node bifurcation
 
-We now consider changes in $\psi$ that may affect the existence or the _nature_ of the fixed point. To this end, consider the following example: $f(x;\psi) = e^{-x} - x + \psi$. 
+We now consider changes in $\psi$ that may affect the existence or the _nature_ of the fixed point. To this end, consider the following example: $f(x;\psi) = \psi - x - e^{-x}$. 
 
-The fixed point may be visualised graphically, with the equation $e^{-x} = x-\psi$. This is the _phase portrait_. 
+The fixed point may be visualised graphically, with the equation $e^{-x} = \psi - x$. This is the _phase portrait_. 
 
 \includegraphics[page=9, angle=90, scale=0.7, trim={2cm 0 0 0cm}, clip]{lphys2114-figures}
 
@@ -37,14 +37,17 @@ f(x;\psi) =&
 f(x_0;\psi_0) + 
 \left.\pd{f}{\psi}\right|_{x_0,\psi_0} (\psi - \psi_0) + 
 \left.\pd{f}{x}\right|_{x_0,\psi_0} (x - x_0) + \\
-& \frac{1}{2} \left.\pd[2]{f}{x}\right|_{x_0,\psi_0} (x-x_0)^2 + \ldots \\
+& \frac{1}{2} \left.\pd[2]{f}{x}\right|_{x_0,\psi_0} (x-x_0)^2 + \\
+& \frac{1}{2} \left.\pd[2]{f}{\psi}\right|_{x_0,\psi_0} (\psi-\psi_0)^2 + \\
+& \frac{1}{2} \left.\frac{\partial^2 f}{\partial \psi\partial x}\right|_{x_0,\psi_0} (x-x_0)(\psi-\psi_0)  \\
+& + \ldots \\
 =& \underbrace{\psi - 1 - \frac{1}{2} x^2}_{\text{normal form}} + \ldots
 \end{split}
 \end{displaymath}
 
-We have found here that if we develop the vector field around the bifurcation point, it takes a specific form that depends on the first and second-order derivatives on $x$ and $\psi$. This specific form is called a _normal form_, and the normal form characterises the bifurcation. 
+Hence, if we develop the vector field around the bifurcation point, it takes a specific form that depends on the first and second-order derivatives on $x$ and $\psi$. This specific form is called a _normal form_, and the normal form characterises the bifurcation. 
 
-Specifically, the normal form $f(x;\psi^\prime)=\psi^\prime - 1 - \frac{1}{2} x^2$ ($\psi^\prime := \psi-1$) is characteristic of the _saddle-node_ bifurcation: it is the collision of a stable and an unstable fixed point, with both vanishing beyond the bifurcation point. We have met this exact bifurcation in the motivating example. 
+Specifically, the normal form $f(x;\psi^\prime)=\psi^\prime - \frac{1}{2} x^2$ ($\psi^\prime := \psi-1$) is characteristic of the _saddle-node_ bifurcation (also called a _fold bifurcation_): it is the collision of a stable and an unstable fixed point, with both vanishing beyond the bifurcation point. We have met this exact bifurcation in the motivating example. 
 
 \bt{Sufficient conditions for a  saddle-node bifurcation on the line.} A saddle-node bifurcation occurs on $x_0,\psi_0$ when:
 

@@ -59,8 +59,8 @@ As we see it, the _conservative_ harmonic oscillator is associated with a non-hy
 
 In this case, the general solution of the trajectories is $\vec{x}(t) = (C_1 e^{\lambda t} + C_2 t e^{\lambda t}) \vec{u} +  C_2 t e^{\lambda t} \vec{v}$. 
 
-
-\includegraphics[page=17, angle=90, scale=0.7, trim={0cm 0 0cm 0cm}, clip]{lphys2114-figures}
+\scalebox{0.8}{ \input{Figures/jordan.eepic}}
+\scalebox{0.8}{ \input{Figures/jordan05.eepic}}
 
 
 \bcd

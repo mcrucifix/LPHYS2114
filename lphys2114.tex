@@ -43,9 +43,12 @@
 \newcommand{\pdtt}[1]{\pd[2]{#1}{t}}
 
 \usepackage{titlesec}
-\titleformat{\section} {\normalfont\sffamily}{\thesection}{1em}{}
-\titleformat{\subsection} {\normalfont\sffamily}{\thesubsection}{1em}{}
-\titleformat{\subsubsection} {\normalfont\sffamily}{\thesubsection}{1em}{}
+\titleformat{\section} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesection.}}{0em}{} 
+
+\titleformat{\subsection} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesubsection.}}{0em}{} 
+
+
+\titleformat{\subsubsection} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesubsubsection.}}{0em}{} 
 
 \usepackage{silence}
 \WarningFilter{hyperref}{removing}

@@ -24,9 +24,7 @@ The fixed point $(0,0)$ is asymptotically attracting if it is a hyperbolic fixed
 
 In other words, the lines defined by $\alpha \vec{u}$ and $\beta \vec{v}$, $\alpha,\beta\in\mathbb{R}$ are invariant manifolds: if you are on the line, the flow keeps you on the line. We can already have some intuitive grasp on what is going on, and observe that the manifold might be unstable (the flow propels you to infinity), or stable (the flow asymptotically brings you to the fixed point $(0,0)$, depending on the eigenvalue. 
 
-
-[ONE GRAPHIC WILL BE ADDED]
-\vspace{8cm}
+\includegraphics[page=15, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
 
 In general, even if the eigenvalues are real, the orbit is _not_ a line. Consider the case of a hyperbolic sink ($\lambda_1,\lambda_2<0$). One can view that $-\lambda_1$ and $-\lambda_2$ act as the inverse of attracting time scales. For example,  $\lambda_1 \gg \lambda_2$ imply that the trajectory will be quickly attracted towards the $u-$component of the trajectory will vanish quickly, so that it will be quickly attracted towards the manifold associated with the second eigenvalue. The $\beta \vec{v}$ will act as a _slow manifold_. As it turns out, depending on the initial condition, an observer that would observe one component (say, the first component) may observe _transient growth_ before reaching the asymptotic limit $(0,0)$. 
 
@@ -55,16 +53,14 @@ The eigenvalues are found with the characteristic equation $\lambda^2+\lambda\nu
 
 As we see it, the _conservative_ harmonic oscillator is associated with a non-hyperbolic fixed point that is a _center_. The more general damped oscillator is associated with a hyperbolic fixed point, asymptotically attracting, that is _spiraling_. 
 
-[ONE GRAPHIC WILL BE ADDED]
-\vspace{8cm}
+\includegraphics[page=16, angle=90, scale=0.7, trim={1cm 0 2cm 0cm}, clip]{lphys2114-figures}
 
 ### Case C: Jordan form matrix
 
 In this case, the general solution of the trajectories is $\vec{x}(t) = (C_1 e^{\lambda t} + C_2 t e^{\lambda t}) \vec{u} +  C_2 t e^{\lambda t} \vec{v}$. 
 
-[TWO GRAPHICS WILL BE ADDED]
 
-\vspace{8cm}
+\includegraphics[page=17, angle=90, scale=0.7, trim={0cm 0 0cm 0cm}, clip]{lphys2114-figures}
 
 
 \bcd
@@ -72,11 +68,9 @@ Can you see that for linear fields to generate bounded trajectories within $\mat
 \ecd
 
 
-### Non diagonisable matrices
-
-
-
 ## Non-linear vector fields in the plane
+
+### Topological equivalence with the linearised system around hyperbolic fixed points 
 
 As we see now, non-linear dynamics are needed to combine hyperbolic sources with bounded behaviour, which, in the plane, will typically generate attracting orbits. We will review at a later stage the dynamics of attracting orbits, but for the moment we would like to take advantage of what we have learned about hyperbolic sources and sinks in the linear regime. The theory allows us to show that _near_ a hyperbolic fixed point, the non-linear flows behaves _like_ a linear system with the same eigenspectrum. 
 
@@ -122,7 +116,7 @@ where $N_{x,y}$ include all the non-linear terms. The _tangent linear system is_
       \left.\pd{g}{y}\right|_{(x_0,y_0)} y^\prime,
 \end{align*}
 
-or, writen in a more compact form, and considering that, by definition of the fixed point, $f(x_0,y_0)$ and $g(x_0,y_0)=0$:
+or, written in a more compact form, and considering that, by definition of the fixed point, $f(x_0,y_0)$ and $g(x_0,y_0)=0$:
 
 $$\vectort{\dot x}{\dot y} = \Dif(f,g)  \vectort{x}{y},$$
 
@@ -135,7 +129,7 @@ The phase portrait is thus fairly straightforward:
 
 You identify without much difficulty the stable and unstable manifolds. 
 
-Let us come back to our full system. The equation for $\dot y$ admits, as solution, $y(t)=C_2 e^{-t}$. Plugged into tho $\dot x$ equation, we have $\dot x= x + C_2^2 e^{-2t}$. The _homogenous_ equation $\dot x= x$ admits, as solution, $x^H(t) = C_1 e^t$. One approach for finding a particular solution to the inhomogeneous system is to make the constant variable, that is try  $C(t)$ in lieu of $C_1$:
+Let us come back to our full system. The equation for $\dot y$ admits, as solution, $y(t)=C_2 e^{-t}$. Plugged into tho $\dot x$ equation, we have $\dot x= x + C_2^2 e^{-2t}$. The _homogeneous_ equation $\dot x= x$ admits, as solution, $x^H(t) = C_1 e^t$. One approach for finding a particular solution to the inhomogeneous system is to make the constant variable, that is try  $C(t)$ in lieu of $C_1$:
 
 
 \begin{align*}
@@ -183,7 +177,7 @@ So what is the trouble here? The key for establishing a qualitative equivalence 
 
 \bt{Hartman-Grobman theorem}
 Consider $p=(0,0)$ a _hyperbolic_ fixed point of the ordinary differential equation $\dot {\vec{x}} = \vec{f}(\vec{x})$, $\vec{x}\in\mathbb{R}^2$, 
-and $\vec{f}\in\mathbf{C}^k(\mathbb{R}^2), k\geq1$. Then, there is a neighborhood $B$ around $p=(0,0)$ and a homeomorphism $h:B\rightarrow R^2$ with $h(0,0)=(0,0)$ such that, $\forall \vec{x}\in B$, there is an interval $I\subset\mathbb{R}$ such that:
+and $\vec{f}\in\mathbf{C}^k(\mathbb{R}^2), k\geq1$. Then, there is a %seighbourhood $B$ around $p=(0,0)$ and a homeomorphism $h:B\rightarrow R^2$ with $h(0,0)=(0,0)$ such that, $\forall \vec{x}\in B$, there is an interval $I\subset\mathbb{R}$ such that:
 $$h \circ \phi^t(\vec x) = \bar\phi^t \circ h(\vec x),\quad \forall t\in I, \vec{x}\in B,$$
 where $\phi^t$ is the flow of $\dot{ \vec{x}} = \vec{f}(\vec{x})$ and $\bar \phi^t$ is the flow of the linearised system $\dot {\vec{x}} = \Dif (f,g)  \vec{x}$. 
 \et
@@ -203,14 +197,169 @@ The stable local manifold around $p$ in the neighbourhood $B$ is $$S_B = \left\{
 Similarly, 
 
 \bd{Unstable local manifold}
-The unstable local manifold around $p$ in the neighbourhood $B$ is $$S_B = \left\{ x \in B: \phi^{-t}(x) \in B \forall t\geq 0\right\}.$$
+The unstable local manifold around $p$ in the neighbourhood $B$ is $$U_B = \left\{ x \in B: \phi^{-t}(x) \in B \forall t\geq 0\right\}.$$
 \ed
 
-At this point, we will use one important theorem, not formally demonstrated here, that will allow us to find out more about the shape of the flow around the fixed point in its neighbourhood. Before doing so, let us see one consequence of the Hartmant-Grobman theorem. 
+Because of the way the definition is put, fixed points (even if they are saddle points or sources) belong to both the local stable and unstable manifolds. This is a bit counter-intuitive, so pay attention to this. 
 
-If $p$ is a (hyperbolic) 
 
-\bd{
+### Stable-unstable manifolds theorem
 
+Let us see one more consequence of the Hartmant-Grobman theorem. 
+
+If $p$ is a (hyperbolic) sink, then there must be a neighbourhood $B$ around $p$ such that  $S_B=B$ and $U_B=\{p\}$. Can you see this? Indeed, in this neighbourhood, the flow is topologically conjugate to that of the linearised system. We now that it is a _sink_, attracting from all directions. The  stable manifold _is_ the whole neighbourhood. But as we have just seen, $\{p\}$ must also belong to the unstable manifold. 
+
+If $p$ is a (hyperbolic) source, then, $U_B=B$ and $S_B=\{p\}$. 
+
+We will now formulate an important theorem, not demonstrated here, that will allow us to obtain more information about the shape of the stable and unstable manifolds around the fixed points. 
+
+\bt{Stable and unstable manifolds theorem}
+Consider $f:\mathbb{R}^2 \rightarrow \mathbb{R}^2$, a diffeomorphism $\in \mathbf{C}^k$, $k\geq 1$, and $p=(0,0)$ a _hyperbolic_ equilibrium of the ordinary differential equation $\dot x = f(x)$, such that 
+
+$$ \Dif f(p)=\begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix},\quad \text{with} \lambda_1 < 0 \lambda_2. $$
+
+Then, $\exists \varepsilon >0$ and $B=]-\varepsilon,\varepsilon[ \cross ]-\varepsilon,\varepsilon[$ such that:
+
+- $S_B = \left\{ (x, s(x)) \text{with} x\in]-\varepsilon,\varepsilon[\right\}$ where $s(x)$ is $\mathbb{C}^k$ and $s^\prime(0) = 0$; 
+- $U_B = \left\{ (u(y), y) \text{with} x\in]-\varepsilon,\varepsilon[\right\}$ where $u(x)$ is $\mathbb{C}^k$ and $u^\prime(0) = 0$; 
+
+\et 
+
+Let's try to put this in plain text. If we have a hyperbolic saddle, then there is a neighbourhood where the stable manifold through the point has a functional form, tangent to the axis corresponding to the stable direction of the linearised system; and there is a  _also_ a neighbourhood where the unstable manifold has a functional form, tangent to the axis corresponding to the unstable direction of the linearised system. It results from this theorem that the stable and unstable manifolds are locally orthogonal to each other ! So this is big. 
+
+The consequences are pretty wild. Indeed, suppose again that the system has been put such that the eigenvectors correspond to the $x$ and $y$ axes (as above), with $x=0$ (the $y-$axis) the unstable manifold through the origin. 
+
+Then, we can as we have done already linearise the system: 
+
+\begin{equation}\label{eq:manifold}
+\begin{split}
+\dot x &=  \lambda_1 x + N_x(x,y), \\
+\dot y &=  \lambda_2 y + N_x(x,y). \\
+\end{split}
+\end{equation}
+
+
+The non-linear terms contain second-order terms and more, so by definition $lim_{(x,y)\rightarrow (0,0)} \frac{N_{x,y}(x,y)}{x^2+y^2} = 0$.
+
+So, consider now $(x(t),y(t))$ an orbit of the stable manifold that passes through $x,s(x)$. It must remain on the stable manifold, and we find that $y(t)=s(x(t))$. We can re-write system \eqref{eq:manifold} as follows:
+
+\begin{equation}\label{eq:manifoldlin}
+\begin{split}
+\dot x &=  \lambda_1 x +  N_x(x,s(x)), \\
+\dot x s^\prime (x) &=  \lambda_2 y + N_x(x,s(x)). \\
+\end{split}
+\end{equation}
+
+Combining both equations to eliminate time (the $\dot x$ term), you get
+
+\begin{equation}
+s^\prime (x) (\lambda_1 x + N_x(x,s(x))) = 
+\lambda_2 s(x) + N_y(x,s(x))
+\end{equation}
+
+Similarly, for the unstable form, you would get: 
+
+\begin{equation}
+(\lambda_1 u(y)x + N_x(u(y),y)) = 
+u^\prime (\lambda_2 u(y) + N_y(u(y),y))
+\end{equation}
+
+We will now show how we can use these developments. Consider again the system that  we have been playing with already, but we just swap the $x$ and $y$ directions to comply with the condition $\lambda_1 < 0 < \lambda_2$:
+
+\begin{align*}
+\dot x &= - x, \\
+\dot y &= y + x^2. 
+\end{align*}
+
+Thus, $N_x(x,y)=0$, $N_y(x,y)=x^2$. We had the solution, and we know that $s(x)=-\frac{1}{3}x^2$, but as we said above, it is unusual to be able to find it analytically. So suppose we don't know it. To this end, consider the differential equation for the stable manifold: 
+
+\begin{displaymath}
+s^\prime (x) (- x ) = s(x) + x^2.
+\end{displaymath}
+
+If we admit that $s$ is infinitely differentiable, and keeping in mind that its first-order derivative is null, then as a general rule we know that $s(x)=\sum_{k=2}^{\infty} s_k x^k$. Substituting in the differential equation, that makes
+
+$$ -x \sum_{k=2}^{\infty}  s_k x^{k-1} = x^2 + \sum_{k=2}^{\infty} -k s_k x^{k}.$$
+
+Identifying terms for the different orders, one by one, we get $-2 s_2 = s_2 + 1$ and $-k s_k = s_k$ for $k\geq 3$. The only solution is $s_2=-\frac{1}{3}$ and $s_k=0$ for $k\geq 3$.
+
+As an exercise, you could find that, for 
+
+\begin{align*}
+\dot x &= x + y^3 \\
+\dot y &= -y + 2xy + x^2
+\end{align*}
+
+\begin{align*}
+u(x) &= \frac{1}{3} x^2 + \frac{1}{6}x^3 + \frac{1}{15} x^4 + \mathcal{O}(x^5) \\
+s(y) &=  - \frac{1}{4} y^3 \mathcal{O}(y^5)
+\end{align*}
+
+The graph below represents sample orbits (red) and the approximate stable and unstable manifolds (blue), the
+computed stable and unstable manifolds (green), and the flow direction (arrows)
+
+\input{Figures/stable.eepic}
+
+## Liapunov functions
+
+(cf. Wiggins chap 2)
+
+The method of Liapunov function can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by Wiggins, the Liapunov theory is a large area, and we examine here a very small part of it. 
+
+
+
+The basic idea is to find, in a neighbourhood of the fixed point, a function of the state that is positive, zero at the fixed point, and known to decay strictly monotonously over time. In which case, quite intuitively, the fixed point is asymptotically stable. 
+
+More specifically, consider the following vector field: 
+
+\begin{align*}
+\dot x &= f(x,y) \\
+\dot y &= g(x,y),\quad (x,y)\in\mathbb{R}^2,
+\end{align*}
+
+with fixed point $(x_f,y_f)$. Let $V(x,y)$ a scalar-valued function on $\mathbb{R}^2$ that is at least $\mathbf{C}^1$, such that $V(x_f,y_f)=0$.
+
+
+\includegraphics[page=19, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
+
+Suppose also that the locus of points satisfying $V(x,y)=C$ (constant) forms closed curves for different values of $C$ encircling $(x_f,y_f)$. Now, recall that the gradient of $V$, $\nabla V$, is a vector perpendicular to the tangent of the curves, pointing to the direction of increasing $V$. If this vector is always pointing outwards (decreasing values of $C$ as we get closer to $(x_f,y_f)$, then we get $\nabla V(x,y)\cdot (\dot x, \dot y) \leq 0$. Now we can state the general theorem
+
+\bt{Existence of Liapunov function implies stabilitiy}
+In the conditions stated above, with $V(x_f,y_f) = 0$ and $V(x_f,y_f) > 0$ if $(x,y)\neq(x_f,y_f)$, if there exists a neighbourhood $U$ around $(x_f,y_f)$ such that:
+- $\dot V(x) \leq 0$ in  $U\\{(x_f,y_f)}$ : $(x_f,y_f)$ is stable
+- $\dot V(x) < 0$ in  $U\\{(x_f,y_f)}$ : $(x_f,y_f)$ is _asymptotically_ stable
+
+\et 
+
+Although quite intuitive, the proof is not quite straightforward and will only be discussed during the lecture time permitting. It is available in @Wiggins03aa, p. 24. 
+
+More insightful for the physicist is the meaning. In a conservative (Hamiltonian system), the Hamiltonian would actually satisfy the definition of a Lyapunov function, although this is a limit case, where $\dot V(x)=0$. In a thermodynamic system, then the Free Energy (at constant temperature) or the Gibbs free energy (at constant pressure) work as Liapunov functions. In the simpler case of a near Hamiltonian system (e.g. pendulum with friction), then the potential + kinetic energy $V$ satisfy the definition of a Liapunov function near the fixed point. 
+
+
+So, in principle we have a good method for proving the stability of a fixed point; in practice, finding $V$ is not always as straigtforward as in the cases above. There is no miracle receipt. 
+
+Again, the evolution of the Liapunov function must be (strictly) monotonous in a neighbourhood of the fixed point. The latter may be arbitrarily small to satisfy the mathematical definition of an asymptotically stable fixed point, though of course, for physical significance, we might want a large neighbourhood !
+
+Indeed, as we see it, a contour $C$ within which $\dot V(x) \leq 0$ will effectively act as a _trapping region_, that is defined as a region that contains all its future states.
+
+\bd{Trapping region}
+A trapping region $U$ relative to a diffeomorphism is a region such that $phi^t(U) \subset U\ \forall t >0$. 
 \ed
+
+An attracting set is the asymptotic limit of the sequence of contractions of the trapping regions, which is technically defined as follows:
+
+\bd{Attracting set}
+An attracting set exists if it can be defined as $\bigcap\limits_{t>0}^\infty \phi^t(U)$.
+\ed
+
+Conversely, the _basin_ of attraction relative to the attracting set $A$ is the set of initial conditions that eventually falls into it:
+
+\bd{Basin of attraction}
+The basing of attraction (or _domain_) of an attracting set $A$ is  $\bigcup\limits_{t\leq 0}^\infty \phi^t(U)$, where $U$ is an open neighbourhood acting as a trapping region leading to $A$. 
+\ed
+
+Below is an example of basins of attractions of two sinks. The sinks act as two individual _attracting sets_. 
+
+\includegraphics[page=20, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
+
 

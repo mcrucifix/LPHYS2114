@@ -15,6 +15,7 @@
 \setlength\parskip{12pt}
 \def\cross{\times}
 \renewcommand{\vec}[1]{\boldsymbol{#1}}
+\renewcommand{\citet}{\cite}
 \newcommand{\curl}{\grad\cross}
 \newcommand{\lapl}{\nabla^2}
 \renewcommand{\u}{\ensuremath{\vec{u}}}
@@ -40,6 +41,11 @@
 \def\divh{\nabla_h\cdot}
 \newcommand{\pdt}[1]{\pd{#1}{t}}
 \newcommand{\pdtt}[1]{\pd[2]{#1}{t}}
+
+\usepackage{titlesec}
+\titleformat{\section} {\normalfont\sffamily}{\thesection}{1em}{}
+\titleformat{\subsection} {\normalfont\sffamily}{\thesubsection}{1em}{}
+\titleformat{\subsubsection} {\normalfont\sffamily}{\thesubsection}{1em}{}
 
 \usepackage{silence}
 \WarningFilter{hyperref}{removing}

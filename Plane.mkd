@@ -8,15 +8,15 @@ In the particular case of a linear diffeomorphism, the vector field takes a matr
 
 $$ \dot{\vec{x}}  = A \vec{x}.$$
 
-The Jordan canoncal form theorem tells us that, if $A$ is a real two by two matrix, there is a non-singular real matrix $T$ such that $A=TJT^{-1}$, and $T$ is made of the column vectors $\vec{u}$ and $\vec{v}$.  Depending on the eigenvalue and eigenvectors of $A$, $J$ will be of one of three forms:
+The Jordan canonical form theorem tells us that, if $A$ is a real two by two matrix, there is a non-singular real matrix $T$ such that $A=TJT^{-1}$, and $T$ is made of the column vectors $\vec{u}$ and $\vec{v}$.  Depending on the eigenvalue and eigenvectors of $A$, $J$ will be of one of three forms:
 
 - _Case A_: Two independent eigenvectors, real eigenvalues : $A = \begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix}$;
-- _Case B_: Complex eignevalues $\alpha \pm i \beta$: $A = \begin{pmatrix} \alpha & \beta \\ -\beta & \alpha \end{pmatrix}$;
+- _Case B_: Complex eigenvalues $\alpha \pm i \beta$: $A = \begin{pmatrix} \alpha & \beta \\ -\beta & \alpha \end{pmatrix}$;
 - _Case C_: A single independent eigenvector, with one single complex eigenvalue $A = \begin{pmatrix} \lambda & 0 \\ 1 & \lambda \end{pmatrix}$. 
 
 Geometrically, $T$ is the composition of a rotation, dilation and reflection around the origin.
 
-### Case A: Real eigenvalues and linearly indepedent eigenvectors : invarant manifolds and linear transient growth
+### Case A: Real eigenvalues and linearly independent eigenvectors : invariant manifolds and linear transient growth
 
 The general solution to the ordinary differential equation is $$\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} +  C_2 e^{\lambda_2 t} \vec{v},$$ where $\vec u$ and $\vec v$ are the eigenvectors, and $\lambda_1$ and $\lambda_2$ the respective eigenvalues. 
 
@@ -177,14 +177,14 @@ So what is the trouble here? The key for establishing a qualitative equivalence 
 
 \bt{Hartman-Grobman theorem}
 Consider $p=(0,0)$ a _hyperbolic_ fixed point of the ordinary differential equation $\dot {\vec{x}} = \vec{f}(\vec{x})$, $\vec{x}\in\mathbb{R}^2$, 
-and $\vec{f}\in\mathbf{C}^k(\mathbb{R}^2), k\geq1$. Then, there is a %seighbourhood $B$ around $p=(0,0)$ and a homeomorphism $h:B\rightarrow R^2$ with $h(0,0)=(0,0)$ such that, $\forall \vec{x}\in B$, there is an interval $I\subset\mathbb{R}$ such that:
+and $\vec{f}\in\mathbf{C}^k(\mathbb{R}^2), k\geq1$. Then, there is a neighbourhood $B$ around $p=(0,0)$ and a homeomorphism $h:B\rightarrow R^2$ with $h(0,0)=(0,0)$ such that, $\forall \vec{x}\in B$, there is an interval $I\subset\mathbb{R}$ such that:
 $$h \circ \phi^t(\vec x) = \bar\phi^t \circ h(\vec x),\quad \forall t\in I, \vec{x}\in B,$$
 where $\phi^t$ is the flow of $\dot{ \vec{x}} = \vec{f}(\vec{x})$ and $\bar \phi^t$ is the flow of the linearised system $\dot {\vec{x}} = \Dif (f,g)  \vec{x}$. 
 \et
 
 It is said that the flows $\phi^t$ and $\bar \phi^t$ are _topologically conjugate_. 
 
-The topological equivalence between linearised systems and non-linear systems around the _hyperbolic_ fixed points imply that we can predict the existence of stable and unstable invariant manifolds and their tangent directions, from inspection of the eigenvalues and eigenvacteurs of the Jacobian. 
+The topological equivalence between linearised systems and non-linear systems around the _hyperbolic_ fixed points imply that we can predict the existence of stable and unstable invariant manifolds and their tangent directions, from inspection of the eigenvalues and eigenvectors of the Jacobian. 
 
 We have a _sink_ if all eigenvalues are negative real parts, a _source_ if they  all have positive real parts, and a _saddle point_ if some are negative and negative, provided that none is null in which case the fixed point is no longer hyperbolic. This theory, including the Hartman-Grobman theorem, works also for $n\geq 2$. 
 
@@ -205,7 +205,7 @@ Because of the way the definition is put, fixed points (even if they are saddle 
 
 ### Stable-unstable manifolds theorem
 
-Let us see one more consequence of the Hartmant-Grobman theorem. 
+Let us see one more consequence of the Hartman-Grobman theorem. 
 
 If $p$ is a (hyperbolic) sink, then there must be a neighbourhood $B$ around $p$ such that  $S_B=B$ and $U_B=\{p\}$. Can you see this? Indeed, in this neighbourhood, the flow is topologically conjugate to that of the linearised system. We now that it is a _sink_, attracting from all directions. The  stable manifold _is_ the whole neighbourhood. But as we have just seen, $\{p\}$ must also belong to the unstable manifold. 
 
@@ -287,26 +287,28 @@ As an exercise, you could find that, for
 
 \begin{align*}
 \dot x &= x + y^3 \\
-\dot y &= -y + 2xy + x^2
+\dot y &= -y + 2xy + x^2,
 \end{align*}
+
+we have:
 
 \begin{align*}
 u(x) &= \frac{1}{3} x^2 + \frac{1}{6}x^3 + \frac{1}{15} x^4 + \mathcal{O}(x^5) \\
 s(y) &=  - \frac{1}{4} y^3 \mathcal{O}(y^5)
 \end{align*}
 
+Attention, there is a small difficulty: the roles of $x$ and $y$ are inverted compared to the theory above (in other words: $\lambda_2 < 0 < \lambda_1$. The trick is just to rename $y^\star=x$ and $x^\star=y$ and then rename back when finished. 
+
 The graph below represents sample orbits (red) and the approximate stable and unstable manifolds (blue), the
 computed stable and unstable manifolds (green), and the flow direction (arrows)
 
 \input{Figures/stable.eepic}
 
-## Liapunov functions
+## Lyapunov functions
 
 (cf. Wiggins chap 2)
 
-The method of Liapunov function can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by Wiggins, the Liapunov theory is a large area, and we examine here a very small part of it. 
-
-
+The method of Lyapunov functions can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by Wiggins, the Lyapunov theory is a large area, and we examine here a very small part of it. Furthermore, while it is presented here in a chapter about vector fields in $\mathbb{R}^2$, it is in fact valid in any dimension, but so much easier to visualise on the plane. 
 
 The basic idea is to find, in a neighbourhood of the fixed point, a function of the state that is positive, zero at the fixed point, and known to decay strictly monotonously over time. In which case, quite intuitively, the fixed point is asymptotically stable. 
 
@@ -324,7 +326,7 @@ with fixed point $(x_f,y_f)$. Let $V(x,y)$ a scalar-valued function on $\mathbb{
 
 Suppose also that the locus of points satisfying $V(x,y)=C$ (constant) forms closed curves for different values of $C$ encircling $(x_f,y_f)$. Now, recall that the gradient of $V$, $\nabla V$, is a vector perpendicular to the tangent of the curves, pointing to the direction of increasing $V$. If this vector is always pointing outwards (decreasing values of $C$ as we get closer to $(x_f,y_f)$, then we get $\nabla V(x,y)\cdot (\dot x, \dot y) \leq 0$. Now we can state the general theorem
 
-\bt{Existence of Liapunov function implies stabilitiy}
+\bt{Existence of Lyapunov function implies stabilitiy}
 In the conditions stated above, with $V(x_f,y_f) = 0$ and $V(x_f,y_f) > 0$ if $(x,y)\neq(x_f,y_f)$, if there exists a neighbourhood $U$ around $(x_f,y_f)$ such that:
 - $\dot V(x) \leq 0$ in  $U\\{(x_f,y_f)}$ : $(x_f,y_f)$ is stable
 - $\dot V(x) < 0$ in  $U\\{(x_f,y_f)}$ : $(x_f,y_f)$ is _asymptotically_ stable
@@ -333,12 +335,12 @@ In the conditions stated above, with $V(x_f,y_f) = 0$ and $V(x_f,y_f) > 0$ if $(
 
 Although quite intuitive, the proof is not quite straightforward and will only be discussed during the lecture time permitting. It is available in @Wiggins03aa, p. 24. 
 
-More insightful for the physicist is the meaning. In a conservative (Hamiltonian system), the Hamiltonian would actually satisfy the definition of a Lyapunov function, although this is a limit case, where $\dot V(x)=0$. In a thermodynamic system, then the Free Energy (at constant temperature) or the Gibbs free energy (at constant pressure) work as Liapunov functions. In the simpler case of a near Hamiltonian system (e.g. pendulum with friction), then the potential + kinetic energy $V$ satisfy the definition of a Liapunov function near the fixed point. 
+More insightful for the physicist is the physical meaning attached to $V$. In a conservative (Hamiltonian system), the Hamiltonian would actually satisfy the definition of a Lyapunov function, although this is a limit case, where $\dot V(x)=0$. In a thermodynamic system, then the Free Energy (at constant temperature) or the Gibbs free energy (at constant pressure) work as Lyapunov functions. In the simpler case of a near Hamiltonian system (e.g. pendulum with friction), then the potential + kinetic energy $V$ satisfy the definition of a Lyapunov function near the fixed point. 
 
 
-So, in principle we have a good method for proving the stability of a fixed point; in practice, finding $V$ is not always as straigtforward as in the cases above. There is no miracle receipt. 
+So, in principle we have a good method for proving the stability of a fixed point; in practice, finding $V$ is not always as straightforward as in the cases above. There is no miracle receipt. 
 
-Again, the evolution of the Liapunov function must be (strictly) monotonous in a neighbourhood of the fixed point. The latter may be arbitrarily small to satisfy the mathematical definition of an asymptotically stable fixed point, though of course, for physical significance, we might want a large neighbourhood !
+Again, the evolution of the Lyapunov function must be (strictly) monotonous in a neighbourhood of the fixed point. The latter may be arbitrarily small to satisfy the mathematical definition of an asymptotically stable fixed point, though of course, for physical significance, we might want a large neighbourhood !
 
 Indeed, as we see it, a contour $C$ within which $\dot V(x) \leq 0$ will effectively act as a _trapping region_, that is defined as a region that contains all its future states.
 

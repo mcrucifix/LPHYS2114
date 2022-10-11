@@ -8,7 +8,7 @@ EEPIC=$(XP:.xp=.eepic)
 
 
 lphys2114.pdf: lphys2114.tex $(TEX) $(PDF) $(EEPIC)
-	latexmk -pdf lphys2114.tex
+	sh Makeversion.sh &&  latexmk -pdf lphys2114.tex
 
 handouts: lphys2114.tex $(TEX) $(PDF)
 	pdflatex -jobname lphys2114_handouts -pdf "\PassOptionsToClass{handout}{mc}\input{lphys2114.tex}"

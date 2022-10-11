@@ -14,19 +14,11 @@
 \bibliographystyle{alpha}
 \setlength\parskip{12pt}
 \def\cross{\times}
+\input{Version.tex}
 \renewcommand{\vec}[1]{\boldsymbol{#1}}
 \renewcommand{\citet}{\cite}
-\newcommand{\curl}{\grad\cross}
-\newcommand{\lapl}{\nabla^2}
-\renewcommand{\u}{\ensuremath{\vec{u}}}
-\newcommand{\uh}{\ensuremath{\vec{u}_h}}
-\newcommand{\ua}{\ensuremath{\vec{u}_a}}
 \newcommand{\steady}[1]{{#1}_{r}}
 \newcommand{\rf}[1]{{{#1}_{r}}}
-\newcommand{\ez}{\ensuremath{\vec{e}_z}}
-\newcommand{\ex}{\ensuremath{\vec{e}_x}}
-\newcommand{\advec}{\boldsymbol{u}\cdot\nabla}
-\newcommand{\advech}{\boldsymbol{u}_h\cdot\nabla_h}
 \newcommand{\Dt}[1]{\frac{\Dif #1}{\Dif t}}
 \newcommand{\dt}[1]{\frac{\dif #1}{\dif t}}
 \newcommand{\Dtg}[1]{\left.\frac{\Dif #1}{\Dif t}\right|_g}
@@ -44,10 +36,7 @@
 
 \usepackage{titlesec}
 \titleformat{\section} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesection.}}{0em}{} 
-
 \titleformat{\subsection} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesubsection.}}{0em}{} 
-
-
 \titleformat{\subsubsection} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesubsubsection.}}{0em}{} 
 
 \usepackage{silence}
@@ -62,6 +51,7 @@
 \begin{document}
 % \raggedright
 \tableofcontents
+\texttt{Git version \gitbranch:\gitrevision}
 \include{Introduction}
 \section{Continuous Flows: existence and uniqueness}
 \input{Existence}

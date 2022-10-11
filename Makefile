@@ -1,11 +1,13 @@
 MKD=$(wildcard *.mkd)
+XP=$(wildcard Figures/*.xp)
 TEX=$(MKD:.mkd=.tex)
-PDF=$(wildcard figures/*.pdf)
+EEPIC=$(XP:.xp=.eepic)
+#PDF=$(wildcard figures/*.pdf)
 
-.SUFFIXES: .mkd .tex
+.SUFFIXES: .mkd .tex .eepic .xp
 
 
-lphys2114.pdf: lphys2114.tex $(TEX) $(PDF)
+lphys2114.pdf: lphys2114.tex $(TEX) $(PDF) $(EEPIC)
 	latexmk -pdf lphys2114.tex
 
 handouts: lphys2114.tex $(TEX) $(PDF)
@@ -14,6 +16,11 @@ handouts: lphys2114.tex $(TEX) $(PDF)
 .mkd.tex:
 	@echo processing $< to $@
 	pandoc --natbib $< -o $@
+
+.xp.eepic:
+	@echo processing $< to $@
+	cd Figures; epix `basename $<` ; cd ..
+
 
 .PHONY:
 bibtex:

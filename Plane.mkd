@@ -176,10 +176,10 @@ Lacking time, full inspection of the system is left as an exercise, but rushing 
 So what is the trouble here? The key for establishing a qualitative equivalence between a linear and a non-linear system is the _hyperbolic_ character of the fixed points, as established by the Hartman-Grobman theorem (1959 and 1960):
 
 \bt{Hartman-Grobman theorem}
-Consider $p=(0,0)$ a _hyperbolic_ fixed point of the ordinary differential equation $\dot {\vec{x}} = \vec{f}(\vec{x})$, $\vec{x}\in\mathbb{R}^2$, 
+Consider $p=(0,0)$ a _hyperbolic_ fixed point of the ordinary differential equation $\dot{\vec{x}} = \vec{f}(\vec{x})$, $\vec{x}\in\mathbb{R}^2$, 
 and $\vec{f}\in\mathbf{C}^k(\mathbb{R}^2), k\geq1$. Then, there is a neighbourhood $B$ around $\vec{p}=(0,0)$ and a homeomorphism $h:B\rightarrow R^2$ with $h(0,0)=(0,0)$ such that, $\forall \vec{x}\in B$, there is an interval $I\subset\mathbb{R}$ such that:
 $$h \circ \phi^t(\vec x) = \bar\phi^t \circ h(\vec x),\quad \forall t\in I, \vec{x}\in B,$$
-where $\phi^t$ is the flow of $\dot{ \vec{x}} = \vec{f}(\vec{x})$ and $\bar \phi^t$ is the flow of the linearised system $\dot {\vec{x}} = \Dif_{(f,g)}(\vec{p})  \vec{x}$. 
+where $\phi^t$ is the flow of $\dot{\vec{x}} = \vec{f}(\vec{x})$ and $\bar \phi^t$ is the flow of the linearised system $\dot {\vec{x}} = \Dif_{(f,g)}(\vec{p})  \vec{x}$. 
 \et
 
 It is said that the flows $\phi^t$ and $\bar \phi^t$ are _topologically conjugate_. 
@@ -214,7 +214,7 @@ If $p$ is a (hyperbolic) source, then, $U_B=B$ and $S_B=\{p\}$.
 We will now formulate an important theorem, not demonstrated here, that will allow us to obtain more information about the shape of the stable and unstable manifolds around the fixed points. 
 
 \bt{Stable and unstable manifolds theorem}
-Consider $\vec{f}:\mathbb{R}^2 \rightarrow \mathbb{R}^2$, a diffeomorphism $\in \mathbf{C}^k$, $k\geq 1$, and $p=(0,0)$ a _hyperbolic_ equilibrium of the ordinary differential equation $\dot \vec{x} = \vec{f}(\vec{x})$, such that 
+Consider $\vec{f}:\mathbb{R}^2 \rightarrow \mathbb{R}^2$, a diffeomorphism $\in \mathbf{C}^k$, $k\geq 1$, and $p=(0,0)$ a _hyperbolic_ equilibrium of the ordinary differential equation $\dot {\vec{x}} = \vec{f}(\vec{x})$, such that 
 
 $$ \Dif \vec{f}(p)=\begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix},\quad \text{with}\ \lambda_1 < 0 < \lambda_2. $$
 

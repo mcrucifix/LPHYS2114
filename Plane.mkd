@@ -328,9 +328,10 @@ Suppose also that the locus of points satisfying $V(x,y)=C$ (constant) forms clo
 
 \bt{Existence of Lyapunov function implies stabilitiy}
 In the conditions stated above, with $V(x_f,y_f) = 0$ and $V(x_f,y_f) > 0$ if $(x,y)\neq(x_f,y_f)$, if there exists a neighbourhood $U$ around $(x_f,y_f)$ such that:
-- $\dot V(x) \leq 0$ in  $U\\{(x_f,y_f)}$ : $(x_f,y_f)$ is stable
-- $\dot V(x) < 0$ in  $U\\{(x_f,y_f)}$ : $(x_f,y_f)$ is _asymptotically_ stable
 
+- $\dot V(x) \leq 0$ in  $U\backslash \{(x_f,y_f)\}$ : $(x_f,y_f)$ is stable
+- $\dot V(x) < 0$ in  $U \backslash \{(x_f,y_f)\}$ : $(x_f,y_f)$ is _asymptotically_ stable
+ 
 \et 
 
 Although quite intuitive, the proof is not quite straightforward and will only be discussed during the lecture time permitting. It is available in @Wiggins03aa, p. 24. 

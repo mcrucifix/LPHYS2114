@@ -1,0 +1,71 @@
+
+#include "epix.h"
+#include "stdio.h"
+using namespace ePiX;
+
+#define mylambda -0.5
+
+// double ux (double x) {  return (1./3.*x*x + x*x*x/6. + x*x*x*x/30.) ;}
+double ux (double x) {  return (1./3.*x*x + x*x*x/6. + 1*x*x*x*x/15.) ;}
+double sy (double y) {  return (- y*y*y/4.) ;}
+
+P traj(double t, double C1, double C2, double lambda) { 
+  return P(C1*exp(lambda*t) + C2*t * exp(lambda * t), 
+           C2*exp(lambda*t)) ; } 
+
+void plot_traj(double C1, double C2, double lambda) {
+   path Ptraj;
+   double t;
+    for (int i=0; i<=60; ++i) {
+      t = i/5.;
+      Ptraj.pt(traj(t,C1,C2,lambda)); // works in all angle modes
+    }
+    Ptraj.pt(traj(30.,C1,C2,lambda)); // works in all angle modes
+    Ptraj.pt(traj(40.,C1,C2,lambda)); // works in all angle modes
+    Ptraj.pt(traj(50.,C1,C2,lambda)); // works in all angle modes
+    Ptraj.pt(traj(100.,C1,C2,lambda)); // works in all angle modes
+   Ptraj.draw();
+   arrow(
+      traj(1.0,C1,C2,lambda), 
+      traj(1.05,C1,C2,lambda));
+}
+
+
+
+int main() {
+
+
+//
+// \begin{align*}
+//\dot x &= x + y^3 \\
+//\dot y &= -y + 2xy + x^2
+//\end{align*}
+
+
+  bounding_box(P(-1.5,-1.5), P(1.5,1.5));
+  picture(6,6);
+  unitlength("40pt");
+
+  begin();
+
+  domain R2(P(-1,-1), P(1,1), mesh(12,12)); 
+  arrow(P(-1.2,0), P(1.2,0));
+  arrow(P(0,-1.2), P(0,1.2));
+ 
+  label(P(1.3,0), "x");
+  label(P(0,1.3), "y");
+ 
+
+  for (int i=0; i<=6; ++i) {
+  plot_traj(1., double(i)/4., mylambda);
+  plot_traj(1., -double(i)/4., mylambda);
+  }
+
+  char buffer[50];
+  sprintf(buffer, "$\\lambda = %.1f$", mylambda);
+  label(P(0,1.7), P(0,0), buffer,b);
+
+  tikz_format();
+
+  end();
+}

@@ -21,7 +21,7 @@ with fixed point $(x_f,y_f)$. Let $V(x,y)$ a scalar-valued function on $\mathbb{
 
 Suppose also that the locus of points satisfying $V(x,y)=C$ (constant) forms closed curves for different values of $C$ encircling $(x_f,y_f)$. Now, recall that the gradient of $V$, $\nabla V$, is a vector perpendicular to the tangent of the curves, pointing to the direction of increasing $V$. If this vector is always pointing outwards (decreasing values of $C$ as we get closer to $(x_f,y_f)$, then we get $\nabla V(x,y)\cdot (\dot x, \dot y) \leq 0$. Now we can state the general theorem
 
-\bt{Existence of Lyapunov function implies stabilitiy}
+\bt{Existence of Lyapunov function implies stability}
 In the conditions stated above, with $V(x_f,y_f) = 0$ and $V(x_f,y_f) > 0$ if $(x,y)\neq(x_f,y_f)$, if there exists a neighbourhood $U$ around $(x_f,y_f)$ such that:
 
 - $\dot V(x) \leq 0$ in  $U\backslash \{(x_f,y_f)\}$ : $(x_f,y_f)$ is stable
@@ -34,7 +34,9 @@ Although quite intuitive, the proof is not quite straightforward and will only b
 More insightful for the physicist is the physical meaning attached to $V$. In a conservative (Hamiltonian system), the Hamiltonian would actually satisfy the definition of a Lyapunov function, although this is a limit case, where $\dot V(x)=0$. In a thermodynamic system, then the Free Energy (at constant temperature) or the Gibbs free energy (at constant pressure) work as Lyapunov functions. In the simpler case of a near Hamiltonian system (e.g. pendulum with friction), then the potential + kinetic energy $V$ satisfy the definition of a Lyapunov function near the fixed point. 
 
 
-So, in principle we have a good method for proving the stability of a fixed point; in practice, finding $V$ is not always as straightforward as in the cases above. There is no miracle receipt. 
+Hence, we seem to have a good method for proving the stability of a fixed point; in practice, finding $V$ is not always as straightforward as in the cases above. There is no miracle receipt. 
+
+## Trapping regions and attracting sets
 
 Again, the evolution of the Lyapunov function must be (strictly) monotonous in a neighbourhood of the fixed point. The latter may be arbitrarily small to satisfy the mathematical definition of an asymptotically stable fixed point, though of course, for physical significance, we might want a large neighbourhood !
 
@@ -44,9 +46,7 @@ Indeed, as we see it, a contour $C$ within which $\dot V(x) \leq 0$ will effecti
 A trapping region $U$ relative to a diffeomorphism is a compact set such that $\phi^t(U) \subset U\ \forall t >0$. 
 \ed
 
-The property $\phi^t(U) \subset U\ \forall t >0$ is the property of _positive invariance_. So a trapping region is a compact positive invariant set. 
-
-So as we move time forward, the trapping region, which keeps containing itself, can be made smaller and smaller until it asymptotically becomes the _attracting set_:
+The property $\phi^t(U) \subset U\ \forall t >0$ is the property of _positive invariance_. Thus, a trapping region is a compact positive invariant set. Aas we move time forward, the trapping region, which keeps containing itself, can be made smaller and smaller until it asymptotically becomes the _attracting set_:
 
 \bd{Attracting set}
 An attracting set is a closed invariant set that can be defined as $\bigcap\limits_{t>0}^\infty \phi^t(U)$.
@@ -54,7 +54,7 @@ An attracting set is a closed invariant set that can be defined as $\bigcap\limi
 
 \footnote{Wiggins requires the set $U$ to be open but not Guckenheimer and Holmes 1983}
 
-The _basin_ of attraction relative to the attracting set $A$ is the set of initial conditions that eventually falls into it, and it can be recovered by travelling backwards in time. 
+On the other hand, the _basin_ of attraction relative to the attracting set $A$ is the set of initial conditions that eventually falls into it, and it can be recovered by travelling backwards in time. 
 
 \bd{Basin of attraction}
 The basing of attraction (or _domain_) of an attracting set $A$ is  $\bigcup\limits_{t\leq 0}^\infty \phi^t(U)$, where $U$ is an open neighbourhood acting as a trapping region leading to $A$. The alternative (equivalent) definition is $\bigcup\limits_{t\geq 0}^\infty \phi^{-t}(U)$. 
@@ -67,7 +67,9 @@ Below is an example of basins of attractions of two sinks. The sinks act as two 
 <!--\includegraphics[page=20, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}-->
 
 
-So, intuitively, the attracting is related to the asymptotic destination of orbits starting within its basin of attraction. But quite perversely, it does not quite work. 
+## The attractor as a topologically intransitive attracting set
+
+Intuitively, the attracting is related to the asymptotic destination of orbits starting within its basin of attraction. But quite perversely, it does not quite work. 
 
 Consider the following system: 
 
@@ -76,9 +78,9 @@ Consider the following system:
 \dot y &= -y. 
 \end{align*}
 
-We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can define a trapping region as an ellipse encompassing the two three fixed points. It turns out the whole compact interval $[-1,1]$ on the $x$ axis is the attracting set obtained from that trapping region. Indeed, for any point $p$ on the segment, and for _any_ time $t$, you can find an initial condition (close enough to the unstable fixed point, presumably) within the attracting set (it is indeed invariant) that reaches $p$ precisely time $t$. So this interval is really the limit of self-evolving trapping regions. 
+We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can define a trapping region as an ellipse encompassing the three fixed points. It turns out the whole compact interval $[-1,1]$ on the $x$ axis is the attracting set obtained from that trapping region. Indeed, for any point $p$ on the segment, and for _any_ time $t$, you can find an initial condition (close enough to the unstable fixed point, presumably) within the attracting set (it is indeed invariant) that reaches $p$ precisely time $t$. So this interval is really the limit of self-evolving trapping regions. 
 
-But clearly this is not the idea that we might have of an attractor. Technically, we say that the attracting set that we just defined contains many "wandering points". The point leaves definitively its neighbourhood as time continues. 
+But clearly this is not the idea that we might have of an attractor. Technically, we say that the attracting set that we just defined contains many "wandering points". Such point leave definitively their own neighbourhood as time continues. 
 
 We want to say, in that example, that there are two attractors and that these are the two sinks. There are different ways to do this, and the literature on this topic is not always very easy to follow.
 One approach is to require topological transitivity. 
@@ -87,28 +89,35 @@ One approach is to require topological transitivity.
 An attractor is an attracting set that is topologically transitive. That means that it contains at least one point $p$ such that the orbit passing through $p$ is $A$. 
 \ed
 
-The notion of attractor is also very much linked to limit set, which considres the asymptotic behaviour of _individual_ orbits. 
+## Limit set
+
+The notion of attractor is very much linked to limit set, which considers the asymptotic behaviour of _individual_ orbits. 
 
 \bd{$\omega$ limit points of a trajectory}: A point $x_0$ in the domain of dynamical system is called an $\omega$ _limit point_ of $x$ if there exists a sequence $\{t_i\}$, $t_i\rightarrow\infty$, such that $\phi^{t_i}(x) \rightarrow x_0$.
 \ed
 
 In other words, there is a sequence of times, towards infinity, that brings asymptotically the state towards this limit point. If we reverse the direction, and flow backwards, then $x_0$ is called an $\alpha$ limit point. We see the idea: a trajectory could flow asymptotically from the $\alpha$ (time $-\infty$) to the $\omega$ (time $+\infty$). 
 
-By extending the notation,  we will note $\omega(p)$ as the set of limit points of orbits passing through $p$, and $\omega(U)$ the limit set of a neighbourhood. 
+By extending the notation,  we will note $\omega(p)$ as the set of limit points of orbits passing through $p$, and $\omega(U)$ the _limit set of $U$_ which constains the union of the $\omega(p)$ for all $p\in U$. 
 
 It can be proved (Wiggins, Proposition 8.1.3.) that within a trapping region, all points $p$ (thus,  in the trapping region) can be attached to a limit set that is non-empty, closed, invariant under the flow, and connected.
 
-Hence, we could also defined an attractor as a topologically transitive set $A$ that admits a neighbourhood $U$ such that $\omega(U)=A$. These two definitions of the attractor are not quite equivalent, but we will admit their equivalence here. 
+Hence, we could also defined an attractor as a topologically transitive set $A$ that admits a neighbourhood $U$ such that $\omega(U)=A$. The two definitions of the attractor can be found in the literature, and I need more research to determine to what extent they overlap each other. 
 
-Let us come back on the notion of the Liapunov function We need to confess that we have been a little bit brutal in our approach to Liapunov functions. Indeed, we first defined the Liapunov function as being defined ons a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-countour of the Liapunov function, in this neighbourhood. 
 
-Now, later in this chapter, we admitted that finding a Liapunov function is also a good approach for determining a trapping region. To this end, we implicitly  relaxed the condition that we have a fixed point. We just need isocontours with the flow pointing inwards. 
+A final note about the notion of the  Lyapunov function.  We need to confess that we have been a little bit brutal in our approach to Lyapunov functions. Indeed, we first defined the Lyapunov function as being defined ons a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-countour of the Lyapunov function, in this neighbourhood. 
+
+Now, later in this chapter, we admitted that finding a Lyapunov function is also a good approach for determining a trapping region. To this end, we implicitly  relaxed the condition that we have a fixed point. We just need isocontours with the flow pointing inwards. 
 So, for example, we could have the following configuration: 
+
+
+\bcd
 
 INSERT GRAPHIC HERE
 
 The two iso-countours, of same value, define a trapping region. What sort of scenario do we expect there? Perhaps your intuition already foresees some possibilities: either orbits land on a fixed point, either they keep looping around a so-called "limit cycle"... or ? 
 
+\ecd
 
 The Poincaré-Bendixson theorem, which we will see in the following chapter, restricts the possibilities
 

@@ -38,17 +38,13 @@ If, on a simply connected region $\mathcal{D}\subset \mathbb{R}^2$ (with contour
 This can be proved as a consequences of Green's theorem on the plane. Indeed, we first note that the path integral $\int_\Gamma f\dif y - g\dif x = 0$:
 
 \begin{equation*}
-\begin{split}
-  &  \int_\Gamma f\dif y - g\dif x \\
-= &  \int_0^T f \dot y - g \dot x \dif t \\
-= & \int_0^T fg - gf \dif t = 0. 
-\end{split}
+   \oint_\Gamma f\dif y - g\dif x =  \int_0^T f \dot y - g \dot x \dif t  =  \int_0^T fg - gf \dif t = 0. 
 \end{equation*}
 
 On the other, because of Green's theorem, 
 
 \begin{displaymath}
- \int_\Gamma \vec{n}\cdot (f,g) \dif \vec{s} = \int_\mathcal{S}\left( \pd{x}{y} + \pd{g}{y} \right) \dif x \dif y. 
+ \oint_\Gamma \vec{n}\cdot (f,g) \dif \vec{s} = \int_\mathcal{S}\left( \pd{x}{y} + \pd{g}{y} \right) \dif x \dif y. 
 \end{displaymath}
 
 The left-hand-side term is the contour integral we just computed. It is zero. The second term can only be zero if the divergence is either identically null, or changes sign. \eop
@@ -76,9 +72,9 @@ The next example (taken form Wiggins, sect. 4.1) shows how the Bendixson' criter
 The equation has three fixed points at $(x,y)=(0,0)$, $(\pm 1,0)$, with the eigenvalues $\lambda_{1,2}$ given by the following expressions: 
 
 \begin{align*}
-  (0,0) \Rightarrow \lambda_{1,2} = \frac{-\delta}{2} \pm \frac{1}{2} \sqrt{\delta^2 + 4},  \\  
-  (1,0) \Rightarrow \lambda_{1,2} = \frac{-\delta + 1 }{2} \pm \frac{1}{2} \sqrt{(-\delta+1)^2 - 8},  \\  
-  (-1,0) \Rightarrow \lambda_{1,2} = \frac{-\delta + 1 }{2} \pm \frac{1}{2} \sqrt{(-\delta+1)^2 - 8}.  \\  
+  (0,0)  & \Rightarrow \lambda_{1,2} = \frac{-\delta}{2} \pm \frac{1}{2} \sqrt{\delta^2 + 4},  \\  
+  (1,0)  & \Rightarrow \lambda_{1,2} = \frac{-\delta + 1 }{2} \pm \frac{1}{2} \sqrt{(-\delta+1)^2 - 8},  \\  
+  (-1,0) & \Rightarrow \lambda_{1,2} = \frac{-\delta + 1 }{2} \pm \frac{1}{2} \sqrt{(-\delta+1)^2 - 8}.  \\  
 \end{align*}
 
 Thus, $(0,0)$ is a saddle, and $(\pm 1,0)$ are sinsk for $\delta > 1$ and sources for $0 \leq \delta < 1$. Furthermore, we find 

@@ -35,7 +35,8 @@
 \newcommand{\pdtt}[1]{\pd[2]{#1}{t}}
 
 \usepackage{titlesec}
-\titleformat{\section} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesection.}}{0em}{} 
+\titleformat{\section}{\newpage\Large\sffamily\bfseries}{\hspace{-2em}\makebox[2em]\thesection}{0em}{\Large\bfseries}{\bigskip}
+% \titleformat{\section} {\newpage \bigskip \normalfont\sffamily}{\Large\bf\thesection. \bigskip}{} 
 \titleformat{\subsection} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesubsection.}}{0em}{} 
 \titleformat{\subsubsection} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesubsubsection.}}{0em}{} 
 

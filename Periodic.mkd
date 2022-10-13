@@ -18,11 +18,13 @@ First explain the slow-fast regime
 
 Consider again our classical diffeomorphism on the plane:
 
-\begin{align}\label{eq:ddb}
+\begin{equation} \label{eq:ddb}
+\begin{split}
 \dot x &= f(x,y), \\
 \dot y &= g(x,y),\quad 
 \text{with $f$ and $g$ at least $\mathbf{C}^1$}:
-\end{align}
+\end{split}
+\end{equation}
 
 \bd{Periodic orbit}
 A solution of \eqref{eq:ddb} through the point $x_0$ is said to be periodic of period $T$ if there exists $T > 0$ such that $x(t)=x(t+T)$ (assuming the initial condition $x_0$), which is equivalent to saying $\phi^T(x)=x$ on this orbit. 
@@ -54,7 +56,7 @@ The left-hand-side term is the contour integral we just computed. It is zero. Th
 The Bendixson theorem can be easily generalised so that is also works by monitoring $\pd{(Bf)}{x}+\pd{(Bg)}{y}$ for any $B(x,y)$ of class $\mathbf{C}^1$. 
 
 \bcd
-Check that the duffing oscillator
+Check that the Duffing oscillator
 \begin{align*}
  \dot{x} &=  y, \\
  \dot{y} &= x - x^3 - \delta y

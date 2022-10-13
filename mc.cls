@@ -88,11 +88,14 @@
  
 
 \newenvironment{definition}[1]
-{\smallskip\par\textbf{Definition (#1)\ }
+{
+\medskip \hrule \fill 4pt 
+ \smallskip\par\textbf{Definition (#1)\ }
  }{\medskip \medskip \hrule \fill 4pt}
  
 \newenvironment{theorem}[1]
-{\smallskip\par\textbf{Theorem (#1)\ }
+{\medskip \hrule \fill 4pt 
+\smallskip\par\textbf{Theorem (#1)\ }
  }{\medskip \medskip \hrule \fill 4pt}
  
 

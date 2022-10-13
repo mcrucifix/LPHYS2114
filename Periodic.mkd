@@ -1,0 +1,100 @@
+## The van der Pol oscillator
+
+\begin{align*}
+ \dot{x} &=  y \\
+ \dot{y} &= \alpha ( y - y^3/3 - x )
+\end{align*}
+
+First explain the slow-fast regime 
+
+- recognise the nullcline
+- explain for high alphe the slow fast behaviour
+
+\input{Figures/vanderpol.eepic}
+\input{Figures/vanderpol_01.eepic}
+
+\bd{Periodic orbit}
+A solution of \eqref{eq:ddb} through the point $x_0$ is said to be periodic of period $T$ if there exists $T > 0$ such that $x(t)=x(t+T)$ (assuming the initial condition $x_0$), which is equivalent to saying $\phi^T(x)=x$ on this orbit. 
+\ed
+
+
+## Bendixson's criterion
+
+Consider again our classical diffeomorphism on the plane:
+
+\begin{align*}
+\dot x &= f(x,y), \\
+\dot y &= g(x,y), 
+\end{align*}
+
+with $f$ and $g$ at least $\mathbf{C}^1$:
+
+\bt{Bendixson's criterion}
+If, on a simply connected region $\mathcal{D}\subset \mathbb{R}^2$ (with contour $\Gamma$), the expression $\pd{f}{x}+\pd{g}{y}:=\div{(f,g)}$ is not identically zero and does not change sign, then the system has no closed orbit lying entirely in $\mathcal{D}$.
+\et
+
+This can be proved as a consequences of Green's theorem on the plane. Indeed, we first note that the path integral $\int_\Gamma f\dif y - g\dif x = 0$:
+
+\begin{equation*}
+\begin{split}
+  &  \int_\Gamma f\dif y - g\dif x \\
+= &  \int_0^T f \dot y - g \dot x \dif t \\
+= & \int_0^T fg - gf \dif t = 0. 
+\end{split}
+\end{equation*}
+
+On the other, because of Green's theorem, 
+
+\begin{displaymath}
+ \int_\Gamma \vec{n}\cdot (f,g) \dif \vec{s} = \int_\mathcal{S}\left( \pd{x}{y} + \pd{g}{y} \right) \dif x \dif y. 
+\end{displaymath}
+
+The left-hand-side term is the contour integral we just computed. It is zero. The second term can only be zero if the divergence is either identically null, or changes sign. \eop
+
+The Bendixson theorem can be easily generalised so that is also works by monitoring $\pd{(Bf)}{x}+\pd{(Bg)}{y}$ for any $B(x,y)$ of class $\mathbf{C}^1$. 
+
+\bcd
+Check that the duffing oscillator
+\begin{align*}
+ \dot{x} &=  y, \\
+ \dot{y} &= x - x^3 - \delta y
+\end{align*}
+ 
+has no closed orbit for $\delta \leq 0$. 
+\ecd 
+
+The next example (taken form Wiggins, sect. 4.1) shows how the Bendixson' criterion allows us to restrict regions in the plan where closed orbits _might_ exist. Consider this modification of the Duffing oscillator: 
+
+
+\begin{align*}
+ \dot{x} &=  y  \\
+ \dot{y} &= x - x^3 - \delta y + x^2 y, \delta \geq 0.  
+\end{align*}
+
+The equation has three fixed points at $(x,y)=(0,0)$, $(\pm 1,0)$, with the eigenvalues $\lambda_{1,2}$ given by the following expressions: 
+
+\begin{align*}
+  (0,0) \Rightarrow \lambda_{1,2} = \frac{-\delta}{2} \pm \frac{1}{2} \sqrt{\delta^2 + 4},  \\  
+  (1,0) \Rightarrow \lambda_{1,2} = \frac{-\delta + 1 }{2} \pm \frac{1}{2} \sqrt{(-\delta+1)^2 - 8},  \\  
+  (-1,0) \Rightarrow \lambda_{1,2} = \frac{-\delta + 1 }{2} \pm \frac{1}{2} \sqrt{(-\delta+1)^2 - 8}.  \\  
+\end{align*}
+
+Thus, $(0,0)$ is a saddle, and $(\pm 1,0)$ are sinsk for $\delta > 1$ and sources for $0 \leq \delta < 1$. Furthermore, we find 
+
+\begin{displaymath}
+ \pd{f}{x} + \pd{f}{y} = \delta + x^2. 
+\end{displaymath}
+
+Thus, the divergence vanishes on the lines $x = \pm \sqrt{\delta}$. These two lines divide the plane into three regions which we label $R_1$, $R_2$ and $R_3$. We cannot have any closed orbit in this regions, but we _cannot_ rule out orbits which would overlap these regions. 
+
+It is possible to restrict the possibilities further with the _index theory_ but at this point of writing the notes, it is not yet clear we will be able to cover this theory in the context of this course. 
+
+
+## Further remaks about periodic orbits
+
+- closing lemmas
+- dynamic averaging
+- characterization of chaose
+- mathematical biology
+- time series analysis
+

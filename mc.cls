@@ -89,11 +89,11 @@
 
 \newenvironment{definition}[1]
 {\smallskip\par\textbf{Definition (#1)\ }
- }{\medskip}
+ }{\medskip \medskip \hrule \fill 4pt}
  
 \newenvironment{theorem}[1]
 {\smallskip\par\textbf{Theorem (#1)\ }
- }{\medskip}
+ }{\medskip \medskip \hrule \fill 4pt}
  
 
 \newcommand{\ddt}[1]{\od{#1}{t}}
@@ -104,6 +104,8 @@
 
 \newcommand{\bd}[1]{\begin{definition}{#1}}
 \newcommand{\ed}{\end{definition}}
+
+\newcommand{\eop}{\hfill $\square$ }
 
 \newcommand{\bt}[1]{\begin{theorem}{#1}}
 \newcommand{\et}{\end{theorem}}

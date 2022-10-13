@@ -69,7 +69,7 @@ Below is an example of basins of attractions of two sinks. The sinks act as two 
 
 ## The attractor as a topologically intransitive attracting set
 
-Intuitively, the attracting is related to the asymptotic destination of orbits starting within its basin of attraction. But quite perversely, it does not quite work. 
+Intuitively, the attracting is related to the asymptotic destination of orbits starting within its basin of attraction. But perversely, it does not quite work. 
 
 Consider the following system: 
 
@@ -83,11 +83,19 @@ We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can 
 But clearly this is not the idea that we might have of an attractor. Technically, we say that the attracting set that we just defined contains many "wandering points". Such point leave definitively their own neighbourhood as time continues. 
 
 We want to say, in that example, that there are two attractors and that these are the two sinks. There are different ways to do this, and the literature on this topic is not always very easy to follow.
-One approach is to require topological transitivity. 
+One approach is to require topological transitivity.
 
 \bd{Attractor}
 An attractor is an attracting set that is topologically transitive. That means that it contains at least one point $p$ such that the orbit passing through $p$ is $A$. 
 \ed
+
+Another approach is to require the attracting set to be _minimal_, i.e., it does not include any subset that is also an attracting set: 
+
+\bd{Attractor (alt.)}
+An attractor is minimal attracting set. 
+\ed
+
+In the abover example, both will generate the same result. There is another approach, as we now see. 
 
 ## Limit set
 
@@ -119,6 +127,6 @@ The two iso-countours, of same value, define a trapping region. What sort of sce
 
 \ecd
 
-The Poincaré-Bendixson theorem, which we will see in the following chapter, restricts the possibilities
+The Poincaré-Bendixson theorem, which we will see later (in two chapters) restricts the possibilities
 
 

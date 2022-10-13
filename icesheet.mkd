@@ -56,24 +56,24 @@ Now we would like to determine the behaviour of the system for initial condition
 
 Hence, a more fruitful strategy is to study the behaviour of $(t)$ _near_ (in French: _dans le voisinage the_) fixed points, and use theory to connect the flowlines between fixed points. 
 
-The model we have been starting with is of the form $\ddt x = F (x;\psi)$ with, here, $\psi := \{S\}$. By definition of a fixed point, $F(x_f;\Psi)=0$ (the dependency on $\psi$ is dropped for clarity). Define $\delta x := x-x_f$. 
+The model we have been starting with is of the form $\ddt x = F (x;\psi)$ with, here, $\psi := S$. By definition of a fixed point, $F(x_f;\Psi)=0$ (the dependency on $\psi$ is dropped for clarity). Define $\delta x := x-x_f$. 
 
 \begin{equation}
-\ddt {x-x_f} \eqbdef \ddt {\delta_x} = \underbrace {\left.\pd{F(x;\psi)}{x}\right|_{x_f}}_{\lambda}  \delta x + \mathcal{O}(x^2)
+\ddt {(x-x_f)} \eqbdef \ddt {\delta_x} = \underbrace {\left.\pd{F(x;\psi)}{x}\right|_{x_f}}_{\lambda}  \delta x + \mathcal{O}(x^2)
 \end{equation}
 
 This is a linear differential equation for $\delta x$ with constant coefficient. That is, near enough to the fixed point, $\delta x$ decays (if  $\lambda < 0$) or grows (if  $\lambda > 0$) exponentially with e-folding time $1/\lambda$. This distinguishes a point that is _locally stable_ from a point that is _locally unstable_. 
 
 \bcd
-Reconsiders the one to three solutions of the bifurcation diagram. Which ones are stable, and which one unstable ? What we see appearing are _stable_ and _unstable_ solution _branches_.
+Reconsiders the one to three solutions of the bifurcation diagram. Which ones are stable, and which one unstable? What we see appearing are branches of  _stable_ and _unstable_ solutions.
 \ecd 
 
 
 \includegraphics[page=3, angle=90, scale=0.7]{lphys2114-figures}
 
-Hence, even though we have avoided to resolve the ordinary differential equation; (we have avoided to solve the initial value problem), but provided that we have identified all fixed points, and characterised their local stability,  we have gained a good qualitative picture of the system's behavior. For any value of $S$, we can picture the _flow_ associated with the dynamical system, that is, for any point $x$ of the domain $\Omega$, we know the direction taken by $x$ as time progresses. 
+Hence, even though we have avoided to resolve the ordinary differential equation (we avoided to solve the initial value problem), but provided that we have identified all fixed points, and characterised their local stability,  we have gained a good qualitative picture of the system's behavior. For any value of $S$, we can picture the _flow_ associated with the dynamical system, that is, for any point $x$ of the domain $\Omega$, we know the direction taken by $x$ as time progresses. 
 
-This is an example of qualitative analysis of a non-linear dynamical system, which, as we see it here, is reasonably simple but not simplistic. We have identified _invariant sets_, that is, sets of points that are left unchanged by the flow. In this example, invariant sets are fixed points. We have identified  _bifurcation points_, that is, points of the parameter space $S$ where the number or the stability of the invariant sets (again, here, fixed points). 
+This is an example of qualitative analysis of a non-linear dynamical system, which, as we see it here, is reasonably simple but not simplistic. We have identified _invariant sets_, that is, sets of points that are left unchanged by the flow. In this example, invariant sets are fixed points. We have also  identified  _bifurcation points_, that is, points of the parameter space $S$ where the number or the stability of the invariant sets (again, here, fixed points). 
 
 In this first lecture, meant to motivate the course, we have been informal and did not justify our findings with theorems; nor did we attempt to be too systematic and rigorous with definitions. But we understand our objectives: identify the nature of invariant sets, estimate their stability, and depict the behaviour of the system between these invariant sets. 
 

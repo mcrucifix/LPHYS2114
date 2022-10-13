@@ -13,21 +13,21 @@ First explain the slow-fast regime
 \input{Figures/vanderpol.eepic}
 \input{Figures/vanderpol_01.eepic}
 
-\bd{Periodic orbit}
-A solution of \eqref{eq:ddb} through the point $x_0$ is said to be periodic of period $T$ if there exists $T > 0$ such that $x(t)=x(t+T)$ (assuming the initial condition $x_0$), which is equivalent to saying $\phi^T(x)=x$ on this orbit. 
-\ed
-
 
 ## Bendixson's criterion
 
 Consider again our classical diffeomorphism on the plane:
 
-\begin{align*}
+\begin{align}\label{eq:ddb}
 \dot x &= f(x,y), \\
-\dot y &= g(x,y), 
-\end{align*}
+\dot y &= g(x,y),\quad 
+\text{with $f$ and $g$ at least $\mathbf{C}^1$}:
+\end{align}
 
-with $f$ and $g$ at least $\mathbf{C}^1$:
+\bd{Periodic orbit}
+A solution of \eqref{eq:ddb} through the point $x_0$ is said to be periodic of period $T$ if there exists $T > 0$ such that $x(t)=x(t+T)$ (assuming the initial condition $x_0$), which is equivalent to saying $\phi^T(x)=x$ on this orbit. 
+\ed
+
 
 \bt{Bendixson's criterion}
 If, on a simply connected region $\mathcal{D}\subset \mathbb{R}^2$ (with contour $\Gamma$), the expression $\pd{f}{x}+\pd{g}{y}:=\div{(f,g)}$ is not identically zero and does not change sign, then the system has no closed orbit lying entirely in $\mathcal{D}$.

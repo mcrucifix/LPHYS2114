@@ -78,16 +78,20 @@ Consider the following system:
 \dot y &= -y. 
 \end{align*}
 
-We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can define a trapping region as an ellipse encompassing the three fixed points. It turns out the whole compact interval $[-1,1]$ on the $x$ axis is the attracting set obtained from that trapping region. Indeed, for any point $p$ on the segment, and for _any_ time $t$, you can find an initial condition (close enough to the unstable fixed point, presumably) within the attracting set (it is indeed invariant) that reaches $p$ precisely time $t$. So this interval is really the limit of self-evolving trapping regions. 
+We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can define a trapping region as an ellipse encompassing the three fixed points. It turns out the whole compact interval $[-1,1]$ on the $x$ axis is the attracting set obtained from that trapping region. Indeed, for any point $p$ on the segment, and for _any_ time $t$, you can find an initial condition (close enough to the unstable fixed point, presumably) within the attracting set (it is indeed invariant) that reaches $p$ precisely time $t$. So this interval is really the limit of self-evolving trapping regions. (see Figure)
 
-But clearly this is not the idea that we might have of an attractor. Technically, we say that the attracting set that we just defined contains many "wandering points". Such point leave definitively their own neighbourhood as time continues. 
+\input{Figures/attractingSet.eepic}
 
-We want to say, in that example, that there are two attractors and that these are the two sinks. There are different ways to do this, and the literature on this topic is not always very easy to follow.
+But clearly this is not the idea that we might have of an attractor. Technically, we say that the attracting set that we obtained in the above example contains many "wandering points". Such point leave definitively their own neighbourhood as time continues, so we do not want to say that they are part of an "attractor". When you are on such points, you do not stay there. 
+
+There are different ways to mend the above definition and better capture the notion af attractor. The  literature on this topic is not always very easy to follow.
 One approach is to require topological transitivity.
 
 \bd{Attractor}
-An attractor is an attracting set that is topologically transitive. That means that it contains at least one point $p$ such that the orbit passing through $p$ is $A$. 
+An attractor $A$ is an attracting set that is topologically transitive. That means that it contains at least one point $p$ such that the orbit passing through $p$ is $A$. 
 \ed
+
+In other words, and to make it short, when you are on the attractor, you will visit all of its points in a finite amount of time. 
 
 Another approach is to require the attracting set to be _minimal_, i.e., it does not include any subset that is also an attracting set: 
 
@@ -95,11 +99,11 @@ Another approach is to require the attracting set to be _minimal_, i.e., it does
 An attractor is minimal attracting set. 
 \ed
 
-In the abover example, both will generate the same result. There is another approach, as we now see. 
+In the abover example, both will generate the same result: we have two attractors, one on $(1,0)$, and one on $(-1,0)$. There is yet another approach, as we now see. 
 
 ## Limit set
 
-The notion of attractor is very much linked to limit set, which considers the asymptotic behaviour of _individual_ orbits. 
+The notion of attractor is very much linked to the notion of limit set, which considers the asymptotic behaviour of _individual_ orbits. 
 
 \bd{$\omega$ limit points of a trajectory}: A point $x_0$ in the domain of dynamical system is called an $\omega$ _limit point_ of $x$ if there exists a sequence $\{t_i\}$, $t_i\rightarrow\infty$, such that $\phi^{t_i}(x) \rightarrow x_0$.
 \ed
@@ -110,10 +114,11 @@ By extending the notation,  we will note $\omega(p)$ as the set of limit points 
 
 It can be proved (Wiggins, Proposition 8.1.3.) that within a trapping region, all points $p$ (thus,  in the trapping region) can be attached to a limit set that is non-empty, closed, invariant under the flow, and connected.
 
-Hence, we could also defined an attractor as a topologically transitive set $A$ that admits a neighbourhood $U$ such that $\omega(U)=A$. The two definitions of the attractor can be found in the literature, and I need more research to determine to what extent they overlap each other. 
+Hence, we could also defined an attractor as a topologically transitive set $A$ that admits a neighbourhood $U$ such that $\omega(U)=A$. This definition of the attractor can also be found in the literature, and I need more research to determine to what extent these different definitions overlap / are compatible / can contradict each other. 
 
 
-A final note about the notion of the  Lyapunov function.  We need to confess that we have been a little bit brutal in our approach to Lyapunov functions. Indeed, we first defined the Lyapunov function as being defined ons a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-countour of the Lyapunov function, in this neighbourhood. 
+A final note about the notion of the  Lyapunov function.  We need to confess that we have been a little bit brutal. 
+Indeed, we first defined the Lyapunov function as being defined ons a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-countour of the Lyapunov function, in this neighbourhood. 
 
 Now, later in this chapter, we admitted that finding a Lyapunov function is also a good approach for determining a trapping region. To this end, we implicitly  relaxed the condition that we have a fixed point. We just need isocontours with the flow pointing inwards. 
 So, for example, we could have the following configuration: 
@@ -121,7 +126,7 @@ So, for example, we could have the following configuration:
 
 \bcd
 
-INSERT GRAPHIC HERE
+\includegraphics[page=21, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
 
 The two iso-countours, of same value, define a trapping region. What sort of scenario do we expect there? Perhaps your intuition already foresees some possibilities: either orbits land on a fixed point, either they keep looping around a so-called "limit cycle"... or ? 
 

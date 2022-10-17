@@ -10,7 +10,7 @@ Consider the following dynamical system.
 We consider first the regime $\alpha \gg 1$ (in the illustration below, we have used $\alpha = 10$). Defining $\varepsilon = 1 \over \alpha$, it is equivalent to write the second equation:
 
 \begin{displaymath}
- \varepsilon \dot{y} &=  ( y - y^3/3 - x ),
+ \varepsilon \dot{y} =  ( y - y^3/3 - x ),
 \end{displaymath}
 
 In the limit of small $\varepsilon$ the left-hand-side term vanishes, so that, to first approximation, $y$ behaves such as to satisfy the diagnostic equation $y - y^3/3 - x = 0$. This equation defines the nullcline. For any reasonable value of $x$, $y$ will run such as to satisfy this equation. 
@@ -21,6 +21,8 @@ Indeed, the equation $y - y^3/3 - x = 0$ has three roots for $-1 \leq x \leq 1$,
 
 Suppose that $x=0$ and that the system is on the upper branch. The slow variable $y$ is positive, and because of the first equation of the full system ($\dot x = y$), $x$ must increase slowly. The fast variable $y$ keep tracking the upper branch, until it reaches the fold bifurcation. At this point $y$ runs away (it has lost its equilibrium), until it falls on the lower branch. Then $y<0$, and $x$ reverses direction. The fast variable $y$ tracks the lower branch, until, again, it finds a fold bifurcation. 
 We have just found an example of attractor that is a limit cycle, characteristic of a slow-fast _relaxation_ oscillator. 
+
+It is a _stable_ limit cycle in the sense that it is a periodic orbit, that is reached _asymptotically_ as time moves forward, and which effectively acts (and is) an attractor. 
 
 The limit cycle persists outside the slow-fast regime, and $y$ then moves more softly from negative to positive values. 
 
@@ -101,6 +103,86 @@ Thus, the divergence vanishes on the lines $x = \pm \sqrt{\delta}$. These two li
 
 It is possible to restrict the possibilities further with the _index theory_ but at this point of writing the notes, it is not yet clear we have time to cover this theory in the context of this course. 
 
+
+## The Hopf bifurcation
+
+We will now explore _one_ mechanism by which orbits emerge. Consider again the van der Pol oscillator, in the regular regime (not slow fast), but with an extra bifurcation parameter called here $\beta$ (and $\alpha = 1$): 
+
+\begin{align*}
+ \dot{x} &=  y - \beta\\
+ \dot{y} &=  ( y - y^3/3 - x )
+\end{align*}
+
+We study the stability of the fixed point $(\beta, \beta - \beta^3 /3)$ with the Jacobian:
+
+\begin{displaymath}
+  D_{f,g}(\beta, \beta - \beta^3) = \begin{pmatrix}
+    0&1\\-1&1-\beta^2 \end{pmatrix}
+\end{displaymath}
+
+which admits, as eigenvalues
+
+\begin{displaymath}
+  \lambda_\pm= \frac{1-\beta^2\pm\sqrt{\beta^4-2\beta^2-3}}{2};
+\end{displaymath}
+
+as we see it, the real part of the eigenvalues vanish for $\beta=\pm 1$, at which point $\lambda_\pm=\pm i$. 
+
+
+In summary, we have three regimes:
+
+- for $|\beta| \geq \sqrt{3}$: two negative, real eigenvalues;
+- for $1 < |\beta| \leq \sqrt{3}$: two complex-conjugate eigenvalues with negative real part;
+- for $|\beta| < 1$: two complex-conjugate eigenvalues with positive real part. 
+
+The fixed point is a source in the fixed regime, which generates trajectories spiraling outwards, and reaching the limit cycle described in the first section. 
+
+The transition from negative to positive real values with imaginary parts is the signature of a Hopf (or Andronov-Hopf) bifurcation. 
+
+Rushing through the theory, it may be shown that if some generic non-degeneracy conditions are met (specifically, the first Lyapunov exponent near the limit cycle is non-zero, and the derivative of the real part of the eigenvalue is non-zero at the equilibrium), it may be shown that systems with a Hopf bifurcation are locally topologically equivalent to the normal form, with $\sigma$ either equal to $1$ or $-1$ (and further assuming a rescaling of time):
+
+\begin{align*}
+  \dot x &= \beta x - y + \sigma x ( x^2 + y^2) \\
+  \dot y &= x + \beta y + \sigma y ( x^2 + y^2) \\
+\end{align*}
+
+
+The bifurcation is found at $\beta=0$. 
+
+The system of equation may be rewritten in polar coordinates, in which case we find
+
+\begin{align*}
+  \dot r &= -\beta r + \sigma r^3 
+  \dot \theta &= 1
+\end{align*}
+
+
+Two cases occur:
+
+- ($\sigma = -1$) The _supercritical_  generates a _stable_ limit cycle of infinitesimal amplitude near the bifurcation point, with amplitude ($\sqrt \beta$) growing continuously as the parameter moves away from the bifurcation point;
+
+- ( $\sigma = 1$) The _subcritical_  generates limit cycle unstable of $\beta > 0$ (and stable for $\beta < 0$). Hence, for $\beta > 0$, move away from the fixed point and reaches another attractor far from it, typically a larger limit cycle. 
+
+As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally be associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of the limit cycle and, for example, it may land on a fixed point. However, when a limit cycle exists, it tends to have a period that is not very far from the one determined from the imaginary part of the eigenvalue. 
+
+Determining whether a given Hopf bifurcation is subcritical or supercritical is therefore a quite tedious process, by which one must develop the function $f$ and $g$ in Taylor series, and then (when possible) making a change of variables to diagonalise the Jacobian, and then mapping the non-linear terms to the normal form. In practice, bifurcation software (AUTO, MATCONT) can do this for you. Furthermore, criteria have been worked out for specific dynamical systems (e.g. Kuznetzov, Elements of applied bifurcation theory, Springer,  \S 3.5)
+
+For example, for the generic form that concerns us here: 
+
+\begin{align*}
+x_1 &= F(x_1) - x_2 \\
+x_2 &= a(x_1 - b)
+\end{align*}
+
+(we recognise $x_2=x$; $y_2=x$, $b=0$, $a=1$, $F(y)=y-y^3$), the sign of $\sigma$ is given by $F^{\prime\prime\prime}$ at the bifurcation point. It is here _negative_, so we have a _supercritical_ Hopf bifurcation. 
+
+The above equation is the FithHugh-Nagumo equation, and your professor has used it to study the dynamics of ice ages. 
+
+Below the limit cycles found in the van der Pol oscillator with $\alpha=1$, for $\beta=0.98$ (grey), $\beta=0.95$ (black), $\beta=0.9$ (blue) and $\beta=0.8$ (green). We recognise the (reasonably) smooth growth of the cycle as $\beta$ gets away from the bifurcation point, as predicted by the theory. 
+
+In some more pathological cases, however, the limit cycle may grow quite quickly and reach saturation, even though the bifurcation is supercritical. This is a case of supercritical, explosive Hopf bifurcation. This is found in the above case, but in the slow-fast regime, with  $\alpha \gg 1$. The behaviour of Hopf bifurcations is  slow-fast systems is a field of research on its own, and gives rises to curious orbits termed "Canard". 
+
+\input{Figures/fn.eepic}
 
 ## Further remarks about periodic orbits
 

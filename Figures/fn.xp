@@ -1,0 +1,101 @@
+
+#include "epix.h"
+#include "stdio.h"
+
+#define delta 1.00
+#define alpha   1.00
+
+using namespace ePiX;
+
+
+// nullcline
+double nc (double y) { return(y - y*y*y/3.); }
+
+
+P F0 (double x, double y) {  return P(y - 0.98 , (nc(y) - x)); }
+P F1 (double x, double y) {  return P(y - 0.95 , (nc(y) - x)); }
+P F2 (double x, double y) {  return P(y - 0.90 , (nc(y) - x)); }
+P F3 (double x, double y) {  return P(y - 0.80 , (nc(y) - x)); }
+
+
+
+path nullcline(int i1, int i2) {
+  path n1;
+  double x, y;
+  double s3 = sqrt(3.) ;
+  for (int i=i1; i<=i2; ++i){
+    y=double(i)/10. ;
+    x = y - y*y*y/3. ;
+    n1.pt(P(x,y));
+  };
+  return(n1);
+}
+
+
+
+int main() {
+
+  bounding_box(P(-3.5,-3.5), P(3.5,3.5));
+  picture(6,6);
+  unitlength("40pt");
+
+  begin();
+
+  plain(Black(0.5));
+  arrow(P(-3.0,0), P(3.0,0));
+  arrow(P(0,-3.0), P(0,3.0));
+ 
+  label(P(3.2,0), "x");
+  label(P(0,3.2), "y");
+ 
+
+  double beta, x0, y0;
+  char buffer[50];
+
+
+  P sp;
+
+  font_size("scriptsize");
+  plain(Black(0.5));
+  label_color(Black(0.5));
+  beta=0.98;
+  x0 = nc(beta);
+  circ(P(x0,beta));
+  sprintf(buffer, "$\\beta = %.1f$", beta);
+  sp=flow(F0, P(x0, beta+0.02), 200, 200);
+  ode_plot(F0, sp,  20, 200);
+  label(sp, P(-5,0), buffer, l);
+
+  plain(Black(1.0));
+  label_color(Black(1.0));
+  beta=0.95;
+  x0 = nc(beta);
+  sprintf(buffer, "$\\beta = %.2f$", beta);
+  sp=flow(F1, P(x0, beta+0.02), 100, 200);
+  ode_plot(F1, sp,  20, 200);
+  label(sp, P(-5,0), buffer, l);
+
+  plain(Blue(1.0));
+  label_color(Blue(1.0));
+  beta=0.90;
+  x0 = nc(beta);
+  circ(P(x0,beta));
+  sprintf(buffer, "$\\beta = %.1f$", beta);
+  sp=flow(F2, P(x0,beta+0.02), 100, 300);
+  ode_plot(F2, sp,  20, 200);
+  label(sp, P(-5,0), buffer, l);
+
+  plain(Green(1.0));
+  label_color(Green(1.0));
+  beta=0.80;
+  x0 = nc(beta);
+  circ(P(x0,beta));
+  sprintf(buffer, "$\\beta = %.1f$", beta);
+  sp=flow(F3, P(x0,beta+0.02), 40, 300);
+  ode_plot(F3, sp, 20, 200);
+  label(sp, P(-5,0), buffer, l);
+// 
+
+  tikz_format();
+  end();
+}

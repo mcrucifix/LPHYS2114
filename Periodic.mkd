@@ -1,14 +1,28 @@
 ## The van der Pol oscillator
 
+Consider the following dynamical system.
+
 \begin{align*}
  \dot{x} &=  y \\
  \dot{y} &= \alpha ( y - y^3/3 - x )
 \end{align*}
 
-First explain the slow-fast regime 
+We consider first the regime $\alpha \gg 1$ (in the illustration below, we have used $\alpha = 10$). Defining $\varepsilon = 1 \over \alpha$, it is equivalent to write the second equation:
 
-- recognise the nullcline
-- explain for high alphe the slow fast behaviour
+\begin{displaymath}
+ \varepsilon \dot{y} &=  ( y - y^3/3 - x ),
+\end{displaymath}
+
+In the limit of small $\varepsilon$ the left-hand-side term vanishes, so that, to first approximation, $y$ behaves such as to satisfy the diagnostic equation $y - y^3/3 - x = 0$. This equation defines the nullcline. For any reasonable value of $x$, $y$ will run such as to satisfy this equation. 
+
+Hence, to get a first grasp on this system, we may consider that $x$ varies slowly, and $y$ equilibrates with respect to a slowly varying $x$, which effectively behaves as a parameter. We then recognise a first-order differential equation with, as we will show, two fold bifurcations with respect to $x$. 
+\
+Indeed, the equation $y - y^3/3 - x = 0$ has three roots for $-1 \leq x \leq 1$, and only one out of this interval. Within the three-root regimes, the center root corresponds to an unstable equilibrium and the upper and lower branches correspond to sinks of this fast system. Again, view $x$ as a parameter, and one will find two fold bifurcations for $x=\pm 1$. 
+
+Suppose that $x=0$ and that the system is on the upper branch. The slow variable $y$ is positive, and because of the first equation of the full system ($\dot x = y$), $x$ must increase slowly. The fast variable $y$ keep tracking the upper branch, until it reaches the fold bifurcation. At this point $y$ runs away (it has lost its equilibrium), until it falls on the lower branch. Then $y<0$, and $x$ reverses direction. The fast variable $y$ tracks the lower branch, until, again, it finds a fold bifurcation. 
+We have just found an example of attractor that is a limit cycle, characteristic of a slow-fast _relaxation_ oscillator. 
+
+The limit cycle persists outside the slow-fast regime, and $y$ then moves more softly from negative to positive values. 
 
 \input{Figures/vanderpol.eepic}
 \input{Figures/vanderpol_01.eepic}
@@ -77,7 +91,7 @@ The equation has three fixed points at $(x,y)=(0,0)$, $(\pm 1,0)$, with the eige
   (-1,0) & \Rightarrow \lambda_{1,2} = \frac{-\delta + 1 }{2} \pm \frac{1}{2} \sqrt{(-\delta+1)^2 - 8}.  \\  
 \end{align*}
 
-Thus, $(0,0)$ is a saddle, and $(\pm 1,0)$ are sinsk for $\delta > 1$ and sources for $0 \leq \delta < 1$. Furthermore, we find 
+Thus, $(0,0)$ is a saddle, and $(\pm 1,0)$ are sinks for $\delta > 1$ and sources for $0 \leq \delta < 1$. Furthermore, we find 
 
 \begin{displaymath}
  \pd{f}{x} + \pd{f}{y} = \delta + x^2. 
@@ -85,14 +99,14 @@ Thus, $(0,0)$ is a saddle, and $(\pm 1,0)$ are sinsk for $\delta > 1$ and source
 
 Thus, the divergence vanishes on the lines $x = \pm \sqrt{\delta}$. These two lines divide the plane into three regions which we label $R_1$, $R_2$ and $R_3$. We cannot have any closed orbit in this regions, but we _cannot_ rule out orbits which would overlap these regions. 
 
-It is possible to restrict the possibilities further with the _index theory_ but at this point of writing the notes, it is not yet clear we will be able to cover this theory in the context of this course. 
+It is possible to restrict the possibilities further with the _index theory_ but at this point of writing the notes, it is not yet clear we have time to cover this theory in the context of this course. 
 
 
-## Further remaks about periodic orbits
+## Further remarks about periodic orbits
 
 - closing lemmas
 - dynamic averaging
-- characterization of chaose
+- characterization of chaos
 - mathematical biology
 - time series analysis
 

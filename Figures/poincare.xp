@@ -1,0 +1,119 @@
+
+#include "epix.h"
+#include "stdio.h"
+
+#define delta 0.12
+
+using namespace ePiX;
+
+// double ux (double x) {  return (1./3.*x*x + x*x*x/6. + x*x*x*x/30.) ;}
+P F (double x, double y) {  return P(y, x - x*x*x - delta*y); }
+
+
+void af(P F(double, double), P s, double  m){
+  P p1;
+  P p2;
+  if (m>0) {
+   p1 = flow(F, s, 2.1*m, 40);
+   p2 = flow(F, s, 2.5*m, 40);
+  } else  {
+   p2 = flow(F, s, 2.1*m, 40);
+   p1 = flow(F, s, 2.5*m, 40);
+  }
+
+  arrow(p1,p2);
+}
+
+int main() {
+
+
+//
+// \begin{align*}
+//\dot x &= x + y^3 \\
+//\dot y &= -y + 2xy + x^2
+//\end{align*}
+
+
+  bounding_box(P(-3.0,-3.0), P(3.0,3.0));
+  picture(8,8);
+  unitlength("40pt");
+
+  begin();
+
+//  domain R2(P(-1,-1), P(1,1), mesh(12,12)); 
+//
+//
+  P p1 = P(.05,-.05);
+  P p2 = P(-.05,.05);
+  path n1;
+  path n2;
+  n1.pt(p1);
+  n2.pt(p2);
+  for (int i=0; i<=150; ++i){
+    p1 = flow(F, p1, -.1);
+    n1.pt(p1);
+  }
+
+
+  for (int i=0; i<=128; ++i){
+    p2 = flow(F, p2, -.1);
+    n2.pt(p2);
+  }
+
+
+  path n11 = n1;
+
+  pen(0.);
+  n1 -= n2;
+  fill(Black(0.5));
+  n1.close();
+  n1.fill();
+  n1.draw();
+
+
+  plain(Blue(1.0));
+  n11.draw();
+  n2.draw();
+
+
+
+  plain(Black(1.0));
+
+  arrow(P(-2.2,0), P(2.2,0));
+  arrow(P(0,-2.2), P(0,2.2));
+ 
+  label(P(2.3,0), "x");
+  label(P(0,2.3), "y");
+   
+  // dart_field(F, R2,.1); //
+
+  
+  solid();  
+  plain(Blue(1.0));
+  ode_plot(F,P(.05,.05),15.,150);
+  ode_plot(F,P(-.05,-.05),15.,150);
+//  ode_plot(F,P(.05,-.05),0.,-15.1,150);
+//  ode_plot(F,P(-.05,.05),0.,-15.1,150);
+
+
+
+  af(F, P(.05, .05), 1.);
+  af(F, P(-.05, .05), -1. );
+  af(F, P(.05, -.05), -1. );
+  af(F, P(-.05, -.05), 1. );
+ 
+  dot (P(-1,0));
+  dot (P(1,0));
+  dot (P(0,0));
+
+
+//  plain(Red(1.0));
+//  n2.close();
+//  n2.fill();
+//  n2.draw();
+
+
+
+  tikz_format();
+  end();
+}

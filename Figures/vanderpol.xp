@@ -1,0 +1,137 @@
+
+#include "epix.h"
+#include "stdio.h"
+
+#define delta 1.00
+#define alpha   10.00
+
+using namespace ePiX;
+
+
+// nullcline
+double nc (double y) { return(y - y*y*y/3.); }
+
+
+// 1-step newtonraphson to find root of nullcline for given x given guess
+double nr (double yg, double x) { 
+   yg = yg - ( nc(yg) - x )/( 1.  - yg*yg ) ;
+   yg = yg - ( nc(yg) - x )/( 1 - yg*yg ) ;
+   return(yg) ; 
+//   return (1.2);
+}
+
+P F (double x, double y) {  return P(y , alpha* (nc(y) - x)); }
+
+
+path nullcline(int i1, int i2) {
+  path n1;
+  double x, y;
+  double s3 = sqrt(3.) ;
+  for (int i=i1; i<=i2; ++i){
+    y=double(i)/10. ;
+    x = y - y*y*y/3. ;
+    n1.pt(P(x,y));
+  };
+  return(n1);
+}
+
+
+
+
+int main() {
+
+  bounding_box(P(-1.5,-3.5), P(1.5,3.5));
+  picture(6,6);
+  unitlength("40pt");
+
+  begin();
+
+  plain(Black(0.5));
+  arrow(P(-1.3,0), P(1.3,0));
+  arrow(P(0,-3.0), P(0,3.0));
+ 
+  label(P(1.4,0), "x");
+  label(P(0,3.2), "y");
+ 
+
+  // nullcline
+  plain(Blue(1.0));
+  bold ();
+  nullcline(-22,-10).draw();
+  dashed ();
+  nullcline(-10,+10).draw();
+  solid ();
+  nullcline(10,+22).draw();
+
+  pen(0.5);
+  plain(Black(0.5));
+  line_style(". - .");
+  line(P(2./3.,1), P(2./3.,-2));
+  line(P(-2./3.,-1), P(-2./3.,2));
+
+  solid();
+  arrow(P(2./3.,0.5), P(2./3.,0.3));
+  arrow(P(2./3.,0.3), P(2./3.,0.1));
+
+  arrow(P(-2./3.,-0.5), P(-2./3.,-0.3));
+  arrow(P(-2./3.,-0.3), P(-2./3.,-0.1));
+
+  solid();
+  plain(Black(1.0));
+  ode_plot(F, P(0,0.1), 4, 120);
+ 
+
+  P f1 = flow(F, P(0,0.1), 0.3, 10);
+  P f2 = flow(F, P(0,0.1), 0.31, 11);
+  arrow(f1, f2);
+
+  f1 = flow(F, P(0,0.1), 1, 30);
+  f2 = flow(F, P(0,0.1), 1.01, 31);
+  arrow(f1, f2);
+
+  f1 = flow(F, P(0,0.1), 2.2, 60);
+  f2 = flow(F, P(0,0.1), 2.21, 61);
+  arrow(f1, f2);
+
+  circ(P(0,0));
+
+  solid();
+  line (P(-1, -0.05), P(-1, 0.05)); label (P(-1,-0.10), P(0,0),  "-1", b);  
+  line (P(1, -0.05), P(1, 0.05)); label (P(1,-0.10),P(0,0),  "1", b);  
+
+
+  line (P(-0.05, -1), P(0.05, -1)); label (P(-0.05, -1), P(0,0), "-1", l);  
+  line (P(-0.05, 1), P(0.05, 1)); label (P(-0.05, 1), P(0,0), "1", l);  
+
+
+  plain(Blue(1.0));
+  for (int i=-1; i<2; i++) {
+    double x=double(i)*0.8;
+    double y=nr(2. , x);
+//    circ(P(x,y));
+    if (i<1){
+    arrow (P(x,y-0.4), P(x,y-0.2));
+    arrow (P(x,y+0.4), P(x,y+0.2));
+    }
+    if (i>(-1)){
+    y=nr(-2. , x);
+//    circ(P(x,y));
+    arrow (P(x,y-0.4), P(x,y-0.2));
+    arrow (P(x,y+0.4), P(x,y+0.2));
+    }
+  }
+
+    double x=-0.3;
+    double y=nr(0. , x);
+    arrow (P(x,y-0.2), P(x,y-0.4));
+    arrow (P(x,y+0.2), P(x,y+0.4));
+ 
+   
+  char buffer[50];
+  sprintf(buffer, "$\\alpha=%.1f$", alpha);
+  label (P(0,3.5), P(0,0), buffer, t);
+  tikz_format();
+
+  tikz_format();
+  end();
+}

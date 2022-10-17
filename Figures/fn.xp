@@ -61,7 +61,7 @@ int main() {
   beta=0.98;
   x0 = nc(beta);
   circ(P(x0,beta));
-  sprintf(buffer, "$\\beta = %.1f$", beta);
+  sprintf(buffer, "$\\beta = %.2f$", beta);
   sp=flow(F0, P(x0, beta+0.02), 200, 200);
   ode_plot(F0, sp,  20, 200);
   label(sp, P(-5,0), buffer, l);

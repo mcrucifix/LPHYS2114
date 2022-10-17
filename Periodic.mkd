@@ -152,7 +152,7 @@ The bifurcation is found at $\beta=0$.
 The system of equation may be rewritten in polar coordinates, in which case we find
 
 \begin{align*}
-  \dot r &= -\beta r + \sigma r^3 
+  \dot r &= -\beta r + \sigma r^3  \\
   \dot \theta &= 1
 \end{align*}
 

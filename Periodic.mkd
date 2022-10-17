@@ -7,7 +7,7 @@ Consider the following dynamical system.
  \dot{y} &= \alpha ( y - y^3/3 - x )
 \end{align*}
 
-We consider first the regime $\alpha \gg 1$ (in the illustration below, we have used $\alpha = 10$). Defining $\varepsilon = 1 \over \alpha$, it is equivalent to write the second equation:
+We consider first the regime $\alpha \gg 1$ (in the illustration below, we have used $\alpha = 10$). Defining $\varepsilon = 1 / \alpha$, it is equivalent to write the second equation:
 
 \begin{displaymath}
  \varepsilon \dot{y} =  ( y - y^3/3 - x ),
@@ -135,11 +135,11 @@ In summary, we have three regimes:
 - for $1 < |\beta| \leq \sqrt{3}$: two complex-conjugate eigenvalues with negative real part;
 - for $|\beta| < 1$: two complex-conjugate eigenvalues with positive real part. 
 
-The fixed point is a source in the fixed regime, which generates trajectories spiraling outwards, and reaching the limit cycle described in the first section. 
+The fixed point is a source in the third regime, which generates trajectories spiraling outwards, and reaching the limit cycle described in the first section. 
 
 The transition from negative to positive real values with imaginary parts is the signature of a Hopf (or Andronov-Hopf) bifurcation. 
 
-Rushing through the theory, it may be shown that if some generic non-degeneracy conditions are met (specifically, the first Lyapunov exponent near the limit cycle is non-zero, and the derivative of the real part of the eigenvalue is non-zero at the equilibrium), it may be shown that systems with a Hopf bifurcation are locally topologically equivalent to the normal form, with $\sigma$ either equal to $1$ or $-1$ (and further assuming a rescaling of time):
+Rushing through the theory, it may be shown that if some generic non-degeneracy conditions are met (specifically, the first Lyapunov exponent near the limit cycle is non-zero \footnote{but we haven't defined it, yet; no panic}), and the derivative of the real part of the eigenvalue is non-zero at the equilibrium), it may be shown that systems with a Hopf bifurcation are locally topologically equivalent to the following normal form, with $\sigma$ either equal to $1$ or $-1$ (remember that topological equivalence assumes a rescaling of time):
 
 \begin{align*}
   \dot x &= \beta x - y + \sigma x ( x^2 + y^2) \\
@@ -180,9 +180,13 @@ The above equation is the FithHugh-Nagumo equation, and your professor has used 
 
 Below the limit cycles found in the van der Pol oscillator with $\alpha=1$, for $\beta=0.98$ (grey), $\beta=0.95$ (black), $\beta=0.9$ (blue) and $\beta=0.8$ (green). We recognise the (reasonably) smooth growth of the cycle as $\beta$ gets away from the bifurcation point, as predicted by the theory. 
 
+\input{Figures/fn.eepic}
+
 In some more pathological cases, however, the limit cycle may grow quite quickly and reach saturation, even though the bifurcation is supercritical. This is a case of supercritical, explosive Hopf bifurcation. This is found in the above case, but in the slow-fast regime, with  $\alpha \gg 1$. The behaviour of Hopf bifurcations is  slow-fast systems is a field of research on its own, and gives rises to curious orbits termed "Canard". 
 
-\input{Figures/fn.eepic}
+The case for $\beta=0.98$, $\alpha=10$ is shown below, for illustration
+
+\input{Figures/canard.eepic}
 
 ## Further remarks about periodic orbits
 

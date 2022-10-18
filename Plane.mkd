@@ -279,7 +279,7 @@ s^\prime (x) (- x ) = s(x) + x^2.
 
 If we admit that $s$ is infinitely differentiable, and keeping in mind that its first-order derivative is null, then as a general rule we know that $s(x)=\sum_{k=2}^{\infty} s_k x^k$. Substituting in the differential equation, that makes
 
-$$ -x \sum_{k=2}^{\infty}  s_k x^{k-1} = x^2 + \sum_{k=2}^{\infty} -k s_k x^{k}.$$
+$$ -x \sum_{k=2}^{\infty}  k s_k x^{k-1} = x^2 + \sum_{k=2}^{\infty} k s_k x^{k}.$$
 
 Identifying terms for the different orders, one by one, we get $-2 s_2 = s_2 + 1$ and $-k s_k = s_k$ for $k\geq 3$. The only solution is $s_2=-\frac{1}{3}$ and $s_k=0$ for $k\geq 3$.
 

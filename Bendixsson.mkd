@@ -14,7 +14,7 @@ In these notes, we will only provide the theorem result, and some elements of th
 
  - one fixed point
  - a closed orbit
- - a finite number of fixed points $p_1\ldots p_n$ and orbits  $\gamma$ linking these fixed points with $\alpha($\gamma$)=p_i$ and $\alpha($\gamma$)=p_j$, $i,j \in 1 \ldots n$. 
+ - a finite number of fixed points $p_1\ldots p_n$ and orbits  $\gamma$ linking these fixed points with $\alpha(\gamma)=p_i$ and $\alpha(\gamma)=p_j$, $i,j \in 1 \ldots n$. 
 
 \et
 
@@ -122,3 +122,4 @@ We now concentrate on the curves defined by $H=0$, which separate negative (insi
 
 <!-- The two iso-countours, of same value, define a trapping region. What sort of scenario do we expect there? Perhaps your intuition already foresees some possibilities: either orbits land on a fixed point, either they keep looping around a so-called "limit cycle"... or ?  -->
 
+\input{Figures/poincare.eepic}

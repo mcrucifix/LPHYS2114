@@ -10,7 +10,7 @@ Consider the following dynamical system.
 We consider first the regime $\alpha \gg 1$ (in the illustration below, we have used $\alpha = 10$). Defining $\varepsilon = 1 \over \alpha$, it is equivalent to write the second equation:
 
 \begin{displaymath}
- \varepsilon \dot{y} &=  ( y - y^3/3 - x ),
+ \varepsilon \dot{y} =  ( y - y^3/3 - x ),
 \end{displaymath}
 
 In the limit of small $\varepsilon$ the left-hand-side term vanishes, so that, to first approximation, $y$ behaves such as to satisfy the diagnostic equation $y - y^3/3 - x = 0$. This equation defines the nullcline. For any reasonable value of $x$, $y$ will run such as to satisfy this equation. 

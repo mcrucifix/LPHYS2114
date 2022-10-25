@@ -120,16 +120,11 @@ Hence, we could also defined an attractor as a topologically transitive set $A$ 
 A final note about the notion of the  Lyapunov function.  We need to confess that we have been a little bit brutal. 
 Indeed, we first defined the Lyapunov function as being defined ons a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-countour of the Lyapunov function, in this neighbourhood. 
 
-Now, later in this chapter, we admitted that finding a Lyapunov function is also a good approach for determining a trapping region. To this end, we implicitly  relaxed the condition that we have a fixed point. We just need isocontours with the flow pointing inwards. 
-
-
-
-<!-- 
-## 
-So, for example, we could have the following configuration: 
-
+Now, later in this chapter, we admitted that finding a Lyapunov function is also a good approach for determining a trapping region. To this end, we implicitly  relaxed the condition that we have a fixed point. We just need isocontours with the flow pointing inwards. As we will see, this helps us to see also the kind of solutions we expect within the trapping region. 
 
 \bcd
+To anticipate a bit on what is coming, consider the following configuration: 
+
 
 \includegraphics[page=21, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
 
@@ -137,6 +132,5 @@ The two iso-countours, of same value, define a trapping region. What sort of sce
 
 \ecd
 
-The Poincaré-Bendixsson theorem, which we will see later (in two chapters) restricts the possibilities
+The Poincaré-Bendixsson theorem, which we will see in section \label{sect:poincare} the possibilities
 
--->

@@ -1,11 +1,13 @@
 ## The Poincaré - Bendixsson theorem
 
+\label{sect:Poincare}
+
 Remember that we have defined the limit set of an orbit (more precisely, the limit set of a point of an orbit, but that is equivalent) as the set of points that are asymptotically reached as time goes forward ($\omega$-limit set), or backwards $\alpha$-limit set). The 
 
 So far we have met two types of limit sets in the plane: fixed points (if it is a $\omega-$fixed point, it is also an attractor), and limit cycles (think of the van der Pol oscillator which we have seen). We have defined the limit set of a whole region $U$, as the union of all limit sets associated with all points in this region. 
 On the other hand,  we have defined the attractor as a minimal attracting set: the notion of "attraction" is very much focused on the idea of a neighbourhood that get smaller and smaller as times goes by. 
 
-So we could reasonably guess that the notion of limit cycle and  the notion of _attractor_ are similar. In fact, attractors _are_ limit sets. However the reverse is not true. We will here some limit set which are not necessarily attracting their neighbourhood. To this end, we need a strategy: an approach that allows us to make an account of all possible limit sets. In this enterprise, we have two friends. The first one is the concept of trapping region, that is closely related to the Lyapunov function. If there is a Lyapunov function --- if we can draw isocontours (so called: level sets) that upper-bound the flow --- then we know we have a trapping region. The second is a theorem: the Poincaré - Bendixsson theorem. 
+So we could reasonably guess that the notion of limit cycle and  the notion of _attractor_ are similar. In fact, attractors _are_ limit sets. However the reverse may not necessarily be true. Hence, we need a strategy: an approach that allows us to make an account of all possible limit sets. In this enterprise, we have two friends. The first one is the concept of trapping region, that is closely related to the Lyapunov function. If there is a Lyapunov function --- if we can draw isocontours (so called: level sets) that upper-bound the flow --- then we know we have a trapping region. The second is a theorem: the Poincaré-Bendixsson theorem. 
 
 In these notes, we will only provide the theorem result, and some elements of the proof will be given during the lecture. The proof is not exam material. 
 
@@ -18,11 +20,11 @@ In these notes, we will only provide the theorem result, and some elements of th
 
 \et
 
-A first few observations before we get some ideas about how this theorem works. Observe first that requires very few assumptions. All what we need is a trapping region in the plane, and not a infinite number of fixed points (we don't one a whole region or even a segment where $f(x,y)=0$). The theorem tells us about limit sets, and it restricts the possible behaviours: we have either attractor points, limit cycles, or (that is the new stuff) homoclinic or heteroclinic orbits. The _homoclinic_ orbit is one that links a fixed point to itself (asymptotically); the _heteroclinic_ orbit links two fixed points. We will speak about those a bit later, and let us briefly explore the mechanics of the proof without, again, considering the details. 
+A first few observations before we get some ideas about how this theorem works. Observe first that it requires very few assumptions. All what we need is a trapping region in the plane, and not a infinite number of fixed points (we don't want a whole region or even a segment where $f(x,y)=0$). The theorem tells us about limit sets, and it restricts the possible behaviours: we have either attractor points, limit cycles, or (that is the new stuff) homoclinic or heteroclinic orbits. The _homoclinic_ orbit is one that links a fixed point to itself (asymptotically); the _heteroclinic_ orbit links two fixed points. We will speak about those a bit later, and let us briefly explore the mechanics of the proof without, again, considering the details. 
 
-Two prove the Poincaré-Bendixsson theorem, you need the concept of a _transverse_ $\Sigma$ of the field. Think of it as a one-way section, with the flow crossing the flow always from, say, the left to the right, without being ever tangent to the transverse, with no hole. The transverse is, technically, a continuous, connected arc. We also use the concept of _positive_ orbit through $p$, which is  the set of points met by the trajectory after it has gone through $p$. 
+Two prove the Poincaré-Bendixsson theorem, you need the concept of a _transverse_ $\Sigma$ of the field. Think of it as a one-way section, with the flow crossing the flow always from, say, the left to the right, without being ever tangent to the transverse. The transverse may not have any hole. Technically, it is defined a continuous, connected arc. We also use the concept of _positive_ orbit through $p$, which is  the set of points met by the trajectory after it has gone through $p$. 
 
-Then, the proof goes on in steps:
+Then, the proof goes on by steps:
 
 - _Lemma 1_: the positive orbit through $p$ cuts the transverse $\Sigma$ in a monotone sequence of $p_i$ (the points of the intersection are ordered on the sequence). (The Lemma is proved by constructing a positively invariant region)
 - Lemma 2: The limit set of $p$ crosses $\Sigma$ at at most one point. (this is a consequence of the monotonous character of the sequence of $p_i$)
@@ -36,8 +38,8 @@ We now show how to use this theorem, with examples.
 
 \begin{equation}
 \begin{split}
- \dot x &= y
-\dot y = x - x^3 - \gamma y
+ \dot x &= y \\
+\dot y &= x - x^3 - \gamma y
 \end{split}
 \end{equation}
 
@@ -47,12 +49,12 @@ A perhaps more intuitive way to view it is to substitute the first equation into
 \ddot x = x - x^3 - \gamma \dot x;
 \end{displaymath}
 
-We see then a down-potential movement with friction coefficient $\gamma$, with the potential $V=x^4/4 - x^2/2$. We have quite obviously a good starting point for a Lyapunov function. The equivalent of the Hamiltonian, in this system, would be $H=V+y^2/2$ and, indeed, we have :
+We see then a down-potential movement with friction coefficient $\gamma$, with the potential $V=x^4/4 - x^2/2$. We have quite obviously a good starting point for a Lyapunov function. The equivalent of the Hamiltonian, in this system, would be $H=V+y^2/2$ and, indeed, we have:
 
 \begin{equation}
 \begin{split}
- \dot x &= \pd{H}{y}
-\dot y = -\pd{H}{x} - \gamma y
+ \dot x &= \pd{H}{y} \\
+\dot y &= -\pd{H}{x} - \gamma y
 \end{split}
 \end{equation}
 
@@ -71,27 +73,31 @@ Consider now:
 
 \begin{equation}
 \begin{split}
-\dot x &= y + \frac{1}{4} x ( 1 - 2 r^2);
-\dot y = -x + \frac{1}{2} y ( 1 - r^2), \quad \text{with }r^2=x^2+y^2.
+\dot x &= y + \frac{1}{4} x ( 1 - 2 r^2); \\
+\dot y &= -x + \frac{1}{2} y ( 1 - r^2), \quad \text{with }r^2=x^2+y^2.
 \end{split}
 \end{equation}
 
-Equilibria are found for $x=\frac{1}{2}y(1-r^2)$, which, after calculation, gives 
+Equilibria impose, by the equation for $\dot y$,  $x=\frac{1}{2}y(1-r^2)$, which, after substitution in the equation for $\dot x$ gives 
 
 \begin{displaymath}
 0 = y (9 - 3r^2 + 2r^4)
 \end{displaymath}
 
-As the polynomial $(9 - 3r^2 + 2r^4)$ has no real root, $p=(0,0)$ is the only equilibrium.
-On the other hand, if we transform the equation into the polar coordinate $(x,y)=r(\cos\theta,\sin\theta)$, and compute $\dot r = \frac{1}{r}(\dot x,\dot y)\cdot (x,y)$, we find:
+As the polynomial $(9 - 3r^2 + 2r^4)$ has no real root, $(0,0)$ is the only equilibrium.
+On the other hand, if we transform the equation into the polar coordinates $(x,y)=r(\cos\theta,\sin\theta)$, and compute $\dot r = \frac{1}{r}(\dot x,\dot y)\cdot (x,y)$, we find:
 
 \begin{displaymath}
 \dot r = \frac{1}{4}r (1 + \sin^2\theta)- \frac{1}{2}r^3.
 \end{displaymath}
 
-As $0\leq \sin^2\theta \leq 1$, $\frac{1}{4}r - \frac{1}{2}r^3 \leq \dot r \leq \frac{1}{2}r(1-r^2)$. 
+As $0\leq \sin^2\theta \leq 1$, we have the  order relationship 
 
+\begin{displaymath}
+\frac{1}{4}r - \frac{1}{2}r^3 \leq \dot r \leq \frac{1}{2}r(1-r^2). 
+\end{displaymath}
 In other words, 
+
 - $\dot r > 0$ (for any $\theta$) for $\frac{1}{4}r - \frac{1}{2}r^3 > 0$, that is, $r < \sqrt{2}/2$, and 
 - $\dot r < 0$ (for any $\theta$) for $r(1-r^2) < 0$, that is, $r > 1$. 
 
@@ -113,13 +119,16 @@ This time, $\dot H = \lambda H ((\pd{H}{x})^2 + (\pd{H}{y})^2)$. We have already
 
 We now concentrate on the curves defined by $H=0$, which separate negative (inside) from positive (outside) values. 
 
-- For $\lambda < 0$, we have trajectories reaching asymptotically one of the two homoclinic loops if they start _outside_, and one of the fixed point if they start inside;
-- For $\lambda > 0$, we have trajectories reaching asymptotically one of the two homoclinic loops if they start _inside_, and diverging if they start outside. 
+- For $\lambda < 0$, we have trajectories reaching asymptotically one of the two homoclinic loops if they start _inside_, and revolve around  (slowly) around the homoclinic loops if they start outside. Homoclinic loops act as attractors. 
+- For $\lambda > 0$, we have trajectories reaching asymptotically one of the two centers if they start _inside_, and diverging if they start outside. Homoclinic loops act as repellers.  
 
 
+\begin{tabular}{cc}
+\input{Figures/homoclinic.eepic} &
+\input{Figures/homoclinic05.eepic} 
+\end{tabular}
 
-\includegraphics[page=21, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
+
 
 <!-- The two iso-countours, of same value, define a trapping region. What sort of scenario do we expect there? Perhaps your intuition already foresees some possibilities: either orbits land on a fixed point, either they keep looping around a so-called "limit cycle"... or ?  -->
 
-\input{Figures/poincare.eepic}

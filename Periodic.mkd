@@ -30,7 +30,7 @@ The limit cycle persists outside the slow-fast regime, and $y$ then moves more s
 \input{Figures/vanderpol_01.eepic}
 
 
-## Bendixson's criterion
+## Bendixsson's criterion
 
 Consider again our classical diffeomorphism on the plane:
 
@@ -47,7 +47,7 @@ A solution of \eqref{eq:ddb} through the point $x_0$ is said to be periodic of p
 \ed
 
 
-\bt{Bendixson's criterion}
+\bt{Bendixsson's criterion}
 If, on a simply connected region $\mathcal{D}\subset \mathbb{R}^2$ (with contour $\Gamma$), the expression $\pd{f}{x}+\pd{g}{y}:=\div{(f,g)}$ is not identically zero and does not change sign, then the system has no closed orbit lying entirely in $\mathcal{D}$.
 \et
 
@@ -65,41 +65,45 @@ On the other, because of Green's theorem,
 
 The left-hand-side term is the contour integral we just computed. It is zero. The second term can only be zero if the divergence is either identically null, or changes sign. \eop
 
-The Bendixson theorem can be easily generalised so that is also works by monitoring $\pd{(Bf)}{x}+\pd{(Bg)}{y}$ for any $B(x,y)$ of class $\mathbf{C}^1$. 
+The Bendixsson theorem can be easily generalised so that is also works by monitoring $\pd{(Bf)}{x}+\pd{(Bg)}{y}$ for any $B(x,y)$ of class $\mathbf{C}^1$. 
 
 \bcd
 Check that the Duffing oscillator
-\begin{align*}
- \dot{x} &=  y, \\
- \dot{y} &= x - x^3 - \delta y
-\end{align*}
+
+\begin{displaymath}
+\spalignsys{
+\dot{x} = y\text{,}; 
+\dot{y} = x - x^3 - \gamma y} 
+\end{displaymath}
  
-has no closed orbit for $\delta \leq 0$. 
+has no closed orbit for $\gamma \leq 0$. 
 \ecd 
 
-The next example (taken form Wiggins, sect. 4.1) shows how the Bendixson' criterion allows us to restrict regions in the plan where closed orbits _might_ exist. Consider this modification of the Duffing oscillator: 
+The next example (taken form Wiggins, sect. 4.1) shows how the Bendixsson' criterion allows us to restrict regions in the plan where closed orbits _might_ exist. Consider this modification of the Duffing oscillator: 
 
 
-\begin{align*}
- \dot{x} &=  y  \\
- \dot{y} &= x - x^3 - \delta y + x^2 y, \delta \geq 0.  
-\end{align*}
+\begin{displaymath}
+\spalignsys{
+ \dot{x} =  y;
+ \dot{y} = x - x^3 - \gamma y + x^2 y\text{, \quad} \gamma \geq 0.  
+}
+\end{displaymath}
 
 The equation has three fixed points at $(x,y)=(0,0)$, $(\pm 1,0)$, with the eigenvalues $\lambda_{1,2}$ given by the following expressions: 
 
 \begin{align*}
-  (0,0)  & \Rightarrow \lambda_{1,2} = \frac{-\delta}{2} \pm \frac{1}{2} \sqrt{\delta^2 + 4},  \\  
-  (1,0)  & \Rightarrow \lambda_{1,2} = \frac{-\delta + 1 }{2} \pm \frac{1}{2} \sqrt{(-\delta+1)^2 - 8},  \\  
-  (-1,0) & \Rightarrow \lambda_{1,2} = \frac{-\delta + 1 }{2} \pm \frac{1}{2} \sqrt{(-\delta+1)^2 - 8}.  \\  
+  (0,0)  & \Rightarrow \lambda_{1,2} = \frac{-\gamma}{2} \pm \frac{1}{2} \sqrt{\gamma^2 + 4},  \\  
+  (1,0)  & \Rightarrow \lambda_{1,2} = \frac{-\gamma + 1 }{2} \pm \frac{1}{2} \sqrt{(-\gamma+1)^2 - 8},  \\  
+  (-1,0) & \Rightarrow \lambda_{1,2} = \frac{-\gamma + 1 }{2} \pm \frac{1}{2} \sqrt{(-\gamma+1)^2 - 8}.  \\  
 \end{align*}
 
-Thus, $(0,0)$ is a saddle, and $(\pm 1,0)$ are sinks for $\delta > 1$ and sources for $0 \leq \delta < 1$. Furthermore, we find 
+Thus, $(0,0)$ is a saddle, and $(\pm 1,0)$ are sinks for $\gamma > 1$ and sources for $0 \leq \gamma < 1$. Furthermore, we find 
 
 \begin{displaymath}
- \pd{f}{x} + \pd{f}{y} = \delta + x^2. 
+ \pd{f}{x} + \pd{f}{y} = \gamma + x^2. 
 \end{displaymath}
 
-Thus, the divergence vanishes on the lines $x = \pm \sqrt{\delta}$. These two lines divide the plane into three regions which we label $R_1$, $R_2$ and $R_3$. We cannot have any closed orbit in this regions, but we _cannot_ rule out orbits which would overlap these regions. 
+Thus, the divergence vanishes on the lines $x = \pm \sqrt{\gamma}$. These two lines divide the plane into three regions which we label $R_1$, $R_2$ and $R_3$. We cannot have any closed orbit in this regions, but we _cannot_ rule out orbits which would overlap these regions. 
 
 It is possible to restrict the possibilities further with the _index theory_ but at this point of writing the notes, it is not yet clear we have time to cover this theory in the context of this course. 
 
@@ -139,7 +143,7 @@ The fixed point is a source in the third regime, which generates trajectories sp
 
 The transition from negative to positive real values with imaginary parts is the signature of a Hopf (or Andronov-Hopf) bifurcation. 
 
-Rushing through the theory, it may be shown that if some generic non-degeneracy conditions are met (specifically, the first Lyapunov exponent near the limit cycle is non-zero \footnote{but we haven't defined it, yet; no panic}), and the derivative of the real part of the eigenvalue is non-zero at the equilibrium), it may be shown that systems with a Hopf bifurcation are locally topologically equivalent to the following normal form, with $\sigma$ either equal to $1$ or $-1$ (remember that topological equivalence assumes a rescaling of time):
+Rushing through the theory, it may be shown that if some generic non-degeneracy conditions are met (specifically, the first Lyapunov exponent near the limit cycle is non-zero \footnote{but we haven't defined it, yet; no panic}, and the derivative of the real part of the eigenvalue is non-zero at the equilibrium), it may be shown that systems with a Hopf bifurcation are locally topologically equivalent to the following normal form, with $\sigma$ either equal to $1$ or $-1$ (remember that topological equivalence assumes a rescaling of time):
 
 \begin{align*}
   \dot x &= \beta x - y + \sigma x ( x^2 + y^2) \\
@@ -149,21 +153,21 @@ Rushing through the theory, it may be shown that if some generic non-degeneracy 
 
 The bifurcation is found at $\beta=0$. 
 
-The system of equation may be rewritten in polar coordinates, in which case we find
+The system of equations may be rewritten in polar coordinates, in which case we find
 
 \begin{align*}
-  \dot r &= -\beta r + \sigma r^3  \\
-  \dot \theta &= 1
+  \dot r &= -\beta r + \sigma r^3,  \\
+  \dot \theta &= 1. 
 \end{align*}
 
 
 Two cases occur:
 
-- ($\sigma = -1$) The _supercritical_  generates a _stable_ limit cycle of infinitesimal amplitude near the bifurcation point, with amplitude ($\sqrt \beta$) growing continuously as the parameter moves away from the bifurcation point;
+- ($\sigma = -1$) The _supercritical_ bifurcation generates a _stable_ limit cycle of infinitesimal amplitude near the bifurcation point, with amplitude ($\sqrt \beta$) growing continuously as the parameter moves away from the bifurcation point;
 
-- ( $\sigma = 1$) The _subcritical_  generates limit cycle unstable of $\beta > 0$ (and stable for $\beta < 0$). Hence, for $\beta > 0$, move away from the fixed point and reaches another attractor far from it, typically a larger limit cycle. 
+- ( $\sigma = 1$) The _subcritical_  bifurcation generates a limit cycle unstable for $\beta > 0$ (and stable for $\beta < 0$). Hence, for $\beta > 0$, the system moves away from the fixed point and reaches another attractor far from it, typically a larger limit cycle but not necessarily. 
 
-As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally be associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of the limit cycle and, for example, it may land on a fixed point. However, when a limit cycle exists, it tends to have a period that is not very far from the one determined from the imaginary part of the eigenvalue. 
+As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of the limit cycle and, for example, it may land on a fixed point or another kind of orbit. However, when a limit cycle exists, it tends to have a period that is not very far from the one determined from the imaginary part of the eigenvalue. 
 
 Determining whether a given Hopf bifurcation is subcritical or supercritical is therefore a quite tedious process, by which one must develop the function $f$ and $g$ in Taylor series, and then (when possible) making a change of variables to diagonalise the Jacobian, and then mapping the non-linear terms to the normal form. In practice, bifurcation software (AUTO, MATCONT) can do this for you. Furthermore, criteria have been worked out for specific dynamical systems (e.g. Kuznetzov, Elements of applied bifurcation theory, Springer,  \S 3.5)
 

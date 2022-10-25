@@ -76,7 +76,7 @@ Check that the Duffing oscillator
 \dot{y} = x - x^3 - \gamma y} 
 \end{displaymath}
  
-has no closed orbit for $\gamma \leq 0$. 
+has no closed orbit for $\gamma \neq 0$. 
 \ecd 
 
 The next example (taken form Wiggins, sect. 4.1) shows how the Bendixsson' criterion allows us to restrict regions in the plan where closed orbits _might_ exist. Consider this modification of the Duffing oscillator: 

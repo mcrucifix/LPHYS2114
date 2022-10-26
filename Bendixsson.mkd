@@ -24,6 +24,11 @@ A few observations before we get some ideas about how this theorem works. Observ
 
 Two prove the Poincaré-Bendixsson theorem, you need the concept of a _transverse_ $\Sigma$ of the field. Think of it as a one-way section, with the flow crossing the flow always from, say, the left to the right, without being ever tangent to the transverse. The transverse may not have any hole. Technically, it is defined a continuous, connected arc. We also use the concept of _positive_ orbit through $p$, which is  the set of points met by the trajectory after it has gone through $p$. 
 
+
+\includegraphics[page=22, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
+
+
+
 Then, the proof goes on by steps:
 
 - _Lemma 1_: the positive orbit through $p$ cuts the transverse $\Sigma$ in a monotone sequence of $p_i$ (the points of the intersection are ordered on the sequence). (The Lemma is proved by constructing a positively invariant region)

@@ -48,10 +48,13 @@ A solution of \eqref{eq:ddb} through the point $x_0$ is said to be periodic of p
 
 
 \bt{Bendixsson's criterion}
-If, on a simply connected region $\mathcal{D}\subset \mathbb{R}^2$ (with contour $\Gamma$), the expression $\pd{f}{x}+\pd{g}{y}:=\div{(f,g)}$ is not identically zero and does not change sign, then the system has no closed orbit lying entirely in $\mathcal{D}$.
+If, on a simply connected region $\mathcal{D}\subset \mathbb{R}^2$,  the expression $\pd{f}{x}+\pd{g}{y}:=\div{(f,g)}$ is not identically zero and does not change sign, then the system has no closed orbit lying entirely in $\mathcal{D}$.
 \et
 
-This can be proved as a consequences of Green's theorem on the plane. Indeed, we first note that the path integral $\int_\Gamma f\dif y - g\dif x = 0$:
+This can be proved as a consequences of Green's theorem on the plane. 
+Assume an orbit with contour $\Gamma$ actually exists in the domain $\mathcal{D}$. 
+
+Note then that the path integral $\int_\Gamma f\dif y - g\dif x = 0$:
 
 \begin{equation*}
    \oint_\Gamma f\dif y - g\dif x =  \int_0^T f \dot y - g \dot x \dif t  =  \int_0^T fg - gf \dif t = 0. 

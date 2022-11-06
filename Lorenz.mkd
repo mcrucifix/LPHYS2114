@@ -1,0 +1,88 @@
+## The origins of the Lorenz 63 model
+
+We will now meet the celebrated Lorenz attractor. The original article by @lorenz63 is a follow up of a model of atmospheric convection written by @Saltzman62aa. This original model of "Finite amplitude free convection" was used to solve an initial value problem to demonstrate the fromation of "roll" convection between two free surfarces maintained at a constant temperature difference. Saltzman started from the so-called Oberbeck and Bussinesq equations to generate a set of _52_ (!) ordinary differential equations of quadratic form (i.e., $\dot{X_i}=\sum_{j,k}C_{ijk}X_jX_k$). Saltzman viewed it as a _highly idealised model_ meant to study the development of turbulence in the atmosphere. 
+
+This is an approach that has been generalised to different problems, for example accounting for Earth rotation and the interface between the oceans and the atmosphere. The PhD thesis of Oisin Hamilton, co-supervised by Stephanne Vannitsem at the Royal Meteorological Institute, and myself, uses a model of that sort of complexity. 
+
+However, 52 equations is still a lot for a qualitative analysis and Ed Lorenz proposed a further idealised version, with three equations only:
+
+\begin{equation}
+\begin{split}
+  \dot X &= - \sigma X + \sigma Y\text{,} \\
+  \dot Y &= - XZ +   \rho X - Y\text{,} \\
+  \dot Z &=  XY  - bZ\text{.} \\
+\end{split}
+\end{equation}
+
+The system is presented as $X$ proportional to the intensity of convective motion, $Y$ proportional to the temperature difference between the ascending and descending currents, and $Z$ to the distortion of the temperature profile with respect to linearity, "a positive value indicating that the strongest gradients occur near the boundaries". 
+
+The parameters $\sigma$ is the Prandtl number defined as the ratio of momentum diffusivity to thermal diffusivity; $b$ is related to the motion wavenumber, and $\rho$ is the ration between the Rayleigh number and the _critical_ Rayleigh number. In short, the higher $\rho$, the more turbulent we expect the flow to be. 
+
+Wether this highly truncated model keeps producing realistic results for $\rho>1$ is contentious and might have been a moot point between Saltzman and Lorenz. Lorenz claimed that [his] "Equations may give realistic results when the Rayleigh number is slightly supercritical, but their solutions cannot be expected to resemble those of [Saltzman's] when strong convection occurs, in view of the extreme truncation". 
+
+This is a fascinating case where a model that his too idealised to still be realistic, proved to be highly insightful. In his acknowledgements, Ed Lorenz writes: "The writer is indebted to Dr. Barry Saltzman for brining to his attention the existence of nonperiodic solutions". This is a big statement, because this is the core of the paper. Yet, Saltzman may have done even more, as explained by @maasch05aa: 
+
+\begin{quote}
+Lorenz (1993) recalls that he had “tried to simplify the model \ldots with no luck” and so he was “indebted to Dr. Barry Saltzman for bringing to his attention the existence of nonperiodic solutions of the convection equations” (Lorenz 1963). Indeed, with Saltzman providing such a low-order system [“whose existence Lorenz had begun to doubt” (Lorenz 1993)]
+\end{quote}
+
+So, Lorenz' model should duly be called the Saltzman-Lorenz model. 
+
+@lorenz63 provides a qualitative analysis of the model, which we will partly follow here, with some complements. 
+
+## Fixed point analysis
+
+The linearised model reads:
+
+\begin{equation}
+\begin{pmatrix}\dot X \\ \dot Y \\ \dot Z \end{pmatrix} =
+\begin{pmatrix}
+ - \sigma & \sigma & 0 \\
+ (\rho-Z) & -1 & -X \\ 
+Y & X & -b \end{pmatrix} 
+\end{equation}
+
+The trace of the Jacobian is $-(\sigma + b + 1)$, indicating that a _small_ volume in phase space will shrink (wherever the position in the state space) for any combination of positive (thus, physical) parameters. 
+
+
+Furthermore, the equation system is invariant to the transformation $(X,Y,Z,t) \rightarrow (-X,-Y,Z,t)$. We therefore expect solutions (and attractor geometries) to be symmetric along the $Z-$axis. 
+
+The (not quite formal from a mathematical point of view) consequence is that each small volume shrinks to zero as $t\rightarrow \infty$. Quite informally, we deduce that the volume contained in a trapping region shrinks to zero at the same rate. It does not mean that it shrinks to a point. It technical terms, it shrinks to a variety of _zero measure_, which may be a surface or, as we will see, a variety of strange character. But in any case, we have a dissipative system and we expect at least one attractor, but that is not enough to guarantee that trajectories will not fly to infinity. 
+
+To this end, consider the fixed points. They obey $X_0=Y_0$, $X_0^2=bZ_0$ and, hence, we find either the fixed point $(X_0,Y_0,Z_0)=(0,0,0)$ or $X_0$ satisfies $X_0^2 = b(\rho-1$). 
+
+## Subcritical flow ($\rho<1$)
+
+Only the trivial fixed point exists. Its eigenvalues satisfy 
+
+\begin{displaymath}
+(\sigma+\lambda)(1+\lambda)(b+\lambda) = \sigma \rho (b+\lambda), 
+\end{displaymath}
+
+giving $\lambda_0=-b$ and 
+
+$$\lambda_{\pm} = -\frac{1+\sigma}{2}\pm \sqrt{\left( \frac {1+\sigma}{2}\right)^2 + \sigma(\rho-1)}.$$ 
+The subcritical case has all eigenvalues negatives. The trivial fixed point is an attractor, as can be shown by considering the Lyapunov function $V=X^2+\sigma Y^2 + \sigma Z^2$. 
+
+
+## Supercritical flow ($\rho>1$)
+
+Consider again the trivial solution. We find $\lambda_+$ becomes positive; the fixed point has become a saddle-point, so that in general (except along the stable manifold), trajectories will be _ejected_ out of the fixed point. Where do they go ? 
+
+We also have new solutions at $X_0=Y_0=\pm\sqrt{b(\rho-1)}$, which we expect to behave similarly given the symmetry of the system. With some algebra, it can be shown that they are attracting for $1<\rho<\rho_H = \sigma\frac{\sigma+b+3}{\sigma-b-1}.$. 
+
+More precisely, they are sinks for $\rho<\rho_1<\rho_H$, and attracting centers for $\rho_1<=\rho<\rho_H$. In may be shown (specialised work!) that there are unstable periodic orbits for $\rho_1<\rho<\rho_H$. 
+
+Yet, trajectories are bounded for all $\rho>1$ To show this, 
+define $U=\rho X^2 + \sigma Y^2 + \sigma (Z-2\rho)^2$. Observe that this time derivative satisfies: 
+
+\begin{displaymath}
+\dot U = -2\sigma (\rho X^2 +y^2 + (z-\rho)^2 - b\rho^2).
+\end{displaymath}
+
+In other words $\dot U$ is strictly negative for $\rho X^2 +y^2 + (z-\rho)^2 - b\rho^2 > 0$, that is, any point outside the ellipsoïd defined by $\rho X^2 +y^2 + (z-\rho)^2 = b\rho^2$. Outside that ellipsoïd, any isocontour of $U$ acts as a trapping region. Trajectories will not fly to infinity as time goes by. 
+## The Lorenz attractor 
+
+\input{Figures/lorenz.eepic}
+
+

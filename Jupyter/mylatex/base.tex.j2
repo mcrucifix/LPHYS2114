@@ -1,0 +1,17 @@
+((=- Latex base template (must inherit)
+This template builds upon the abstract template, adding common latex output
+functions. Figures, data_text,
+This template defines defines a default docclass, the inheriting class should
+override this.-=))
+
+((*- extends 'document_contents.tex.j2' -*))
+
+%===============================================================================
+% Abstract overrides
+%===============================================================================
+
+((* block body *))
+ 
+    ((( super() )))
+
+((* endblock body *))

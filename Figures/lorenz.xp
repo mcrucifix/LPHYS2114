@@ -1,0 +1,75 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+// ODE parameters
+const double A1(10);
+const double A2(28);
+const double A3(2.6666);
+
+// parameter box
+const double MAX(30);
+
+// bounding box (set in screens)
+const double XMAX(50);
+
+// flow time
+const double TMAX(4000);
+
+P F(double x, double y, double z)
+{
+  return 0.01*P(A1*(y-x), x*(A2-z)-y, x*y-A3*z);
+}
+
+domain R(P(-MAX,-MAX,0), P(MAX,MAX,2*MAX), mesh(6, 6, 6));
+
+void draw_frame()
+{
+  /* dart_field(F, R.resize1(0,MAX), 0.5); */
+
+  arrow(P(0,0,0),P(30,0,0));
+  arrow(P(0,0,0),P(0,30,0));
+  arrow(P(0,0,0),P(0,0,30));
+
+  label(P(30,0,0),P(0,2,0),"$x$",r);
+  label(P(0,30,0),P(0,2,0),"$y$",l);
+  label(P(0,0,30),P(0,2,0),"$z$",r);
+
+
+  plain(Red());
+  ring(P(10,0,0));
+  ode_plot(F, P(10,0,0), 0, TMAX, 4000);
+  
+/*  arrow( flow(F, P(10,0,0), 0, 50,50)
+         flow(F, P(10,0,0), 0, 55,55)); */
+
+  pen(Blue());
+  ring(P(10.5,0,0));
+  // nearby start points, but trajectories not close
+  ode_plot(F, P(10.5,0,0), 0, TMAX, 4000);
+
+}
+
+// initialize the camera
+void init_cam(const P& arg)
+{
+  camera.at(arg);
+  camera.look_at(P(0,0,MAX));
+  camera.range(50);
+}
+
+int main()
+{
+  picture(P(-45,0), P(45,45), "4x2in");
+
+  begin();
+
+  init_cam(P(60, -140, -23));
+  draw_frame();
+
+
+  // page layout
+
+  tikz_format();
+  end();
+}

@@ -1,6 +1,6 @@
 MKD=$(wildcard *.mkd)
 XP=$(wildcard Figures/*.xp)
-IPYNB=$(wildcard Figures/*.ipynb)
+IPYNB=$(wildcard Jupyter/*.ipynb)
 TEX=$(MKD:.mkd=.tex)
 EEPIC=$(XP:.xp=.eepic)
 JUPYTERTEX=$(IPYNB:.ipynb=.tex)

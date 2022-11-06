@@ -124,7 +124,7 @@ This time, $\dot H = \lambda H ((\pd{H}{x})^2 + (\pd{H}{y})^2)$. We have already
 
 We now concentrate on the curves defined by $H=0$, which separate negative (inside) from positive (outside) values. 
 
-- For $\lambda < 0$, we have trajectories reaching asymptotically one of the two homoclinic loops if they start _inside_, and revolve around  (slowly) around the homoclinic loops if they start outside. Homoclinic loops act as attractors. The period of the oscillation will increase to infinity as the trajectory approaches the homoclinic attractor
+- For $\lambda < 0$, we have trajectories reaching asymptotically one of the two homoclinic loops if they start _inside_, and revolve (slowly) around the homoclinic loops if they start outside. Homoclinic loops act as attractors. The period of the oscillation will increase to infinity as the trajectory approaches the homoclinic attractor
 - For $\lambda > 0$, we have trajectories reaching asymptotically one of the two centers if they start _inside_, and diverging if they start outside. Homoclinic loops act as repellers.  
 
 

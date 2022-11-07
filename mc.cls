@@ -45,7 +45,7 @@ overlay={%
 \node at ([shift={(60mm,4mm) }]n2){\parbox{10cm}{\itshape\textbf{\sffamily \mycontent}}}; 
 }}}
 
-\tcbset{theorembox/.style={enhanced,colback=white,colframe=yellow!65!black,
+\tcbset{theorembox/.style={enhanced,colback=white,colframe=orange!65!black,
 enlarge top by=10mm,
 overlay={%
 \path[fill=yellow!65!green,line width=.4mm] (frame.north west)--++(32mm,0)coordinate(n2)--++(0,8mm)--++(-35mm,0) arc (-90:90:-4mm)--cycle;

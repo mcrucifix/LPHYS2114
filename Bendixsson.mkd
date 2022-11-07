@@ -138,7 +138,7 @@ We now consider the Lyapunov function candidate $H(x,y)=\frac{1}{2}(x^2+y^2)$. W
 \dot H = -yF(y)
 \end{displaymath}
 
-Hence, the conditions we have put on $F$ make it clear that $H>0$ near the center and $H<0$ at some point, far away from it. We have a trapping region that does not include any fixed point. It must be an orbit. 
+Hence, the conditions we have put on $F$ make it clear that $H>0$ near the center and $H<0$ at some point, far away from it. We have a trapping region that does not include any fixed point. It must contain an orbit. 
 
 ## Homoclinic orbits in the modified Duffing oscillator
 

@@ -65,7 +65,7 @@ The model we have been starting with is of the form $\ddt x = F (x;\psi)$ with, 
 This is a linear differential equation for $\delta x$ with constant coefficient. That is, near enough to the fixed point, $\delta x$ decays (if  $\lambda < 0$) or grows (if  $\lambda > 0$) exponentially with e-folding time $1/\lambda$. This distinguishes a point that is _locally stable_ from a point that is _locally unstable_. 
 
 \bcd
-Reconsiders the solutions of the bifurcation diagram. Which ones are stable, and which one unstable? What we see appearing are branches of  _stable_ and _unstable_ solutions.
+Reconsider the solutions of the bifurcation diagram. Which ones are stable, and which one unstable? What we see appearing are branches of  _stable_ and _unstable_ solutions.
 \ecd 
 
 

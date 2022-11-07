@@ -126,8 +126,8 @@ The system is equivalently written as $\ddot y + \dot F(y) + y = 0$. Further def
 
 \begin{equation*}
 \begin{split}
-\dot x &= -y
- \dot y &= x - F(y)\\
+\dot x &= -y \\
+ \dot y &= x - F(y)
 \end{split}
 \end{equation*}
 

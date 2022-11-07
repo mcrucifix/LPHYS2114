@@ -75,14 +75,12 @@ Can you see that for linear fields to generate bounded trajectories within $\mat
 As we see now, non-linear dynamics are needed to combine hyperbolic sources with bounded behaviour, which, in the plane, will typically generate attracting orbits. We will review at a later stage the dynamics of attracting orbits, but for the moment we would like to take advantage of what we have learned about hyperbolic sources and sinks in the linear regime. The theory allows us to show that _near_ a hyperbolic fixed point, the non-linear flows behaves _like_ a linear system with the same eigenspectrum. 
 
 To get there, we start with an example that, unusual fact, can be solved analytically. 
-
 \begin{align*}
 \dot x &= x + y^2, \\
 \dot y &= -y. 
 \end{align*}
 
 The fixed point is $(x_0,y_0)=(0,0)$. Writing, more generically, the system as:
-
 \begin{align*}
 \dot x &= f(x,y), \\
 \dot y &= g(x,y)
@@ -100,7 +98,7 @@ we find that we can _linearise_ the system as follows (writing $x^\prime = x - x
      g(x_0,y_0) + 
       \left.\pd{g}{x}\right|_{(x_0,y_0)} x^\prime + 
       \left.\pd{g}{y}\right|_{(x_0,y_0)} y^\prime + 
-      N_y(x,y), \\
+      N_y(x,y), 
 \end{align}
 
 where $N_{x,y}$ include all the non-linear terms. The _tangent linear system is_, per definition: 

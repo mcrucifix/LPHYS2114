@@ -60,7 +60,10 @@ void init_cam(const P& arg)
 
 int main()
 {
-  picture(P(-45,0), P(45,45), "4x2in");
+
+  bounding_box(P(-45,0), P(45,45));
+  picture(40,40);
+  unitlength("2pt");
 
   begin();
 

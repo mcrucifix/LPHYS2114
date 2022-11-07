@@ -69,7 +69,7 @@ The subcritical case has all eigenvalues negatives. The trivial fixed point is a
 
 Consider again the trivial solution. We find $\lambda_+$ becomes positive; the fixed point has become a saddle-point, so that in general (except along the stable manifold), trajectories will be _ejected_ out of the fixed point. Where do they go ? 
 
-We also have new solutions at $X_0=Y_0=\pm\sqrt{b(\rho-1)}$, which we expect to behave similarly given the symmetry of the system. With some algebra, it can be shown that they are attracting for $1<\rho<\rho_H = \sigma\frac{\sigma+b+3}{\sigma-b-1}.$. 
+We also have new solutions at $X_0=Y_0=\pm\sqrt{b(\rho-1)}$, which we expect to behave similarly given the symmetry of the system. With some algebra, it can be shown that they are attracting for $1<\rho<\rho_H = \sigma\frac{\sigma+b+3}{\sigma-b-1}$. (cf. Appendix \ref{appendix:maxima})
 
 More precisely, they are sinks for $\rho<\rho_1<\rho_H$, and attracting centers for $\rho_1<=\rho<\rho_H$. In may be shown (specialised work!) that there are unstable periodic orbits for $\rho_1<\rho<\rho_H$. 
 
@@ -80,9 +80,16 @@ define $U=\rho X^2 + \sigma Y^2 + \sigma (Z-2\rho)^2$. Observe that this time de
 \dot U = -2\sigma (\rho X^2 +y^2 + (z-\rho)^2 - b\rho^2).
 \end{displaymath}
 
-In other words $\dot U$ is strictly negative for $\rho X^2 +y^2 + (z-\rho)^2 - b\rho^2 > 0$, that is, any point outside the ellipsoïd defined by $\rho X^2 +y^2 + (z-\rho)^2 = b\rho^2$. Outside that ellipsoïd, any isocontour of $U$ acts as a trapping region. Trajectories will not fly to infinity as time goes by. 
+In other words $\dot U$ is strictly negative for $\rho X^2 +y^2 + (z-\rho)^2 - b\rho^2 > 0$, that is, any point outside the ellipsoid defined by $\rho X^2 +y^2 + (z-\rho)^2 = b\rho^2$. Outside that ellipsoid, any isocontour of $U$ acts as a trapping region. Trajectories will not fly to infinity as time goes by. 
+
 ## The Lorenz attractor 
 
-\input{Figures/lorenz.eepic}
+An animation of the Lorenz attractor with the canonical parameters $\sigma=10$, $\rho=28$, $\beta=8/3$ is available on Moodle. Demonstrating the "strange" character of the geometry was considered as one of the great challenges of the mathematics and was formally achieved by  Tucker 2002 (todo: add reference @tucker2002). However, Lorenz already provided an intuitive approach for showing the chaotic character of his system by constructing a tent map, as shown in Appendix \ref{appendix:tent}. 
 
+The chaotic character may be defined as the sensitive dependence on initial conditions, and expresed by the mean value of the greatest Lyapunov exponent along the trajectory to be positive. The Bennettin (todo: add Benettin 1980 reference) algorithm for the computation of the mean value of the greatest Lyapunov exponent, and its dependency on $\rho$ is provided in Appendix \ref{appendix:lyapunov}. As can be seen, chaos emerges for $\rho > \rho_H$. 
+
+
+<!--The next figure provides a view on the attractor, and shows the sensitive dependence. However, to further develop our intuition about how chaos emerges, we need idealised models, and this will be the object of studying dynamical systems as iterations. -->
+
+<!--\input{Figures/lorenz.eepic}-->
 

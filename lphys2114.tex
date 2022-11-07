@@ -38,101 +38,102 @@
 \newcommand{\pdt}[1]{\pd{#1}{t}}
 \newcommand{\pdtt}[1]{\pd[2]{#1}{t}}
 
+% force new section no new page
+\newcommand{\sectionbreak}{\clearpage\stepcounter{secshift}}
 
 % to be replaced by official UCL colours
-\definecolor{mybluei}{RGB}{0,33,78}
-\definecolor{myblueii}{RGB}{93,179,230}
-\definecolor{myblueiii}{RGB}{156,183,212}
 
 \usepackage[calcwidth]{titlesec}
 
+
 \newcounter{secshift}
-\def\modulo#1#2{\tmpcnta=#1
-        \divide\tmpcnta by #2
-        \multiply\tmpcnta by #2
-        \multiply\tmpcnta by -1
-        \advance\tmpcnta by #1\relax
-        \the\tmpcnta}
 
-\titleformat{\section}
-{\newpage\stepcounter{secshift}
-\ifx\secshift>4\setcounter{secshift}{0}\fi \Large\sffamily\bfseries\color{mybluei}}
-    { \hspace{-3em} 
-      \tikz[baseline=(a.base)]{
-     \node[fill=mybluei,anchor=south west, 
-           outer sep=0, draw=none,
-           inner sep=.0mm,text=white,font=\Large,
-           text width=2em, align=center, 
-         minimum height=8.5mm, 
-          ] (a) {\thesection}; 
-       }
-   }{0em}{} %\bigskip}
+ \titleformat{\section}
+  {
+  %\newpage
+  %\ifx\thesecshift=4\setcounter{secshift}{0}\fi
+  %\Large\sffamily\bfseries\color{mybluei}}
+  %\stepcounter{secshift}
+  \Large\sffamily\bfseries}
+      { \hspace{-3em} 
+        \tikz[baseline=(a.base)]{
+       \node[fill=mybluei,anchor=south west, 
+             outer sep=0, draw=none,
+             inner sep=.0mm,text=white,font=\Large,
+             text width=2em, align=center, 
+           minimum height=8.5mm, 
+            ] (a) {\thesection}; 
+         }
+       }{0em}{}
+
+ 
+
+      % for some reason the color title causes an color stock error
+
+ \titleformat{\subsection}
+     %{\Large\sffamily\bfseries\color{myblueii}}
+     {\Large\sffamily\bfseries}
+     { \hspace{-2.5em} 
+       \tikz[baseline=(a.base)]{
+      \node[fill=myblueii,anchor=south west, 
+            outer sep=0, draw=none,
+            inner sep=.0mm,text=white,font=\Large,
+            text width=1.5em, align=center, 
+          minimum height=8.5mm, 
+           ] (a) {\thesubsection}; 
+        }
+    }{0em}{} %\bigskip}
+ 
 
 
-\titleformat{\subsection}
-    {\Large\sffamily\bfseries\color{myblueii}}
-    { \hspace{-2.5em} 
-      \tikz[baseline=(a.base)]{
-     \node[fill=myblueii,anchor=south west, 
-           outer sep=0, draw=none,
-           inner sep=.0mm,text=white,font=\Large,
-           text width=1.5em, align=center, 
-         minimum height=8.5mm, 
-          ] (a) {\thesubsection}; 
-       }
-   }{0em}{} %\bigskip}
-
-
+ \titleformat{\subsubsection}
+     %{\Large\sffamily\bfseries\color{myblueiii}}
+     {\Large\sffamily\bfseries}
+     { \hspace{-3.5em} 
+       \tikz[baseline=(a.base)]{
+      \node[fill=myblueiii,anchor=south west, 
+            outer sep=0, draw=none,
+            inner sep=.0mm,text=mybluei,font=\Large,
+            text width=2.5em, align=center, 
+          minimum height=8.5mm, 
+           ] (a) {\thesubsubsection}; 
+        }
+    }{0em}{} %\bigskip}
+ 
+ 
+    \setlength{\headheight}{36pt}
+% 
     \def\subsectiontitle{}
     \renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize#1}{}}
     \renewcommand{\subsectionmark}[1]{\def\subsectiontitle{#1}}
 
-    \pagestyle{fancy}
-    \renewcommand{\headrule}{{\color{myblueii}%
-    \hrule width\headwidth height\headrulewidth depth\headrulewidth}}
-    \fancyhf{} \fancyhead[LE,RO]{
-        \normalsize\colorbox{myblueii}{\color{white}\sffamily\bfseries\strut\quad\thepage\quad}
-        }
-    \fancyfoot[LO]{\textcolor{mybluei} \rightmark%
-    \begin{tikzpicture}[overlay,remember picture]
-      \node[fill=mybluei,inner sep=0pt,rectangle,text width=1.5cm,
-        text height=1.5cm,align=center,anchor=north east]
-        at ($ (current page.north east) + (-0cm,-1*\modulo{\thesecshift}{3} cm) $)
-      {\rotatebox{90}{\parbox{1.5cm}{%
-       \centering\textcolor{white}{\sffamily\thesubsection}}}};
-      \end{tikzpicture}}
-    \fancyfoot[RE]{%
-      \begin{tikzpicture}[overlay,remember picture]
-      \node[fill=mybluei,inner sep=0pt,rectangle,text width=1.5cm,
-        text height=1.5cm,align=center,anchor=north west]
-      at ($ (current page.north west) + (-0cm,-1*\thesecshift cm) $)
-      {\rotatebox{90}{\parbox{1.5cm}{%
-        \centering\textcolor{white}{\sffamily\thesection}}}};
-      \end{tikzpicture}}
-    \fancyfoot[CE, CO, LE, LO]{}
-
-
-%     \newcommand\SectionFont{\usefont{T1}{qhv}{b}{n}\selectfont}
-%     \titleformat{\section}
-%       {\normalfont\SectionFont\color{myblueii}}
-%       {\tikz[baseline=(a.base), overlay]{
-%             \node[fill=mybluei, anchor=south west, outer sep=0, draw=none, inner sep=.5mm,
-%                 text=white,font=\Large, text width=1.5cm, align=center, minimum height=8.5mm,
-%                 label={[text=myblueii]right:#1}
-%             ] (a) {\thesection};
-%         \foreach \x in {.25,.5,.75}{%
-%         \draw[mybluei, ultra thick] (a) ($(a.south west)!\x!(a.north west)$) --++ (-4,0);
-%         }
-%         \draw[myblueii, ultra thick] ($(a.south east)!.25!(a.north east)$) --++ (\textwidth-1.6cm,0);
-%         }
-%       }
-%       {1em}
-%       {}
-
-
-% \titleformat{\subsection} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesubsection.}}{0em}{} 
-
-\titleformat{\subsubsection} {\normalfont\sffamily}{\hspace{-2em}\makebox[2em]{\thesubsubsection.}}{0em}{} 
+     \pagestyle{fancy}
+     \renewcommand{\headrule}{{\color{myblueii}%
+     \hrule width\headwidth height\headrulewidth depth\headrulewidth}}
+     \fancyhf{} 
+     \fancyhead[LE,RO]{
+         %\normalsize
+         \colorbox{myblueii}
+        {\color{white}\sffamily\bfseries\strut\quad\thepage\quad}%
+ }
+     \fancyfoot[LO]{%
+     \begin{tikzpicture}[overlay,remember picture]
+       \node[fill=mybluei,inner sep=0pt,rectangle,text width=1.5cm,
+         text height=1.5cm,align=center,anchor=north east]
+         at ($ (current page.north east) + (-0cm,-1*\thesecshift cm) $)
+       {\rotatebox{90}{\parbox{1.5cm}{%
+        \centering\textcolor{white}{\sffamily\thesubsection}}}};
+       \end{tikzpicture}}
+     \fancyfoot[RE]{%
+       \begin{tikzpicture}[overlay,remember picture]
+       \node[fill=mybluei,inner sep=0pt,rectangle,text width=1.5cm,
+         text height=1.5cm,align=center,anchor=north west]
+       at ($ (current page.north west) + (-0cm,-1*\thesecshift cm) $)
+       {\rotatebox{90}{\parbox{1.5cm}{%
+         \centering\textcolor{white}{\sffamily\thesection}}}};
+       \end{tikzpicture}}
+ 
+ 
 
 \usepackage{silence}
 \WarningFilter{hyperref}{removing}
@@ -502,6 +503,7 @@
 \appendix
 
 \section{Appendix: Analysis of the Lorenz 1963 model with Maxima}
+\label{appendix:maxima}
 \small
 
 \subimport{Jupyter/}{lorenz.tex}
@@ -509,10 +511,13 @@
 \section{Appendix: Analogy of the tent map in the Lorenz - Saltzman model}
 
 \subimport{Jupyter/}{Lorenz_tent.tex}
+\label{appendix:tent}
+\small
 
 \section{Appendix: Numerical computation of the largest Lyapunov exponent in the Lorenz-Saltzmant model}
 
 \subimport{Jupyter/}{Lorenz_Lyapunov.tex}
+\label{appendix:lyapunov}
 
 
 \end{document}

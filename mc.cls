@@ -17,12 +17,20 @@
 \RequirePackage{calc}
 \RequirePackage{ifthen}
 
+
+\definecolor{mybluei}{RGB}{0,33,78}
+\definecolor{myblueii}{RGB}{93,179,230}
+\definecolor{myblueiii}{RGB}{156,183,212}
+
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
  
 \DeclareOption{handout}{
 \geometry{paper=a5paper,landscape}
 \AtBeginDocument{\raggedright}
 }
+
+
+\renewcommand\labelitemi{$\triangleright$}
 
 
 \tcbset{discussionbox/.style={enhanced,colback=white,colframe=green!65!black,
@@ -124,15 +132,15 @@ overlay={%
 \newcounter{dfcounter}
 \newcounter{tcounter}
 \newenvironment{cdiscussion}
-{\begin{tcolorbox}[discussionbox,step=dcounter,label=one]}
+{\begin{tcolorbox}[discussionbox,step=dcounter]}
 {\end{tcolorbox}}
 
 \newenvironment{definition}[1]
-{\newcommand{\mycontent}{#1}\begin{tcolorbox}[definitionbox,step=dfcounter,label=one]}
+{\newcommand{\mycontent}{#1}\begin{tcolorbox}[definitionbox,step=dfcounter]}
 {\end{tcolorbox}}
 
  \newenvironment{theorem}[1]
-{\newcommand{\mycontent}{#1}\begin{tcolorbox}[theorembox,step=tcounter,label=one]}
+{\newcommand{\mycontent}{#1}\begin{tcolorbox}[theorembox,step=tcounter]}
 {\end{tcolorbox}}
 
 

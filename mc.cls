@@ -6,6 +6,8 @@
 \RequirePackage{xcolor}
 \RequirePackage{geometry}
 \RequirePackage{amsmath}
+\RequirePackage[breakable,skins,listings]{tcolorbox}
+\tcbuselibrary{skins}
 \usepackage{mathtools}
 \usepackage{bm}
 \usepackage{hyperref}
@@ -21,6 +23,42 @@
 \geometry{paper=a5paper,landscape}
 \AtBeginDocument{\raggedright}
 }
+
+
+\tcbset{discussionbox/.style={enhanced,colback=white,colframe=green!65!black,
+enlarge top by=10mm,
+overlay={%
+\path[fill=blue!65,line width=.4mm] (frame.north west)--++(67mm,0)coordinate(n2)--++(0,8mm)--++(-70mm,0) arc (-90:90:-4mm)--cycle;
+\node at ([shift={(30mm,4mm)}]frame.north west){\color{white}{\textbf{\sffamily CLASS ROOM DISCUSSION}}};
+\path[fill=green!65!blue] ([xshift=.4mm]n2)--++(0,8mm)--++(7mm,0)--++(0,-8mm)--cycle;
+\node at ([shift={(4mm,4mm)}]n2){\color{white}{\textbf{\sffamily \thedcounter}}};
+\node at ([shift={(18mm,4mm)}]n2){\itshape\textbf{\sffamily }};
+}}}
+
+\tcbset{definitionbox/.style={enhanced,colback=white,colframe=red!65!black,
+enlarge top by=10mm,
+overlay={%
+\path[fill=red!65,line width=.4mm] (frame.north west)--++(32mm,0)coordinate(n2)--++(0,8mm)--++(-35mm,0) arc (-90:90:-4mm)--cycle;
+\node at ([shift={(12mm,4mm)}]frame.north west){\color{white}{\textbf{\sffamily DEFINITION}}};
+\path[fill=orange!65!blue] ([xshift=.4mm]n2)--++(0,8mm)--++(7mm,0)--++(0,-8mm)--cycle;
+\node at ([shift={(4mm,4mm)}]n2){\color{white}{\textbf{\sffamily \thedfcounter}}};
+\node at ([shift={(60mm,4mm) }]n2){\parbox{10cm}{\itshape\textbf{\sffamily \mycontent}}}; 
+}}}
+
+\tcbset{theorembox/.style={enhanced,colback=white,colframe=yellow!65!black,
+enlarge top by=10mm,
+overlay={%
+\path[fill=yellow!65!green,line width=.4mm] (frame.north west)--++(32mm,0)coordinate(n2)--++(0,8mm)--++(-35mm,0) arc (-90:90:-4mm)--cycle;
+\node at ([shift={(12mm,4mm)}]frame.north west){\color{black}{\textbf{\sffamily THEOREM}}};
+\path[fill=orange!65!black] ([xshift=.4mm]n2)--++(0,8mm)--++(7mm,0)--++(0,-8mm)--cycle;
+\node at ([shift={(4mm,4mm)}]n2){\color{white}{\textbf{\sffamily \thetcounter}}};
+\node at ([shift={(60mm,4mm) }]n2){\parbox{10cm}{\itshape\textbf{\sffamily \mycontent}}};
+}}}
+
+
+
+
+
 
 \ProcessOptions\relax
 \newlength\bl
@@ -81,23 +119,23 @@
 }
 
 
+
+\newcounter{dcounter}
+\newcounter{dfcounter}
+\newcounter{tcounter}
 \newenvironment{cdiscussion}
-{\begin{parbox}{\textwidth}\medskip \hrule \fill 4pt 
-\textbf{Class room discussion:}
- }{\medskip \hrule \fill 4pt\end{parbox}}
- 
+{\begin{tcolorbox}[discussionbox,step=dcounter,label=one]}
+{\end{tcolorbox}}
 
 \newenvironment{definition}[1]
-{
-\medskip \hrule \fill 4pt 
- \smallskip\par\textbf{Definition (#1)\ }
- }{\medskip \medskip \hrule \fill 4pt}
- 
-\newenvironment{theorem}[1]
-{\medskip \hrule \fill 4pt 
-\smallskip\par\textbf{Theorem (#1)\ }
- }{\medskip \medskip \hrule \fill 4pt}
- 
+{\newcommand{\mycontent}{#1}\begin{tcolorbox}[definitionbox,step=dfcounter,label=one]}
+{\end{tcolorbox}}
+
+ \newenvironment{theorem}[1]
+{\newcommand{\mycontent}{#1}\begin{tcolorbox}[theorembox,step=tcounter,label=one]}
+{\end{tcolorbox}}
+
+
 
 \newcommand{\ddt}[1]{\od{#1}{t}}
 

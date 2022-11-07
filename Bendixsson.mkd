@@ -108,6 +108,38 @@ In other words,
 
 Can you see that we have defined a trapping region without any fixed point? 
 
+## Periodic orbits in the Liénard systems
+
+Liénard systems are named according to Anne-Marie Liénard, 1869--1958, and can be seen as a generalisation of the Van der pol oscillator: 
+
+\begin{displaymath}
+\ddot y + f(y) \dot y + y = 0,
+\end{displaymath}
+
+which appears as a harmonic oscillator under a friction $f(y)\dot y$. We further assume that $f(y)=F^\prime(y)$ with $F^\prime(0)=0$.
+
+- $F(-y)=-F(y)$, equivalent to $f(-y)=f(y)$
+- $\lim_{y\rightarrow \infty} F(y)=\infty$, and $\exists \beta : F(y)$ is strictly growing for $y>\beta$;
+- $\exists \beta : F(\alpha) < 0$  for $0<y<\alpha$
+
+The system is equivalently written as $\ddot y + \dot F(y) + y = 0$. Further defining $x\eqdef \dot y + F(y)$, we find the first-order system:
+
+\begin{equation*}
+\begin{split}
+\dot x &= -y
+ \dot y &= x - F(y)\\
+\end{split}
+\end{equation*}
+
+so that we recover the Van der pol system for $F(y)=y^3/3 - y$ (compared to the definition we have given in section \ref{lab:periodic} the sign of $x$ is inverted). 
+We now consider the Lyapunov function candidate $H(x,y)=\frac{1}{2}(x^2+y^2)$. We find that
+
+\begin{displaymath}
+\dot H = -yF(y)
+\end{displaymath}
+
+Hence, the conditions we have put on $F$ make it clear that $H>0$ near the center and $H<0$ at some point, far away from it. We have a trapping region that does not include any fixed point. It must be an orbit. 
+
 ## Homoclinic orbits in the modified Duffing oscillator
 
 We now consider the (somewhat artificial) system: 

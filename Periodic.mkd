@@ -1,4 +1,4 @@
-## The van der Pol oscillator
+## The van der Pol oscillator \label{lab:periodic}
 
 Consider the following dynamical system.
 

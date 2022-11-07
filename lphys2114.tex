@@ -47,6 +47,12 @@
 \usepackage[calcwidth]{titlesec}
 
 \newcounter{secshift}
+\def\modulo#1#2{\tmpcnta=#1
+        \divide\tmpcnta by #2
+        \multiply\tmpcnta by #2
+        \multiply\tmpcnta by -1
+        \advance\tmpcnta by #1\relax
+        \the\tmpcnta}
 
 \titleformat{\section}
 {\newpage\stepcounter{secshift}
@@ -91,7 +97,7 @@
     \begin{tikzpicture}[overlay,remember picture]
       \node[fill=mybluei,inner sep=0pt,rectangle,text width=1.5cm,
         text height=1.5cm,align=center,anchor=north east]
-      at ($ (current page.north east) + (-0cm,-1*\thesecshift cm) $)
+        at ($ (current page.north east) + (-0cm,-1*\modulo{\thesecshift}{3} cm) $)
       {\rotatebox{90}{\parbox{1.5cm}{%
        \centering\textcolor{white}{\sffamily\thesubsection}}}};
       \end{tikzpicture}}

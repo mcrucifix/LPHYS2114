@@ -96,7 +96,7 @@ In other words, and to make it short, when you are on the attractor, you will vi
 Another approach is to require the attracting set to be _minimal_, i.e., it does not include any subset that is also an attracting set: 
 
 \bd{Attractor (alt.)}
-An attractor is minimal attracting set. 
+An attractor is a  minimal attracting set. 
 \ed
 
 In the abover example, both will generate the same result: we have two attractors, one on $(1,0)$, and one on $(-1,0)$. There is yet another approach, as we now see. 
@@ -105,7 +105,7 @@ In the abover example, both will generate the same result: we have two attractor
 
 The notion of attractor is very much linked to the notion of limit set, which considers the asymptotic behaviour of _individual_ orbits. 
 
-\bd{$\omega$ limit points of a trajectory}: A point $x_0$ in the domain of dynamical system is called an $\omega$ _limit point_ of $x$ if there exists a sequence $\{t_i\}$, $t_i\rightarrow\infty$, such that $\phi^{t_i}(x) \rightarrow x_0$.
+\bd{$\omega$ limit points of a trajectory}A point $x_0$ in the domain of dynamical system is called an $\omega$ _limit point_ of $x$ if there exists a sequence $\{t_i\}$, $t_i\rightarrow\infty$, such that $\phi^{t_i}(x) \rightarrow x_0$.
 \ed
 
 In other words, there is a sequence of times, towards infinity, that brings asymptotically the state towards this limit point. If we reverse the direction, and flow backwards, then $x_0$ is called an $\alpha$ limit point. We see the idea: a trajectory could flow asymptotically from the $\alpha$ (time $-\infty$) to the $\omega$ (time $+\infty$). 

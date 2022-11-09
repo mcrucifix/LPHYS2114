@@ -174,7 +174,7 @@ Exploiting differential form $\eqref{eq:form2}$ makes it clear that that integra
 
 In summary, $\Delta H(x_0)$ is positive for $x_0 < a$. It decreases monotonously towards minus infinity as $x_0$ increases. Thus, it _must_ pass through one, single root. This is that root that _defines_ the (unique) circular orbit. Call this critical point $x_0=a_0$. 
 
-Remember that the path we have constructed in the positive $y-$axis domain  can be mirrored in the negative domain. For that reason, we can define an ejecting region for $x_0 < a_0 $ and a trapping region  $x_0 > a_0$ as shown on the graph below. 
+Remember that the path we have constructed in the positive $y-$axis domain  can be mirrored in the negative domain. For that reason, we can define an ejecting region for $x_0 < a_0$ and a trapping region  $x_0 > a_0$ as shown on the graph below. 
 We have demonstrated that the  Liénard system admits one single attractor that is a closed orbit. 
 
 

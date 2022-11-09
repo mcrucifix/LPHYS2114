@@ -69,7 +69,7 @@ Below is an example of basins of attractions of two sinks. The sinks act as two 
 
 ## The attractor as a topologically intransitive attracting set
 
-Intuitively, the attracting is related to the asymptotic destination of orbits starting within its basin of attraction. But perversely, it does not quite work. 
+Intuitively, the attracting set is related to the asymptotic destination of orbits starting within its basin of attraction. But perversely, it does not quite work. 
 
 Consider the following system: 
 

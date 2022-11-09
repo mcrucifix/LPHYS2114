@@ -1,0 +1,32 @@
+## Definitions and examples
+
+Define orbit, positive orbit 
+
+attractor etc. 
+
+## The Logistic map
+
+### Motivation and definition
+
+### Orbit diagram
+
+## The Hénon map
+
+define the Hénon map, give reference and orign. Explain also the julia package
+
+\subimport{Jupyter/}{Henon.tex}
+
+
+## Iterations from continuous dynamical systems
+
+### Numerical resolution
+
+### The Lorenz model
+
+### Poincaré sections
+
+### Stroboscopic maps
+
+- useful to study synchronisation
+
+

@@ -157,7 +157,8 @@ In our notation we have been a little ambiguous about the domain of $\phi$, some
 
 $$\phi^{\tau_1+\tau_2}(U) = \phi^{\tau_2} \circ \phi^{\tau_1} (U).$$ Again, this flow function is invertible.
 
-\includegraphics[page=5, angle=90, scale=0.7]{lphys2114-figures}
+<!--\includegraphics[page=5, angle=90, scale=0.7]{lphys2114-figures}-->
+\input{Figures/flow.tikz}
 
 So the flow function provides an intuitive impression that is reminiscent of a fluid flow. It may be converging; diverging but streamlines never cross each other. At this point, we may already perceive that dynamical systems will fall in different categories. 
 

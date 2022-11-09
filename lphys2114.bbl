@@ -10,10 +10,20 @@ K.~A. Maasch, R.~J. Oglesby, and A.~Fournier.
 \newblock Barry saltzman and the theory of climate.
 \newblock {\em Journal of Climate}, 18(13):2141–2150, 2005.
 
+\bibitem[Per01]{perko01aa}
+L.~Perko.
+\newblock Differential equations and dynamical systems.
+\newblock 2001.
+
 \bibitem[Sal62]{Saltzman62aa}
 B.~Saltzman.
 \newblock Finite amplitude free convection as an initial value problem---i.
 \newblock {\em Journal of the Atmospheric Sciences}, 19(4):329--341, 1962.
+
+\bibitem[Tuc02]{tucker02lorenz}
+W.~Tucker.
+\newblock A rigorous ode solver and smale's 14th problem.
+\newblock {\em Found. Comput. Math.}, 2:53--117, 2002.
 
 \bibitem[Wig03]{Wiggins03aa}
 S.~Wiggins.

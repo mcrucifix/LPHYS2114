@@ -56,35 +56,36 @@ The orbit map of the logistic model is a _fractal_ : it reproduces itself by zoo
 
 The tent map is defined as
 
+\mbox{
+\begin{minipage}[t]{8cm}
 \begin{equation}
 x_{i+1}=
 \begin{cases}
 2 x_{i}\text{ for } x_i < \frac{1}{2}, \\
 1 - 2x_i\text{, otherwise} \\
 \end{cases}
-\end{equation}
-
-\begin{tikzpicture}[scale=5]
-
-\draw[->](0,0) -- (1,0) node [label=right:$x$] {}; 
-\draw[->](0,0) -- (0,1.2) node [label=above:$y$] {}; 
+\end{equation} 
+\end{minipage}}\hfill\mbox{
+\begin{tikzpicture}[scale=4, baseline=(current bounding box.north)]
+\draw[->](0,0) -- (1.2,0) node [label=right:$x_i$] {}; 
+\draw[->](0,0) -- (0,1.0) node [label=above:$x_{i+1}$] {}; 
 
 \draw[-, thick] (0,0) -- (0.5,1) -- (1,0);
-\draw[-, dashed] (0,0) -- (1,1) node [label=right:{$x=y$}] {};
-\end{tikzpicture}
+\draw[-, dashed] (0,0) -- (1,1) node [label=right:{$x_i=x_{i+1}$}] {};
+\end{tikzpicture}}
 
 \bcd
-By reasoning in base 2 (as computers do), one can see that the tent map produces _periodic_ solutions for all rational numbers, and _a periodic_ solutions for all irrational initial conditions. For that reason, computing the tent map with a digital computer gives you almost surely the wrong solution, because $\mathbb{Q}$ is a set of measure zero in $\mathbb{R}$. _Hint_: multiplying by 2 in base 2 is shifting all numbers by one on the right.
+By reasoning in base 2 (as computers do), one can see that the tent map produces _periodic_ solutions for all rational numbers, and _aperiodic_ solutions for all irrational initial conditions. For that reason, computing the tent map with a digital computer gives you almost surely the wrong solution, because $\mathbb{Q}$ is a set of measure zero in $\mathbb{R}$. _Hint_: multiplying by 2 in base 2 is shifting all numbers by one on the right.
 \ecd
 
 
 ### Getting iterations from continuous dynamical systems
 
-It is common to map a continuous dynamical system in an iteration in order to understand its properties, at the cost of some information loss :
+It is common to map a continuous dynamical system on an iteration to understand its properties, at the cost of some information loss:
 
 - _Numerical iteration_ is perhaps the most common case. The _Euler_, _Runge Kutta_ schemes are example of iterations extracted from a continuous dynamical system. 
-- The _Poincaré_ map obtained the cross section of a n-dimensional continuous orbit onto a lower-dimensional section, typically a plane. 
-- The _stroboscopic map_ is obtained as the sample of a continuous orbit at fixed interval. It is particularly usefuf to study synchronisation in forced (thus, non-autonomous) systems. 
+- The _Poincaré_ map is the cross section of a n-dimensional continuous orbit onto a lower-dimensional section, typically a plane. For example, the Poincaré map of a limit cycle is a point; that of a torus: a circle. 
+- The _stroboscopic map_ is obtained as the sample of a continuous orbit at fixed intervals $T$. It is particularly usefuf to study synchronisation in forced  systems with period $T$.  
 - In some cases, authors have been more creative. We have seen how Lorenz interpreted the behaviour Saltzman-Lorenz by plotting successive local maxima in the $z-$coordinate with the tent map. We comen now to another example.
 
 ### The Hénon map

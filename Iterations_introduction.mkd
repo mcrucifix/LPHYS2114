@@ -80,7 +80,7 @@ x_{i+1}=
 \end{tikzpicture}}
 
 \bcd
-By reasoning in base 2 (as computers do), one can see that the tent map produces _periodic_ solutions for all rational numbers, and _aperiodic_ solutions for all irrational initial conditions. For that reason, computing the tent map with a digital computer gives you almost surely the wrong solution, because $\mathbb{Q}$ is a set of measure zero in $\mathbb{R}$. _Hint_: multiplying by 2 in base 2 is shifting all numbers by one on the right.
+By reasoning in base 2 (as computers do), one can see that the tent map produces _periodic_ solutions for all rational numbers, and _aperiodic_ solutions for all irrational initial conditions. For that reason, computing the tent map with a digital computer gives you almost surely the wrong solution, because $\mathbb{Q}$ is a set of measure zero in $\mathbb{R}$. _Hint_: multiplying by 2 in base 2 is equivalent to shifting all digits leftwards. 
 \ecd
 
 

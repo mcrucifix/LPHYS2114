@@ -18,6 +18,8 @@
 \RequirePackage{ifthen}
 
 
+\newcommand\Jupyterimport[1]{{\small\subimport{Jupyter/}{#1.tex}}}
+
 \definecolor{mybluei}{RGB}{0,33,78}
 \definecolor{myblueii}{RGB}{93,179,230}
 \definecolor{myblueiii}{RGB}{156,183,212}

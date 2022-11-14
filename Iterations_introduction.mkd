@@ -1,32 +1,111 @@
 ## Definitions and examples
 
-Define orbit, positive orbit 
+### Positive, negative and full orbit
 
-attractor etc. 
+The _map_ or _discrete dynamical system_ is defined by an iteration. We define $x_i \in \Omega \subseteq \mathbb{R}^n,$ and the iteration $f:\Omega \rightarrow \Omega$ such that:
 
-## The Logistic map
+\begin{displaymath}
+x_{i+1} = f(x_i).
+\end{displaymath}
 
-### Motivation and definition
+Thus, 
 
-### Orbit diagram
+\begin{displaymath}
+x_{i} = \underbrace{f \circ f \circ f \ldots \circ f}_{i\text{ times, noted }f^i} (x_0).
+\end{displaymath}
 
-## The Hénon map
+\def\plus{+}
 
-define the Hénon map, give reference and orign. Explain also the julia package
+\bd{Positive orbit}
+The _positive_ orbit of $x\in\Omega$, noted $\theta^\plus(x)$ is defined by $\theta^\plus(x)=\{f^i(x) | i\geq 0\}$. 
+\ed
 
-\subimport{Jupyter/}{Henon.tex}
-
-
-## Iterations from continuous dynamical systems
-
-### Numerical resolution
-
-### The Lorenz model
-
-### Poincaré sections
-
-### Stroboscopic maps
-
-- useful to study synchronisation
+If $f$ is invertible, then one can go backwards using $f^{-1}$. One can then define the negative orbit and the full orbit:
 
 
+\bd{Negative and full orbit}
+
+- The _negative_ orbit of $x\in\Omega$, noted $\theta^{-}(x)$ is defined by $\theta^\plus(x)=\{f^{-i}(x) | i\geq 0\}$; 
+- The _full orbit of $x\in\Omega$, noted $\theta(x)$ is defined by $\theta^\plus(x)=\{f^{-i}(x) | i\in\mathbb{Z}\}$. 
+
+\ed
+
+### The logistic growth
+
+A simple model for, e.g., demographic growth is defined as $f(x)=r x$. Quite obviously the positive orbits diverge to $+\infty$ for positive $r$ ($\lambda = r$). The idea of _limiting growth_ by a competition or limiting resource argument bringing a demographic limitation is the basis of the _logistic growth_ model:
+\begin{displaymath}
+f(x) = rx (1-\frac{x}{N}), 
+\end{displaymath}
+
+or, rescaling the population mass by $N$, $f(x) = rx (1-x)$. 
+
+This _logistic_ equation can be interpreted as a _discrete_ version of the Verhulst model for population growth, developed under the influence of Adolphe Quetelet (both Belgian Mathematicians). Its behaviour can be surprisingly complex depending on the value of $a$ and we will explore some of it later on. 
+
+The Cobweb construction provides a insightful approach to construct the orbits. It consists in iterating using by reporting the iteration $x_{i+1}$, found on the $y-$axis, to the $x-$axis using the $x_{i}=x_{i+1}$ line. 
+
+
+\Jupyterimport{Logistic_Cobweb} 
+
+We have here an example ($r=3.2$) where the map converges to a limit cycle attractor. For low-enough $r$, the attractor is a fixed point; for high $r$, the solution is a-periodic and chaotic (will still need to define chaos in this case). These behaviours can be visualised with the so-called _orbit diagram_, which may be understood as the equivalent of the bifurcation diagram in the continuous domain. 
+
+\Jupyterimport{Logistic_orbit}
+
+The orbit map of the logistic model is a _fractal_ : it reproduces itself by zooming over it again and again. 
+
+### The tent map
+
+The tent map is defined as
+
+\begin{equation}
+x_{i+1}=
+\begin{cases}
+2 x_{i}\text{ for } x_i < \frac{1}{2}, \\
+1 - 2x_i\text{, otherwise} \\
+\end{cases}
+\end{equation}
+
+\begin{tikzpicture}[scale=5]
+
+\draw[->](0,0) -- (1,0) node [label=right:$x$] {}; 
+\draw[->](0,0) -- (0,1.2) node [label=above:$y$] {}; 
+
+\draw[-, thick] (0,0) -- (0.5,1) -- (1,0);
+\draw[-, dashed] (0,0) -- (1,1) node [label=right:{$x=y$}] {};
+\end{tikzpicture}
+
+\bcd
+By reasoning in base 2 (as computers do), one can see that the tent map produces _periodic_ solutions for all rational numbers, and _a periodic_ solutions for all irrational initial conditions. For that reason, computing the tent map with a digital computer gives you almost surely the wrong solution, because $\mathbb{Q}$ is a set of measure zero in $\mathbb{R}$. _Hint_: multiplying by 2 in base 2 is shifting all numbers by one on the right.
+\ecd
+
+
+### Getting iterations from continuous dynamical systems
+
+It is common to map a continuous dynamical system in an iteration in order to understand its properties, at the cost of some information loss :
+
+- _Numerical iteration_ is perhaps the most common case. The _Euler_, _Runge Kutta_ schemes are example of iterations extracted from a continuous dynamical system. 
+- The _Poincaré_ map obtained the cross section of a n-dimensional continuous orbit onto a lower-dimensional section, typically a plane. 
+- The _stroboscopic map_ is obtained as the sample of a continuous orbit at fixed interval. It is particularly usefuf to study synchronisation in forced (thus, non-autonomous) systems. 
+- In some cases, authors have been more creative. We have seen how Lorenz interpreted the behaviour Saltzman-Lorenz by plotting successive local maxima in the $z-$coordinate with the tent map. We comen now to another example.
+
+### The Hénon map
+
+The Hénon map (Michel Hénon, Communications in Mathematical Physics, 1976) was introduced as a minimalist dynamical system presenting a strange attractor, reminiscent of a cross section of the Lorenz system. 
+
+\begin{equation}
+\begin{split}
+x_{i+1} &= 1 - a x_i^2 + y_i,  \\
+y_{i+1} &= b x_i.
+\end{split}
+\end{equation}
+
+\Jupyterimport{Henon}
+
+The _strange_ character of the attractor is related to the fact the way the number of pixels you need to cover it scales with the dimensions of the pixels. 
+
+For a example, for a line segment, the number of pixels growth linearly the inverse of the size of the pixels. The dimension is 1. 
+
+For a square or a rectangle, the nuber of pixels needed growth with the _square_ of the inverse of the size of the pixels. Dimension is 2. 
+
+The _Hausdorff_ dimension quantifies this scale relationship. 
+
+In the Hénon attractor, this number is about 1.261. This is _strange_ in that sense. 

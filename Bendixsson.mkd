@@ -144,7 +144,7 @@ Finding a _trapping region_ is a much more difficult exercise. The demonstration
 
 [^1]: Note that compared to @perko01aa, $x$ and $y$ are switched. 
 
-First, observe that the differential for $H$ can be writtent in different equivalent forms:
+First, observe that the differential for $H$ can be written in different equivalent forms:
 
 \begin{subequations}
 \begin{align}

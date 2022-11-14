@@ -19,7 +19,7 @@ In the limit of small $\varepsilon$ the left-hand-side term vanishes, so that, t
 
 Hence, to get a first grasp on this system, we may consider that $x$ varies slowly, and $y$ equilibrates with respect to a slowly varying $x$, which effectively behaves as a parameter. We then recognise a first-order differential equation with, as we will show, two fold bifurcations with respect to $x$. 
 \
-Indeed, the equation $y - y^3/3 - x = 0$ has three roots for $-1 \leq x \leq 1$, and only one out of this interval. Within the three-root regimes, the center root corresponds to an unstable equilibrium and the upper and lower branches correspond to sinks of this fast system. Again, view $x$ as a parameter, and one will find two fold bifurcations for $x=\pm 1$. 
+Indeed, the equation $y - y^3/3 - x = 0$ has three roots for $-1 \leq x \leq 1$, and only one out of this interval. Within the three-root regimes, the middle root corresponds to an unstable equilibrium and the upper and lower branches correspond to sinks of this fast system. Again, view $x$ as a parameter, and one will find two fold bifurcations for $x=\pm 1$. 
 
 Suppose that $x=0$ and that the system is on the upper branch. The slow variable $y$ is positive, and because of the first equation of the full system ($\dot x = y$), $x$ must increase slowly. The fast variable $y$ keep tracking the upper branch, until it reaches the fold bifurcation. At this point $y$ runs away (it has lost its equilibrium), until it falls on the lower branch. Then $y<0$, and $x$ reverses direction. The fast variable $y$ tracks the lower branch, until, again, it finds a fold bifurcation. 
 We have just found an example of attractor that is a limit cycle, characteristic of a slow-fast _relaxation_ oscillator. 

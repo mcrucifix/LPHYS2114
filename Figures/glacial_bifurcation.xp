@@ -1,0 +1,70 @@
+
+#include "epix.h"
+#include "stdio.h"
+
+#define alpha   10.00
+
+using namespace ePiX;
+
+
+// nullcline
+double b1 (double S) { return(2*(1+sqrt(1-S))); }
+double b2 (double S) { return(2*(1-sqrt(1-S))); }
+double b3 (double S) { return(0); }
+
+
+
+int main() {
+
+  bounding_box(P(-0.2,-0.5), P(1.5,5.0));
+  picture(12,12);
+  unitlength("30pt");
+
+  begin();
+
+  arrow(P(0.0,0.0), P(1.2,0));
+  arrow(P(0,-0.5), P(0,4.5));
+ 
+  label(P(-0.0,4.5), P(-10,0), "$x_f$",tl);
+  label(P(1.2,0), P(10,0), "$S$",br);
+ 
+  for (int j=1; j<4; j++){
+    line(P(-0.01,double(j)), P(+0.01,double(j))); }
+
+  line(P(1,0), P(1,-0.2)); 
+  label(P(1,-0.2), P(0,-10),"$1$",b);
+
+  
+  bbold();
+  solid();
+  plot(b1,-0.3,0.8,10);
+  plot(b1,0.8,1.0,30);
+  dashed();
+  plot(b2,0,1,50);
+  solid();
+  plot(b3,0,1.2,2);
+
+  label(P(0.7, b1(0.7)), P(12,0),"$x_f = 2(1+\\sqrt{1-S})$",r);
+  label(P(0.7, b2(0.7)), P(12,1),"$x_f = 2(1-\\sqrt{1-S})$",r);
+  label(P(0.7, b3(0.7)), P(10,20),"$x_f = 0$",r);
+
+
+  line (P(0.7, b1(0.7)+0.2), P(0.7,0)); 
+  arrow(P(0.7, b1(0.7)+0.5), P(0.7, b1(0.7)+0.1)) ;
+  double ycoord;
+  for (int j=1; j<4; j++){
+    ycoord=b2(0.7)+double(j)/4.*(b1(0.7)-b2(0.7));
+    arrow(P(0.7, ycoord-0.1), P(0.7, ycoord)) ;}
+
+  for (int j=1; j<3; j++){
+    ycoord=b3(0.7)+double(j)/3.*(b2(0.7)-b3(0.7));
+    arrow(P(0.7, ycoord+0.1), P(0.7, ycoord)) ;}
+ 
+  font_size("Large");
+  label (P(0.7, b1(0.7)), P(0,0), "$\\CIRCLE$", c);
+  label (P(0.7, b2(0.7)), P(0,0), "$\\Circle$", c);
+  label (P(0.7, b3(0.7)), P(0,0), "$\\CIRCLE$", c);
+
+  tikz_format();
+  end();
+}

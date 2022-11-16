@@ -69,7 +69,9 @@ Reconsider the solutions of the bifurcation diagram. Which ones are stable, and 
 \ecd 
 
 
-\includegraphics[page=3, angle=90, scale=0.7]{lphys2114-figures}
+\input{Figures/glacial_bifurcation.eepic}
+
+<!--\includegraphics[page=3, angle=90, scale=0.7]{lphys2114-figures}-->
 
 Hence, even though we have avoided to resolve the ordinary differential equation (we avoided to solve the initial value problem), but provided that we have identified all fixed points, and characterised their local stability,  we have gained a good qualitative picture of the system's behavior. For any value of $S$, we can picture the _flow_ associated with the dynamical system, that is, for any point $x$ of the domain $\Omega$, we know the direction taken by $x$ as time progresses. 
 

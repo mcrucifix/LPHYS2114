@@ -16,6 +16,10 @@
 \usepackage{spalign}
 \usepackage{natbib}
 \usepackage{etoolbox,fancyhdr}
+\usepackage{makeidx}
+% create a new list incl. counter
+% \newlistof{dfcounter}{Definitions}{List of definitions}
+% \newlistof{tcounter}{Theorems}{List of theorems}
 \bibliographystyle{alpha}
 \setlength\parskip{12pt}
 \def\cross{\times}
@@ -471,6 +475,10 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth}
+\makeindex
+%\usepackage{multicol}
+%\renewcommand\cftdotfill[1]{, }
+%\renewcommand\cftafterloftitle{\twocolumns}
 \begin{document}
 % \raggedright
 \tableofcontents
@@ -503,7 +511,7 @@
 \section{Iterations: definitions and examples}
 \input{Iterations_introduction}
 
-\section{Iterations: stablity}
+\section{1-d iterations}
 \input{Iterations_stability}
 
 
@@ -530,6 +538,10 @@
 
 
 \bibliography{/Users/crucifix/Documents/BibDesk.bib}
+
+%\listofDefinitions
+%\listofTheorems
+%\printindex
 
 \end{document}
 

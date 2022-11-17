@@ -1,4 +1,4 @@
-## Definitions and examples
+## Definition of orbit
 
 ### Positive, negative and full orbit
 
@@ -29,6 +29,10 @@ If $f$ is invertible, then one can go backwards using $f^{-1}$. One can then def
 - The _full_ orbit of $x\in\Omega$, noted $\theta(x)$ is defined by $\theta(x)=\{f^{-i}(x) | i\in\mathbb{Z}\}$. 
 
 \ed
+
+
+
+## Motivating examples
 
 ### The logistic growth
 
@@ -108,10 +112,73 @@ y_{i+1} &= b x_i.
 
 The _strange_ character of the attractor is related to the fact the way the number of pixels you need to cover it scales with the dimensions of the pixels. 
 
-For a example, for a line segment, the number of pixels growth linearly the inverse of the size of the pixels. The dimension is 1. 
+For a example, for a line segment, the number of pixels grows linearly with the inverse of the size of the pixels. The dimension is 1. 
 
-For a square or a rectangle, the nuber of pixels needed growth with the _square_ of the inverse of the size of the pixels. Dimension is 2. 
+For a square or a rectangle, the number of pixels needed grows with the _square_ of the inverse of the size of the pixels. Dimension is 2. 
 
 The _Hausdorff_ dimension quantifies this scale relationship. 
 
 In the Hénon attractor, this number is about 1.261. This is _strange_ in that sense. 
+
+
+## Fixed points and periodic orbits
+
+Similarly to diffeomorphisms, we can define fixed points, periodic orbits, sinks and sources. 
+
+\bd{$k-$periodic points}
+Given the iteration $f$, a point in the domain $\Omega$ is said to be $k-$periodic, or periodic with period $k$, if $f^k(p)=p$, and $f^j(p)\neq p$ for $j=1\ldots k-1$.
+\ed
+
+A fixed point is a 1-periodic point, $f(p)=p$. 
+
+The positive orbit $\theta^\plus$ of a $k-$periodic point is thus an ensemble of $k$ points $\{f(p) \ldots f^k(p)\}$. 
+It happens that the $k-$periodic character of an orbit  develops after a finite number of iterations given an initial condition. This will be the case, for example, for $f(x)=2x \mathop{mod} x$ ($\mathop{mod}$ is the modulus). 
+
+The inital condition $\frac{1}{14}$ ends up in a periodic orbit (show this). 
+
+\bd{Finally periodic points}
+A point $p\in\Omega$ in the domain of the iteration $f$ is said to be _finally_ $k-$periodic if $\exists m\in\mathbb{N}_0$ such that $f^m(p)$ is $k-$periodic. 
+\ed
+
+
+## Fixed points and periodic orbits
+
+Given a metric in domain $\Omega$ (usually $\Omega=\mathbb{R}^n$), we can characterise the stability property of a $k-$periodic orbit.  To proceed by steps, we first consider the case of a fixed point.
+
+\bd{Attractor and repeller of an iteration}
+
+- A fixed point $p$ is locally attracting (it is a _sink_) if $\exists \delta >0$ such that $\forall x \in \Omega$ with $|x-p|<\delta$, $\lim_{i\rightarrow\infty}f^i(x)=p$. 
+
+- A fixed point $p$ is _repelling_ (it is a _source_) if $\exists \delta >0$ such that $\forall x \in \Omega$ with $|x-p|<\delta$ and $x\neq p$,  $\exists i \geq 1$ such that  $|f^i(x)-p|\geq \delta$. 
+
+\ed 
+
+Again, similarly to the _hyperbolic_ character of a fixed point in a diffeomorphism \index{diffeomorphism}:
+
+\bd{Hyperbolic fixed point}
+The fixed point of an iteration is _hyperbolic_ if all eigenvalues of its Jacobian have non-zero eigenvalues
+\ed 
+
+We anticipate a similar connection between eigenvalues of the Jacobian and the locally attracting - repelling properties of the fixed point, but we leave the demonstration for the next section. 
+
+We just proceed a bit more with our enthusiasm for definitions to define the stability of a periodic orbit:
+
+\bd{Stability of periodic orbits}
+For $k\geq1$ and $p$ a point of the $k-$periodic orbit of $f$, the latter is said to be 
+- attracting if $p$ is a sink of $f^k$, and
+- repelling if $p$ is a source of $f^k$. 
+\ed
+
+Similarly, we will characterise the hyperbolic character of $p$ by considering the $f^k$ iteration. 
+
+Finally, we consider the _basin_ of attraction of a fixed point or a $k-$periodic fixed point:
+
+\bd{Basin of attraction}
+For an iteration $f$ on $\Omega$, given a $k-$periodic fixed point, locally attracting (a sink), the basin of attraction is the set of all points $x$ such that
+\begin{displaymath}
+\lim_{i\rightarrow\infty} |f^i(x)-f^i(p)|=0.
+\end{displaymath}
+The basin of attraction of the _positive orbit_ $\theta^\plus(p)$ is the union of the basins of attractions of all points of the positive orbit, thus the $f^j(p)$, $j=1\ldots k$. 
+\ed
+
+

@@ -6,6 +6,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{geometry}
 \RequirePackage{amsmath}
+\RequirePackage[titles]{tocloft}
 \RequirePackage[breakable,skins,listings]{tcolorbox}
 \tcbuselibrary{skins}
 \usepackage{mathtools}
@@ -131,20 +132,27 @@ overlay={%
 
 
 \newcounter{dcounter}
-\newcounter{dfcounter}
-\newcounter{tcounter}
+%\newcounter{dfcounter}
+%\newcounter{tcounter}
+\newlistof{dfcounter}{Definitions}{List of definitions}
+\newlistof{tcounter}{Theorems}{List of theorems}
+\AtEndDocument{
+\listofdfcounter
+\listoftcounter
+}
 \newenvironment{cdiscussion}
 {\begin{tcolorbox}[discussionbox,step=dcounter]}
 {\end{tcolorbox}}
 
 \newenvironment{definition}[1]
-{\newcommand{\mycontent}{#1}\begin{tcolorbox}[definitionbox,step=dfcounter]}
+{\newcommand{\mycontent}{#1}\begin{tcolorbox}[definitionbox,step=dfcounter]%
+\addcontentsline{Definitions}{dfcounter}{\thedfcounter:\quad#1}}% add item to list
 {\end{tcolorbox}}
 
  \newenvironment{theorem}[1]
-{\newcommand{\mycontent}{#1}\begin{tcolorbox}[theorembox,step=tcounter]}
+{\newcommand{\mycontent}{#1}\begin{tcolorbox}[theorembox,step=tcounter]%
+\addcontentsline{Theorems}{tcounter}{\thetcounter:\quad#1}}% add item to list
 {\end{tcolorbox}}
-
 
 
 \newcommand{\ddt}[1]{\od{#1}{t}}

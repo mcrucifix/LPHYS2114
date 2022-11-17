@@ -1,0 +1,12 @@
+## Stability
+
+\noindent
+\mbox{\input{Figures/cobweb.eepic}}
+\mbox{\input{Figures/cobweb_2.eepic}} \\
+\mbox{\input{Figures/cobweb_3.eepic}}
+\mbox{\input{Figures/cobweb_4.eepic}}
+
+- hyperstable points
+- theorems
+- fractal character of the logistic map for $a>4$
+- define sensitivity to initial conditions and chaos

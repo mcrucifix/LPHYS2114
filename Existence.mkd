@@ -180,8 +180,8 @@ The figure below represents a _dissipative_ flow that has at least one positive 
 
 \includegraphics[page=6, angle=90, scale=0.7]{lphys2114-figures}
 
-This is the basic explanation to the possibility of sensitive dependence to initial conditions, that is, chaos. 
+This is the basic explanation to the possibility of sensitive dependence to initial conditions, that is one of the cornerstones of chaos. 
 
-One generally distinguishes dissipative chaos (in dissipative flows) from Hamiltonian chaos (in Hamiltonian flows). Poincaré first discovered sensitive dependence to initial conditions in the 3-body problem, which is characterised by a Hamiltonian flow. The meteorologist Edwar Lorenz is famous for having popularised the notion of dissipative chaos.   We will come back to these notions later on. 
+One generally distinguishes dissipative chaos (in dissipative flows) from Hamiltonian chaos (in Hamiltonian flows). Poincaré first discovered sensitive dependence to initial conditions in the 3-body problem, which is characterised by a Hamiltonian flow. The meteorologist Edwar Lorenz is famous for having popularised the notion of dissipative chaos. We will come back to these notions later on. 
 
 

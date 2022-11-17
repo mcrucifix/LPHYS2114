@@ -1,0 +1,11 @@
+#define arrowshift 0.75
+#define xaxislength 1.0
+#define xinit=0.1
+#define firstiter 4
+
+// nullcline
+double f (double x) { return(0.25+0.5*(x) + 1*(x-0.5)*(x-0.5)*(x-0.5)); }
+
+#include "cobweb.cpp"
+
+

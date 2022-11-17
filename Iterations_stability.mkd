@@ -1,7 +1,7 @@
 ## Stability
 
 \noindent
-\mbox{\input{Figures/cobweb.eepic}}
+\mbox{\input{Figures/cobweb_1.eepic}}
 \mbox{\input{Figures/cobweb_2.eepic}} \\
 \mbox{\input{Figures/cobweb_3.eepic}}
 \mbox{\input{Figures/cobweb_4.eepic}}

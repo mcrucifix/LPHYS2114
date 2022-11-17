@@ -22,7 +22,7 @@ handouts: lphys2114.tex $(TEX) $(PDF)
 
 .xp.eepic:
 	@echo processing $< to $@
-	cd Figures; epix `basename $<` ; cd ..
+	cd Figures; CPLUS_INCLUDE_PATH=. epix `basename $<` ; cd ..
 
 .ipynb.tex:
 	@echo processing $< to $@

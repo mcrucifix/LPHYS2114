@@ -1,14 +1,11 @@
+/** does not compile stand alone. preprocessing compiler directives included in the .xp files **/
 
 #include "epix.h"
 #include "stdio.h"
 
-#define alpha   10.00
 
 using namespace ePiX;
 
-
-// nullcline
-double f (double x) { return(0.25+0.5*(x) + 1*(x-0.5)*(x-0.5)*(x-0.5)); }
 
 int main() {
 
@@ -18,14 +15,14 @@ int main() {
 
   begin();
 
-  arrow(P(0.0,0.0), P(1.0,0));
+  arrow(P(0.0,0.0), P(xaxislength,0));
   arrow(P(0.0,0.0), P(0.0,1.0));
  
   label(P(0.0,1.0), P(-10,0), "$x_{i+1}$",tl);
-  label(P(1.0,0), P(0,0), "$x_i$",br);
+  label(P(xaxislength,0), P(0,0), "$x_i$",br);
  
 
-  double x=0.1;
+  double x=xinit;
   double x1=x;
   double x12;
 
@@ -36,9 +33,9 @@ int main() {
   sprintf(buffer, "$x_{%i}$", 0);
   label (P(x,0), P(0,-5), buffer, b);
 
-  for (int j=1; j<4; j++){
+  for (int j=1; j<firstiter; j++){
     x1=f(x);
-    x12=x+0.75*(x1-x);
+    x12=x+arrowshift*(x1-x);
     solid();
     arrow(P(x, x), P(x,x12));
     line(P(x, x12), P(x,x1));
@@ -51,7 +48,7 @@ int main() {
     label (P(x,0), P(0,-5), buffer, b);
 }
 
-  for (int j=4; j<8; j++){
+  for (int j=firstiter; j<8; j++){
     x1=f(x);
     x12=x+0.75*(x1-x);
     solid();

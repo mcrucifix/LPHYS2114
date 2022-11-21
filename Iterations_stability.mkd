@@ -1,4 +1,8 @@
-## Stability
+## Stability 
+
+We consider iterations mapping $\mathbb{R}$ on itself, that is: $f:\mathbb{R} \rightarrow \mathbb{R}$. 
+
+The cobweb construction makes it reasonably intuitive that the stability of a fixed point is linked to the first-order derivative of $f$
 
 \noindent
 \mbox{\input{Figures/cobweb_1.eepic}}
@@ -6,7 +10,74 @@
 \mbox{\input{Figures/cobweb_3.eepic}}
 \mbox{\input{Figures/cobweb_4.eepic}}
 
+More specifically, we prove:
+
+\bt{Stability of hyperbolic fixed points}
+Let $p$ a hyperbolic fixed point of $f$.
+
+ - $p$ is a _sink_ if $|f^\prime(p)|<1$, 
+ - $p$ is a _source_ if $|f^\prime(p)|>1$. 
+
+\et
+
+We first proceed by proving that for any $\epsilon>0$, there is $\delta >0$ such that
+
+\begin{displaymath}
+|f^\prime (p)| - \varepsilon < \left| \frac{f(x)-p}{x-p}\right| < |f^\prime (p)| + \epsilon. 
+\end{displaymath}
+
+This relationship emerges from the definition the definition of the derivative, and the definition of the fixed point. Indeed, from:
+
+\begin{displaymath}
+f^\prime (p) = \lim_{x\rightarrow p} \frac{f(x)-f(p)}{x-p} = \lim_{x\rightarrow p} \frac{f(x)-p}{x-p}, 
+\end{displaymath}
+
+we find, by definition of the limit:
+
+\begin{displaymath}
+|x-p|<\delta, x\neq p \rightarrow \left| f^\prime (p) - \frac{f(x)-p}{x-p}\right| < \epsilon. 
+\end{displaymath}
+
+As $|x+y|<|x|+|y|$, we find the sought after relationship. 
+
+Now, we consider separately the attractor and the sink. 
+
+If $|f^\prime (p) |<1$, we can find $\epsilon$ and the corresponding $\delta$ such that $|f^\prime(p)| < 1-\epsilon$ and:
+
+\begin{displaymath}
+|f(x) -  (p)| < (|f^\prime(x)| + \epsilon) |x-p|  < \delta.
+\end{displaymath}
+
+We proceed by successive iterations, i.e., substituting $f(x)$ to $x$ in the above relationship to find:
+
+
+\begin{displaymath}
+|f^n(x) -  (p)| < (|f^\prime(x)| + \varepsilon)^n |x-p|  < \delta, 
+\end{displaymath}
+
+and this $\forall n>0$. We have proved the attractor property. There is a $\delta$ such that $\lim_{n\rightarrow\infty}|f^n(x)-p|=0$. 
+
+Now, we consider the source case, and proceed by contradiction. We now that we can find  $\epsilon >0$ such
+that $(|f^\prime(x)|-\epsilon >1$. There is also a $\delta$ such that, for $|x-p|<\delta$, 
+
+\begin{equation}\label{eq:t12}
+|f(x) -  (p)| > (|f^\prime(x)| + \varepsilon) |x-p|. 
+\end{equation}
+
+If there was one $x\neq p$, such that  $|f^n(x) -  (p)| < \delta  \forall n \geq 1$, we would get, by iteration of \eqref{eq:t12}: 
+
+
+\begin{displaymath}
+|f^n(x) -  (p)| > (|f^\prime(x)| + \varepsilon)^n |x-p|. 
+\end{displaymath}
+
+
+but as $(|f^\prime(x)| + \varepsilon)>1$ I can find a $n$ such that, given $|x-p|$, the right-hand-side as big as I want, which contradicts the hypothesis. \hfill$\square$.
+
+
+
+## Still to add in this section
+
 - hyperstable points
-- theorems
 - fractal character of the logistic map for $a>4$
 - define sensitivity to initial conditions and chaos

@@ -1,6 +1,6 @@
 #define arrowshift 0.75
 #define xaxislength 1.0
-#define xinit=0.1
+#define xinit 0.1
 #define firstiter 4
 
 // nullcline

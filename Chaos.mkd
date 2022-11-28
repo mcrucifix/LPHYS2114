@@ -1,0 +1,91 @@
+## Chaos of the 2 $\mod$ 1 map
+
+We consider an iteration similar to the tent map, but a little bit simpler:
+
+\begin{equation}
+x_{i+1}=
+\begin{cases}
+2 x_{i}\text{ for } 0 \leq x_i < \frac{1}{2}, \\
+2 x_{i} - 1 \text{ for } \frac{1}{2} \leq x_i < 1. \\
+\end{cases}
+\end{equation}
+
+This is also sometimes called the $2 \mod 1$ map (multiply by 2, and take one off if needed). 
+It is neither continuous, nor reversible. We will now formalise some of the arguments that we have already raised in class when discussing in the class when discussing the tent map. Consider the binary[^1] representation of $x=.b_1 b_2 b_3 \ldots$, with $x=\sum \frac{1}{2^i}b_i$. 
+
+[^1] also called: "dyadic"
+
+First, observe that $f(x)=.b_2b_3b_4\ldots$, such that $f^n(x)=x_{n+1}x_{n+2}\ldots$. 
+
+Then, for any $x_0$, and consider $y_0$ such that $|y_0-x_0| = \epsilon$.
+, with $x_0=.b_1b_2\ldots$ and  $x_1=.b_1b_2\ldots$. Then, we generally expect that for $n<-\log_2 \epsilon$, $b_n=c_n$. We can no longer expect this equality to hold after $n=-\log_2 \epsilon$ and the distance $|f^n(x_0)-f^n(x_0)|$ will be of the order of $\frac{1}{2}$. 
+
+As a general rule, there exists a typical distance $d$ (here, 0.5) such that   for any $\epsilon>0$, $x\in\Omega$, I can find $y$ such that $|x-y|<\epsilon$ and $|f^n(x)-f^n(y)|\geq d$ for $n$ _not too big_. This is the basis of the definition of _sensitivity to initial conditions_: 
+
+\bd{Sensitivity to initial conditions (SIC)}
+Let $f:\Omega \rightarrow \Omega$. $f$ has SIC iff  there is $d>0$, $0<C<\infty$ such that $\forall x\in\Omega$ and $\epsilon>0$, there is a $y\in\Omega$ and $0<n<C\ln \epsilon$ with  $|x-y|<\epsilon$ and $|f^n(x)-f^n(y)|\geq d$. 
+\ed
+
+So, our iteration has SIC. 
+
+The interval $[0,1]$ has further properties. All rational numbers in this interval generate finally periodic orbits. Indeed, any rational number comprised in the $[0,1]$ interval can be expressed an $.b_1b_2\ldots$ with the suite $b_n$ finally periodic. Hence, its positive orbit will be finally periodic, too. $\mathbb{Q}$ being dense in $\mathbb{R}$, we find that there is a dense set of points in $[0,1]$ which generate finally periodic orbits. 
+
+
+More surprising perhaps, observe that the set of points with a finite binary representation (i.e., $x=.b_1\ldots b_n$ with $n$ finite) is both _enumerable_ and _dense_. Call this set $E$. 
+
+- Enumerable: one can enumerate these numbers one by one, by growing $n$ and, for fixed $n$, by enumerating them by lexicographic order;
+- Dense: I can find such a number in any finite, closed interval of the domain. 
+
+This, the set of points with finite binary representation can be called $\{f_i, i\in\mathbb{N}\}$. 
+
+Now, construct the number made of concatenating all these numbers in the binary representation (possibly with filling in zeros so that every number appears with any desired floating point accuracy). This one does have an infinity of digits in the binary representation, but its positive orbit passes close to any number in $E$ as close as one wants, and given that $E$ is dense in $\Omega$, we have generated an orbit that passes close to any number in $\Omega$. 
+
+At this point, we have gathered all the ingredients of one-dimensional chaos. 
+
+\bd{Chaos of a 1-D iteration}
+The iteration $f:\Omega\rightarrow\Omega$, $\Omega \in \mathbb{R}$ is chaotic iff:
+
+ 1. it has the SIC property;
+ 2. it has a dense set of periodic orbit;
+ 3. it posses at least one dense orbit in $\Omega$. 
+
+\ed
+
+The definition includes the duality of order (dense set of orbits) and unpredictability (SIC); it also combines metric (SIC) and topological (dense character) properties. 
+
+In fact, it may be demonstrated that (2.) and (3.) imply (1.). 
+
+## Chaos in other dynamical systems
+
+The $(2 \mod 1)$ map is a starting point to demonstrate chaos in other dynamical systems. To this end, one must find an approach to transfer knowledge from this iteration to other ones. We will briefly review here to approaches.
+
+### The itinerary approach
+
+\bd{Itinerary}
+Consider a set of disjoint intervals forming $\Omega$, that is, $\Omega = \bigcup_{i} \Omega_i$ with $\Omega_i \cap \Omega_j = \emptyset$ for $i\neq j$. Consider the suite obtained $x_i$ from the iteration $f$. The _itinerary_ associated with an initial condition $x_0$ is the suite of indices $s_1, s_2 \ldots$ corresponding to the visited subsets, i.e., $x_{s_i} \in \Omega_{s_i}$. 
+\ed
+
+As a general rule, we expect some information loss when we express the original orbit as its itinerary. But there are special cases, and the $(2 \mod 1)$ map associated with the partition $\Omega_1=[0,\frac{1}{2}[$ and $\Omega_2=[\frac{1}{2},1[$ is one such special case. There is a bijection between the ensemble $\Omega$ and the ensemble of itineraries, quite obviously so given the fact that the itinerary maps the binary representation of numbers. 
+
+Now, consider the tent map. We expect that it behaves somehow similarly to the $(2 \mod 1)$ map but we need the right trick to prove it. This is what itineraries are for. In (very) brief: 
+
+ - we can find a mapping between the set of itineraries, and the ensemble $\Omega$. Again, we consider the binary representation of numbers, i.e., for $x\in\Omega$, with its binary representation $.b_1b_2b_3\ldots$, one can show (in very brief) thats its itinerary will be $s_0=b_1$ and $s_n=|b_n - b_{n+1}|$. The demonstration (skipped here) consists in demonstrating that any distinct itinerary generates a specific series of $b_1$, thus a unique number in $\Omega$. In other words, any number in $\Omega$ can be denoted by its equivalent itinerary, which we could note $\sim s_1s_2s_3\ldots$. 
+
+ - We then observe that the action of the iteration $f$ on $\sim s_1s_2\ldots$ is similar to the action of the $(2 \mod 1)$ map on the binary representation $.b_1b_2b_3\ldots$. All the demonstrations made for the $(2 \mod 1)$ map will work here. The two systems behave similarly. 
+
+### The topological equivalence
+
+We have already defined the notion of topological equivalence for continuous dynamical systems. In brief, there is topological equivalence between two dynamical systems if the domain $\Omega$ can be deformed continuously such as to make the two dynamical systems correspond to each other. Specifically, consider two dynamical systems $f$ and $g$, with
+$f:\Omega\rightarrow\Omega$ and
+$g:\Omega^\prime \rightarrow \Omega^\prime$; there is topological equivalence if there is an homeomorphism
+$C:\Omega \rightarrow \Omega^\prime$ if $C\circ f = g \circ C$. The topological equivalence preserves the $k-$periodic character of orbits, the dense character of orbits, and there repelling-attracting properties. Again, the demonstration rests on the notion of itineraries. One can define to _topologically equivalent_ partitions, and given the continuous character of $C$, with such smart partitioning, the dynamical systems $f$ and $g$ iterated from  two equivalent points can be associated with the same itineraries. 
+
+So, a successful approach to demonstrate the chaotic character of orbits in the logistic equation is to find a topological equivalence with the tent map. Rare fact, the topological equivalence can be made explicit. Indeed, the logistic orbit with $r=4$, that is, the iteration $f:4x(1-x)$ is topologically equivalent to the tent map $g$ by the homeomorphism  $C(x)=\frac{1}{2}1-\cos(\pi x)$. Indeed, taking the above notation: 
+
+- $g(C(x)) = 4 \frac{1}{2}(1-\cos(\pi x)) \frac{1}{2}(1+\cos(\pi x)) = \sin^2\pi x$
+- $C(f(x)) = \sin^2\pi x$ (to be verified for the two subcases $x\leq \frac{1}{2}$ and $x>\frac{1}{2}$. 
+
+In other words, given a smart choice of partitions, the tent map and the logistic equation with $r=4$ will generate the same itineraries, and given that the metrics can be adjusted to work in both sets (two points close to each other in $\Omega$ will remain close to each other in $C(\Omega)$, properties such as density and closeness will be preserved. 
+
+
+

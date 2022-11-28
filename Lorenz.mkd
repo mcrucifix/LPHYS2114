@@ -77,10 +77,10 @@ Yet, trajectories are bounded for all $\rho>1$ To show this,
 define $U=\rho X^2 + \sigma Y^2 + \sigma (Z-2\rho)^2$. Observe that this time derivative satisfies: 
 
 \begin{displaymath}
-\dot U = -2\sigma (\rho X^2 +y^2 + (z-\rho)^2 - b\rho^2).
+\dot U = -2\sigma (\rho X^2 +Y^2 + (Z-\rho)^2 - b\rho^2).
 \end{displaymath}
 
-In other words $\dot U$ is strictly negative for $\rho X^2 +y^2 + (z-\rho)^2 - b\rho^2 > 0$, that is, any point outside the ellipsoid defined by $\rho X^2 +y^2 + (z-\rho)^2 = b\rho^2$. Outside that ellipsoid, any isocontour of $U$ acts as a trapping region. Trajectories will not fly to infinity as time goes by. 
+In other words $\dot U$ is strictly negative for $\rho X^2 +Y^2 + (Z-\rho)^2 - b\rho^2 > 0$, that is, any point outside the ellipsoid defined by $\rho X^2 +Y^2 + (Z-\rho)^2 = b\rho^2$. Outside that ellipsoid, any isocontour of $U$ acts as a trapping region. Trajectories will not fly to infinity as time goes by. 
 
 ## The Lorenz attractor 
 

@@ -101,6 +101,7 @@ overlay={%
 %\DeclareMathOperator{\dif}{d}
 \newcommand{\Dif}{\mathop{}\!\mathrm{D}}
 \newcommand{\dif}{\mathop{}\!\mathrm{d}}
+%\newcommand{\mod}{\mathop{}\!\mathrm{mod}}
 
 \newcommand{\od}[3][]{
 \ifthenelse{\equal{#1}{}}{

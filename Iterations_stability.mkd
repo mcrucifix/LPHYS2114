@@ -41,27 +41,33 @@ Now, we consider separately the attractor and the sink.
 
 If $|f^\prime (p) |<1$, we can find $\epsilon$ and the corresponding $\delta$ such that $|f^\prime(p)| < 1-\epsilon$ and:
 
-\begin{displaymath}
+\begin{equation}\label{eq:it1}
 |f(x) -  p| < (|f^\prime(p)| + \epsilon) |x-p|  < \delta.
+\end{equation}
+
+We proceed by successive iterations. Indeed, we now know that the point $f(x)$ is also close to $p$, with a distance less than $\delta$. Hence, the above relationship also applies to this point, i.e., 
+we may substituting $f(x)$ to $x$, to find:
+
+\begin{displaymath}
+|f(f(x)) -  p| < (|f^\prime(p)| + \epsilon) |f(x)-p|  < \delta
 \end{displaymath}
 
-We proceed by successive iterations, i.e., substituting $f(x)$ to $x$ in the above relationship to find:
-
+and then substitute the result of \eqref{eq:it1}. Iteration after iteration we eventually find
 
 \begin{displaymath}
 |f^n(x) -  (p)| < (|f^\prime(x)| + \varepsilon)^n |x-p|  < \delta, 
 \end{displaymath}
 
-and this $\forall n>0$. We have proved the attractor property. There is a $\delta$ such that $\lim_{n\rightarrow\infty}|f^n(x)-p|=0$. 
+and this  $\forall n>0$. This is exactly the attractor property. There is a $\delta$ such that $\lim_{n\rightarrow\infty}|f^n(x)-p|=0$. 
 
-Now, we consider the source case. We now that we can find  $\epsilon >0$ such
+Now, we consider the source case. We know that we can find  $\epsilon >0$ such
 that $|f^\prime(x)|-\epsilon >1$. There is also a $\delta$ such that, for $|x-p|<\delta$, 
 
 \begin{equation}\label{eq:t12}
 |f(x) -  p| > (|f^\prime(p)| + \varepsilon) |x-p|,
 \end{equation}
 
-Byy iteration of \eqref{eq:t12}: 
+By iteration of \eqref{eq:t12}: 
 
 \begin{displaymath}
 |f^n(x) -  (p)| > (|f^\prime(p)| + \varepsilon)^n |x-p|. 
@@ -85,21 +91,43 @@ Hence,
 \xi_{n+1} = f^\prime(p)\xi_n + \frac{1}{2}f^{\prime\prime}(p)\xi_n^2 + \mathcal{O}(x_n^3) 
 \end{displaymath}
 
-From this it is clear around a _hyperbolic_ fixed point, the linearised system evolves, near the fixed point, as an exponential convergence towards the fixed point if $|f^\prime (p)| < 1$, and divergence for $|f^\prime (p)| > 1$. 
+From this it is clear around a _hyperbolic_ fixed point, the linearised system evolves, near the fixed point, as a geometric convergence towards the fixed point if $|f^\prime (p)| < 1$, and geometric for $|f^\prime (p)| > 1$:
 
-If  $|f^\prime (p)| = 0$, the fixed point is non-hyperbolic. The second-order approximation is $$\xi_{n+1}=\frac{1}{2}f^{\prime\prime}(p)\xi_n^2$$.  The convergence or divergence, depending on the sign of the second-order derivative, is superexponential. 
+\begin{displaymath}
+\xi_{n} \sim  f^\prime(p)^n xi_0
+\end{displaymath}
+
+
+A bit abusively, we sometimes speak of exponential divergence or convergence but cleary what we have here is a power law. It dictates the behaviour of the system in a neighbourhood of a non-hyperbolic fixed point as long as $f^\prime(p)$ is non-zero. 
+
+The particular case  $|f^\prime (p)| = 0$ merits some mention. The fixed point is said to be _superstable_. The second-order approximation is $$\xi_{n+1}=\frac{1}{2}f^{\prime\prime}(p)\xi_n^2$$. 
+
+
+The convergence or divergence, depending on the sign of the second-order derivative, is supergeometric:
+
+\begin{displaymath}
+\begin{split}
+\xi_{n} &\simeq \frac{1}{2} f^{\prime\prime}(p) xi_{n-1}^2 \\
+       &\simeq \frac{1}{2}  \frac{1}{2}^2 f^{\prime\prime}(p) f^{\prime\prime}(p)^2  xi_{n-2}^4 \\
+       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{1+2+\ldots+n}   xi_{n-2}^{2n} \\
+       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{\frac{1}{2}(n)(n+1)}   xi_{n-2}^{2n} \\
+\end{split}
+\end{displaymath}
+
 
 \bd{superstable point}
 A point with  $f^{\prime}(p)=0$s is said to be superstable. 
 \ed
 
+It may be shown that root found by a Newton-Raphson iteration is superstable. 
+
 Quite naturally, the stability of $k-$periodic orbit may be assessed considering the iteration $f^k$ and its derivatives.
 
-## Analyses of the logistic equation
+## Analysis of the logistic equation
 
 We come back to the logistic iteration $f(x)=r(1-x)$,and examine some of its properties:
 
-### Diverging orbits outside $[0,1]$ for $r<1$. 
+### Diverging orbits outside $[0,1]$ for $r>1$. 
 
 For $r>1$, orbits are diverging towards $-\infty$ for $x_0 \notin [0,1]$. We proceed separately for $x_0<0$ and $x_0>1$. 
 
@@ -111,28 +139,33 @@ p = \lim_{n\rightarrow \infty} x_{n+1} =\lim_{n\rightarrow \infty} f(x_n) = f (\
 
 If $x_0>1$, then $f(x_0)$ is negative, and we are back to case one. 
 
-### Fixed points
+### Fixed points 
 
-The fixed points satisfy $p=f(p)=rp(1-p)$. The two roots are $p=0$ and $p=1-\frac{1}{r}$. Inspection of the derivative shows that:
+The fixed points satisfy $p=f(p)=rp(1-p)$. The two roots are $p=0$ and $p=1-\frac{1}{r}$. The second root $p=1-\frac{1}{r}$ exists even for $r<1$ but it is negative, and unstable. 
+
+Inspection of the derivative shows that:
 
 - $p=0$ is a sink for $r<1$ and a source for $r>1$ (assuming $r$ positive);
-- $p=1-\frac{1}{r}$ is a sink for $r<3$ and a source for $r>3$. 
+- $p=1-\frac{1}{r}$ is a hyperbolic sink for $1<r<3$ and a source for $r>3$. 
+
+
+The paramater $r=1$ corresponds to a _transcritical_ bifurcation, where both fixed points exchange their stability. Above $r>3$, both fixed points become unstable, so that we have another kind of bifurcation that is now investigated. 
 
 ### Existence of 2-periodic points for $r>3$. 
 
 The existence of a 2-periodic point is conditioned by the equation
 
 \begin{displaymath}
-r^p(1-p)(1-rp(1-p)) = p.
+rp(1-p)(1-rp(1-p)) = p.
 \end{displaymath}
 
 Having the $p$ of the right-hand-side in the left-hand-side and some algebra genie would show that this is equivalent to
 
 \begin{displaymath}
-rp(r-(1-\frac{1}{r}))(r^2p^2 - r(r+1)p + r + 1) =0.
+rp(p-(1-\frac{1}{r}))(r^2p^2 - r(r+1)p + r + 1) = 0.
 \end{displaymath}
 
-This form has the merit to make it clear that we have a fixed point for $p=0$ and $p=1-\frac{1}{r}$ but these are the fixed points of the iteration (period 1). The period-2 points are hidden in the third factor. There must be 2 roots, which are real for $r>3$, and which correspond to the $2$ distinct points ($p_1$ and $p_2$) that form the orbit. 
+This form has the merit to make it clear that we have a fixed point for $p=0$ and $p=1-\frac{1}{r}$ but these are the fixed points of the iteration (period 1) so they can't count as a solution for period-2 orbits. The period-2 points are hidden in the third factor. There must be 2 roots, which are real for $r>3$, and which correspond to the $2$ distinct points ($p_1$ and $p_2$) that form the orbit. 
 
 Further analysis shows that the $2-$orbit is attracting for $3<r<1+\sqrt{6}$, and repulsive for $r>1+\sqrt{6}$. This requires inspection of $(f^2)^\prime=f^\prime(p_2)f^\prime(p_1)$. 
 
@@ -148,7 +181,7 @@ This is called the Feigenbaum number, who observed it in other iterations (e.g. 
 
 ### Chaotic behaviour for $r_\infty < r < 4$
 
-In this regime, the orbits have the characteristics of chaos that we further define in section \label{sect:chaos}.
+In this regime, the orbits have mostly  the characteristics of chaos that we further define in section \label{sect:chaos}. Numerical analysis shows however some suprising windows of peridic behaviour (look again at the orbit diagram in section \ref{sect:lgrowth}, and of _intermittent_ behaviour, where the system seems to hesitate between different periods. 
 
 ### Fractal set of diverging orbits  for $r>4$
 

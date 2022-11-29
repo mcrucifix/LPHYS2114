@@ -125,7 +125,7 @@ Quite naturally, the stability of $k-$periodic orbit may be assessed considering
 
 ## Analysis of the logistic equation
 
-We come back to the logistic iteration $f(x)=r(1-x)$,and examine some of its properties:
+We come back to the logistic iteration $f(x)=rx(1-x)$,and examine some of its properties:
 
 ### Diverging orbits outside $[0,1]$ for $r>1$. 
 

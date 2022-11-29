@@ -107,10 +107,10 @@ The convergence or divergence, depending on the sign of the second-order derivat
 
 \begin{displaymath}
 \begin{split}
-\xi_{n} &\simeq \frac{1}{2} f^{\prime\prime}(p) xi_{n-1}^2 \\
-       &\simeq \frac{1}{2}  \frac{1}{2}^2 f^{\prime\prime}(p) f^{\prime\prime}(p)^2  xi_{n-2}^4 \\
-       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{1+2+\ldots+n}   xi_{n-2}^{2n} \\
-       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{\frac{1}{2}(n)(n+1)}   xi_{n-2}^{2n} \\
+\xi_{n} &\simeq \frac{1}{2} f^{\prime\prime}(p) \xi_{n-1}^2 \\
+       &\simeq \frac{1}{2}  \frac{1}{2}^2 f^{\prime\prime}(p) f^{\prime\prime}(p)^2  \xi_{n-2}^4 \\
+       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{1+2+\ldots+n}   \xi_{n-2}^{2n} \\
+       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{\frac{1}{2}(n)(n+1)}   \xi_{n-2}^{2n} \\
 \end{split}
 \end{displaymath}
 

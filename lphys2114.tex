@@ -83,7 +83,7 @@
       \node[fill=myblueii,anchor=south west, 
             outer sep=0, draw=none,
             inner sep=.0mm,text=white,font=\Large,
-            text width=1.5em, align=center, 
+            text width=2.0em, align=center, 
           minimum height=8.5mm, 
            ] (a) {\thesubsection}; 
         }
@@ -107,6 +107,9 @@
  
  
     \setlength{\headheight}{36pt}
+    \setlength{\cftsecnumwidth}{3em}% Set length of number width in ToC for \subsection
+    \setlength{\cftsubsecnumwidth}{4em}% Set length of number width in ToC for \subsection
+    \setlength{\cftsubsubsecnumwidth}{5em}% Set length of number width in ToC for \subsection
 % 
     \def\subsectiontitle{}
     \renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize#1}{}}

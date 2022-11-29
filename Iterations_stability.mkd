@@ -146,11 +146,11 @@ Numerical inspection of fixed points shows a suit of bifurcations at (rounded nu
 
 This is called the Feigenbaum number, who observed it in other iterations (e.g. $f(x)=r\sin(\pi x)$), suggesting it be a universal property. 
 
-### Chaotic behaviour for $r\infty < r < 4$
+### Chaotic behaviour for $r_\infty < r < 4$
 
 In this regime, the orbits have the characteristics of chaos that we further define in section \label{sect:chaos}.
 
-### Fractal set of diverging orbits  for $a>4$
+### Fractal set of diverging orbits  for $r>4$
 
 The cobweb diagram makes it apparent for $r>4$, there is an interval $A\in [0,1]$ such that, for $x_n\in A$, $x_{n+1}$ is outside the $[0,1]$ interval and the iteration will diverge. 
 

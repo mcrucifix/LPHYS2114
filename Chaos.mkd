@@ -13,12 +13,12 @@ x_{i+1}=
 This is also sometimes called the $2 \mod 1$ map (multiply by 2, and take one off if needed). 
 It is neither continuous, nor reversible. We will now formalise some of the arguments that we have already raised in class when discussing in the class when discussing the tent map. Consider the binary[^1] representation of $x=.b_1 b_2 b_3 \ldots$, with $x=\sum \frac{1}{2^i}b_i$. 
 
-[^1] also called: "dyadic"
+[^1]: also called: "dyadic"
 
-First, observe that $f(x)=.b_2b_3b_4\ldots$, such that $f^n(x)=x_{n+1}x_{n+2}\ldots$. 
+First, observe that $f(x)=.b_2b_3b_4\ldots$, such that $f^n(x)=b_{n+1}b_{n+2}b_{n+3}\ldots$. 
 
-Then, for any $x_0$, and consider $y_0$ such that $|y_0-x_0| = \epsilon$.
-, with $x_0=.b_1b_2\ldots$ and  $x_1=.b_1b_2\ldots$. Then, we generally expect that for $n<-\log_2 \epsilon$, $b_n=c_n$. We can no longer expect this equality to hold after $n=-\log_2 \epsilon$ and the distance $|f^n(x_0)-f^n(x_0)|$ will be of the order of $\frac{1}{2}$. 
+Then, for any $x_0$, and consider $y_0$ such that $|y_0-x_0| = \epsilon$, 
+with $x_0=.b_1b_2\ldots$ and  $y_0=.c_1c_2\ldots$. Then, we generally expect that for $n<-\log_2 \epsilon$, $b_n=c_n$. We can no longer expect this equality to hold after $n=-\log_2 \epsilon$ and the distance $|f^n(x_0)-f^n(x_0)|$ will be of the order of $\frac{1}{2}$. 
 
 As a general rule, there exists a typical distance $d$ (here, 0.5) such that   for any $\epsilon>0$, $x\in\Omega$, I can find $y$ such that $|x-y|<\epsilon$ and $|f^n(x)-f^n(y)|\geq d$ for $n$ _not too big_. This is the basis of the definition of _sensitivity to initial conditions_: 
 
@@ -36,7 +36,7 @@ More surprising perhaps, observe that the set of points with a finite binary rep
 - Enumerable: one can enumerate these numbers one by one, by growing $n$ and, for fixed $n$, by enumerating them by lexicographic order;
 - Dense: I can find such a number in any finite, closed interval of the domain. 
 
-This, the set of points with finite binary representation can be called $\{f_i, i\in\mathbb{N}\}$. 
+This, the set of points with finite binary representation $E=\{f_i, i\in\mathbb{N}\}$. 
 
 Now, construct the number made of concatenating all these numbers in the binary representation (possibly with filling in zeros so that every number appears with any desired floating point accuracy). This one does have an infinity of digits in the binary representation, but its positive orbit passes close to any number in $E$ as close as one wants, and given that $E$ is dense in $\Omega$, we have generated an orbit that passes close to any number in $\Omega$. 
 
@@ -46,7 +46,7 @@ At this point, we have gathered all the ingredients of one-dimensional chaos.
 The iteration $f:\Omega\rightarrow\Omega$, $\Omega \in \mathbb{R}$ is chaotic iff:
 
  1. it has the SIC property;
- 2. it has a dense set of periodic orbit;
+ 2. it has a dense set of periodic orbits;
  3. it posses at least one dense orbit in $\Omega$. 
 
 \ed
@@ -69,18 +69,18 @@ As a general rule, we expect some information loss when we express the original 
 
 Now, consider the tent map. We expect that it behaves somehow similarly to the $(2 \mod 1)$ map but we need the right trick to prove it. This is what itineraries are for. In (very) brief: 
 
- - we can find a mapping between the set of itineraries, and the ensemble $\Omega$. Again, we consider the binary representation of numbers, i.e., for $x\in\Omega$, with its binary representation $.b_1b_2b_3\ldots$, one can show (in very brief) thats its itinerary will be $s_0=b_1$ and $s_n=|b_n - b_{n+1}|$. The demonstration (skipped here) consists in demonstrating that any distinct itinerary generates a specific series of $b_1$, thus a unique number in $\Omega$. In other words, any number in $\Omega$ can be denoted by its equivalent itinerary, which we could note $\sim s_1s_2s_3\ldots$. 
+ - we can find a mapping between the set of itineraries of the tent map, and the ensemble $\Omega$. Again, we consider the binary representation of numbers, i.e., for $x\in\Omega$, with its binary representation $.b_1b_2b_3\ldots$, one can show (in very brief) thats its itinerary will be $s_0=b_1$ and $s_n=|b_n - b_{n+1}|$. The demonstration (skipped here) consists in demonstrating that any distinct itinerary generates a specific series of $b_1$, thus a unique number in $\Omega$. In other words, any number in $\Omega$ can be denoted by its equivalent itinerary, which we could note $\sim s_1s_2s_3\ldots$. 
 
- - We then observe that the action of the iteration $f$ on $\sim s_1s_2\ldots$ is similar to the action of the $(2 \mod 1)$ map on the binary representation $.b_1b_2b_3\ldots$. All the demonstrations made for the $(2 \mod 1)$ map will work here. The two systems behave similarly. 
+ - We then observe that the action of the iteration $f$ on $\sim s_1s_2s_3\ldots$ is similar to the action of the $(2 \mod 1)$ map on the binary representation $.b_1b_2b_3\ldots$. All the demonstrations made for the $(2 \mod 1)$ map will work here. The two systems behave similarly. 
 
 ### The topological equivalence
 
 We have already defined the notion of topological equivalence for continuous dynamical systems. In brief, there is topological equivalence between two dynamical systems if the domain $\Omega$ can be deformed continuously such as to make the two dynamical systems correspond to each other. Specifically, consider two dynamical systems $f$ and $g$, with
 $f:\Omega\rightarrow\Omega$ and
 $g:\Omega^\prime \rightarrow \Omega^\prime$; there is topological equivalence if there is an homeomorphism
-$C:\Omega \rightarrow \Omega^\prime$ if $C\circ f = g \circ C$. The topological equivalence preserves the $k-$periodic character of orbits, the dense character of orbits, and there repelling-attracting properties. Again, the demonstration rests on the notion of itineraries. One can define to _topologically equivalent_ partitions, and given the continuous character of $C$, with such smart partitioning, the dynamical systems $f$ and $g$ iterated from  two equivalent points can be associated with the same itineraries. 
+$C:\Omega \rightarrow \Omega^\prime$ with $C\circ f = g \circ C$. The topological equivalence preserves the $k-$periodic character of orbits, the dense character of orbits, and there repelling-attracting properties. Again, the demonstration rests on the notion of itineraries. One can define to _topologically equivalent_ partitions, and given the continuous character of $C$, with such smart partitioning, the dynamical systems $f$ and $g$ iterated from  two equivalent points can be associated with the same itineraries. 
 
-So, a successful approach to demonstrate the chaotic character of orbits in the logistic equation is to find a topological equivalence with the tent map. Rare fact, the topological equivalence can be made explicit. Indeed, the logistic orbit with $r=4$, that is, the iteration $f:4x(1-x)$ is topologically equivalent to the tent map $g$ by the homeomorphism  $C(x)=\frac{1}{2}1-\cos(\pi x)$. Indeed, taking the above notation: 
+So, a successful approach to demonstrate the chaotic character of orbits in the logistic equation is to find a topological equivalence with the tent map. Remarkable fact, the topological equivalence can be made explicit. Indeed, the logistic orbit with $r=4$, that is, the iteration $f:4x(1-x)$ is topologically equivalent to the tent map $g$ by the homeomorphism  $C(x)=\frac{1}{2}1-\cos(\pi x)$. Indeed, taking the above notation: 
 
 - $g(C(x)) = 4 \frac{1}{2}(1-\cos(\pi x)) \frac{1}{2}(1+\cos(\pi x)) = \sin^2\pi x$
 - $C(f(x)) = \sin^2\pi x$ (to be verified for the two subcases $x\leq \frac{1}{2}$ and $x>\frac{1}{2}$. 

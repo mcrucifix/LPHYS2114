@@ -244,7 +244,7 @@ So, consider now $(x(t),y(t))$ an orbit of the stable manifold that passes throu
 \begin{equation}\label{eq:manifoldlin}
 \begin{split}
 \dot x &=  \lambda_1 x +  N_x(x,s(x)), \\
-\dot x s^\prime (x) &=  \lambda_2 y + N_x(x,s(x)). \\
+\dot x s^\prime (x) &=  \lambda_2 y + N_y(x,s(x)). \\
 \end{split}
 \end{equation}
 

@@ -2,13 +2,18 @@
 
 We consider an iteration similar to the tent map, but a little bit simpler:
 
+
+\mbox{
+\begin{minipage}[t]{8cm}
 \begin{equation}
 x_{i+1}=
 \begin{cases}
 2 x_{i}\text{ for } 0 \leq x_i < \frac{1}{2}, \\
 2 x_{i} - 1 \text{ for } \frac{1}{2} \leq x_i < 1. \\
 \end{cases}
-\end{equation}
+\end{equation} 
+\end{minipage}}\hfill\mbox{
+\input{Figures/mod_map.tikz}}
 
 This is also sometimes called the $2 \mod 1$ map (multiply by 2, and take one off if needed). 
 It is neither continuous, nor reversible. We will now formalise some of the arguments that we have already raised in class when discussing in the class when discussing the tent map. Consider the binary[^1] representation of $x=.b_1 b_2 b_3 \ldots$, with $x=\sum \frac{1}{2^i}b_i$. 

@@ -68,18 +68,7 @@ x_{i+1}=
 \end{cases}
 \end{equation} 
 \end{minipage}}\hfill\mbox{
-\begin{tikzpicture}[scale=4, baseline=(current bounding box.north)]
-\draw[->](0,0) -- (1.2,0) node [label=right:$x_i$] {}; 
-\draw[->](0,0) -- (0,1.1) node [label=above:$x_{i+1}$] {}; 
-
-\draw[-, thick] (0,0) -- (0.5,1) -- (1,0);
-\draw[-, dashed] (0,0) -- (1,1) node [label=right:{$x_i=x_{i+1}$}] {};
-
-\draw (0,0) -- (0,-0.05) node [label=below:0] {};
-\draw (0.5,0) -- (0.5,-0.05) node [label=below:{$\frac{1}{2}$}] {};
-\draw (1,0) -- (1,-0.05) node [label=below:1] {};
-\draw (0,1) -- (-0.05,1) node [label=left:1] {};
-\end{tikzpicture}}
+\input{Figures/tent_map.tikz}}
 
 \bcd
 By reasoning in base 2 (as computers do), one can see that the tent map produces _periodic_ solutions for all rational numbers, and _aperiodic_ solutions for all irrational initial conditions. For that reason, computing the tent map with a digital computer gives you almost surely the wrong solution, because $\mathbb{Q}$ is a set of measure zero in $\mathbb{R}$. _Hint_: multiplying by 2 in base 2 is equivalent to shifting all digits leftwards. 

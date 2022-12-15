@@ -185,7 +185,6 @@ In this regime, the orbits have mostly  the characteristics of chaos that we fur
 
 ### Fractal set of diverging orbits  for $r>4$
 
-The cobweb diagram makes it apparent for $r>4$, there is an interval $A\in [0,1]$ such that, for $x_n\in A$, $x_{n+1}$ is outside the $[0,1]$ interval and the iteration will diverge. 
+The maximum of $rx(1-x)$ occurs at $x=\frac{1}{2}$ and is $r/4$. Hence, for $r>=4$ there is an interval $A$ comprised between $x\mp = \frac{1}{2} ( 1 \mp \sqrt {1-\frac{4}{r}})$ that ejects the points out of the safe interval $[0,1]$, from where trajectories diverge towards $-\infty$. 
 
-However, outside $A$, there are also smaller intervals that will drive $x$ into $A$, so that their positive orbits also diverge.  This reasoning leads us to the construction of an ensemble of diverging orbit that is a Cantor set, made of the union of disjoint sets that have a self-similarity property. 
-
+However, outside $A$, there are also smaller intervals that will drive $x$ into $A$, so that their positive orbits also diverge.  This reasoning leads us to the construction of an ensemble of diverging orbits that is a Cantor set, made of the union of disjoint sets that have a self-similarity property. 

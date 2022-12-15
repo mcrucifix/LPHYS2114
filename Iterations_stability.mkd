@@ -109,8 +109,8 @@ The convergence or divergence, depending on the sign of the second-order derivat
 \begin{split}
 \xi_{n} &\simeq \frac{1}{2} f^{\prime\prime}(p) \xi_{n-1}^2 \\
        &\simeq \frac{1}{2}  \frac{1}{2}^2 f^{\prime\prime}(p) f^{\prime\prime}(p)^2  \xi_{n-2}^4 \\
-       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{1+2+\ldots+n}   \xi_{n-2}^{2n} \\
-       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{\frac{1}{2}(n)(n+1)}   \xi_{n-2}^{2n} \\
+       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{1+2+\ldots+n}   \xi_{0}^{2n} \\
+       &\simeq \left(\frac{1}{2} f^{\prime\prime}(p) \right)^{\frac{1}{2}(n)(n+1)}   \xi_{0}^{2n} \\
 \end{split}
 \end{displaymath}
 
@@ -125,7 +125,7 @@ Quite naturally, the stability of $k-$periodic orbit may be assessed considering
 
 ## Analysis of the logistic equation
 
-We come back to the logistic iteration $f(x)=r(1-x)$,and examine some of its properties:
+We come back to the logistic iteration $f(x)=rx(1-x)$,and examine some of its properties:
 
 ### Diverging orbits outside $[0,1]$ for $r>1$. 
 

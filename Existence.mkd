@@ -35,7 +35,7 @@ We distinguish the Lyapunov stability from the asymptotic stability. Roughly spe
 \bd{Lyapunov Stability} The fixed point $x_f$ is (Lyapunov) stable if, given $\varepsilon > 0$, there exists a $\delta > 0$ such that, for any other trajectory  $y(t)$ satisfying $|x_f-y(t_0)| < \delta$, then $|x_f-y(t_0)| < \varepsilon$ for $t>t_0$, $t_0 \in \mathbb{R}$. 
 \ed
 
-\bd{Asymptotic  Stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|x_f-y(t_0)| < 0$, then  $\lim_{t \rightarrow \infty} |x_f-y(t)| = 0$. 
+\bd{Asymptotic  Stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|x_f-y(t_0)| < b$, then  $\lim_{t \rightarrow \infty} |x_f-y(t)| = 0$. 
 \ed
 
 \bcd

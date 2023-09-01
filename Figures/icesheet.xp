@@ -1,0 +1,150 @@
+
+#include "epix.h"
+#include "stdio.h"
+using namespace ePiX;
+
+// double ux (double x) {  return (1./3.*x*x + x*x*x/6. + x*x*x*x/30.) ;}
+double iceprofile (double x) {  
+  if ( x < 0.) return 0;
+  if ( x < 2.) return sqrt(x) ; 
+  if ( x < 4.) return (sqrt (4 - x)) ; 
+  return 0;
+}
+
+int main() {
+
+
+//
+// \begin{align*}
+//\dot x &= x + y^3 \\
+//\dot y &= -y + 2xy + x^2
+//\end{align*}
+
+  double S = 1.0;
+  double x = sqrt(2);
+  double Sx1 = 1.0 ;   // 1^2
+  double Sx2 = 3.0 ;   // 4-1^2
+  double Sx0  = 2.0 ;
+
+  bounding_box(P(0,0), P(5,2.5)); 
+  picture(8,4);
+  unitlength("40pt");
+
+  begin();
+
+  arrow (P(0,0), P(0,2.1)); 
+  arrow (P(0,0), P(4.5,0));
+
+  bold();
+  dashed(); 
+
+  line (P(0,S), P(4.5,S));
+  line (P(0,x), P(Sx0, x));
+
+
+//  dotted(); 
+
+//  line (P(Sx1,0), P(Sx1,S));
+//  line (P(Sx2,0), P(Sx2,S));
+
+  solid();
+
+  path profile1; 
+  profile1.pt(P(0,0));
+  for (int i = 0; i < 41; i++){
+    double x = double (i) / 10. ;
+    double y = iceprofile(x);
+    profile1.pt(P(x,y));
+  }
+
+  profile1.draw () ;
+
+   
+  plain();
+
+  path profile2; 
+  fill(Black(0.1));
+  profile2.pt(P(0,0));
+  for (int i = 0; i < 11; i++){
+    double x = double (i) / 10. ;
+    double y = iceprofile(x);
+    profile2.pt(P(x,y));
+  }
+  profile2.pt(P(1,0));
+  profile2.pt(P(0,0));
+  profile2.close();
+  profile2.fill () ;
+  profile2.draw () ; 
+
+   path profile3; 
+  fill(Black(0.1));
+  profile3.pt(P(4,0));
+  for (int i = 0; i < 11; i++){
+    double x = 4. - double (i) / 10. ;
+    double y = iceprofile(x);
+    profile3.pt(P(x,y));
+  }
+  profile3.pt(P(3.0,0));
+  profile3.pt(P(4,0));
+  profile3.close();
+  profile3.fill () ;
+  profile3.draw () ; 
+
+  path profile4; 
+  fill(Black(0.3));
+  profile4.pt(P(1,1));
+  for (int i = 10; i < 31; i++){
+    double x = double (i) /  10. ;
+    double y = iceprofile(x);
+    profile4.pt(P(x,y));
+  }
+  profile4.pt(P(1,1));
+  profile4.close();
+  profile4.fill () ;
+  profile4.draw () ; 
+
+  arrow (P(4,1), P(4,x));
+  label (P(0,1), P(-5,0), "$S$", l);
+  label (P(0,x), P(-5,0), "$x$", l);
+  label (P(4,(1+x)/2.), P(5,0), "$x-S$", r);
+ 
+  path arrow1; 
+  for (int i = 19; i > 11; i--){
+    double x = i/10.;
+    double y = 0.95-sqrt(2.-x)*0.8;
+    arrow1.pt(P(x,y));
+  }
+  arrow1.draw () ;
+  {
+    int i1 = 13;
+    double x1 = i1/10.;
+    double y1 = 0.95-sqrt(2.-x1)*0.8;
+    int i2 = i1-2;
+    double x2 = i2/10.;
+    double y2 = 0.95-sqrt(2.-x2)*0.8;
+    arrow(P(x1,y1), P(x2,y2));
+  }
+
+  path arrow2; 
+  for (int i = 21; i < 29; i++){
+    double x = i/10.;
+    double y = 0.95-sqrt(x-2.)*0.8;
+    arrow2.pt(P(x,y));
+  }
+  arrow2.draw () ;
+  {
+    int i1 = 27;
+    double x1 = i1/10.;
+    double y1 = 0.95-sqrt(x1-2.)*0.8;
+    int i2 = i1+2;
+    double x2 = i2/10.;
+    double y2 = 0.95-sqrt(x2-2.)*0.8;
+    arrow(P(x1,y1), P(x2,y2));
+  }
+
+
+ 
+   
+  tikz_format();
+  end();
+}

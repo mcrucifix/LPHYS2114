@@ -26,10 +26,14 @@ In other words, the lines defined by $\alpha \vec{u}$ and $\beta \vec{v}$, $\alp
 
 \includegraphics[page=15, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
 
-In general, even if the eigenvalues are real, the orbit is _not_ a line. Consider the case of a hyperbolic sink ($\lambda_1,\lambda_2<0$). One can view that $-\lambda_1$ and $-\lambda_2$ act as the inverse of attracting time scales. For example,  $\lambda_1 \gg \lambda_2$ imply that the trajectory will be quickly attracted towards the $u-$component of the trajectory will vanish quickly, so that it will be quickly attracted towards the manifold associated with the second eigenvalue. The $\beta \vec{v}$ will act as a _slow manifold_. As it turns out, depending on the initial condition, an observer that would observe one component (say, the first component) may observe _transient growth_ before reaching the asymptotic limit $(0,0)$. 
+In general, even if the eigenvalues are real, the orbit is _not_ a line. Consider the case of a hyperbolic sink ($\lambda_1,\lambda_2<0$). One can view that $-\lambda_1$ and $-\lambda_2$ act as the inverse of attracting time scales. For example,  |$\lambda_1| \gg |\lambda_2|$ imply that the trajectory will be quickly attracted towards the $u-$component of the trajectory will vanish quickly, so that it will be quickly attracted towards the manifold associated with the second eigenvalue. The $\beta \vec{v}$ will act as a _slow manifold_. 
 
-\includegraphics[page=12, angle=90, scale=0.7, trim={2cm 0 0 0cm}, clip]{lphys2114-figures}
 
+A further counter-intuitive behaviour may occur in the case $u$ and $v$ are non-orthogonal. As the $u$-component quickly vanishes (in this example), the _norm_ of the vector $$\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} +  C_2 e^{\lambda_2 t} \vec{v},$$ may display a _transient growth_. This phenomenon, called _non-normal growth_ is common in fluid dynamics and has been suggested to be important in the early phases of the dynamics of the ocean-atmosphere phenomenon El-Nino [^1].
+
+\input{Figures/nonnormal.eepic}
+
+[^1]:Von der Heydt and Dijkstra, \url{https://dspace.library.uu.nl/bitstream/handle/1874/314407/naw5_2013_14_3_195.pdf?sequence=1}
 
 ### Case B: Complex eigenvalues : spiral and center 
 

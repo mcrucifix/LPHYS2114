@@ -1,0 +1,73 @@
+
+#include "epix.h"
+#include "stdio.h"
+using namespace ePiX;
+
+// double ux (double x) {  return (1./3.*x*x + x*x*x/6. + x*x*x*x/30.) ;}
+double evol1 (double t) { return(  exp(-t/10.)); };
+double evol2 (double t) { return(  -1./(0.90)*exp(-t/2.));  };
+
+
+int main() {
+
+
+//
+// \begin{align*}
+//\dot x &= x + y^3 \\
+//\dot y &= -y + 2xy + x^2
+//\end{align*}
+
+  bounding_box(P(-1,0), P(1,1.5)); 
+  picture(6,4);
+  unitlength("40pt");
+
+  begin();
+
+  arrow (P(0,0), P(0,1.2)); 
+  label_color(Red());
+  label(P(0.,1.0), P(3,3), "$\\vec{v}$", tr);
+  label(P(0.316,0.90), P(3,3), "$\\vec{u}$", tr);
+  arrow (P(0,0), P(1.2,0));
+
+  P phi1 = P(0.,1.0);
+  P phi2 = P(0.316, .90);
+  P O = P(0,0);
+
+  bold();
+
+  plain(Red());
+
+  arrow (O, phi1);
+  arrow (O, phi2);
+
+  plain(Blue());
+
+  char buffer[5];
+ 
+
+  label_color(Blue());
+  font_size("small");
+  for (int i = 0; i < 10; i++){
+    double t = double (i);
+    P dest = evol1(t) * phi1 + evol2(t) * phi2 ;
+    arrow ( O, dest );
+    if (i < 3){
+      sprintf(buffer, "$t_%d$", i);
+      label(dest , P(-4,4), buffer, b);
+    }
+
+    if (i == 6 ){
+      sprintf(buffer, "$t_%d$", i);
+      label(dest , P(0,7), buffer, b);
+    }
+
+    if (i == 9 ){
+      sprintf(buffer, "$t_%d$", i);
+      label(dest , P(4,0), buffer, r);
+    }
+
+  }
+
+  tikz_format();
+  end();
+}

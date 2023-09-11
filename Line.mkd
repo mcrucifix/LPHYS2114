@@ -21,7 +21,8 @@ We now consider changes in $\psi$ that may affect the existence or the _nature_ 
 
 The fixed point may be visualised graphically, with the equation $e^{-x} = \psi - x$. This is the _phase portrait_. 
 
-\includegraphics[page=9, angle=90, scale=0.7, trim={2cm 0 0 0cm}, clip]{lphys2114-figures}
+
+\input{Figures/phaseprotrait.eepic}
 
 As is clear from the figure showing the phase portraits, the number of fixed points changes for 2 hyperbolic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
 

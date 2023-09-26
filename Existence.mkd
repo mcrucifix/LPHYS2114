@@ -18,7 +18,7 @@ For simplicity, we will admit that $\Omega = \mathbb{R}^n$, where $n$ is the pha
 @. An orbit through $x_0$ is the set of points in phase space passing of a trajectory passing through $x_0$. 
 
 
-## Equilibrium solutions, stability and linearised stability
+## Equilibrium solutions, stability and asymptotic stability
 
 In this section we briefly formalise and extend notions that have already been covered in the _Motivating example_ section. 
 

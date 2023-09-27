@@ -17,16 +17,17 @@ It comes up that trajectories on the line must either be constant (fixed point),
 
 ## Stability of the fixed point
  
-Consider $x_f$ a fixed point, so that by defintion $f(x_f)=0$. Suppose first that $\od{f}{x}|_{x=x_f}$ is strictly negative. Then it comes that there one can find a (small) neibourghoud around $x_f$ such that $f(x)$ is strictly positive for $x<x_f$, and $f(x)$ is strictly negative for $x<x_f$. It comes up that orbits in this neighbourood will asymptotically converge (since they are monotonous) to $x_f$. One can also verify that the conditions for Lyapunov stability are fulfulfilled. There is thus asymptotic stability. 
-
-By the same token, one verifies asymptotic _instability_ when $\od{f}{x}|_{x=x_f}>0$. 
-
-
-The two cases that we have just reviewed constitute hyperbolic fixed points. 
-
 \bd{Hyperbolic fixed points on the line}
 Fixed points on the line are said to be hyperbolic if the derivative $\od{f}{x}$ is either strictly negative or positive
 \ed 
+
+\bt{Stability of hyperbolic fixed points on the line}
+Fixed points with $\od{f}{x}|_{x=x_f} < 0$, or $\od{f}{x}|_{x=x_f} > 0$, are asymptotically stable or unstable, respectively \et
+
+Consider $x_f$ a fixed point, so that by definition $f(x_f)=0$. Suppose first that $\od{f}{x}|_{x=x_f}$ is strictly negative. Then it comes that there one can find a (small) open neighbourhood around $x_f$ such that $f(x)$ is strictly positive for $x<x_f$ in this neighbourhood, and $f(x)$ is strictly negative for $x<x_f$. It comes up that orbits in this neighbourhood will asymptotically converge (since they are monotonous) to $x_f$. One can also verify that the conditions for Lyapunov stability are fulfilled. There is thus asymptotic stability.
+
+By the same token, one verifies asymptotic _instability_ when $\od{f}{x}|_{x=x_f}>0$. \eop
+
 
 Hyperbolic fixed points with negative derivative are a _sink_; those with positve derivative are a _source_. 
 
@@ -45,7 +46,7 @@ The fixed point may be visualised graphically, with the equation $e^{-x} = \psi 
 
 \input{Figures/phaseprotrait.eepic}
 
-As is clear from the figure showing the phase portraits, the number of fixed points changes for 2 hyporbelic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
+As is clear from the figure showing the phase portraits, the number of fixed points changes for 2 hyperbolic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
 
 In this section we will learn to _detect_ bifurcation points in vector fields on the line and classify them. 
 
@@ -82,7 +83,7 @@ Specifically, the normal form $f(x;\psi^\prime)=\psi^\prime - \frac{1}{2} x^2$ (
 \end{tabular}
 \et
 
-The intuition beyond this theorem is reasonably clear. The first condition imposes the existence of the fixed point; the second one is the non-asymptotic character of the fixed point (neither linear stable nor linearly unstable). The third and fourth conditions set the locally parabolic character of the solutions near the bifurcation point. 
+The intuition beyond this theorem is reasonably clear. The first condition imposes the existence of the fixed point; the second one is the non-hyperbolic character of the fixed point (neither linear stable nor linearly unstable). The third and fourth conditions set the locally parabolic character of the solutions near the bifurcation point. 
 
 More formally, from the implicit function theorem, (1) and (4) imply that there must exist a function $\psi(x)$ on an interval $I\subset\mathbb{R}$ such that $f(x,\psi(x)) = 0$ and $\psi(x_0)=\psi_0$.
 

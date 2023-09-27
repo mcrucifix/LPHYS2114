@@ -169,6 +169,7 @@ overlay={%
 
 \newcommand{\bt}[1]{\begin{theorem}{#1}}
 \newcommand{\et}{\end{theorem}}
+\newcommand{\eot}{\hfill\square}
 
 \makeatother
 

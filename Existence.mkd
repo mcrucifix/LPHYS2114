@@ -174,7 +174,7 @@ The latter category represents the class of _Hamiltonian flows_. Can you guess w
 \ecd 
 
 \bcd
-At this point we may already have some intuitions about how the eigenvectors and eigenvalues of the Jacobian of $f$ governs the properties of the flow.  Which conditions do we expect for a converging flow? What happens if at least one eigenvalue is positive? The eigenvalues of the Jacobian are the _Lyapunov spectrum_ and the individual values are called the _Lyapunov exponents_. Why this term: "exponent". In non-linear dynamics we tend to pay attention to the _largest Lyapunov exponent_. Can you guess why ? 
+At this point we may already have some intuitions about how the eigenvectors and eigenvalues of the Jacobian of $f$ governs the properties of the flow.  Which conditions do we expect for a converging flow? What happens if at least one eigenvalue is positive? The eigenvalues of the Jacobian are the _Lyapunov spectrum_ and the individual values are called the _Lyapunov exponents_. Why this term: "exponent". In non-linear dynamics we tend to pay attention to the _largest Lyapunov exponent_. Can you guess why? 
 \ecd
 
 As we will make it clear in the following, _dissipative flows_ are characterised by a _negative Jacobian trace_: the sum of eigenvalues is negative; $\sum\lambda_i < 0$.  

@@ -15,6 +15,27 @@ Proof: If there was a local extrema at time $t$, $x(t)$ at that point would need
 
 It comes up that trajectories on the line must either be constant (fixed point), strictly increasing (towards infinity, or towards a fixed point), or strictly decreasing (ditto). 
 
+## Stability of the fixed point
+ 
+Consider $x_f$ a fixed point, so that by defintion $f(x_f)=0$. Suppose first that $\od{f}{x}|_{x=x_f}$ is strictly negative. Then it comes that there one can find a (small) neibourghoud around $x_f$ such that $f(x)$ is strictly positive for $x<x_f$, and $f(x)$ is strictly negative for $x<x_f$. It comes up that orbits in this neighbourood will asymptotically converge (since they are monotonous) to $x_f$. One can also verify that the conditions for Lyapunov stability are fulfulfilled. There is thus asymptotic stability. 
+
+By the same token, one verifies asymptotic _instability_ when $\od{f}{x}|_{x=x_f}>0$. 
+
+
+The two cases that we have just reviewed constitute hyperbolic fixed points. 
+
+\bd{Hyperbolic fixed points on the line}
+Fixed points on the line are said to be hyperbolic if the derivative $\od{f}{x}$ is either strictly negative or positive
+\ed 
+
+Hyperbolic fixed points with negative derivative are a _sink_; those with positve derivative are a _source_. 
+
+Stability is no-longer trivial for non-hyperbolic fixed points, since one cannot affirm that $\od{f}{x}$ changes sign. We show an example below. 
+
+\bcd
+Consider again the motivating example with the ice sheets. Are the fixed points hyperbolic? Everywhere ? (tip: it is enough  to restrict the discussion to the case $x \neq 0$. )
+\ecd 
+
 ## The saddle-node bifurcation
 
 We now consider changes in $\psi$ that may affect the existence or the _nature_ of the fixed point. To this end, consider the following example: $f(x;\psi) = \psi - x - e^{-x}$. 
@@ -24,7 +45,7 @@ The fixed point may be visualised graphically, with the equation $e^{-x} = \psi 
 
 \input{Figures/phaseprotrait.eepic}
 
-As is clear from the figure showing the phase portraits, the number of fixed points changes for 2 hyperbolic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
+As is clear from the figure showing the phase portraits, the number of fixed points changes for 2 hyporbelic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
 
 In this section we will learn to _detect_ bifurcation points in vector fields on the line and classify them. 
 

@@ -16,6 +16,20 @@ The Jordan canonical form theorem tells us that, if $A$ is a real two by two mat
 
 Geometrically, $T$ is the composition of a rotation, dilation and reflection around the origin.
 
+### Hyperbolicity
+
+\bd{Hyperbolic fixed point.} A fixed point is hyperbolic if all the eigenvalues of $\Dif f(x_f)$ have either a strictly positive or a strictly negative real part.
+\ed
+
+We will be able to _prove_ that a fixed point with all _negative_ eigenvalues (said to be linearly stable) is asymptotically stable. But we leave it for later. At this point, we already know enough to understand the idea of sink and source:
+
+1. A hyperbolic fixed point is called a _sink_ if all eigenvalues of the Lyapunov spectrum have negative real parts. 
+2. A hyperbolic fixed point is called a _source_ if all eigenvalues of the Lyapunov spectrum have positive real parts.
+3. A hyperbolic fixed point is called a _saddle_ if some but not all eigenvalues of the Lyapunov spectrum have positive real parts
+4. A non-hyperbolic fixed point with purely imaginary eigenvalues, and non-zero is a _center_.
+
+
+
 ### Case A: Real eigenvalues and linearly independent eigenvectors : invariant manifolds and linear transient growth
 
 The general solution to the ordinary differential equation is $$\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} +  C_2 e^{\lambda_2 t} \vec{v},$$ where $\vec u$ and $\vec v$ are the eigenvectors, and $\lambda_1$ and $\lambda_2$ the respective eigenvalues. 

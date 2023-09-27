@@ -42,6 +42,7 @@ We distinguish the Lyapunov stability from the asymptotic stability. Roughly spe
 Illustrate these notions graphically
 \ecd 
 
+<!-- 
 We now reconsider the notion of linear stability, based on the developments already started in the Motivation section. 
 
 Consider a fixed point $x_f$, and let $y = x_f + \delta x$. 
@@ -80,6 +81,8 @@ We will be able to _prove_ that a fixed point with all _negative_ eigenvalues (s
 \bcd
 Consider again the motivating example with the ice sheets. Are the fixed points hyperbolic? Everywhere ? (tip: it is enough  to restrict the discussion to the case $x \neq 0$. )
 \ecd 
+
+-->
 
 ## Properties of vector fields: existence, uniqueness, differentiability and flows
 

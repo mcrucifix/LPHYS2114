@@ -61,7 +61,7 @@ f(x_0;\psi_0) +
 \left.\pd{f}{\psi}\right|_{x_0,\psi_0} (\psi - \psi_0) + 
 \left.\pd{f}{x}\right|_{x_0,\psi_0} (x - x_0) + \\
 & \frac{1}{2} \left.\pd[2]{f}{x}\right|_{x_0,\psi_0} (x-x_0)^2 + \\
-& \frac{1}{2} \left.\pd[2]{f}{\psi}\right|_{x_0,\psi_0} (\psi-\psi_0)^2 + \\
+& \left.\pd[2]{f}{\psi}\right|_{x_0,\psi_0} (\psi-\psi_0)^2 + \\
 & \frac{1}{2} \left.\frac{\partial^2 f}{\partial \psi\partial x}\right|_{x_0,\psi_0} (x-x_0)(\psi-\psi_0)  \\
 & + \ldots \\
 =& \underbrace{\psi - 1 - \frac{1}{2} x^2}_{\text{normal form}} + \ldots

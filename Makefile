@@ -28,9 +28,12 @@ handouts: lphys2114.tex $(TEX) $(PDF)
 	@echo processing $< to $@
 	cd Jupyter; jupyter-nbconvert --to latex --template mylatex `basename $<` ; cd ..
 
-lphys2114_corrections.pdf: lphys2114.pdf  2023_distr_flattenned.tex
+flattenned.tex: $(TEX) 
 	python3 ~/.local/bin/latex-flatten.py lphys2114.tex flattenned.tex
-	latexdiff-vc --force   --packages=hyperref  --only-changes --pdf 2023_distr_flattenned.tex flattenned.tex
+
+lphys2114_corrections.pdf: flattenned.tex  2023_distr_flattenned.tex
+	python3 ~/.local/bin/latex-flatten.py lphys2114.tex flattenned.tex
+	latexdiff-vc --force    --packages=hyperref,amsmath  --only-changes --pdf 2023_distr_flattenned.tex flattenned.tex
 	mv flattenned-diff.pdf lphys2114_corrections.pdf
 
 .PHONY:

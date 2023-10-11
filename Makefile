@@ -28,6 +28,11 @@ handouts: lphys2114.tex $(TEX) $(PDF)
 	@echo processing $< to $@
 	cd Jupyter; jupyter-nbconvert --to latex --template mylatex `basename $<` ; cd ..
 
+lphys2114_corrections.pdf: lphys2114.pdf  2023_distr_flattenned.tex
+	python3 ~/.local/bin/latex-flatten.py lphys2114.tex flattenned.tex
+	latexdiff-vc --force   --packages=hyperref  --only-changes --pdf 2023_distr_flattenned.tex flattenned.tex
+	mv flattenned-diff.pdf lphys2114_corrections.pdf
+
 .PHONY:
 bibtex:
 	bibtex lphys2114
@@ -35,3 +40,7 @@ bibtex:
 figures_handrown:
 	sh update_handrown_figures.sh
    
+upload: lphys2114.pdf lphys2114_corrections.pdf
+	scp lphys2114.pdf aurora:/elic/web/crucifix/direct
+	scp lphys2114_corrections.pdf aurora:/elic/web/crucifix/direct
+	

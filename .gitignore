@@ -23,4 +23,6 @@
 Jupyter/.ipynb_checkpoints/
 *.Definitions
 *.Theorems
-
+tmp
+*.cb
+*.cb2

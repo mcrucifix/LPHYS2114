@@ -10,11 +10,13 @@ $$ \dot{\vec{x}}  = A \vec{x}.$$
 
 The Jordan canonical form theorem tells us that, if $A$ is a real two by two matrix, there is a non-singular real matrix $T$ such that $A=TJT^{-1}$, and $T$ is made of the column vectors $\vec{u}$ and $\vec{v}$.  Depending on the eigenvalue and eigenvectors of $A$, $J$ will be of one of three forms:
 
-- _Case A_: Two independent eigenvectors, real eigenvalues : $A = \begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix}$;
+- _Case A_: Two independent eigenvectors ($\vec{u}$ and $\vec{v}$), real eigenvalues : $A = \begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix}$;
 - _Case B_: Complex eigenvalues $\alpha \pm i \beta$: $A = \begin{pmatrix} \alpha & \beta \\ -\beta & \alpha \end{pmatrix}$;
-- _Case C_: A single independent eigenvector, with one single real eigenvalue $A = \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix}$. 
+- _Case C_: A single independent eigenvector ($\vec{u}$), with one single real eigenvalue $A = \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix}$. 
+
 
 Geometrically, $T$ is the composition of a rotation, dilation and reflection around the origin.
+Vectors $\vec{u}$ and $\vec{v}$ are not necessarily orthogonal. We only have this guarantee when the matrix $A$ is symmetric. 
 
 ### Case A: Real eigenvalues and linearly independent eigenvectors : invariant manifolds and linear transient growth
 

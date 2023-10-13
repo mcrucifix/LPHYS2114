@@ -1,0 +1,80 @@
+## Jordan canonical form theorem
+
+\label{sect:Jordan}
+\newcommand{\mc}{\multicolumn{1}{c}}
+
+The full explanation of the Jordan canonical form theorem is available in @horn90aa, Chapter 3, and see its Theorem 3.4.5 for applications in real vector spaces. 
+
+The Jordan canonical form theorem states for any linear application, it is possible to find a basis of vectors (called the _genrealised eigenvectors_) such that the application can be expressed as a matrix with Jordan blocs. A Jordan block $J_i$ is a square matrix with a same value $\lambda_i$ on the diagonal, and ones on the upper diagonal: 
+
+\begin{displaymath} J = 
+  \renewcommand{\arraystretch}{1.2}
+  \left(
+  \begin{array}{ c c | c c | c c }
+    \multicolumn{1}{|c}{} & & 0 & \mc{0} & 0 & 0 \\
+    \multicolumn{2}{|c|}{\raisebox{.6\normalbaselineskip}[0pt][0pt]{$J_1$}} & 0 & \mc{0} & 0 & 0 \\
+    \cline{1-4}
+    0 & 0 & & & 0 & 0 \\
+    0 & 0 & \multicolumn{2}{c|}{\raisebox{.6\normalbaselineskip}[0pt][0pt]{$\ddots$}} & 0 & 0 \\
+    \cline{3-6}
+    0 & \mc{0} & 0 & 0 & & \multicolumn{1}{c|}{} \\
+    0 & \mc{0} & 0 & 0 & \multicolumn{2}{c|}{\raisebox{.6\normalbaselineskip}[0pt][0pt]{$J_m$}}
+  \end{array}
+  \right),  \text{with }
+  J_i =
+    \left(
+      \begin{array}{*4{c}}
+       \lambda_i     &     1         &    0      &  0                \\
+                                        & \lambda_i     &    1      &   0             \\
+                                        &                        &  \ddots &           \\
+                             0          &               &              & \lambda_i \\
+      \end{array}
+    \right)
+\end{displaymath}
+
+The $\lambda_i$ are the eigenvalues. This bloc-diagonal matrix is called the canonical form. If the linear application is expressed as a matrix $A$ in an original basis, the  canonical form can be obtained by a suitable basis transformation  ($J=T^{-1}AT$), where the columns of $T$ are the genralised eigenvectors.  The number of Jordan blocs correspond to the number of (true) eigenvectors, which are in general less than the number of generalised eigenvectors. The linear application is said to be _diagonalisable_ (all eigenvectors are independent) when all Jordan blocks have dimension one. If at least one Jordan block has 2 or more dimensions, then there will be fewer eigenvectors than the number of dimensions, thus, fewer eigenvectors than _generalised_ eigenvectors.
+In its original formulation, the Jordan canonical form theorem concerns linear applications in algebraic closed spaces, that is, spaces that contain the solutions of all polynomial equations. Vector spaces such as $\mathbb{C}^n$ are algebraically closed, but not $\mathbb{R}^n$. For example, $\mathbb{R}^1$ does not contain the solution of $x^2+1=0$. As a consequence, what we needed in Section \ref{sect:plane} is a  slightly extended version of the Jordan canonical form theorem. In this case of a _linear_ application from $\mathbb{R}^n \rightarrow \mathbb{R}^n$, eigenvalues are either real, or appear by pairs of complex conjugates. Real eigenvalues are associated with Jordan blocs. Hence, in this case, we have two options: either accept complex entries in the normal canonical form (associated with complex basis vectors), or opt for a purely real expression, but in this case we need _another_ basis of vectors than the actual eigenvectors. In this case, conjugate pairs of eigenvalues $\lambda  = \alpha \pm \beta$ are replaced by $2\times 2$ blocks of the form 
+$\begin{pmatrix} \alpha& \beta \\  -\beta &  \alpha \end{pmatrix}$. 
+
+Hence, for a linear application $\mathbb{R}^n \rightarrow \mathbb{R}^n$, the canonical form is: 
+
+\begin{displaymath} J = 
+  \renewcommand{\arraystretch}{1.2}
+  \left(
+  \begin{array}{ c c | c c | c c }
+    \multicolumn{1}{|c}{} & & 0 & \mc{0} & 0 & 0 \\
+    \multicolumn{2}{|c|}{\raisebox{.6\normalbaselineskip}[0pt][0pt]{$C_1$}} & 0 & \mc{0} & 0 & 0 \\
+    \cline{1-4}
+    0 & 0 & & & 0 & 0 \\
+    0 & 0 & \multicolumn{2}{c|}{\raisebox{.6\normalbaselineskip}[0pt][0pt]{$\ddots$}} & 0 & 0 \\
+    \cline{3-6}
+    0 & \mc{0} & 0 & 0 & & \multicolumn{1}{c|}{} \\
+    0 & \mc{0} & 0 & 0 & \multicolumn{2}{c|}{\raisebox{.6\normalbaselineskip}[0pt][0pt]{$C_m$}}
+  \end{array}
+  \right),
+\end{displaymath}
+where the $C_i$ are either Jordan blocks (associated with a real eigenvalue), or blocks of the form:
+\begin{displaymath} C_i = 
+  \renewcommand{\arraystretch}{1.2}
+  \left(
+  \begin{array}{ c c | c c | c c }
+    \multicolumn{1}{|c}{\alpha_i} & \beta_i & 1 & 0 & 0 & 0 \\
+    \multicolumn{1}{|c}{-\beta_i} & \alpha_i & 0 & 1 & 0 & 0 \\
+    \cline{1-6}
+    0 & 0 & \alpha & \beta  & 1 & \multicolumn{1}{c|}0 \\
+    0 & 0 & -\beta_i & \alpha_i  & 0 & \multicolumn{1}{c|}1 \\
+    \cline{3-6}
+    0 & \mc{0} & 0 & 0 & \alpha_i & \multicolumn{1}{c|}{\beta_i} \\
+    0 & \mc{0} & 0 & 0 & -\beta_i & \multicolumn{1}{c|}{\alpha_i} \\
+  \end{array}
+  \right),
+\end{displaymath}
+which are then associated with a pair of eigenvalues $\alpha\pm i\beta$. 
+Hence, in an application of dimension $2$, the only remaining possibilities are:
+
+- $\begin{pmatrix} \lambda1  & 0\\  0  &  \lambda_2 \end{pmatrix}$ : two Jordan blocks of dimension 1, associated with real eigenvalues. The matrix is diagonalisable. 
+
+- $\begin{pmatrix} \alpha & -\beta \\  \beta  &  \alpha \end{pmatrix}$ : two Jordan blocks of dimension 1 but associated with a pair of complex conjugate eigenvalues. We use the adapted version for real applications. 
+
+- $\begin{pmatrix} \lambda & 1 \\  0 & \lambda   \end{pmatrix}$ : one Jordan block of dimension 2. Since there is only one eigenvalue in this case, it must be real (as complex comes as pairs). 
+

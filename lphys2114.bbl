@@ -1,5 +1,10 @@
 \begin{thebibliography}{MOF05}
 
+\bibitem[HJ90]{horn90aa}
+R.~A. Horn and C.~R. Johnson.
+\newblock {\em Matrix Analysis}.
+\newblock Cambridge University Press, 1990.
+
 \bibitem[Lor63]{lorenz63}
 E.~N. Lorenz.
 \newblock Deterministic non-periodic flow.

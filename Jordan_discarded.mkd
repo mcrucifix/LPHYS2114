@@ -1,0 +1,115 @@
+## What the Jordan form theorem actually says
+
+\bd{Jordan normal form theorem}
+Consider an _algebraically closed_ vector space $V=\\mathbb{R}^n$, and a linear operator $A:V\rightarrow V$, there exist
+
+- a linear decomposotion of $V$, written as a _direct_ sum of subspaces
+
+\begin{displaymath}
+V = V_1 \oplus V_2 \oplus \ldots \oplus V_k
+\end{displaymath}
+
+into _invariant_ subspaces of $A$
+
+- for every component $V_i$, there is a basis of $e_k^{(i)}$, $k=1\ldots n_i$, such that
+
+\begin{displaymath}
+(A-\lambda_i \Id)e_1^{(i)} = 0; 
+(A-\lambda_i \Id)e_2^{(i)} = e_1^{(i)}; 
+(A-\lambda_i \Id)e_2)n^{(i)} = e_{n-1}^{(i)}; 
+\end{displaymath}
+\ed
+
+Before willing to prove anything, we define a few concepts used in the theorem, such as to rewrite it in the more classical matrix form. 
+
+\bd{Invariant subspace of a linear operator}
+The invariant subspace $U$ of a linear operator $A$ in $V$ is a subspace such that all elements of $U$ are projected in $U$. In other words, $\forall u \in U, A(u) \in U$. 
+\ed
+
+\bd{Direct sum of spaces}
+The sum of spaces $V_1 \oplus V_2$ is the set of elements $v_1 + v_2$ such that $v_1 \in V_1$ and $v_2 \in V_2$. The sum is called _direct_ when $V_1 \cat V_2=\emptyset$, in which case $\mathrm{dim}(V_1 \oplus V_2) = \mathmrm{dim}(V_1) + \mathrm{dim}(V_2)$. 
+\ed
+
+\bd{Algebraically closed space}
+An algebraically closed space contains the roots of all its polynomial equations
+\ed
+
+Hence, $\mathbb{R}$ is not algebraically close because it does not contain, for example, the root or $x^2+1=0$. Buth \mathbb{C}$ is. In practice, we therefore view $V$ as $\mathbb{C}^n$. 
+
+
+With these preliminaries, we see that the theorem claims that, _in the basis formed_ of the $e_k^{(i)}$, $A$ takes a matrix form that is bloc diagonal (here assuming $i=1\ldots 3$:
+
+\newcommand{\mc}{\multicolumn{1}{c}}
+\begin{displaymath} A = 
+  \renewcommand{\arraystretch}{1.2}
+  \left(
+  \begin{array}{ c c | c c | c c }
+    \multicolumn{1}{|c}{} & & 0 & \mc{0} & 0 & 0 \\
+    \multicolumn{2}{|c|}{\raisebox{.6\normalbaselineskip}[0pt][0pt]{$J_1$}} & 0 & \mc{0} & 0 & 0 \\
+    \cline{1-4}
+    0 & 0 & & & 0 & 0 \\
+    0 & 0 & \multicolumn{2}{c|}{\raisebox{.6\normalbaselineskip}[0pt][0pt]{$J_2$}} & 0 & 0 \\
+    \cline{3-6}
+    0 & \mc{0} & 0 & 0 & & \multicolumn{1}{c|}{} \\
+    0 & \mc{0} & 0 & 0 & \multicolumn{2}{c|}{\raisebox{.6\normalbaselineskip}[0pt][0pt]{$J_3$}}
+  \end{array}
+  \right)
+\end{displaymath}
+
+where $J_1$ has dimension $n_i \times n_i$ and has the form
+
+$J_i = (\lambda_i)$ for $n_i = 1$, 
+
+\begin{displaymath}
+  J_i =
+    \left(
+      \begin{array}{*2{c}}
+       \lambda_i     &     1  \\
+                   0     &     \lambda_i  \\
+\right)
+\end{array}
+\end{displaymath} for $n_i = 2$, and 
+
+\begin{displaymath}
+  J_i =
+    \left(
+      \begin{array}{*5{c}}
+       \lambda_i     &     1         &    0      &         &  0        \\
+                                        & \lambda_i     &    1      &         &           \\
+                                        &               & \lambda_i &         &           \\
+                                        &               &           &  \ddots &           \\
+                             0          &               &           &         & \lambda_i \\
+      \end{array}
+    \right)
+\end{displaymath}
+
+for higher dimensions. 
+
+
+
+## Particular case of two dimensions
+
+In two dimensions, the Jordan canonical form can only take two forms:
+
+\begin{displaymath}
+  A =
+    \left(
+      \begin{array}{*2{c}}
+       \lambda_1     &     0  \\
+                   0     &     \lambda_2  \\
+    \right(
+\end{displaymath}, or 
+
+\begin{displaymath}
+  A =
+    \left(
+      \begin{array}{*2{c}}
+       \lambda_1     &     1  \\
+                   0     &     \lambda_1  \\
+    \right(
+\end{displaymath}. 
+
+
+
+
+

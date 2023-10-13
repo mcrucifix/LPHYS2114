@@ -11,7 +11,7 @@ JUPYTERTEX=$(IPYNB:.ipynb=.tex)
 
 
 lphys2114.pdf: lphys2114.tex $(TEX) $(PDF) $(EEPIC) $(JUPYTERTEX) mc.cls $(TIKZ) local.bib
-	sh Makeversion.sh &&  latexmk -pdf --use-make --deps-out=".deps"  lphys2114.tex
+	sh Makeversion.sh &&  latexmk -pdf lphys2114.tex
 
 local.bib: lphys2114.aux
 	~/Unix/BibManagement/generate_s_bibtex.py `cat lphys2114.aux| ~/bin/citation_extract.pl`  > local.bib

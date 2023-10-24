@@ -62,13 +62,17 @@ Note then that the path integral $\int_\Gamma f\dif y - g\dif x = 0$:
    \oint_\Gamma f\dif y - g\dif x =  \int_0^T (f \dot y - g \dot x) \dif t  =  \int_0^T (fg - gf) \dif t = 0. 
 \end{equation*}
 
-On the other hand, because of Green's theorem, 
+On the other hand, because of the divergence theorem [^green]
 
 \begin{displaymath}
- \oint_\Gamma \vec{n}\cdot (f,g) \dif \vec{s} = \int_\mathcal{S}\left( \pd{x}{y} + \pd{g}{y} \right) \dif x \dif y. 
+ \oint_\Gamma \vec{n}\cdot (f,g) \dif s = \int_\mathcal{S}\left( \pd{x}{y} + \pd{g}{y} \right) \dif x \dif y, 
 \end{displaymath}
 
-The left-hand-side term is the contour integral we just computed. It is zero. The second term can only be zero if the divergence is either identically null, or changes sign. \eop
+where $\hat\mathbf{n}$ is the normalised, outward pointing vector orthogonal to the path. 
+
+[^green:] There  equivalent approaches is to simply consider Green's theorem that states that $\oint_\Gamma \pd{f}{y}- \pd{g}{x} = \int_\mathcal{S}\left( \pd{f}{x} + \pd{g}{y}\right) \dif \mathcal{S}$. 
+
+The left-hand-side term is the contour integral we just computed (you must use: $\hat \mathbf{n} \dif s = (\dif y, -\dif x)$).  It is zero. The second term can only be zero if the divergence is either identically null, or changes sign. \eop
 
 The Bendixsson theorem can be easily generalised so that is also works by monitoring $\pd{(Bf)}{x}+\pd{(Bg)}{y}$ for any $B(x,y)$ of class $\mathbf{C}^1$. 
 
@@ -165,12 +169,13 @@ The system of equations may be rewritten in polar coordinates, in which case we 
   \dot \theta &= 1. 
 \end{align*}
 
+The first eqution has one fixed point at $r=\pm\sqrt{\beta}$ with eigenvalue $-\beta+3\sigma(\sqrt\beta)^2=\beta(3\sigma - 1)$
 
 Two cases occur:
 
 - ($\sigma = -1$) The _supercritical_ bifurcation generates a _stable_ limit cycle of infinitesimal amplitude near the bifurcation point, with amplitude ($\sqrt \beta$) growing continuously as the parameter moves away from the bifurcation point;
 
-- ( $\sigma = 1$) The _subcritical_  bifurcation generates a limit cycle unstable for $\beta > 0$ (and stable for $\beta < 0$). Hence, for $\beta > 0$, the system moves away from the fixed point and reaches another attractor far from it, typically a larger limit cycle but not necessarily. 
+- ( $\sigma = 1$) The _subcritical_  bifurcation generates a limit cycle unstable for $\beta > 0$. Hence, for $\beta > 0$, the system moves away from the fixed point and reaches another attractor far from it, typically a larger limit cycle but not necessarily. 
 
 As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of the limit cycle and, for example, it may land on a fixed point or another kind of orbit. However, when a limit cycle exists, it tends to have a period that is not very far from the one determined from the imaginary part of the eigenvalue. 
 

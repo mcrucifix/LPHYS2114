@@ -40,13 +40,13 @@ Hence, we seem to have a good method for proving the stability of a fixed point;
 
 Again, the evolution of the Lyapunov function must be (strictly) monotonous in a neighbourhood of the fixed point. The latter may be arbitrarily small to satisfy the mathematical definition of an asymptotically stable fixed point, though of course, for physical significance, we might want a large neighbourhood !
 
-Indeed, as we see it, a contour $C$ within which $\dot V(x) \leq 0$ will effectively define as a _trapping region_, that is defined as a region that contains all its future states.
+Indeed, as we see it, a contour $C$ within which $\dot V(x) \leq 0$ will effectively define a _trapping region_, that is defined as a region that contains all its future states.
 
 \bd{Trapping region}
 A trapping region $U$ relative to a diffeomorphism is a compact set such that $\phi^t(U) \subset U\ \forall t >0$. 
 \ed
 
-The property $\phi^t(U) \subset U\ \forall t >0$ is the property of _positive invariance_. Thus, a trapping region is a compact positive invariant set. Aas we move time forward, the trapping region, which keeps containing itself, can be made smaller and smaller until it asymptotically becomes the _attracting set_:
+The property $\phi^t(U) \subset U\ \forall t >0$ is the property of _positive invariance_. Thus, a trapping region is a compact positive invariant set. As we move time forward, the trapping region, which keeps containing itself, can be made smaller and smaller until it asymptotically becomes the _attracting set_:
 
 \bd{Attracting set}
 An attracting set is a closed invariant set that can be defined as $\bigcap\limits_{t>0}^\infty \phi^t(U)$.
@@ -78,7 +78,7 @@ Consider the following system:
 \dot y &= -y. 
 \end{align*}
 
-We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can define a trapping region as an ellipse encompassing the three fixed points. It turns out the whole compact interval $[-1,1]$ on the $x$ axis is the attracting set obtained from that trapping region. Indeed, for any point $p$ on the segment, and for _any_ time $t$, you can find an initial condition (close enough to the unstable fixed point, presumably) within the attracting set (it is indeed invariant) that reaches $p$ precisely time $t$. So this interval is really the limit of self-evolving trapping regions. (see Figure)
+We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can define a trapping region as an ellipse encompassing the three fixed points. It turns out the whole compact interval $[-1,1]$ on the $x$ axis is the attracting set obtained from that trapping region. Indeed, for any point $p$ on the segment, and for _any_ time $t$, you can find an initial condition (close enough to the unstable fixed point, presumably) within the attracting set (it is indeed invariant) that reaches $p$ precisely at time $t$. So this interval is really the limit of self-evolving trapping regions. (see Figure)
 
 \input{Figures/attractingSet.eepic}
 
@@ -114,11 +114,11 @@ By extending the notation,  we will note $\omega(p)$ as the set of limit points 
 
 It can be proved (Wiggins, Proposition 8.1.3.) that within a trapping region, all points $p$ (thus,  in the trapping region) can be attached to a limit set that is non-empty, closed, invariant under the flow, and connected.
 
-Hence, we could also defined an attractor as a topologically transitive set $A$ that admits a neighbourhood $U$ such that $\omega(U)=A$. This definition of the attractor can also be found in the literature, and I need more research to determine to what extent these different definitions overlap / are compatible / can contradict each other. 
+Hence, we could also have defined an attractor as a topologically transitive set $A$ that admits a neighbourhood $U$ such that $\omega(U)=A$. This definition of the attractor can also be found in the literature, and I need more research to determine to what extent these different definitions overlap / are compatible / can contradict each other. 
 
 
 A final note about the notion of the  Lyapunov function.  We need to confess that we have been a little bit brutal. 
-Indeed, we first defined the Lyapunov function as being defined ons a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-countour of the Lyapunov function, in this neighbourhood. 
+Indeed, we first defined the Lyapunov function as being defined on a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-countour of the Lyapunov function, in this neighbourhood. 
 
 Now, later in this chapter, we admitted that finding a Lyapunov function is also a good approach for determining a trapping region. To this end, we implicitly  relaxed the condition that we have a fixed point. We just need isocontours with the flow pointing inwards. As we will see, this helps us to see also the kind of solutions we expect within the trapping region. 
 

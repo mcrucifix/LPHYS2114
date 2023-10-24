@@ -59,10 +59,10 @@ Assume an orbit with contour $\Gamma$ actually exists in the domain $\mathcal{D}
 Note then that the path integral $\int_\Gamma f\dif y - g\dif x = 0$:
 
 \begin{equation*}
-   \oint_\Gamma f\dif y - g\dif x =  \int_0^T f \dot y - g \dot x \dif t  =  \int_0^T fg - gf \dif t = 0. 
+   \oint_\Gamma f\dif y - g\dif x =  \int_0^T (f \dot y - g \dot x) \dif t  =  \int_0^T (fg - gf) \dif t = 0. 
 \end{equation*}
 
-On the other, because of Green's theorem, 
+On the other hand, because of Green's theorem, 
 
 \begin{displaymath}
  \oint_\Gamma \vec{n}\cdot (f,g) \dif \vec{s} = \int_\mathcal{S}\left( \pd{x}{y} + \pd{g}{y} \right) \dif x \dif y. 
@@ -84,7 +84,7 @@ Check that the Duffing oscillator
 has no closed orbit for $\gamma \neq 0$. 
 \ecd 
 
-The next example (taken form Wiggins, sect. 4.1) shows how the Bendixsson' criterion allows us to restrict regions in the plan where closed orbits _might_ exist. Consider this modification of the Duffing oscillator: 
+The next example (taken form Wiggins, sect. 4.1) shows how the Bendixsson' criterion allows us to restrict regions in the plane where closed orbits _might_ exist. Consider this modification of the Duffing oscillator: 
 
 
 \begin{displaymath}
@@ -105,7 +105,7 @@ The equation has three fixed points at $(x,y)=(0,0)$, $(\pm 1,0)$, with the eige
 Thus, $(0,0)$ is a saddle, and $(\pm 1,0)$ are sinks for $\gamma > 1$ and sources for $0 \leq \gamma < 1$. Furthermore, we find 
 
 \begin{displaymath}
- \pd{f}{x} + \pd{f}{y} = \gamma + x^2. 
+ \pd{f}{x} + \pd{g}{y} = -\gamma + x^2. 
 \end{displaymath}
 
 Thus, the divergence vanishes on the lines $x = \pm \sqrt{\gamma}$. These two lines divide the plane into three regions which we label $R_1$, $R_2$ and $R_3$. We cannot have any closed orbit in this regions, but we _cannot_ rule out orbits which would overlap these regions. 
@@ -148,7 +148,7 @@ The fixed point is a source in the third regime, which generates trajectories sp
 
 The transition from negative to positive real values with imaginary parts is the signature of a Hopf (or Andronov-Hopf) bifurcation. 
 
-Rushing through the theory, it may be shown that if some generic non-degeneracy conditions are met (specifically, the first Lyapunov exponent near the limit cycle is non-zero \footnote{but we haven't defined it, yet; no panic}, and the derivative of the real part of the eigenvalue is non-zero at the equilibrium), it may be shown that systems with a Hopf bifurcation are locally topologically equivalent to the following normal form, with $\sigma$ either equal to $1$ or $-1$ (remember that topological equivalence assumes a rescaling of time):
+Rushing through the theory, it may be shown that if some generic non-degeneracy conditions are met (specifically, the first Lyapunov exponent near the limit cycle is non-zero \footnote{but we haven't defined it, yet; no panic}, and the derivative of the real part of the eigenvalue is non-zero at the equilibrium), it may be shown that systems with a Hopf bifurcation are locally topologically equivalent to the following normal form, with $\sigma$ either equal to $1$ or $-1$ (topological equivalence may imply a rescaling of time):
 
 \begin{align*}
   \dot x &= \beta x - y + \sigma x ( x^2 + y^2) \\

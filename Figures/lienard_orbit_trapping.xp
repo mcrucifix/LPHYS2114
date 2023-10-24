@@ -1,0 +1,97 @@
+#include "epix.h"
+#include "stdio.h"
+
+#define delta 0.12
+
+using namespace ePiX;
+
+// double ux (double x) {  return (1./3.*x*x + x*x*x/6. + x*x*x*x/30.) ;}
+float F(float y){ return ( - y + y*y*y ); }
+
+P ds (P xy){
+  float dx = -xy.x2();
+  float dy = xy.x1() - F(xy.x2());
+  return(P(dx,dy));
+}
+
+float alpha = 1;
+float dt=0.1;
+
+P EulerOneStep (P ds, float dt){
+  return(P(ds.x1()*dt, ds.x2()*dt));
+}
+
+
+
+float xp4 (float x0){
+  P p4;
+  P xy = P(x0,0.0);
+  P xytemp;
+  float dttemp;
+  int iflag=1;
+  for (int i=0; ((i < 45) && (iflag == 1)); i++){
+    xytemp = xy + EulerOneStep(ds(xy), dt);
+    // not very optimal but will run only a couple of times
+    //
+    // I am saving programmer's time
+
+    if ((xy.x2() > 0) && (xytemp.x2() < 0)){
+      dttemp = dt*((xy.x2())/(xy.x2()-xytemp.x2()));
+      xytemp = xy + EulerOneStep(ds(xy), dttemp);
+      p4 = xytemp;
+      iflag = 0;
+    }
+    xy = xytemp;
+  }
+    return(p4.x1());
+
+}
+
+
+
+int main() {
+
+  bounding_box(P(-0,0,-0.0), P(2.0,2.0));
+  picture(2,2);
+  unitlength("4cm");
+
+  begin();
+
+  arrow(P(0,-0.0), P(0,1.6));
+  arrow(P(-0,0,0), P(1.6,0));
+
+  float x,y;
+
+  P pa;
+  path Fcurve;
+  Fcurve.pt(P(0,0));
+
+ path curve;
+ float xxp4,xp4old,x0,x0old, xstar;
+
+ x0 = 0.1;
+ curve.pt(P(x0,-xp4(x0)));
+ x0old=x0;
+ 
+  for (int i=2;i<15;i++){
+    x0 = float(i)*0.1;
+    xxp4 = -xp4(x0);
+    curve.pt(P(x0,xxp4));
+    if ((xp4old > x0old) && (xxp4 < x0))
+    {
+     xstar = x0old - 0.1*(xp4old-x0old)/(xxp4-x0-(xp4old-x0old));
+//     xstar = x0old ;
+    }
+    xp4old=xxp4;
+    x0old = x0;
+  }
+
+  curve.draw();
+  dot(P(xstar,xp4(xstar)));
+  dot(P(xstar,xstar));
+
+  line(P(0,0), P(1.5,1.5));
+
+  tikz_format();
+  end();
+}

@@ -10,8 +10,11 @@ JUPYTERTEX=$(IPYNB:.ipynb=.tex)
 .SUFFIXES: .mkd .tex .eepic .xp .ipynb
 
 
-lphys2114.pdf: lphys2114.tex $(TEX) $(PDF) $(EEPIC) $(JUPYTERTEX) mc.cls $(TIKZ)
+lphys2114.pdf: lphys2114.tex $(TEX) $(PDF) $(EEPIC) $(JUPYTERTEX) mc.cls $(TIKZ) local.bib
 	sh Makeversion.sh &&  latexmk -pdf lphys2114.tex
+
+local.bib: lphys2114.aux
+	~/Unix/BibManagement/generate_s_bibtex.py `cat lphys2114.aux| ~/bin/citation_extract.pl`  > local.bib
 
 handouts: lphys2114.tex $(TEX) $(PDF)
 	pdflatex -jobname lphys2114_handouts -pdf "\PassOptionsToClass{handout}{mc}\input{lphys2114.tex}"
@@ -37,6 +40,9 @@ lphys2114_corrections.pdf: flattenned.tex  2023_distr_flattenned.tex
 	mv flattenned-diff.pdf lphys2114_corrections.pdf
 
 .PHONY:
+lphys2114-figures.tex:
+	touch lphys2114-figures
+
 bibtex:
 	bibtex lphys2114
 

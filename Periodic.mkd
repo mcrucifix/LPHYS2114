@@ -65,14 +65,14 @@ Note then that the path integral $\int_\Gamma f\dif y - g\dif x = 0$:
 On the other hand, because of the divergence theorem [^green]
 
 \begin{displaymath}
- \oint_\Gamma \vec{n}\cdot (f,g) \dif s = \int_\mathcal{S}\left( \pd{x}{y} + \pd{g}{y} \right) \dif x \dif y, 
+ \oint_\Gamma \hat{\mathbf{n}}\cdot (f,g) \dif s = \int_\mathcal{S}\left( \pd{x}{y} + \pd{g}{y} \right) \dif x \dif y, 
 \end{displaymath}
 
-where $\hat\mathbf{n}$ is the normalised, outward pointing vector orthogonal to the path. 
+where $\hat{\mathbf{n}}$ is the normalised, outward pointing vector orthogonal to the path. 
 
 [^green:] There  equivalent approaches is to simply consider Green's theorem that states that $\oint_\Gamma \pd{f}{y}- \pd{g}{x} = \int_\mathcal{S}\left( \pd{f}{x} + \pd{g}{y}\right) \dif \mathcal{S}$. 
 
-The left-hand-side term is the contour integral we just computed (you must use: $\hat \mathbf{n} \dif s = (\dif y, -\dif x)$).  It is zero. The second term can only be zero if the divergence is either identically null, or changes sign. \eop
+The left-hand-side term is the contour integral we just computed (you must use: $\hat {\mathbf{n}} \dif s = (\dif y, -\dif x)$).  It is zero. The second term can only be zero if the divergence is either identically null, or changes sign. \eop
 
 The Bendixsson theorem can be easily generalised so that is also works by monitoring $\pd{(Bf)}{x}+\pd{(Bg)}{y}$ for any $B(x,y)$ of class $\mathbf{C}^1$. 
 

@@ -165,21 +165,31 @@ The bifurcation is found at $\beta=0$.
 The system of equations may be rewritten in polar coordinates, in which case we find
 
 \begin{align*}
-  \dot r &= -\beta r + \sigma r^3,  \\
+  \dot r &= \beta r + \sigma r^3,  \\
   \dot \theta &= 1. 
 \end{align*}
 
-The first eqution has one fixed point at $r=\pm\sqrt{\beta}$ with eigenvalue $-\beta+3\sigma(\sqrt\beta)^2=\beta(3\sigma - 1)$
+The equation for $r$ is the normal form for the pitchfork bifurcation on the line. 
+Consider first the trivial fixed point for $r$, $r=0$. It is stable for $\beta<0$. 
+The zero fixed point is stable for $\beta<0$.
+The radius $r$ admits a second fixed point when the sign of $\sigma$ and $\beta$ are opposite to each other. 
 
-Two cases occur:
+- ( $\sigma = 1$) : In the _supercritical_ bifurcation, on finds a stable limit cycle (fixed point for $r$) for positive values of $\beta$, and growing as ($\sqrt \beta$). In other words, the limit cycle grows from zero and reaches a finite amplitude as $\beta$ increases. 
 
-- ($\sigma = -1$) The _supercritical_ bifurcation generates a _stable_ limit cycle of infinitesimal amplitude near the bifurcation point, with amplitude ($\sqrt \beta$) growing continuously as the parameter moves away from the bifurcation point;
+- ( $\sigma = 1$) :  In the  _subcritical_, an _unstable_ limit cycle exists in the negative domain of $\beta$, and then disappears as $\beta$ is positive. That is, for positive $\beta$, the only invariant form is the unstable fixed point. 
 
-- ( $\sigma = 1$) The _subcritical_  bifurcation generates a limit cycle unstable for $\beta > 0$. Hence, for $\beta > 0$, the system moves away from the fixed point and reaches another attractor far from it, typically a larger limit cycle but not necessarily. 
+As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of fixed point. What happens is not predicted by the normal form: higher order terms must be taken into account. It may land on a fixed point or, more likely, on another limit cycle.  A typical scenario is obtained when the unstable limit cycle for negative $\beta$ regains stability and continues towards positive values of $\beta$, in which case the period of the stable limit cycle is often not very different from that of the unstable limite cycle near the bifurcation point. 
 
-As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of the limit cycle and, for example, it may land on a fixed point or another kind of orbit. However, when a limit cycle exists, it tends to have a period that is not very far from the one determined from the imaginary part of the eigenvalue. 
+For example, a fifth-order term, such as:
+\begin{align*}
+  \dot r &= \beta r +  r^3 - r^5  \\
+\end{align*}
 
-Determining whether a given Hopf bifurcation is subcritical or supercritical is therefore a quite tedious process, by which one must develop the function $f$ and $g$ in Taylor series, and then (when possible) making a change of variables to diagonalise the Jacobian, and then mapping the non-linear terms to the normal form. In practice, bifurcation software (AUTO, MATCONT) can do this for you. Furthermore, criteria have been worked out for specific dynamical systems (e.g. Kuznetzov, Elements of applied bifurcation theory, Springer,  \S 3.5)
+will generate, in addition to the trivial $r=0$ and keeping only positive, real $r$, the solutions $r=\frac{1}{\sqrt 2}\sqrt(1\pm\sqrt{4\beta+1})$, that is, 2 solutions for $-\frac{1}{4}\leq \beta \leq 0$ and one solution for $\beta>0$. 
+
+(to do: make figure)
+
+Determining whether a given Hopf bifurcation is subcritical or supercritical is therefore a quite tedious process, by which one must develop the function $f$ and $g$ in Taylor series, and then (when possible) making a change of variables to diagonalise the Jacobian, and then mapping the non-linear terms to the normal form. In practice, bifurcation software (AUTO, MATCONT) can do this for you. Furthermore, criteria have been worked out for specific dynamical systems (e.g.  Kuznetzov, Elements of applied bifurcation theory, Springer,  \S 3.5)
 
 For example, for the generic form that concerns us here: 
 

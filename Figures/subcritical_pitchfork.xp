@@ -1,0 +1,45 @@
+#include "epix.h"
+#include "stdio.h"
+
+#define delta 0.12
+
+using namespace ePiX;
+
+// double ux (double x) {  return (1./3.*x*x + x*x*x/6. + x*x*x*x/30.) ;}
+float F(float y){ return ( - y + y*y*y ); }
+
+const double sqrt12 = sqrt(2)/2.;
+
+double ubranchplus (double psi){ return (sqrt12*sqrt(1-sqrt(1+4*psi)));}
+double ubranchminus (double psi){ return (-sqrt12*sqrt(1-sqrt(1+4*psi)));}
+double sbranchplus (double psi){ return (sqrt12*sqrt(1+sqrt(1+4*psi)));}
+double sbranchminus (double psi){ return (-sqrt12*sqrt(1+sqrt(1+4*psi)));}
+
+
+int main() {
+
+  bounding_box(P(-1.2,-1.4), P(1.2,1.4));
+  picture(2.4,2.8);
+  unitlength("2cm");
+
+  begin();
+
+  arrow(P(0,-1.3), P(0,1.3));
+  arrow(P(-1.,0), P(1.,0));
+
+  label(P(0,1.4), P(5,0),"$\\psi$", r);
+  label(P(1.1,0), P(5,0),"$x$", l);
+
+  bbold();
+  dashed();
+  line(P(0,0), P(1,0));
+  plot(ubranchplus, -0.25, 0., 20);
+  plot(ubranchminus, -0.25, 0., 20);
+  solid();
+  line(P(-1,0), P(0,0));
+  plot(sbranchplus, -0.25, 1., 40);
+  plot(sbranchminus, -0.25, 1., 40);
+
+  tikz_format();
+  end();
+}

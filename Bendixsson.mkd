@@ -1,4 +1,4 @@
-## The Poincaré - Bendixsson theorem
+## The Poincaré - Bendixson theorem
 
 \label{sect:Poincare}
 
@@ -7,11 +7,11 @@ Remember that we have defined the limit set of an orbit (more precisely, the lim
 So far we have met two types of limit sets in the plane: fixed points (if it is a $\omega-$fixed point, it is also an attractor), and limit cycles (think of the van der Pol oscillator which we have seen). We have defined the limit set of a whole region $U$, as the union of all limit sets associated with all points in this region. 
 On the other hand,  we have defined the attractor as a minimal attracting set: the notion of "attraction" is very much focused on the idea of a neighbourhood that get smaller and smaller as times goes by. 
 
-So we could reasonably guess that the notion of limit cycle and  the notion of _attractor_ are similar. In fact, attractors _are_ limit sets. However the reverse may not necessarily be true. Hence, we need a strategy: an approach that allows us to make an account of all possible limit sets. In this enterprise, we have two friends. The first one is the concept of trapping region, that is closely related to the Lyapunov function. If there is a Lyapunov function --- if we can draw isocontours (so called: level sets) that upper-bound the flow --- then we know we have a trapping region. The second is a theorem: the Poincaré-Bendixsson theorem. 
+So we could reasonably guess that the notion of limit cycle and  the notion of _attractor_ are similar. In fact, attractors _are_ limit sets. However the reverse may not necessarily be true. Hence, we need a strategy: an approach that allows us to make an account of all possible limit sets. In this enterprise, we have two friends. The first one is the concept of trapping region, that is closely related to the Lyapunov function. If there is a Lyapunov function --- if we can draw isocontours (so called: level sets) that upper-bound the flow --- then we know we have a trapping region. The second is a theorem: the Poincaré-Bendixson theorem. 
 
 In these notes, we will only provide the theorem result, and some elements of the proof will be given during the lecture. The proof is not exam material. 
 
-\bt{Poincaré - Bendixsson theorem}
+\bt{Poincaré - Bendixson theorem}
  Let $U$ a trapping region in the plane, containing a finite number of fixed points (it may be zero). The limit set of any point $p$ in $U$ is either
 
  - one fixed point
@@ -22,7 +22,7 @@ In these notes, we will only provide the theorem result, and some elements of th
 
 A few observations before we get some ideas about how this theorem works. Observe first that it requires very few assumptions. All what we need is a trapping region in the plane, and not a infinite number of fixed points (we don't want a whole region or even a segment where $f(x,y)=0$). The theorem tells us about limit sets, and it restricts the possible behaviours: we have either attractor points, limit cycles, or (that is the new stuff) homoclinic or heteroclinic orbits. The _homoclinic_ orbit is one that links a fixed point to itself (asymptotically); the _heteroclinic_ orbit links two fixed points. We will speak about those a bit later, and let us briefly explore the mechanics of the proof without, again, considering the details. 
 
-Two prove the Poincaré-Bendixsson theorem, you need the concept of a _transverse_ $\Sigma$ of the field. Think of it as a one-way section, with the flow crossing the flow always from, say, the left to the right, without being ever tangent to the transverse. The transverse may not have any hole. Technically, it is defined a continuous, connected arc. We also use the concept of _positive_ orbit through $p$, which is  the set of points met by the trajectory after it has gone through $p$. 
+Two prove the Poincaré-Bendixson theorem, you need the concept of a _transverse_ $\Sigma$ of the field. Think of it as a one-way section, with the flow crossing the flow always from, say, the left to the right, without being ever tangent to the transverse. The transverse may not have any hole. Technically, it is defined a continuous, connected arc. We also use the concept of _positive_ orbit through $p$, which is  the set of points met by the trajectory after it has gone through $p$. 
 
 
 \includegraphics[page=22, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
@@ -33,7 +33,7 @@ Then, the proof goes on by steps:
 
 - _Lemma 1_: the positive orbit through $p$ cuts the transverse $\Sigma$ in a monotone sequence of $p_i$ (the points of the intersection are ordered on the sequence). (The Lemma is proved by constructing a positively invariant region)
 - _Lemma 2_: The limit set of $p$ crosses $\Sigma$ at at most one point. (this is a consequence of the monotonous character of the sequence of $p_i$)
-- _Lemma 3_: If $\omega(p)$ contains _no_ fixed point, then it is a closed orbit. This is the vanilla-version of the Poincaré-Bendixsson theorem. It is proved by contradiction. To make it short and a bit rough, we take $q \in \omega(p)$ and draw a section such that $q$ is on it. Given that $q$ is _not_ a fixed point, it crosses the section, and it has a positive orbit that will cut the section through a monotone sequence. But as we now that $\omega(p)$ crosses the section at only one point, the monotone sequence is made of $q$ only. This is an closed orbit. 
+- _Lemma 3_: If $\omega(p)$ contains _no_ fixed point, then it is a closed orbit. This is the vanilla-version of the Poincaré-Bendixson theorem. It is proved by contradiction. To make it short and a bit rough, we take $q \in \omega(p)$ and draw a section such that $q$ is on it. Given that $q$ is _not_ a fixed point, it crosses the section, and it has a positive orbit that will cut the section through a monotone sequence. But as we now that $\omega(p)$ crosses the section at only one point, the monotone sequence is made of $q$ only. This is an closed orbit. 
 - _Lemma 4_ : if $p_1$ and $p_2$ are distinct fixed points contained in $\omega(p)$; then there exists at most _one_ orbit linking asymptotically $p_1$ ($\alpha$-point) from $p_2$ ($\omega$-point). The proof is made by contradiction. The idea is that the orbit passing by $p$ would need to pass nearby $\gamma_1$ and $\gamma_2$, two hypothetical distinct orbits. We consider two transverses that are linking our hypothetical orbit with $\gamma_1$ and $\gamma_2$ and observe that it produces a topological absurdity (you can't both get nearby the two orbits at two distinct times, and have both of them as  limit sets). 
 
 We now show how to use this theorem, with examples. 
@@ -69,7 +69,7 @@ We see then a down-potential movement with friction coefficient $\gamma$, with t
 
 
 \bcd
-Draw the graph of $H$ and discuss the implications of the Poincare-Bendixsson theorem
+Draw the graph of $H$ and discuss the implications of the Poincare-Bendixson theorem
 \ecd 
 
 ## An example showing the existence of periodic orbits

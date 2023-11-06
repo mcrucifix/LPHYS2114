@@ -11,4 +11,4 @@ In preparing this lecture, I have relied on several reference books. Although th
  -  Alligood K., T. Sauer and J. Yorke (1997), Chaos: An Introduction to Dynamical Systems, Springer (NewYork)
  -  Perko L. (2001), Differential Equations and Dynamical Systems, Springer, ISBN 978-1-4612-6526-9 
 
-
+Last but not least, I am thankfull to students who spotted small and big mistakes and communicated them to me. By doing so they improved the document and made life easier for their followers. 

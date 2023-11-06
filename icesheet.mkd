@@ -56,10 +56,10 @@ Now we would like to determine the behaviour of the system for initial condition
 
 Hence, a more fruitful strategy is to study the behaviour of $S(t)$ _near_ (in French: _dans le voisinage the_) fixed points, and use theory to connect the flow lines between fixed points. 
 
-The model we have been starting with is of the form $\ddt x = F (x;\psi)$ with, here, $\psi := S$. By definition of a fixed point, $F(x_f;\Psi)=0$ (the dependency on $\psi$ is dropped for clarity). Define $\delta x := x-x_f$. 
+The model we have been starting with is of the form $\ddt x = F (x;\psi)$ with, here, $\psi := S$. By definition of a fixed point, $F(x_f;\psi)=0$ (the dependency on $\psi$ is dropped for clarity). Define $\delta x := x-x_f$. 
 
 \begin{equation}
-\ddt {(x-x_f)} \eqbdef \ddt {\delta_x} = \underbrace {\left.\pd{F(x;\psi)}{x}\right|_{x_f}}_{\lambda}  \delta x + \mathcal{O}(x^2)
+\ddt {(x-x_f)} \eqbdef \ddt {\delta_x} = \underbrace {\left.\pd{F(x;\psi)}{x}\right|_{x_f}}_{\lambda}  \delta x + \mathcal{O}(\delta x^2)
 \end{equation}
 
 This is a linear differential equation for $\delta x$ with constant coefficient. That is, near enough to the fixed point, $\delta x$ decays (if  $\lambda < 0$) or grows (if  $\lambda > 0$) exponentially with e-folding time $1/\lambda$. This distinguishes a point that is _locally stable_ from a point that is _locally unstable_. 

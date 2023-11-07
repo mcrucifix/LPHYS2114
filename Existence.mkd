@@ -62,7 +62,7 @@ The notation $\Dif f(x_f)$  refers to the Jacobian of $f$ evaluated in $x_f$. If
 Given that for the stability of fixed points we are only concerned with the behaviour of solutions arbitrarily close to $x_f$, it seems reasonable to inspect the linear system: 
 
 \begin{displaymath}
-\ddt {\delta x}_j = \Dif f(x_f) \delta x,
+\ddt {\delta x} = \Dif f(x_f) \delta x,
 \end{displaymath}
 
 We will inspect more carefully the solutions of this system in the plane in section \ref{sect:plane} but we may already anticipate that  solutions will grow exponentially in the direction of eigenvectors of the Jacobian with positive eigenvalues, and decay exponentially in the direction of eigenvectors with negative eigenvalues. 
@@ -150,7 +150,7 @@ Consider the following flow diagram. How would you prove that the intersection i
 
 At this point, we have understood (at least intuitively) that the future fate a point in the phase space, in an autonomous system, does not depend on the time at which the snapshot has been taken. This is after all quite straightforward given the definition of an autonomous system (the evolution dictated by $f$ does not depend explicitly on time). In other words, for any point $(x_0,t_0)$, there will be a function $\phi^\tau(x_0)$ that points to the point of the orbit reached at time $t+\tau$,  as long as the trajectory has remained within the bounds of the domain. This function $\phi$ is the _flow function_, sometimes called the _phase flow_ function. 
 
-Given the uniqueness of solutions, we find that $\phi^{\tau_1+\tau_2} = \phi^{\tau_2} \circ \phi^{\tau_2}$ and $\phi^0 = \phi^{\tau_1-\tau_1} = Id.$. 
+Given the uniqueness of solutions, we find that $\phi^{\tau_1+\tau_2} = \phi^{\tau_2} \circ \phi^{\tau_1}$ and $\phi^0 = \phi^{\tau_1-\tau_1} = Id.$. 
 
 From where it comes that the flow is an invertible function:
 

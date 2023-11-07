@@ -1,4 +1,4 @@
-## Stability 
+## Stability of iterations
 
 We consider iterations mapping $\mathbb{R}$ on itself, that is: $f:\mathbb{R} \rightarrow \mathbb{R}$. 
 

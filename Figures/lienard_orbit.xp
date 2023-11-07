@@ -115,7 +115,7 @@ int main() {
 
   label_color(Red(1.0));
   dot (pa);
-  label(P(pa.x1(), pa.x2()), P(-15,5), "$p_a=(x_0, a(x_0))$", t);
+  label(P(pa.x1(), pa.x2()), P(-15,5), "$p_a=(x_a, a(x_0))$", t);
   label_color(Red(1.0));
   label(gammapoint,P(5,2),"$\\gamma(x_0)$",r);
   label_color(Black(1.0));

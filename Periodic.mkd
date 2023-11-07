@@ -21,7 +21,7 @@ Hence, to get a first grasp on this system, we may consider that $x$ varies slow
 \
 Indeed, the equation $y - y^3/3 - x = 0$ has three roots for $-1 \leq x \leq 1$, and only one out of this interval. Within the three-root regimes, the middle root corresponds to an unstable equilibrium and the upper and lower branches correspond to sinks of this fast system. Again, view $x$ as a parameter, and one will find two fold bifurcations for $x=\pm 1$. 
 
-Suppose that $x=0$ and that the system is on the upper branch. The slow variable $y$ is positive, and because of the first equation of the full system ($\dot x = y$), $x$ must increase slowly. The fast variable $y$ keep tracking the upper branch, until it reaches the fold bifurcation. At this point $y$ runs away (it has lost its equilibrium), until it falls on the lower branch. Then $y<0$, and $x$ reverses direction. The fast variable $y$ tracks the lower branch, until, again, it finds a fold bifurcation. 
+Suppose that $x=0$ and that the system is on the upper branch. The fast variable $y$ is positive, and because of the first equation of the full system ($\dot x = y$), $x$ must increase slowly. The fast variable $y$ keep tracking the upper branch, until it reaches the fold bifurcation. At this point $y$ runs away (it has lost its equilibrium), until it falls on the lower branch. Then $y<0$, and $x$ reverses direction. The fast variable $y$ tracks the lower branch, until, again, it finds a fold bifurcation. 
 We have just found an example of attractor that is a limit cycle, characteristic of a slow-fast _relaxation_ oscillator. 
 
 It is a _stable_ limit cycle in the sense that it is a periodic orbit, that is reached _asymptotically_ as time moves forward, and which effectively acts (and is) an attractor. 
@@ -32,7 +32,7 @@ The limit cycle persists outside the slow-fast regime, and $y$ then moves more s
 \input{Figures/vanderpol_01.eepic}
 
 
-## Bendixsson's criterion
+## Bendixson's criterion
 
 Consider again our classical diffeomorphism on the plane:
 
@@ -49,7 +49,7 @@ A solution of \eqref{eq:ddb} through the point $x_0$ is said to be periodic of p
 \ed
 
 
-\bt{Bendixsson's criterion}
+\bt{Bendixson's criterion}
 If, on a simply connected region $\mathcal{D}\subset \mathbb{R}^2$,  the expression $\pd{f}{x}+\pd{g}{y}:=\div{(f,g)}$ is not identically zero and does not change sign, then the system has no closed orbit lying entirely in $\mathcal{D}$.
 \et
 
@@ -65,16 +65,16 @@ Note then that the path integral $\int_\Gamma f\dif y - g\dif x = 0$:
 On the other hand, because of the divergence theorem [^green]
 
 \begin{displaymath}
- \oint_\Gamma \hat{\mathbf{n}}\cdot (f,g) \dif s = \int_\mathcal{S}\left( \pd{x}{y} + \pd{g}{y} \right) \dif x \dif y, 
+ \oint_\Gamma \hat{\mathbf{n}}\cdot (f,g) \dif s = \int_\mathcal{S}\left( \pd{f}{x} + \pd{g}{y} \right) \dif \mathcal{S}, 
 \end{displaymath}
 
 where $\hat{\mathbf{n}}$ is the normalised, outward pointing vector orthogonal to the path. 
 
-[^green:] There  equivalent approaches is to simply consider Green's theorem that states that $\oint_\Gamma \pd{f}{y}- \pd{g}{x} = \int_\mathcal{S}\left( \pd{f}{x} + \pd{g}{y}\right) \dif \mathcal{S}$. 
+[^green]: The  equivalent approach is to simply consider Green's theorem that states that $\oint_\Gamma \pd{f}{y}- \pd{g}{x}\,\dif s = \int_\mathcal{S}\left( \pd{f}{x} + \pd{g}{y}\right) \dif \mathcal{S}$. 
 
 The left-hand-side term is the contour integral we just computed (you must use: $\hat {\mathbf{n}} \dif s = (\dif y, -\dif x)$).  It is zero. The second term can only be zero if the divergence is either identically null, or changes sign. \eop
 
-The Bendixsson theorem can be easily generalised so that is also works by monitoring $\pd{(Bf)}{x}+\pd{(Bg)}{y}$ for any $B(x,y)$ of class $\mathbf{C}^1$. 
+The Bendixson theorem can be generalised so that is also works by monitoring $\pd{(Bf)}{x}+\pd{(Bg)}{y}$ for any $B(x,y)$ of class $\mathbf{C}^1$. The generalisation is due to Henri Dulac. 
 
 \bcd
 Check that the Duffing oscillator
@@ -88,7 +88,7 @@ Check that the Duffing oscillator
 has no closed orbit for $\gamma \neq 0$. 
 \ecd 
 
-The next example (taken form Wiggins, sect. 4.1) shows how the Bendixsson' criterion allows us to restrict regions in the plane where closed orbits _might_ exist. Consider this modification of the Duffing oscillator: 
+The next example (taken form Wiggins, sect. 4.1) shows how the Bendixson' criterion allows us to restrict regions in the plane where closed orbits _might_ exist. Consider this modification of the Duffing oscillator: 
 
 
 \begin{displaymath}

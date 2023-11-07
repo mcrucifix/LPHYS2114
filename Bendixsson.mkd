@@ -120,7 +120,7 @@ which appears as a harmonic oscillator under a friction $f(y)\dot y$. We further
 
 - $F(-y)=-F(y)$, equivalent to $f(-y)=f(y)$
 - $\lim_{y\rightarrow \infty} F(y)=\infty$, and $\exists \beta : F(y)$ is strictly growing for $y>\beta$;
-- $\exists \alpha : F(\alpha) < 0$  for $0<y<\alpha$
+- $\exists \alpha : F(y) < 0$  for $0<y<\alpha$
 
 The system is equivalently written as $\ddot y + \dot F(y) + y = 0$. Further defining $x\eqdef \dot y + F(y)$, we find the first-order system:
 
@@ -150,7 +150,7 @@ First, observe that the differential for $H$ can be written in different equival
 \begin{align}
 \dif H &= y F(y) \dif t, \label{eq:form1} \\
 \dif H &= F(y) \dif x, \label{eq:form2} \\
-\dif H &= \frac{-yF(y)}{x-F(y)} \dif  x \label{eq:form3}
+\dif H &= \frac{-yF(y)}{x-F(y)} \dif  y \label{eq:form3}
 \end{align}
 \end{subequations}
 

@@ -16,9 +16,9 @@ However, 52 equations is still a lot for a qualitative analysis and Ed Lorenz pr
 
 The system is presented as $X$ proportional to the intensity of convective motion, $Y$ proportional to the temperature difference between the ascending and descending currents, and $Z$ to the distortion of the temperature profile with respect to linearity, "a positive value indicating that the strongest gradients occur near the boundaries". 
 
-The parameters $\sigma$ is the Prandtl number defined as the ratio of momentum diffusivity to thermal diffusivity; $b$ is related to the motion wavenumber, and $\rho$ is the ration between the Rayleigh number and the _critical_ Rayleigh number. In short, the higher $\rho$, the more turbulent we expect the flow to be. 
+The parameters $\sigma$ is the Prandtl number defined as the ratio of momentum diffusivity to thermal diffusivity; $b$ is related to the motion wavenumber, and $\rho$ is the ratio between the Rayleigh number and the _critical_ Rayleigh number. In short, the higher $\rho$, the more turbulent we expect the flow to be. 
 
-Wether this highly truncated model keeps producing realistic results for $\rho>1$ is contentious and might have been a moot point between Saltzman and Lorenz. Lorenz claimed that [his] "Equations may give realistic results when the Rayleigh number is slightly supercritical, but their solutions cannot be expected to resemble those of [Saltzman's] when strong convection occurs, in view of the extreme truncation". 
+Whether this highly truncated model keeps producing realistic results for $\rho>1$ is contentious and might have been a moot point between Saltzman and Lorenz. Lorenz claimed that [his] "Equations may give realistic results when the Rayleigh number is slightly supercritical, but their solutions cannot be expected to resemble those of [Saltzman's] when strong convection occurs, in view of the extreme truncation". 
 
 This is a fascinating case where a model that his too idealised to still be realistic, proved to be highly insightful. In his acknowledgements, Ed Lorenz writes: "The writer is indebted to Dr. Barry Saltzman for brining to his attention the existence of nonperiodic solutions". This is a big statement, because this is the core of the paper. Yet, Saltzman may have done even more, as explained by @maasch05aa: 
 

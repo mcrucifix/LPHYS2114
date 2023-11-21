@@ -1,0 +1,85 @@
+#define arrowshift 0.75
+#define xaxislength 1.1
+#define xinit 0.1
+#define firstiter 4
+
+#include "epix.h"
+#include "stdio.h"
+
+#define r 4.3
+
+// nullcline
+double f (double x) { return(r*(x) - r*(x*x)); }
+double root_left (double x) {return ((r-sqrt(r*r-4*x*r))/(2.*r));}
+double root_right (double x) {return ((r+sqrt(r*r-4*x*r))/(2.*r));}
+
+
+
+
+using namespace ePiX;
+
+
+int main() {
+
+  bounding_box(P(-0.2,-0.2), P(1.6,1.6));
+  picture(2,2);
+  unitlength("100pt");
+
+  begin();
+
+  arrow(P(0.0,0.0), P(xaxislength,0));
+  arrow(P(0.0,0.0), P(0.0,1.0));
+ 
+  label(P(0.0,1.1), P(10,0), "$x_{n+1}$",tl);
+  label(P(xaxislength,0), P(10,0), "$x_n$",br);
+ 
+
+  double x=xinit;
+  double x1=x;
+  double x12;
+
+  char buffer[8];
+  bbold();
+  solid();
+  plot(f,-0.02,1.02,25);
+
+
+
+
+  double rl = root_left(1.);
+  double rr = root_right(1.);
+  fill(Black(0.2));
+  solid();
+  plain();
+  rect(P(rl,0.), P(rr,1.));
+  dashed();
+  line(P(0,f(rr)),P(xaxislength, f(rr)));
+  solid();
+
+
+//  dot(P(rl,1.));
+//  dot(P(rr,1.));
+  double tmp1; double tmp2;
+  tmp1 = rl;
+  tmp2 = rr;
+  rr = root_left(tmp1);
+  rl = root_left(tmp2);
+  rect(P(rl,0), P(rr,f(rr)));
+  line(P(0,f(rr)),P(xaxislength, f(rr)));
+  rr = root_right(tmp1);
+  rl = root_right(tmp2);
+  rect(P(rl,0), P(rr,f(rr)));
+  solid();
+
+  dashed();
+  line(P(0,f(rr)),P(xaxislength, f(rr)));
+  solid();
+
+
+  bbold();
+  dashed();
+  line(P(-0.2,-0.2), P(1.2,1.2));
+  tikz_format();
+  end();
+}
+

@@ -100,10 +100,10 @@ From this it is clear around a _hyperbolic_ fixed point, the linearised system e
 
 A bit abusively, we sometimes speak of exponential divergence or convergence but cleary what we have here is a power law. It dictates the behaviour of the system in a neighbourhood of a non-hyperbolic fixed point as long as $f^\prime(p)$ is non-zero. 
 
-The particular case  $|f^\prime (p)| = 0$ merits some mention. The fixed point is said to be _superstable_. The second-order approximation is $$\xi_{n+1}=\frac{1}{2}f^{\prime\prime}(p)\xi_n^2$$. 
+The particular case  $|f^\prime (p)| = 0$ merits some mention. The fixed point is said to be _superstable_. The second-order approximation is $$\xi_{n+1}=\frac{1}{2}f^{\prime\prime}(p)\xi_n^2.$$ 
 
 
-The convergence or divergence, depending on the sign of the second-order derivative, is supergeometric:
+The convergence (we have convergence since  $|f^\prime (p)| < 0$)  is supergeometric:
 
 \begin{displaymath}
 \begin{split}
@@ -116,10 +116,10 @@ The convergence or divergence, depending on the sign of the second-order derivat
 
 
 \bd{superstable point}
-A point with  $f^{\prime}(p)=0$s is said to be superstable. 
+A point with  $f^{\prime}(p)=0$  is said to be superstable. 
 \ed
 
-It may be shown that root found by a Newton-Raphson iteration is superstable. 
+It may be shown that the root found by a Newton-Raphson iteration is superstable. 
 
 Quite naturally, the stability of $k-$periodic orbit may be assessed considering the iteration $f^k$ and its derivatives.
 
@@ -131,7 +131,7 @@ We come back to the logistic iteration $f(x)=rx(1-x)$,and examine some of its pr
 
 For $r>1$, orbits are diverging towards $-\infty$ for $x_0 \notin [0,1]$. We proceed separately for $x_0<0$ and $x_0>1$. 
 
-For $x_0<0$, the definition of the iteration makes it clear that $x_{n+1} < x_{n}$ (tip: write it as $ax-ax^2$), and there cannot be any fixed point $p$ towards which the iteration converges. Indeed, this would imply
+For $x_0<0$, the definition of the iteration makes it clear that $x_{n+1} < x_{n}$ (tip: write it as $rx-rx^2$), and there cannot be any fixed point $p$ towards which the iteration converges. Indeed, this would imply
 
 \begin{displaymath}
 p = \lim_{n\rightarrow \infty} x_{n+1} =\lim_{n\rightarrow \infty} f(x_n) = f (\lim_{n\rightarrow \infty} x_n) = f(p) < p.
@@ -185,6 +185,9 @@ In this regime, the orbits have mostly  the characteristics of chaos that we fur
 
 ### Fractal set of diverging orbits  for $r>4$
 
-The maximum of $rx(1-x)$ occurs at $x=\frac{1}{2}$ and is $r/4$. Hence, for $r>=4$ there is an interval $A$ comprised between $x\mp = \frac{1}{2} ( 1 \mp \sqrt {1-\frac{4}{r}})$ that ejects the points out of the safe interval $[0,1]$, from where trajectories diverge towards $-\infty$. 
+The maximum of $rx(1-x)$ occurs at $x=\frac{1}{2}$ and is $r/4$. Hence, for $r>4$ there is an interval $A$ comprised between $x\mp = \frac{1}{2} ( 1 \mp \sqrt {1-\frac{4}{r}})$ that ejects the points out of the safe interval $[0,1]$, from where trajectories diverge towards $-\infty$. 
 
 However, outside $A$, there are also smaller intervals that will drive $x$ into $A$, so that their positive orbits also diverge.  This reasoning leads us to the construction of an ensemble of diverging orbits that is a Cantor set, made of the union of disjoint sets that have a self-similarity property. 
+
+\input{Figures/logistic_fractal.eepic}
+

@@ -54,7 +54,7 @@ int main() {
   rect(P(rl,0.), P(rr,1.));
   dashed();
   line(P(0,f(rr)),P(xaxislength, f(rr)));
-  label(P(rr+rl/2.), P(0,-5), "$A$", b)
+  label(P(rr+rl/2.), P(0,-5), "$A$", b);
   solid();
 
 
@@ -66,12 +66,12 @@ int main() {
   rr = root_left(tmp1);
   rl = root_left(tmp2);
   rect(P(rl,0), P(rr,f(rr)));
-  label(P(rr+rl/2.), P(0,-5), "$B_1$", b)
+  label(P(rr+rl/2.), P(0,-5), "$B_1$", b);
   line(P(0,f(rr)),P(xaxislength, f(rr)));
   rr = root_right(tmp1);
   rl = root_right(tmp2);
   rect(P(rl,0), P(rr,f(rr)));
-  label(P(rr+rl/2.), 0, P(0,-5), "$B_2$", b)
+  label(P(rr+rl/2.), P(0,-5), "$B_2$", b);
   solid();
 
   dashed();

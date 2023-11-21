@@ -35,14 +35,46 @@ f^\prime (p) = \lim_{x\rightarrow p} \frac{f(x)-f(p)}{x-p} = \lim_{x\rightarrow 
 we find, by definition of the limit that, for any $\epsilon$ we can find a $\delta$ such that:
  $\left| f^\prime (p) - \frac{f(x)-p}{x-p}\right| < \epsilon$. 
 
-It comes up that the distance between $|f^\prime (p)|$ and $|\frac{f(x)-p}{x-p}|$ is less that $\epsilon$. 
+It comes up that the distance between $f^\prime (p)$ and $\frac{f(x)-p}{x-p}$ is less that $\epsilon$, that is: 
+
+\begin{align*}
+- \epsilon &<  f^\prime (p) - \frac{f(x)-p}{x-p} < \epsilon.  \\
+- \epsilon -  f^\prime (p) &<  - \frac{f(x)-p}{x-p} < \epsilon - f^\prime (p) \\
+\end{align*}
+
+If $f^\prime (p) < 0$, this inequality becomes ($f(x)-f(p)$ and $(x-p)$ have opposite signs)
+
+\begin{displaymath}
+- \epsilon +  |f^\prime (p)| <  \frac{|f(x)-p|}{|x-p|}| < \epsilon + |f^\prime (p)|. 
+\end{displaymath}, which we rewrite, for clarity
+
+\begin{displaymath}
+|f^\prime (p)| - \epsilon <  \frac{|f(x)-p|}{|x-p|}| < |f^\prime (p)| + \epsilon. 
+\end{displaymath}, which we rewrite, for clarity
+
+Now, if $f^\prime (p) > 0$, this inequality becomes ($f(x)-f(p)$ and $(x-p)$ have the same sign)
+
+\begin{displaymath}
+- \epsilon -  |f^\prime (p)| <  -\frac{|f(x)-p|}{|x-p|}| < \epsilon - |f^\prime (p)|.
+\end{displaymath}
+
+We turn the sign to obtain:
+\begin{displaymath}
+ |f^\prime (p)| + \epsilon >  \frac{|f(x)-p|}{|x-p|}| > |f^\prime (p)| + \epsilon ,
+\end{displaymath}
+
+so that both positive and negative $f^\prime(p)$ will satisfy the inequality
+
+\begin{displaymath}
+ (|f^\prime (p)| - \epsilon) < |f(x)-p| <  (|f^\prime (p)| + \epsilon)|x-p| 
+\end{displaymath}
 
 Now, we consider separately the attractor and the sink. 
 
-If $|f^\prime (p) |<1$, we can find $\epsilon$ and the corresponding $\delta$ such that $|f^\prime(p)| < 1-\epsilon$ and:
+If $|f^\prime (p) |<1$, we can find $\epsilon$ such that $|f^\prime(p)| + \epsilon < 1$, and then we can find (because of the definition of the limit that we have just used), $\delta$ with $|x-p|<\delta$ such that
 
 \begin{equation}\label{eq:it1}
-|f(x) -  p| < (|f^\prime(p)| + \epsilon) |x-p|  < \delta.
+|f(x) -  p| < (|f^\prime(p)| + \epsilon) |x-p|  < 1 \delta < \delta. 
 \end{equation}
 
 We proceed by successive iterations. Indeed, we now know that the point $f(x)$ is also close to $p$, with a distance less than $\delta$. Hence, the above relationship also applies to this point, i.e., 
@@ -61,19 +93,19 @@ and then substitute the result of \eqref{eq:it1}. Iteration after iteration we e
 and this  $\forall n>0$. This is exactly the attractor property. There is a $\delta$ such that $\lim_{n\rightarrow\infty}|f^n(x)-p|=0$. 
 
 Now, we consider the source case. We know that we can find  $\epsilon >0$ such
-that $|f^\prime(x)|-\epsilon >1$. There is also a $\delta$ such that, for $|x-p|<\delta$, 
+that $|f^\prime(x)|-\epsilon >1$. But from what we have already learned,  there is also a $\delta$ such that, for $|x-p|<\delta$, 
 
 \begin{equation}\label{eq:t12}
-|f(x) -  p| > (|f^\prime(p)| + \varepsilon) |x-p|,
+|f(x) -  p| > (|f^\prime(p)| - \varepsilon) |x-p|,
 \end{equation}
 
 By iteration of \eqref{eq:t12}: 
 
 \begin{displaymath}
-|f^n(x) -  (p)| > (|f^\prime(p)| + \varepsilon)^n |x-p|. 
+|f^n(x) -  (p)| > (|f^\prime(p)| - \varepsilon)^n |x-p|. 
 \end{displaymath}
 
-As $(|f^\prime(p)| + \varepsilon)>1$ I can find a $n$ such that, given $|x-p|$, the right-hand-side as big as I want. I have therefore found a $\delta$ such that $|f^n(x) -  p| > \delta  \forall n \geq 1$. \hfill$\square$.
+As $(|f^\prime(p)| - \varepsilon)>1$ one can find a $n$ such that, given $|x-p|$, the right-hand-side as big as one wants. We have therefore found a $\delta$ such that $|f^n(x) -  p| > \delta  \forall n \geq 1$. \hfill$\square$.
 
 ## Linearised system
 

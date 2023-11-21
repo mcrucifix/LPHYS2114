@@ -179,3 +179,62 @@ overlay={%
 
 
 \newcommand\vectort[2]{\begin{pmatrix}#1 \\ #2\end{pmatrix}}
+
+\definecolor{turquoiseblue}{rgb}{0.0, 1.0, 0.94}
+\definecolor{uclbleunuit}{rgb}{0, 0.1289, 0.3047}
+\definecolor{uclcyan}{rgb}{0.3633, 0.6992 , 0.8984}
+\definecolor{uclbleugris}{rgb}{0.6094,.7148,0.8281}
+
+\newcommand{\uclouvainlogo}[3]{
+\begin{scope}[shift={(#1,#2)}, scale=#3]
+    \fill[fill=uclcyan] (0,0) rectangle (0.75,0.25);
+    \fill[fill=uclcyan] (0,0) rectangle (0.25,1.00);
+    \fill[fill=uclbleunuit] (0.25,0.25) rectangle (0.75,1.00);
+    \fill[fill=uclbleugris] (0.75,0.25) rectangle (1.00,1.00);
+  \end{scope}
+}
+
+
+\makeatletter
+
+\newcommand{\@coursecode}{coursecode}
+\renewcommand{\@title}{title}
+\newcommand{\@academicyear}{academicyear}
+\newcommand{\@documenttype}{documenttype}
+\newcommand{\@coursetitle}{coursetitle}
+\newcommand{\@school}{UCLouvain -- Facult\'e des Sciences}
+\newcommand{\coursecode}[1]{\renewcommand{\@coursecode}{#1}}
+\newcommand{\coursetitle}[1]{\renewcommand{\@coursetitle}{#1}}
+\newcommand{\documenttype}[1]{\renewcommand{\@documenttype}{#1}}
+\newcommand{\academicyear}[1]{\renewcommand{\@academicyear}{#1}}
+\newcommand{\school}[1]{\renewcommand{\@school}{#1}}
+\renewcommand{\titlepage}{%
+\begingroup% 
+\thispagestyle{empty}
+%\hpace{0.4\textwidth}
+%\hfill
+\hspace{0.3\textwidth}%
+\colorbox{uclbleunuit}{%\textcolor{white}
+\parbox{0.8\textwidth}{%
+\begin{flushright}
+%\setlength{\parskip}{4\bigskipamount plus \smallskipamount minus \smallskipamount}
+\textcolor{white}{%
+{\Huge\scshape\sf \@coursetitle} \\ [\baselineskip]
+{\Large\scshape\sf \@coursecode} \\ [\baselineskip]
+{\large\scshape\sf \@documenttype} \\ [\baselineskip]
+{\large\scshape\sf \@author} \\ [\baselineskip]
+{\large\scshape\sf \@academicyear} 
+\vspace{2em}
+}
+\end{flushright}
+}
+\vspace{2em}
+}
+\vfill
+\hfill
+\begin{tikzpicture}
+  \uclouvainlogo{0}{0}{0.6pt}
+\end{tikzpicture} {\Huge\sf{UCLouvain}}\\[0.5\baselineskip]
+\vspace*{4em}
+\endgroup}
+\makeatother

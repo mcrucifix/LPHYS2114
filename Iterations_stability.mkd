@@ -35,14 +35,46 @@ f^\prime (p) = \lim_{x\rightarrow p} \frac{f(x)-f(p)}{x-p} = \lim_{x\rightarrow 
 we find, by definition of the limit that, for any $\epsilon$ we can find a $\delta$ such that:
  $\left| f^\prime (p) - \frac{f(x)-p}{x-p}\right| < \epsilon$. 
 
-It comes up that the distance between $|f^\prime (p)|$ and $|\frac{f(x)-p}{x-p}|$ is less that $\epsilon$. 
+It comes up that the distance between $f^\prime (p)$ and $\frac{f(x)-p}{x-p}$ is less that $\epsilon$, that is: 
+
+\begin{align*}
+- \epsilon &<  f^\prime (p) - \frac{f(x)-p}{x-p} < \epsilon.  \\
+- \epsilon -  f^\prime (p) &<  - \frac{f(x)-p}{x-p} < \epsilon - f^\prime (p) \\
+\end{align*}
+
+If $f^\prime (p) < 0$, this inequality becomes ($f(x)-f(p)$ and $(x-p)$ have opposite signs)
+
+\begin{displaymath}
+- \epsilon +  |f^\prime (p)| <  \frac{|f(x)-p|}{|x-p|}| < \epsilon + |f^\prime (p)|. 
+\end{displaymath}, which we rewrite, for clarity
+
+\begin{displaymath}
+|f^\prime (p)| - \epsilon <  \frac{|f(x)-p|}{|x-p|}| < |f^\prime (p)| + \epsilon. 
+\end{displaymath}, which we rewrite, for clarity
+
+Now, if $f^\prime (p) > 0$, this inequality becomes ($f(x)-f(p)$ and $(x-p)$ have the same sign)
+
+\begin{displaymath}
+- \epsilon -  |f^\prime (p)| <  -\frac{|f(x)-p|}{|x-p|}| < \epsilon - |f^\prime (p)|.
+\end{displaymath}
+
+We turn the sign to obtain:
+\begin{displaymath}
+ |f^\prime (p)| + \epsilon >  \frac{|f(x)-p|}{|x-p|}| > |f^\prime (p)| + \epsilon ,
+\end{displaymath}
+
+so that both positive and negative $f^\prime(p)$ will satisfy the inequality
+
+\begin{displaymath}
+ (|f^\prime (p)| - \epsilon) < |f(x)-p| <  (|f^\prime (p)| + \epsilon)|x-p| 
+\end{displaymath}
 
 Now, we consider separately the attractor and the sink. 
 
-If $|f^\prime (p) |<1$, we can find $\epsilon$ and the corresponding $\delta$ such that $|f^\prime(p)| < 1-\epsilon$ and:
+If $|f^\prime (p) |<1$, we can find $\epsilon$ such that $|f^\prime(p)| + \epsilon < 1$, and then we can find (because of the definition of the limit that we have just used), $\delta$ with $|x-p|<\delta$ such that
 
 \begin{equation}\label{eq:it1}
-|f(x) -  p| < (|f^\prime(p)| + \epsilon) |x-p|  < \delta.
+|f(x) -  p| < (|f^\prime(p)| + \epsilon) |x-p|  < 1 \delta < \delta. 
 \end{equation}
 
 We proceed by successive iterations. Indeed, we now know that the point $f(x)$ is also close to $p$, with a distance less than $\delta$. Hence, the above relationship also applies to this point, i.e., 
@@ -61,19 +93,19 @@ and then substitute the result of \eqref{eq:it1}. Iteration after iteration we e
 and this  $\forall n>0$. This is exactly the attractor property. There is a $\delta$ such that $\lim_{n\rightarrow\infty}|f^n(x)-p|=0$. 
 
 Now, we consider the source case. We know that we can find  $\epsilon >0$ such
-that $|f^\prime(x)|-\epsilon >1$. There is also a $\delta$ such that, for $|x-p|<\delta$, 
+that $|f^\prime(x)|-\epsilon >1$. But from what we have already learned,  there is also a $\delta$ such that, for $|x-p|<\delta$, 
 
 \begin{equation}\label{eq:t12}
-|f(x) -  p| > (|f^\prime(p)| + \varepsilon) |x-p|,
+|f(x) -  p| > (|f^\prime(p)| - \varepsilon) |x-p|,
 \end{equation}
 
 By iteration of \eqref{eq:t12}: 
 
 \begin{displaymath}
-|f^n(x) -  (p)| > (|f^\prime(p)| + \varepsilon)^n |x-p|. 
+|f^n(x) -  (p)| > (|f^\prime(p)| - \varepsilon)^n |x-p|. 
 \end{displaymath}
 
-As $(|f^\prime(p)| + \varepsilon)>1$ I can find a $n$ such that, given $|x-p|$, the right-hand-side as big as I want. I have therefore found a $\delta$ such that $|f^n(x) -  p| > \delta  \forall n \geq 1$. \hfill$\square$.
+As $(|f^\prime(p)| - \varepsilon)>1$ one can find a $n$ such that, given $|x-p|$, the right-hand-side as big as one wants. We have therefore found a $\delta$ such that $|f^n(x) -  p| > \delta  \forall n \geq 1$. \hfill$\square$.
 
 ## Linearised system
 
@@ -100,10 +132,10 @@ From this it is clear around a _hyperbolic_ fixed point, the linearised system e
 
 A bit abusively, we sometimes speak of exponential divergence or convergence but cleary what we have here is a power law. It dictates the behaviour of the system in a neighbourhood of a non-hyperbolic fixed point as long as $f^\prime(p)$ is non-zero. 
 
-The particular case  $|f^\prime (p)| = 0$ merits some mention. The fixed point is said to be _superstable_. The second-order approximation is $$\xi_{n+1}=\frac{1}{2}f^{\prime\prime}(p)\xi_n^2$$. 
+The particular case  $|f^\prime (p)| = 0$ merits some mention. The fixed point is said to be _superstable_. The second-order approximation is $$\xi_{n+1}=\frac{1}{2}f^{\prime\prime}(p)\xi_n^2.$$ 
 
 
-The convergence or divergence, depending on the sign of the second-order derivative, is supergeometric:
+The convergence (we have convergence since  $|f^\prime (p)| < 0$)  is supergeometric:
 
 \begin{displaymath}
 \begin{split}
@@ -116,10 +148,10 @@ The convergence or divergence, depending on the sign of the second-order derivat
 
 
 \bd{superstable point}
-A point with  $f^{\prime}(p)=0$s is said to be superstable. 
+A point with  $f^{\prime}(p)=0$  is said to be superstable. 
 \ed
 
-It may be shown that root found by a Newton-Raphson iteration is superstable. 
+It may be shown that the root found by a Newton-Raphson iteration is superstable. 
 
 Quite naturally, the stability of $k-$periodic orbit may be assessed considering the iteration $f^k$ and its derivatives.
 
@@ -131,7 +163,7 @@ We come back to the logistic iteration $f(x)=rx(1-x)$,and examine some of its pr
 
 For $r>1$, orbits are diverging towards $-\infty$ for $x_0 \notin [0,1]$. We proceed separately for $x_0<0$ and $x_0>1$. 
 
-For $x_0<0$, the definition of the iteration makes it clear that $x_{n+1} < x_{n}$ (tip: write it as $ax-ax^2$), and there cannot be any fixed point $p$ towards which the iteration converges. Indeed, this would imply
+For $x_0<0$, the definition of the iteration makes it clear that $x_{n+1} < x_{n}$ (tip: write it as $rx-rx^2$), and there cannot be any fixed point $p$ towards which the iteration converges. Indeed, this would imply
 
 \begin{displaymath}
 p = \lim_{n\rightarrow \infty} x_{n+1} =\lim_{n\rightarrow \infty} f(x_n) = f (\lim_{n\rightarrow \infty} x_n) = f(p) < p.
@@ -185,6 +217,9 @@ In this regime, the orbits have mostly  the characteristics of chaos that we fur
 
 ### Fractal set of diverging orbits  for $r>4$
 
-The maximum of $rx(1-x)$ occurs at $x=\frac{1}{2}$ and is $r/4$. Hence, for $r>=4$ there is an interval $A$ comprised between $x\mp = \frac{1}{2} ( 1 \mp \sqrt {1-\frac{4}{r}})$ that ejects the points out of the safe interval $[0,1]$, from where trajectories diverge towards $-\infty$. 
+The maximum of $rx(1-x)$ occurs at $x=\frac{1}{2}$ and is $r/4$. Hence, for $r>4$ there is an interval $A$ comprised between $x\mp = \frac{1}{2} ( 1 \mp \sqrt {1-\frac{4}{r}})$ that ejects the points out of the safe interval $[0,1]$, from where trajectories diverge towards $-\infty$. 
 
-However, outside $A$, there are also smaller intervals that will drive $x$ into $A$, so that their positive orbits also diverge.  This reasoning leads us to the construction of an ensemble of diverging orbits that is a Cantor set, made of the union of disjoint sets that have a self-similarity property. 
+However, outside $A$, there are also smaller intervals that will drive $x$ into $A$ at the next iteration(here, denoted $B_1$ and $B_2$), so that their positive orbits also diverge.  This reasoning leads us to the construction of an ensemble of diverging orbits that is a Cantor set, made of the union of disjoint sets that have a self-similarity property. 
+
+\input{Figures/logistic_fractal.eepic}
+

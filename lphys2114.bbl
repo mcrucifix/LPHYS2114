@@ -1,4 +1,10 @@
-\begin{thebibliography}{MOF05}
+\begin{thebibliography}{BGGS80}
+
+\bibitem[BGGS80]{benettin80aa}
+G.~Benettin, L.~Galgani, A.~Giorgilli, and J.~Strelcyn.
+\newblock Lyapunov characteristic exponents for smooth dynamical systems and
+  for hamiltonian systems; a method for computing all of them. part 1: Theory.
+\newblock {\em Meccanica}, 15(1):9–20, 1980.
 
 \bibitem[HJ90]{horn90aa}
 R.~A. Horn and C.~R. Johnson.
@@ -19,6 +25,12 @@ K.~A. Maasch, R.~J. Oglesby, and A.~Fournier.
 L.~Perko.
 \newblock Differential equations and dynamical systems.
 \newblock 2001.
+
+\bibitem[RS00]{Ramasubramanian200072}
+K.~Ramasubramanian and M.~S. Sriram.
+\newblock A comparative study of computation of lyapunov spectra with different
+  algorithms.
+\newblock {\em Physica D: Nonlinear Phenomena}, 139(1-2):72 -- 86, 2000.
 
 \bibitem[Sal62]{Saltzman62aa}
 B.~Saltzman.

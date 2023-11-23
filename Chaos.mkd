@@ -62,7 +62,7 @@ In fact, it may be demonstrated that (2.) and (3.) imply (1.).
 
 ## Chaos in other dynamical systems
 
-The $(2 \mod 1)$ map is a starting point to demonstrate chaos in other dynamical systems. To this end, one must find an approach to transfer knowledge from this iteration to other ones. We will briefly review here to approaches.
+The $(2 \mod 1)$ map is a starting point to demonstrate chaos in other dynamical systems. To this end, one must find an approach to transfer knowledge from this iteration to other ones. We will briefly review here two approaches.
 
 ### The itinerary approach
 

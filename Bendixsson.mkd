@@ -199,11 +199,11 @@ We now consider the (somewhat artificial) system:
 \end{equation}
 
 
-This time, $\dot H = \lambda H ((\pd{H}{x})^2 + (\pd{H}{y})^2)$. We have already studied the (conservative) $\lambda=0$ case. If $\lambda \neq 0$, the fixed points $p(\pm 1, 0)$ and $p(0,0)$ persist. The first two points are centres; the $p(0,0)$ is a saddle. The iso-contours $H=C$ are generally not orbits, _except_ the very particular case $H=0$. 
+This time, $\dot H = \lambda H ((\pd{H}{x})^2 + (\pd{H}{y})^2)$, still with $H=V(x)+y^2/2$, $V(x)=x^4/4-x^2/2$.  We have already studied the (conservative) $\lambda=0$ case. If $\lambda \neq 0$, the fixed points $p(\pm 1, 0)$ and $p(0,0)$ persist. The first two points are centres; the $p(0,0)$ is a saddle. The iso-contours $H=C$ are generally not orbits, _except_ the very particular case $H=0$. 
 
 We now concentrate on the curves defined by $H=0$, which separate negative (inside) from positive (outside) values. 
 
-- For $\lambda < 0$, we have trajectories reaching asymptotically one of the two homoclinic loops if they start _inside_, and revolve (slowly) around the homoclinic loops if they start outside. Homoclinic loops act as attractors. The period of the oscillation will increase to infinity as the trajectory approaches the homoclinic attractor
+- For $\lambda < 0$, we have trajectories reaching asymptotically one of the two homoclinic loops if they start _inside_, and revolve (slowly) around the homoclinic loops if they start outside. Homoclinic loops act as attractors. The period of the oscillation will increase to infinity as the trajectory approaches the homoclinic attractor.
 - For $\lambda > 0$, we have trajectories reaching asymptotically one of the two centers if they start _inside_, and diverging if they start outside. Homoclinic loops act as repellers.  
 
 

@@ -137,10 +137,10 @@ overlay={%
 %\newcounter{tcounter}
 \newlistof{dfcounter}{Definitions}{List of definitions}
 \newlistof{tcounter}{Theorems}{List of theorems}
-\AtEndDocument{
-\listofdfcounter
-\listoftcounter
-}
+%\AtEndDocument{
+%\listofdfcounter
+%\listoftcounter
+%}
 \newenvironment{cdiscussion}
 {\begin{tcolorbox}[discussionbox,step=dcounter]}
 {\end{tcolorbox}}
@@ -180,3 +180,73 @@ overlay={%
 
 
 \newcommand\vectort[2]{\begin{pmatrix}#1 \\ #2\end{pmatrix}}
+
+\definecolor{turquoiseblue}{rgb}{0.0, 1.0, 0.94}
+\definecolor{uclbleunuit}{rgb}{0, 0.1289, 0.3047}
+\definecolor{uclcyan}{rgb}{0.3633, 0.6992 , 0.8984}
+\definecolor{uclbleugris}{rgb}{0.6094,.7148,0.8281}
+
+\newcommand{\uclouvainlogo}[3]{
+\begin{scope}[shift={(#1,#2)}, scale=#3]
+    \fill[fill=uclcyan] (0,0) rectangle (0.75,0.25);
+    \fill[fill=uclcyan] (0,0) rectangle (0.25,1.00);
+    \fill[fill=uclbleunuit] (0.25,0.25) rectangle (0.75,1.00);
+    \fill[fill=uclbleugris] (0.75,0.25) rectangle (1.00,1.00);
+  \end{scope}
+}
+
+
+\makeatletter
+
+\newcommand{\@coursecode}{coursecode}
+\renewcommand{\@title}{title}
+\newcommand{\@academicyear}{academicyear}
+\newcommand{\@documenttype}{documenttype}
+\newcommand{\@coursetitle}{coursetitle}
+\newcommand{\@school}{UCLouvain -- Facult\'e des Sciences}
+\newcommand{\coursecode}[1]{\renewcommand{\@coursecode}{#1}}
+\newcommand{\coursetitle}[1]{\renewcommand{\@coursetitle}{#1}}
+\newcommand{\documenttype}[1]{\renewcommand{\@documenttype}{#1}}
+\newcommand{\academicyear}[1]{\renewcommand{\@academicyear}{#1}}
+\newcommand{\school}[1]{\renewcommand{\@school}{#1}}
+\renewcommand{\titlepage}{%
+\begingroup% 
+\thispagestyle{empty}
+%\hpace{0.4\textwidth}
+%\hfill
+\hspace{0.4\textwidth}%
+\parbox{0.8\textwidth}{%
+\begin{flushright}
+\textcolor{uclbleunuit}{
+{\Huge\scshape\sf \@coursetitle} \\ [\baselineskip]
+{\Huge\scshape\sf \@coursecode} \\ [\baselineskip]
+}
+ \end{flushright}
+}\\ [\baselineskip] 
+%parbox \\
+
+\hspace{0.4\textwidth}%
+\colorbox{uclbleunuit}{%
+  \parbox{0.8\textwidth}{%
+  \setlength{\parskip}{4\bigskipamount plus \smallskipamount minus \smallskipamount}
+  \vspace{6cm}
+  \begin{flushright}
+  \textcolor{white}{%
+{\large\scshape\sf \@documenttype} \\[\baselineskip]
+{\large\scshape\sf \@academicyear} \\[\baselineskip]
+}
+\textcolor{uclcyan}{%
+{\large\scshape\sf \@author} \\ [\baselineskip]
+{\large\scshape\sf Facult\'e des Sciences}% %\\ [\baselineskip]
+}
+\end{flushright}
+}
+}
+\vspace{2.0cm}
+\\
+\begin{tikzpicture}
+  \uclouvainlogo{0}{0}{0.6pt}
+\end{tikzpicture} {\Huge\sf{UCLouvain}}
+\hfill
+\endgroup}
+\makeatother

@@ -137,10 +137,10 @@ overlay={%
 %\newcounter{tcounter}
 \newlistof{dfcounter}{Definitions}{List of definitions}
 \newlistof{tcounter}{Theorems}{List of theorems}
-\AtEndDocument{
-\listofdfcounter
-\listoftcounter
-}
+%\AtEndDocument{
+%\listofdfcounter
+%\listoftcounter
+%}
 \newenvironment{cdiscussion}
 {\begin{tcolorbox}[discussionbox,step=dcounter]}
 {\end{tcolorbox}}
@@ -213,28 +213,39 @@ overlay={%
 \thispagestyle{empty}
 %\hpace{0.4\textwidth}
 %\hfill
-\hspace{0.3\textwidth}%
-\colorbox{uclbleunuit}{%\textcolor{white}
+\hspace{0.4\textwidth}%
 \parbox{0.8\textwidth}{%
 \begin{flushright}
-%\setlength{\parskip}{4\bigskipamount plus \smallskipamount minus \smallskipamount}
-\textcolor{white}{%
+\textcolor{uclbleunuit}{
 {\Huge\scshape\sf \@coursetitle} \\ [\baselineskip]
-{\Large\scshape\sf \@coursecode} \\ [\baselineskip]
-{\large\scshape\sf \@documenttype} \\ [\baselineskip]
+{\Huge\scshape\sf \@coursecode} \\ [\baselineskip]
+}
+ \end{flushright}
+}\\ [\baselineskip] 
+%parbox \\
+
+\hspace{0.4\textwidth}%
+\colorbox{uclbleunuit}{%
+  \parbox{0.8\textwidth}{%
+  \setlength{\parskip}{4\bigskipamount plus \smallskipamount minus \smallskipamount}
+  \vspace{6cm}
+  \begin{flushright}
+  \textcolor{white}{%
+{\large\scshape\sf \@documenttype} \\[\baselineskip]
+{\large\scshape\sf \@academicyear} \\[\baselineskip]
+}
+\textcolor{uclcyan}{%
 {\large\scshape\sf \@author} \\ [\baselineskip]
-{\large\scshape\sf \@academicyear} 
-\vspace{2em}
+{\large\scshape\sf Facult\'e des Sciences}% %\\ [\baselineskip]
 }
 \end{flushright}
 }
-\vspace{2em}
 }
-\vfill
-\hfill
+\vspace{2.0cm}
+\\
 \begin{tikzpicture}
   \uclouvainlogo{0}{0}{0.6pt}
-\end{tikzpicture} {\Huge\sf{UCLouvain}}\\[0.5\baselineskip]
-\vspace*{4em}
+\end{tikzpicture} {\Huge\sf{UCLouvain}}
+\hfill
 \endgroup}
 \makeatother

@@ -227,9 +227,8 @@ overlay={%
 
 \hspace{0.4\textwidth}%
 \colorbox{uclbleunuit}{%
-  \parbox{0.8\textwidth}{%
+  \parbox[][12cm][b]{0.8\textwidth}{%
   \setlength{\parskip}{4\bigskipamount plus \smallskipamount minus \smallskipamount}
-  \vspace{6cm}
   \begin{flushright}
   \textcolor{white}{%
 {\large\scshape\sf \@documenttype} \\[\baselineskip]

@@ -126,7 +126,7 @@ We will now explore _one_ mechanism by which orbits emerge. Consider again the v
  \dot{y} &=  ( y - y^3/3 - x )
 \end{align*}
 
-We study the stability of the fixed point $(\beta, \beta - \beta^3 /3)$ with the Jacobian:
+We study the stability of the fixed point $(\beta - \beta^3 /3, \beta)$ with the Jacobian:
 
 \begin{displaymath}
   D_{f,g}(\beta, \beta - \beta^3) = \begin{pmatrix}
@@ -198,7 +198,7 @@ x_1 &= F(x_1) - x_2 \\
 x_2 &= a(x_1 - b)
 \end{align*}
 
-(we recognise $x_2=x$; $y_2=x$, $b=0$, $a=1$, $F(y)=y-y^3$), the sign of $\sigma$ is given by $F^{\prime\prime\prime}$ at the bifurcation point. It is here _negative_, so we have a _supercritical_ Hopf bifurcation. 
+(we recognise $x_2=x$; $y_2=y$, $b=0$, $a=1$, $F(y)=y-y^3$), the sign of $\sigma$ is given by $F^{\prime\prime\prime}$ at the bifurcation point. It is here _negative_, so we have a _supercritical_ Hopf bifurcation. 
 
 The above equation is the FithHugh-Nagumo equation, and your professor has used it to study the dynamics of ice ages. 
 

@@ -126,7 +126,7 @@ We will now explore _one_ mechanism by which orbits emerge. Consider again the v
  \dot{y} &=  ( y - y^3/3 - x )
 \end{align*}
 
-We study the stability of the fixed point $(\beta, \beta - \beta^3 /3)$ with the Jacobian:
+We study the stability of the fixed point $(\beta - \beta^3 /3, \beta)$ with the Jacobian:
 
 \begin{displaymath}
   D_{f,g}(\beta, \beta - \beta^3) = \begin{pmatrix}
@@ -174,7 +174,7 @@ Consider first the trivial fixed point for $r$, $r=0$. It is stable for $\beta<0
 The zero fixed point is stable for $\beta<0$.
 The radius $r$ admits a second fixed point when the sign of $\sigma$ and $\beta$ are opposite to each other. 
 
-- ( $\sigma = 1$) : In the _supercritical_ bifurcation, on finds a stable limit cycle (fixed point for $r$) for positive values of $\beta$, and growing as ($\sqrt \beta$). In other words, the limit cycle grows from zero and reaches a finite amplitude as $\beta$ increases. 
+- ( $\sigma \neq 1$) : In the _supercritical_ bifurcation, one finds a stable limit cycle (fixed point for $r$) for positive values of $\beta$, and growing as ($\sqrt \beta$). In other words, the limit cycle grows from zero and reaches a finite amplitude as $\beta$ increases. 
 
 - ( $\sigma = 1$) :  In the  _subcritical_, an _unstable_ limit cycle exists in the negative domain of $\beta$, and then disappears as $\beta$ is positive. That is, for positive $\beta$, the only invariant form is the unstable fixed point. 
 
@@ -198,7 +198,7 @@ x_1 &= F(x_1) - x_2 \\
 x_2 &= a(x_1 - b)
 \end{align*}
 
-(we recognise $x_2=x$; $y_2=x$, $b=0$, $a=1$, $F(y)=y-y^3$), the sign of $\sigma$ is given by $F^{\prime\prime\prime}$ at the bifurcation point. It is here _negative_, so we have a _supercritical_ Hopf bifurcation. 
+(we recognise $x_2=x$; $y_2=y$, $b=0$, $a=1$, $F(y)=y-y^3$), the sign of $\sigma$ is given by $F^{\prime\prime\prime}$ at the bifurcation point. It is here _negative_, so we have a _supercritical_ Hopf bifurcation. 
 
 The above equation is the FithHugh-Nagumo equation, and your professor has used it to study the dynamics of ice ages. 
 

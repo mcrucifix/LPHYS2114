@@ -41,7 +41,7 @@ f(x) = rx (1-\frac{x}{N}),
 
 or, rescaling the population mass by $N$, $f(x) = rx (1-x)$. 
 
-This _logistic_ equation can be interpreted as a _discrete_ version of the Verhulst model for population growth, developed under the influence of Adolphe Quetelet (both Belgian Mathematicians). Its behaviour can be surprisingly complex depending on the value of $a$ and we will explore some of it later on. 
+This _logistic_ equation can be interpreted as a _discrete_ version of the Verhulst model for population growth, developed under the influence of Adolphe Quetelet (both Belgian Mathematicians). Its behaviour can be surprisingly complex depending on the value of $r$ and we will explore some of it later on. 
 
 The Cobweb construction provides a insightful approach to construct the orbits. It consists in iterating using by reporting the iteration $x_{i+1}$, found on the $y-$axis, to the $x-$axis using the $x_{i}=x_{i+1}$ line. 
 
@@ -145,7 +145,7 @@ Given a metric in domain $\Omega$ (usually $\Omega=\mathbb{R}^n$), we can charac
 Again, similarly to the _hyperbolic_ character of a fixed point in a diffeomorphism \index{diffeomorphism}:
 
 \bd{Hyperbolic fixed point}
-The fixed point of an iteration is _hyperbolic_ if all eigenvalues of its Jacobian have non-zero eigenvalues
+The fixed point of an iteration is _hyperbolic_ if all eigenvalues of its Jacobian are on the unit circle. 
 \ed 
 
 We anticipate a similar connection between eigenvalues of the Jacobian and the locally attracting - repelling properties of the fixed point, but we leave the demonstration for the next section. 

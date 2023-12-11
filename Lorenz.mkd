@@ -71,7 +71,7 @@ Consider again the trivial solution. We find $\lambda_+$ becomes positive; the f
 
 We also have new solutions at $X_0=Y_0=\pm\sqrt{b(\rho-1)}$, which we expect to behave similarly given the symmetry of the system. With some algebra, it can be shown that they are attracting for $1<\rho<\rho_H = \sigma\frac{\sigma+b+3}{\sigma-b-1}$. (cf. Appendix \ref{appendix:maxima})
 
-More precisely, they are sinks for $\rho<\rho_1<\rho_H$, and sinking spirals (sinks with imaginary parts)  for $\rho_1<=\rho<\rho_H$. In may be shown (specialised work!) that there are unstable periodic orbits for $\rho_1<\rho<\rho_H$. 
+More precisely, they are sinks for $\rho<\rho_1<\rho_H$, and sinking spirals (sinks with imaginary parts)  for $\rho_1\leq\rho<\rho_H$. In may be shown (specialised work!) that there are unstable periodic orbits for $\rho_1<\rho<\rho_H$. 
 
 Yet, trajectories are bounded for all $\rho>1$ To show this, 
 define $U=\rho X^2 + \sigma Y^2 + \sigma (Z-2\rho)^2$. Observe that this time derivative satisfies: 
@@ -80,7 +80,7 @@ define $U=\rho X^2 + \sigma Y^2 + \sigma (Z-2\rho)^2$. Observe that this time de
 \dot U = -2\sigma (\rho X^2 +Y^2 + (Z-\rho)^2 - b\rho^2).
 \end{displaymath}
 
-In other words $\dot U$ is strictly negative for $\rho X^2 +Y^2 + (Z-\rho)^2 - b\rho^2 > 0$, that is, any point outside the ellipsoid defined by $\rho X^2 +Y^2 + b(Z-\rho)^2 = b\rho^2$. Outside that ellipsoid, any isocontour of $U$ acts as a trapping region. Trajectories will not fly to infinity as time goes by. 
+In other words $\dot U$ is strictly negative for $\rho X^2 +Y^2 + (Z-\rho)^2 - b\rho^2 > 0$, that is, any point outside the ellipsoid defined by $\rho X^2 +Y^2 + (Z-\rho)^2 = b\rho^2$. Outside that ellipsoid, any isocontour of $U$ acts as a trapping region. Trajectories will not fly to infinity as time goes by. 
 
 ## The Lorenz attractor 
 

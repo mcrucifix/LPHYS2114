@@ -10,7 +10,7 @@ JUPYTERTEX=$(IPYNB:.ipynb=.tex)
 .SUFFIXES: .mkd .tex .eepic .xp .ipynb
 
 
-lphys2114.pdf: lphys2114.tex $(TEX) $(PDF) $(EEPIC) $(JUPYTERTEX) mc.cls $(TIKZ) local.bib
+lphys2114.pdf: lphys2114.tex $(TEX) $(PDF) $(EEPIC) $(JUPYTERTEX) mc.cls $(TIKZ)
 	sh Makeversion.sh &&  latexmk -pdf lphys2114.tex
 
 local.bib: lphys2114.aux

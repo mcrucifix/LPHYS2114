@@ -22,10 +22,10 @@ It is neither continuous, nor reversible. We will now formalise some of the argu
 
 First, observe that $f(x)=.b_2b_3b_4\ldots$, such that $f^n(x)=b_{n+1}b_{n+2}b_{n+3}\ldots$. 
 
-Then, for any $x_0$, and consider $y_0$ such that $|y_0-x_0| = \epsilon$, 
-with $x_0=.b_1b_2\ldots$ and  $y_0=.c_1c_2\ldots$. Then, we generally expect that for $n<-\log_2 \epsilon$, $b_n=c_n$. We can no longer expect this equality to hold after $n=-\log_2 \epsilon$ and the distance $|f^n(x_0)-f^n(x_0)|$ will be of the order of $\frac{1}{2}$. 
+Then, for any $x_0$, and consider $y_0$ such that $|y_0-x_0| < \epsilon$, 
+with $x_0=.b_1b_2\ldots$ and  $y_0=.c_1c_2\ldots$. Then, we generally expect that for $n<-\log_2 \epsilon$, $b_n=c_n$. We can no longer expect this equality to hold after $n=-\log_2 \epsilon$ and the distance $|f^n(y_0)-f^n(x_0)|$ will be of the order of $\frac{1}{2}$. 
 
-As a general rule, there exists a typical distance $d$ (here, 0.5) such that   for any $\epsilon>0$, $x\in\Omega$, I can find $y$ such that $|x-y|<\epsilon$ and $|f^n(x)-f^n(y)|\geq d$ for $n$ _not too big_. This is the basis of the definition of _sensitivity to initial conditions_: 
+As a general rule, there exists a typical distance $d$ (here, 0.5) such that   for any $\epsilon>0$, $x\subset\Omega$, I can find $y$ such that $|x-y|<\epsilon$ and $|f^n(y)-f^n(x)|\geq d$ for $n$ _not too big_. This is the basis of the definition of _sensitivity to initial conditions_: 
 
 \bd{Sensitivity to initial conditions (SIC)}
 Let $f:\Omega \rightarrow \Omega$. $f$ has SIC iff  there is $d>0$, $0<C<\infty$ such that $\forall x\in\Omega$ and $\epsilon>0$, there is a $y\in\Omega$ and $0<n<C|\ln \epsilon|$ with  $|x-y|<\epsilon$ and $|f^n(x)-f^n(y)|\geq d$. 
@@ -52,7 +52,7 @@ The iteration $f:\Omega\rightarrow\Omega$, $\Omega \in \mathbb{R}$ is chaotic if
 
  1. it has the SIC property;
  2. it has a dense set of periodic orbits;
- 3. it posses at least one dense orbit in $\Omega$. 
+ 3. it possesses at least one dense orbit in $\Omega$. 
 
 \ed
 

@@ -26,7 +26,7 @@ We first proceed by proving that for any $\epsilon>0$, there is $\delta >0$ such
 |f^\prime (p)| - \varepsilon < \left| \frac{f(x)-p}{x-p}\right| < |f^\prime (p)| + \epsilon. 
 \end{displaymath}
 
-This relationship emerges from the definition the definition of the derivative, and the definition of the fixed point. Indeed, from:
+This relationship emerges from the definition of the derivative, and the definition of the fixed point. Indeed, from:
 
 \begin{displaymath}
 f^\prime (p) = \lim_{x\rightarrow p} \frac{f(x)-f(p)}{x-p} = \lim_{x\rightarrow p} \frac{f(x)-p}{x-p}, 
@@ -42,43 +42,43 @@ It comes up that the distance between $f^\prime (p)$ and $\frac{f(x)-p}{x-p}$ is
 - \epsilon -  f^\prime (p) &<  - \frac{f(x)-p}{x-p} < \epsilon - f^\prime (p) \\
 \end{align*}
 
-If $f^\prime (p) < 0$, this inequality becomes ($f(x)-f(p)$ and $(x-p)$ have opposite signs)
+If $f^\prime (p) < 0$, this inequality becomes ($f(x)-p$ and $(x-p)$ have opposite signs)
 
 \begin{displaymath}
-- \epsilon +  |f^\prime (p)| <  \frac{|f(x)-p|}{|x-p|}| < \epsilon + |f^\prime (p)|. 
-\end{displaymath}, which we rewrite, for clarity
+- \epsilon +  |f^\prime (p)| <  \frac{|f(x)-p|}{|x-p|}| < \epsilon + |f^\prime (p)|,  
+\end{displaymath}which we rewrite, for clarity
 
 \begin{displaymath}
 |f^\prime (p)| - \epsilon <  \frac{|f(x)-p|}{|x-p|}| < |f^\prime (p)| + \epsilon. 
-\end{displaymath}, which we rewrite, for clarity
+\end{displaymath}
 
 Now, if $f^\prime (p) > 0$, this inequality becomes ($f(x)-f(p)$ and $(x-p)$ have the same sign)
 
 \begin{displaymath}
-- \epsilon -  |f^\prime (p)| <  -\frac{|f(x)-p|}{|x-p|}| < \epsilon - |f^\prime (p)|.
+- \epsilon -  |f^\prime (p)| <  -\frac{|f(x)-p|}{|x-p|} < \epsilon - |f^\prime (p)|.
 \end{displaymath}
 
 We turn the sign to obtain:
 \begin{displaymath}
- |f^\prime (p)| + \epsilon >  \frac{|f(x)-p|}{|x-p|}| > |f^\prime (p)| + \epsilon ,
+ |f^\prime (p)| - \epsilon >  \frac{|f(x)-p|}{|x-p|} > |f^\prime (p)| + \epsilon ,
 \end{displaymath}
 
 so that both positive and negative $f^\prime(p)$ will satisfy the inequality
 
 \begin{displaymath}
- (|f^\prime (p)| - \epsilon) < |f(x)-p| <  (|f^\prime (p)| + \epsilon)|x-p| 
+ (|f^\prime (p)| - \epsilon)|x-p| < |f(x)-p| <  (|f^\prime (p)| + \epsilon)|x-p| 
 \end{displaymath}
 
 Now, we consider separately the attractor and the sink. 
 
-If $|f^\prime (p) |<1$, we can find $\epsilon$ such that $|f^\prime(p)| + \epsilon < 1$, and then we can find (because of the definition of the limit that we have just used), $\delta$ with $|x-p|<\delta$ such that
+If $|f^\prime (p) |<1$, we can find $\epsilon$ such that $|f^\prime(p)| + \epsilon < 1$, and  we can find $\delta$ with $|x-p|<\delta$ such that
 
 \begin{equation}\label{eq:it1}
 |f(x) -  p| < (|f^\prime(p)| + \epsilon) |x-p|  < 1 \delta < \delta. 
 \end{equation}
 
 We proceed by successive iterations. Indeed, we now know that the point $f(x)$ is also close to $p$, with a distance less than $\delta$. Hence, the above relationship also applies to this point, i.e., 
-we may substituting $f(x)$ to $x$, to find:
+we may substitute $f(x)$ to $x$, to find:
 
 \begin{displaymath}
 |f(f(x)) -  p| < (|f^\prime(p)| + \epsilon) |f(x)-p|  < \delta
@@ -102,7 +102,7 @@ that $|f^\prime(x)|-\epsilon >1$. But from what we have already learned,  there 
 By iteration of \eqref{eq:t12}: 
 
 \begin{displaymath}
-|f^n(x) -  (p)| > (|f^\prime(p)| - \varepsilon)^n |x-p|. 
+|f^n(x) -  p| > (|f^\prime(p)| - \varepsilon)^n |x-p|. 
 \end{displaymath}
 
 As $(|f^\prime(p)| - \varepsilon)>1$ one can find a $n$ such that, given $|x-p|$, the right-hand-side as big as one wants. We have therefore found a $\delta$ such that $|f^n(x) -  p| > \delta  \forall n \geq 1$. \hfill$\square$.
@@ -113,20 +113,20 @@ If $f(x)$ is $C^\infty$, we can also proceed by Taylor expansion, writing, aroun
 
 \begin{displaymath}
 \begin{split}
-p+\xi_{n+1} = f(p+\xi_n) &= f(p)+f^\prime(p)\xi_n + \frac{1}{2}f^{\prime\prime}(p)\xi_n^2 + \mathcal{O}(x_n^3) \\
-                     &= p   +f^\prime(p)\xi_n + \frac{1}{2}f^{\prime\prime}(p)\xi_n^2 + \mathcal{O}(x_n^3) \\
+p+\xi_{n+1} = f(p+\xi_n) &= f(p)+f^\prime(p)\xi_n + \frac{1}{2}f^{\prime\prime}(p)\xi_n^2 + \mathcal{O}(\xi_n^3) \\
+                     &= p   +f^\prime(p)\xi_n + \frac{1}{2}f^{\prime\prime}(p)\xi_n^2 + \mathcal{O}(\xi_n^3) \\
 \end{split}
 \end{displaymath}
 
 Hence, 
 \begin{displaymath}
-\xi_{n+1} = f^\prime(p)\xi_n + \frac{1}{2}f^{\prime\prime}(p)\xi_n^2 + \mathcal{O}(x_n^3) 
+\xi_{n+1} = f^\prime(p)\xi_n + \frac{1}{2}f^{\prime\prime}(p)\xi_n^2 + \mathcal{O}(\xi_n^3) 
 \end{displaymath}
 
 From this it is clear around a _hyperbolic_ fixed point, the linearised system evolves, near the fixed point, as a geometric convergence towards the fixed point if $|f^\prime (p)| < 1$, and geometric for $|f^\prime (p)| > 1$:
 
 \begin{displaymath}
-\xi_{n} \sim  f^\prime(p)^n xi_0
+\xi_{n} \sim  f^\prime(p)^n \xi_0
 \end{displaymath}
 
 
@@ -188,7 +188,7 @@ The paramater $r=1$ corresponds to a _transcritical_ bifurcation, where both fix
 The existence of a 2-periodic point is conditioned by the equation
 
 \begin{displaymath}
-rp(1-p)(1-rp(1-p)) = p.
+r^2p(1-p)(1-rp(1-p)) = p.
 \end{displaymath}
 
 Having the $p$ of the right-hand-side in the left-hand-side and some algebra genie would show that this is equivalent to
@@ -199,7 +199,7 @@ rp(p-(1-\frac{1}{r}))(r^2p^2 - r(r+1)p + r + 1) = 0.
 
 This form has the merit to make it clear that we have a fixed point for $p=0$ and $p=1-\frac{1}{r}$ but these are the fixed points of the iteration (period 1) so they can't count as a solution for period-2 orbits. The period-2 points are hidden in the third factor. There must be 2 roots, which are real for $r>3$, and which correspond to the $2$ distinct points ($p_1$ and $p_2$) that form the orbit. 
 
-Further analysis shows that the $2-$orbit is attracting for $3<r<1+\sqrt{6}$, and repulsive for $r>1+\sqrt{6}$. This requires inspection of $(f^2)^\prime=f^\prime(p_2)f^\prime(p_1)$. 
+Further analysis shows that the $2-$periodic orbit is attracting for $3<r<1+\sqrt{6}$, and repulsive for $r>1+\sqrt{6}$. This requires inspection of $(f^2)^\prime=f^\prime(p_2)f^\prime(p_1)$. 
 
 In summary, we have a _period doubling_ bifurcation at $r=3$ and we anticipate a similar phenomenon at $1+\sqrt{6}$. At the specific parameter of $r=3$, the orbit is  converging _very slowly_ towards the $\frac{2}{3}$. 
 
@@ -213,7 +213,7 @@ This is called the Feigenbaum number, who observed it in other iterations (e.g. 
 
 ### Chaotic behaviour for $r_\infty < r < 4$
 
-In this regime, the orbits have mostly  the characteristics of chaos that we further define in section \label{sect:chaos}. Numerical analysis shows however some suprising windows of peridic behaviour (look again at the orbit diagram in section \ref{sect:lgrowth}, and of _intermittent_ behaviour, where the system seems to hesitate between different periods. 
+In this regime, the orbits have mostly  the characteristics of chaos that we further define in section \label{sect:chaos}. Numerical analysis shows however some suprising windows of periodic behaviour (look again at the orbit diagram in section \ref{sect:lgrowth}, and of _intermittent_ behaviour, where the system seems to hesitate between different periods. 
 
 ### Fractal set of diverging orbits  for $r>4$
 

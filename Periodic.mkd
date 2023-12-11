@@ -174,7 +174,7 @@ Consider first the trivial fixed point for $r$, $r=0$. It is stable for $\beta<0
 The zero fixed point is stable for $\beta<0$.
 The radius $r$ admits a second fixed point when the sign of $\sigma$ and $\beta$ are opposite to each other. 
 
-- ( $\sigma = 1$) : In the _supercritical_ bifurcation, on finds a stable limit cycle (fixed point for $r$) for positive values of $\beta$, and growing as ($\sqrt \beta$). In other words, the limit cycle grows from zero and reaches a finite amplitude as $\beta$ increases. 
+- ( $\sigma \neq 1$) : In the _supercritical_ bifurcation, one finds a stable limit cycle (fixed point for $r$) for positive values of $\beta$, and growing as ($\sqrt \beta$). In other words, the limit cycle grows from zero and reaches a finite amplitude as $\beta$ increases. 
 
 - ( $\sigma = 1$) :  In the  _subcritical_, an _unstable_ limit cycle exists in the negative domain of $\beta$, and then disappears as $\beta$ is positive. That is, for positive $\beta$, the only invariant form is the unstable fixed point. 
 

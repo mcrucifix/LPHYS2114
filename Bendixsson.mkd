@@ -180,7 +180,7 @@ In summary, $\Delta H(x_0)$ is positive for $a(x_0) < \alpha$. It decreases mono
 Remember that the path we have constructed in the positive $y-$axis domain  can be mirrored in the negative domain. For that reason, we can define an ejecting region by chosing $x_0$ such that $a(x_0) < a_0$,  and a trapping region by chosing $x_0$ such that $a(x_0) > a_0$, and connecting paths such as shown on the graph below. 
 We have demonstrated that the  Liénard system admits one single attractor that is a closed orbit. 
 
-TODO: corriger la figure $a_0) \rightarrow x^\star$. 
+_Note de la présente édition_: la figure doit être corrigée: $a_0 \rightarrow x^\star$. 
 
 \includegraphics[page=25, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
 

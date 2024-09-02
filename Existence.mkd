@@ -144,7 +144,7 @@ In other words,
 \et 
 
 \bcd
-Consider the following representation of trajectories. How would you prove that the intersection is necessarily a fixed point? What does it say about the time a trajectory will need to reach the fixed point? 
+Consider the following diagram. As we will see later this is called a phase portrait: a diagram which qualitatively represents some trajectories such as to provide a general idea of the behavour of trajectories in the phase spaced. In this case, several trajectories seem to converge to a same point.  How would you prove that the intersection is necessarily a fixed point? What does it say about the time a trajectory will need to reach the fixed point? 
 
 \includegraphics[page=4, angle=90, scale=0.7, trim={0 0 0 3cm}, clip]{lphys2114-figures}
 

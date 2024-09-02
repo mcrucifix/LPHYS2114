@@ -1,4 +1,17 @@
-- define properly the invariant manifold. 
-- An orbit is an invariant manifold. 
-- Explains that it partitions the state space
-- modify the sentence that having an infinity of invariante manifolds is characteristics of a Hamiltionian orbit (Plane.mkd)
+- define properly the invariant manifold.  --> done
+- An orbit is an invariant manifold.       --> done
+- Explains that it partitions the state space --> done
+- modify the sentence that having an infinity of invariante manifolds is characteristics of a Hamiltionian orbit (Plane.mkd) --> done
+
+
+Preciser ce qu'est une fonction de Lyapunov 
+
+a long term: ajouter resonance et "circle map" (qui peut etre forc,ee, et meme devenir chaotique)
+verifier que le 'phase portrait' est correctement d,efini (flow map) (ok mais ajouter un index)
+verifier que le 'diagramme de stabilite' est correctement defini   (ok mais ajouter un index)
+
+dire quelque part que le theoreme de poincare de bendixon a pour idee de projeter sur la dynamique d'une orbit sur l'idee d'une iteration.
+
+verifier ce qu'on dit a propos de la section de pointcare
+
+

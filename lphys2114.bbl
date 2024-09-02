@@ -6,6 +6,11 @@ G.~Benettin, L.~Galgani, A.~Giorgilli, and J.~Strelcyn.
   for hamiltonian systems; a method for computing all of them. part 1: Theory.
 \newblock {\em Meccanica}, 15(1):9–20, 1980.
 
+\bibitem[HD13]{hirsh13aa}
+M.~W. Hirsh and R.~L. Devaney.
+\newblock {\em Dynamical Systems, and an Introduction to Chaos}.
+\newblock Elsevier, 2013.
+
 \bibitem[HJ90]{horn90aa}
 R.~A. Horn and C.~R. Johnson.
 \newblock {\em Matrix Analysis}.

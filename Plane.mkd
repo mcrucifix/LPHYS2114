@@ -1,12 +1,23 @@
-## Linear fields 
+## Linear fields on the plane
 \label{sect:plane}
 
 ### General solution
 
 We consider the vector field defined in $\mathbb{R}^2\rightarrow \mathbb{R}^2$, with $\vec{x} \in \mathbb{R}^2$. 
-In the particular case of a linear diffeomorphism, the vector field takes a matrix form, as follows:
+
+Before we start anything, we will have to define the notion of invariant set. 
+
+\bd{Invariant set}
+A set $S$ is said to be invariant _under the vector field_ $\dot x = f(x,t)$ if for any $x_0\in S$, its trajectory $x(t,t_0,x_0) $\in S$ (see def. of trajectory in sect.  \ref{def:trajectory})
+\ed
+
+Technically, much of what follows here actually applies to _invariant manifolds_, which are invariant sets that that are locally differentiable (you can describe them locally as a vector space. We will not insist on this difference here. Note that, by definition, an _orbit_ is an invariant set, but an invariant set is not necessarily an orbit.
+
+Now, this chapter is specifically dedicated to linear, autonomous dynamical systems. In other words, they can be written in matrix notation:
 
 $$ \dot{\vec{x}}  = A \vec{x}.$$
+
+The flow associated with such linear fields are called linear diffeomorphisms (the space is deformed linearly). 
 
 The Jordan canonical form theorem tells [^Jordan] us that, if $A$ is a real two by two matrix, there is a non-singular real matrix $T$ such that $A=TJT^{-1}$, and $T$ is made of the column vectors $\vec{u}$ and $\vec{v}$.  Depending on the eigenvalue and eigenvectors of $A$, $J$ will be of one of three forms:
 
@@ -36,15 +47,19 @@ We will be able to _prove_ that a fixed point with all _negative_ eigenvalues (s
 
 ### Case A: Real eigenvalues and linearly independent eigenvectors : invariant manifolds and linear transient growth
 
+
 The general solution to the ordinary differential equation is $$\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} +  C_2 e^{\lambda_2 t} \vec{v},$$ where $\vec u$ and $\vec v$ are the eigenvectors, and $\lambda_1$ and $\lambda_2$ the respective eigenvalues. 
 
 The fixed point $(0,0)$ is asymptotically attracting if it is a hyperbolic fixed point with $\lambda_{1,2} < 0$. Furthermore, for an initial condition along the eigenvector $\vec{u}$, that is, $\vec{x}_0 = \alpha \vec{u}$, the particular solution is $\vec{x} = \alpha e^{\lambda_1 t} \vec{u}$. In other words, in the particular case of an initial condition along an eigenvector, the orbit is a line. 
 
-In other words, the lines defined by $\alpha \vec{u}$ and $\beta \vec{v}$, $\alpha,\beta\in\mathbb{R}$ are invariant manifolds: if you are on the line, the flow keeps you on the line. We can already have some intuitive grasp on what is going on, and observe that the manifold might be unstable (the flow propels you to infinity), or stable (the flow asymptotically brings you to the fixed point $(0,0)$, depending on the eigenvalue. 
+In other words, the lines defined respectively  by $\alpha \vec{u}$ and $\beta \vec{v}$, $\alpha,\beta\in\mathbb{R}$ have a special property: if you are on the line. They are invariant sets and given that we are in a 2-D domain, these lines effectively partition the state space. If a trajectory is born on one side of the set, it remains there. 
+
+At this point we can already have some intuitive grasp on what is going on.
+Some of these lines are associated with an exponentially growing solution (the associated  $\lambda$ is positive): This is an _unstable_ manifold. Some, to the contrary, bring you asymptotically to the fixed point $(0,0)$. They are _stable_. Whether they are stable or unstable depends on the eigenvalue. 
 
 \includegraphics[page=15, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
 
-In general, even if the eigenvalues are real, the orbit is _not_ a line. Consider the case of a hyperbolic sink ($\lambda_1,\lambda_2<0$). One can view that $-\lambda_1$ and $-\lambda_2$ act as the inverse of attracting time scales. For example,  |$\lambda_1| \gg |\lambda_2|$ imply that the trajectory will be quickly attracted towards the $u-$component of the trajectory will vanish quickly, so that it will be quickly attracted towards the manifold associated with the second eigenvalue. The $\beta \vec{v}$ will act as a _slow manifold_. 
+However, these are particular cases: even when both eigenvalues are real, the orbit is _not_ a line. Consider the case of a hyperbolic sink ($\lambda_1,\lambda_2<0$). One can view that $-\lambda_1$ and $-\lambda_2$ act as the inverse of attracting time scales. For example,  |$\lambda_1| \gg |\lambda_2|$ imply that the trajectory will be quickly attracted towards the $u-$component of the trajectory will vanish quickly, so that it will be quickly attracted towards the manifold associated with the second eigenvalue. The $\beta \vec{v}$ will act as a _slow manifold_. 
 
 
 A further counter-intuitive behaviour may occur in the case $\vec{u}$ and $\vec{v}$ are non-orthogonal. As the $u$-component quickly vanishes (in this example), the _norm_ of the vector $$\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} +  C_2 e^{\lambda_2 t} \vec{v},$$ may display a _transient growth_. This phenomenon, called _non-normal growth_ is common in fluid dynamics and has been suggested to be important in the early phases of the dynamics of the ocean-atmosphere phenomenon El-Nino [^1].
@@ -64,9 +79,8 @@ This is a typical example of linear vector field with purely imaginary eigenvalu
 The general solution is $q = C_0 e^{i(t+\phi_0)}$ and $p=\dot q$. 
 
 \bcd
-Can you see that you now have an _infinity_ of invariant manifolds? Which are they? This situation is quite typical of Hamiltonian (conservative flows).
+Can you see that you now have an _infinity_ of orbits which can are arbritarily far apart from each other ?  Which are they ? How can you say that this property must be specifific of non-dissipative systems ? (Class discussion sect. \ref{bcd:Ham1})
 \ecd 
-
 Now consider the slightly more realistic case of a harmonic oscillator with friction coefficient $\nu$.
 
 $$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -1 & -\nu \end{pmatrix} \vectort{q}{p}  $$

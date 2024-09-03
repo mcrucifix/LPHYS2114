@@ -1,8 +1,10 @@
-MKD=$(wildcard Md/*.mkd)
+MDDIR=Md/
+MKDFILES=$(wildcard  $(MDDIR)*.mkd)
+TEXDIR=./
+TEX = $(patsubst $(MDDIR)%.mkd,%.tex,$(MKDFILES))
 XP=$(wildcard Figures/*.xp)
 IPYNB=$(wildcard Jupyter/*.ipynb)
 TIKZ=$(wildcard Figures/*.tikz)
-TEX=$(MKD:.mkd=.tex)
 EEPIC=$(XP:.xp=.eepic)
 JUPYTERTEX=$(IPYNB:.ipynb=.tex)
 #PDF=$(wildcard figures/*.pdf)
@@ -11,6 +13,8 @@ JUPYTERTEX=$(IPYNB:.ipynb=.tex)
 
 
 lphys2114.pdf: lphys2114.tex $(TEX) $(PDF) $(EEPIC) $(JUPYTERTEX) mc.cls $(TIKZ)
+	@echo check mdfiles: $(MKDFILES)
+	@echo check texfiles: $(TEX)
 	sh Makeversion.sh &&  latexmk -pdf lphys2114.tex
 
 local.bib: lphys2114.aux
@@ -19,9 +23,9 @@ local.bib: lphys2114.aux
 handouts: lphys2114.tex $(TEX) $(PDF)
 	pdflatex -jobname lphys2114_handouts -pdf "\PassOptionsToClass{handout}{mc}\input{lphys2114.tex}"
 
-.mkd.tex:
+%.tex:  Md/%.mkd
 	@echo processing $< to $@
-	pandoc --natbib $< -f markdown  -o $@; sed -i '1 i\%\n% AUTOMATICALLY GENERATED  WITH PANDOC DO NOT EDIT\n%' $@ && mv $@ . 
+	pandoc --natbib $< -f markdown  -o $@; sed -i '1 i\%\n% AUTOMATICALLY GENERATED  WITH PANDOC DO NOT EDIT\n%' $@ 
 
 .xp.eepic:
 	@echo processing $< to $@

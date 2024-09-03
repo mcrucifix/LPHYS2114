@@ -22,9 +22,9 @@ P EulerOneStep (P ds, float dt){
 
 int main() {
 
-  bounding_box(P(-2.0,-0.5), P(2.0,2.0));
-  picture(4,2.5);
-  unitlength("3cm");
+  bounding_box(P(-2.0,-0.5), P(3.0,2.0));
+  picture(5,2.5);
+  unitlength("2.7cm");
 
   begin();
 

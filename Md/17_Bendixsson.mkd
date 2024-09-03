@@ -159,7 +159,7 @@ Next,  we construct an  orbit (call it $\gamma(x_0)$) that starts somewhere from
 
 <!--\includegraphics[page=24, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}-->
 
-\input{Figures/lienard_orbit.eepic}
+\efigure{lienard_orbit}
 
 Because of this, if $H(p_4)$ was equal to $H(p_1)$, then we would have a closed orbit. But this is generally not the case. 
 
@@ -181,7 +181,7 @@ Remember that the path we have constructed in the positive $y-$axis domain  can 
 We have demonstrated that the  Liénard system admits one single attractor that is a closed orbit. 
 
 
-<!--\input{Figures/lienard_proof.eepic}-->
+<!--\efigure{lienard_proof}-->
 \efigure{lienard_proof}
 
 
@@ -207,10 +207,8 @@ We now concentrate on the curves defined by $H=0$, which separate negative (insi
 - For $\lambda > 0$, we have trajectories reaching asymptotically one of the two centers if they start _inside_, and diverging if they start outside. Homoclinic loops act as repellers.  
 
 
-\begin{tabular}{cc}
-\input{Figures/homoclinic.eepic} &
-\input{Figures/homoclinic05.eepic} 
-\end{tabular}
+\efigure{homoclinic}
+\efigure{homoclinic05} 
 
 
 

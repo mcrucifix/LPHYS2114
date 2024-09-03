@@ -5,10 +5,10 @@ We consider iterations mapping $\mathbb{R}$ on itself, that is: $f:\mathbb{R} \r
 The cobweb construction makes it reasonably intuitive that the stability of a fixed point is linked to the first-order derivative of $f$
 
 \noindent
-\mbox{\input{Figures/cobweb_1.eepic}}
-\mbox{\input{Figures/cobweb_2.eepic}} \\
-\mbox{\input{Figures/cobweb_3.eepic}}
-\mbox{\input{Figures/cobweb_4.eepic}}
+\mbox{\efigure{cobweb_1}}
+\mbox{\efigure{cobweb_2}} \\
+\mbox{\efigure{cobweb_3}}
+\mbox{\efigure{cobweb_4}}
 
 More specifically, we prove:
 
@@ -221,5 +221,5 @@ The maximum of $rx(1-x)$ occurs at $x=\frac{1}{2}$ and is $r/4$. Hence, for $r>4
 
 However, outside $A$, there are also smaller intervals that will drive $x$ into $A$ at the next iteration(here, denoted $B_1$ and $B_2$), so that their positive orbits also diverge.  This reasoning leads us to the construction of an ensemble of diverging orbits that is a Cantor set, made of the union of disjoint sets that have a self-similarity property. 
 
-\input{Figures/logistic_fractal.eepic}
+\efigure{logistic_fractal}
 

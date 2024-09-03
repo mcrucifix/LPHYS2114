@@ -64,7 +64,7 @@ However, these are particular cases: even when both eigenvalues are real, the or
 
 A further counter-intuitive behaviour may occur in the case $\vec{u}$ and $\vec{v}$ are non-orthogonal. As the $u$-component quickly vanishes (in this example), the _norm_ of the vector $$\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} +  C_2 e^{\lambda_2 t} \vec{v},$$ may display a _transient growth_. This phenomenon, called _non-normal growth_ is common in fluid dynamics and has been suggested to be important in the early phases of the dynamics of the ocean-atmosphere phenomenon El-Nino [^1].
 
-\input{Figures/nonnormal.eepic}
+\efigure{nonnormal}
 
 [^1]:Von der Heydt and Dijkstra, \url{https://dspace.library.uu.nl/bitstream/handle/1874/314407/naw5_2013_14_3_195.pdf?sequence=1}
 
@@ -95,8 +95,8 @@ As we see it, the _conservative_ harmonic oscillator is associated with a non-hy
 
 In this case, the general solution of the trajectories is $\vec{x}(t) = (C_1 e^{\lambda t} + C_2 t e^{\lambda t}) \vec{u} +  C_2 e^{\lambda t} \vec{v}$. 
 
-\scalebox{0.8}{ \input{Figures/jordan.eepic}}
-\scalebox{0.8}{ \input{Figures/jordan05.eepic}}
+\efigure{jordan}
+\efigure{jordan05}
 
 
 \bcd
@@ -337,6 +337,6 @@ Attention, there is a small difficulty: the roles of $x$ and $y$ are inverted co
 The graph below represents sample orbits (red) and the approximate stable and unstable manifolds (blue), the
 computed stable and unstable manifolds (green), and the flow direction (arrows)
 
-\input{Figures/stable.eepic}
+\efigure{stable}
 
 

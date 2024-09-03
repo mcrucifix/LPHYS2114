@@ -66,7 +66,7 @@ The basin of attraction (or _domain_) of an attracting set $A$ is  $\bigcup\limi
 
 Below is an example of basins of attractions of two sinks. The sinks act as two individual _attracting sets_. We will later identify this dynamical system as the Duffing oscillator. 
 
-\input{Figures/poincare.eepic}
+\efigure{poincare}
 
 <!--\includegraphics[page=20, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}-->
 
@@ -84,7 +84,7 @@ Consider the following system:
 
 We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can define a trapping region as an ellipse encompassing the three fixed points. It turns out the whole compact interval $[-1,1]$ on the $x$ axis is the attracting set obtained from that trapping region. Indeed, for any point $p$ on the segment, and for _any_ time $t$, you can find an initial condition (close enough to the unstable fixed point, presumably) within the attracting set (it is indeed invariant) that reaches $p$ precisely at time $t$. So this interval is really the limit of self-evolving trapping regions. (see Figure)
 
-\input{Figures/attractingSet.eepic}
+\efigure{attractingSet}
 
 But clearly this is not the idea that we might have of an attractor. Technically, we say that the attracting set that we obtained in the above example contains many "wandering points". Such point leave definitively their own neighbourhood as time continues, so we do not want to say that they are part of an "attractor". When you are on such points, you do not stay there. 
 

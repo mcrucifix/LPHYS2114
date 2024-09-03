@@ -42,9 +42,10 @@ int main() {
 //\end{align*}
 
 
-  bounding_box(P(-1.5,-1.5), P(1.5,1.5));
-  picture(6,6);
-  unitlength("40pt");
+
+  bounding_box(P(-1.2,-1.5), P(1.2,1.5));
+  picture(2.4,3);
+  unitlength("60pt");
 
   begin();
 

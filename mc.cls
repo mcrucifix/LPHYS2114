@@ -17,6 +17,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{calc}
 \RequirePackage{ifthen}
+\RequirePackage{ifoddpage}
 
 
 \newcommand\Jupyterimport[1]{{\small\subimport{Jupyter/}{#1.tex}}}
@@ -37,12 +38,24 @@
 
 % \newcommand{\efigure}[1]{\begin{figure}[h]{\input{Figures/#1.eepic}\caption{}}\end{figure}}
 
+% \newcommand{\efigure}[1]{
+% \stepcounter{figure}
+% \checkoddpage
+% \ifoddpage
+% \hspace{-5.2em}%
+% \begin{tabular}{@{}l@{\hspace{0.2em}}@{}|l@{}}
+% \parbox[b]{5em}{\textbf{Fig. \thefigure}}&\parbox[t]{\textwidth}{\input{Figures/#1.eepic}}\end{tabular}\else
+% \begin{tabular}{@{}l@{\hspace{0.2em}}@{}|l@{}}
+% \parbox[t]{\textwidth}{\input{Figures/#1.eepic}}&\parbox[b]{5em}{\textbf{Fig. \thefigure}}\end{tabular}
+% \fi}
 
 \newcommand{\efigure}[1]{
 \stepcounter{figure}
-\hspace{-6.0em}%
-\begin{tabular}{@{}l@{\hspace{1.0em}}@{}l@{}}
-\parbox[b]{5em}{\textbf{Fig. \thefigure}}&\parbox[t]{\textwidth}{\input{Figures/#1.eepic}}\end{tabular}}
+%\hspace{-5.2em}%
+\begin{tabular}{@{}l@{}l@{}}
+\raisebox{0cm}{\input{Figures/#1.eepic}}&\rule{1pt}{12pt}\hspace{0.2em}\parbox[b]{5em}{\textbf{Fig. \thefigure}}\end{tabular}
+}
+
 
 
 \tcbset{discussionbox/.style={enhanced,colback=white,colframe=green!65!black,

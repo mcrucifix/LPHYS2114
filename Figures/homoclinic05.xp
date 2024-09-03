@@ -28,9 +28,9 @@ int main() {
 //\end{align*}
 
 
-  bounding_box(P(-2.2,-2.2), P(2.2,2.2));
-  picture(6,6);
-  unitlength("40pt");
+  bounding_box(P(-2.5,-2.2), P(2.5,2.2));
+  picture(5,4.4);
+  unitlength("35pt");
 
   begin();
 

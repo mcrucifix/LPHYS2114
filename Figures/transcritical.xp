@@ -1,0 +1,39 @@
+#include "epix.h"
+#include "stdio.h"
+
+#define delta 0.12
+
+using namespace ePiX;
+
+// double ux (double x) {  return (1./3.*x*x + x*x*x/6. + x*x*x*x/30.) ;}
+float F(float y){ return ( - y + y*y*y ); }
+
+const double sqrt12 = sqrt(2)/2.;
+
+
+
+int main() {
+
+  bounding_box(P(-1.2,-1.4), P(1.2,1.4));
+  picture(2.4,2.8);
+  unitlength("2cm");
+
+  begin();
+
+  arrow(P(0,-1.3), P(0,1.3));
+  arrow(P(-1.,0), P(1.,0));
+
+  label(P(0,1.4), P(5,0),"$x$", r);
+  label(P(1.1,0), P(5,0),"$\\psi$", l);
+
+  bbold();
+  solid();
+  line(P(-1,0), P(0,0));
+  line(P(0,0), P(1,1));
+  dashed();
+  line(P(-1,-1), P(0,0));
+  line(P(0,0), P(1,0));
+
+  tikz_format();
+  end();
+}

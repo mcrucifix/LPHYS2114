@@ -36,15 +36,15 @@ void set_scene(double psi){
   bold();
   pen(Black(1.0)); 
   label_color(Black(1.0));
-  plot(expmx, -0.8, 1.8, 15);
+  plot([](double x){return (exp(-x));}, -0.8, 1.8, 15);
   label(P(-0.8, expmx(-0.8)), P(15,0), "$e^{-x}$");
   pen(Green(-0.7)); 
   label_color(Green(-0.7));
-  line(P(-1.0,1.0 +psi), P(psi+0.2,-0.2));
+  line(P(-0.8,0.8 +psi), P(0.8,-0.8 + psi));
   if (psi > 0.99) {
-  label(P(-0.5+psi,1), P(5,0), "$\\psi + x$");
+  label(P(-0.5+psi,1), P(5,0), "$\\psi-x$");
   }  else {
-  label(P(-1.3+psi,1), P(-15,0), "$\\psi + x$",r);
+  label(P(-1.3+psi,1), P(-15,0), "$\\psi-x$",r);
   }
 
   plain();

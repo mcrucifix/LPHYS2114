@@ -46,7 +46,7 @@ The fixed point may be visualised graphically, with the equation $e^{-x} = \psi 
 
 \input{Figures/phaseprotrait.eepic}
 
-As is clear from the figure showing the phase portraits, the number of fixed points changes for 2 hyperbolic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
+As is clear from the figure showing the phase portraits, the number of fixed points changes for 2 hyperbolic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a qualitative change. This is a singularity that is called a _bifurcation point_. 
 
 In this section we will learn to _detect_ bifurcation points in vector fields on the line and classify them. 
 

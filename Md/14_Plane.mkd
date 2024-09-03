@@ -17,7 +17,7 @@ Now, this chapter is specifically dedicated to linear, autonomous dynamical syst
 
 $$ \dot{\vec{x}}  = A \vec{x}.$$
 
-The flow\index{flow} associated with such linear fields are called linear diffeomorphisms\index{diffeomorphism} (the space is deformed continuously and linearly). 
+The flow\index{flow} associated with such linear fields are linear diffeomorphisms\index{diffeomorphism} (the space is deformed continuously and linearly). 
 
 The Jordan canonical form theorem tells [^Jordan] us that, if $A$ is a real two by two matrix, there is a non-singular real matrix $T$ such that $A=TJT^{-1}$, and $T$ is made of the column vectors $\vec{u}$ and $\vec{v}$.  Depending on the eigenvalue and eigenvectors of $A$, $J$ will be of one of three forms:
 

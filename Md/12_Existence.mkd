@@ -5,21 +5,21 @@
 Consider the following dynamical system:
 
 \begin{equation}\label{eq:diff}
-\dot x \eqdef \ddt x = f(x,t),\text{ with }x \in \Omega
+\dot{\vec{x}} \eqdef \ddt \vec{x} = \vec{f}(\vec{x},t),\text{ with }\vec{x} \in \Omega
 \end{equation}
 
 \bd{Autonomous dynamical system}
-The system is said to be _autonomous_\index{autonomous} if there is no explicit dependence of $f$ on $t$, and non-autonomous otherwise. 
+The system is said to be _autonomous_\index{autonomous} if there is no explicit dependence of $\vec{f}$ on $t$, and non-autonomous otherwise. 
 \ed
 
 For simplicity, we will admit that $\Omega = \mathbb{R}^n$, where $n$ is the phase-space dimension. 
 
 \bd{Trajectory}\label{def:trajectory}
-A _trajectory_\index{trajectory} $x(t, t_0, x_0)$ (or _phase curve_), for $t\in I$ is a solution of the differential equation \eqref{eq:diff}, passing through $x_0$ at time $t_0$ over an interval of existence $I$. 
+A _trajectory_\index{trajectory} $\vec{x}(t, t_0, x_0)$ (or _phase curve_), for $t\in I$ is a solution of the differential equation \eqref{eq:diff}, passing through $\vec{x}_0$ at time $t_0$ over an interval of existence $I$. 
 \ed
 
 \bd{Orbit}
-An orbit through $x_0$ is the set of points in phase space passing of a trajectory passing through $x_0$. 
+An orbit through $\vec{x}_0$ is the set of points in phase space passing of a trajectory passing through $\vec{x}_0$. 
 \ed
 
 ## Equilibrium solutions, stability and asymptotic stability
@@ -29,17 +29,17 @@ In this section we briefly formalise and extend notions that have already been i
 We consider an _autonomous_ vector field
 
 \begin{displaymath}
-\ddt x = f(x), \quad x \in \mathbb{R}^n
+\ddt{\vec{x}} = \vec{f}(\vec{x}), \quad \vec{x} \in \mathbb{R}^n
 \end{displaymath}
 
-A fixed point\index{fixed point} (also said: _equilibrium solution_) is a point $x_f \in \mathbb{R}^n$ such that $f(x_f)=0$. 
+A fixed point\index{fixed point} (also said: _equilibrium solution_) is a point $\vec{x}_f \in \mathbb{R}^n$ such that $f(\vec{x}_f)=0$. 
 
-We distinguish the Lyapunov stability from the asymptotic stability. Roughly speaking, $x_f$ is _stable_ (shorthand for _Lyapunov stable_) if solutions starting close enough to $x_f$ remain near it. It is _asymptotically stable_ if these solutions eventually converge to $x_f$. 
+We distinguish the Lyapunov stability from the asymptotic stability. Roughly speaking, $\vec{x}_f$ is _stable_ (shorthand for _Lyapunov stable_) if solutions starting close enough to $\vec{x}_f$ remain near it. It is _asymptotically stable_ if these solutions eventually converge to $\vec{x}_f$. 
 
-\bd{Lyapunov Stability}\index{Lyapunov stability} The fixed point $x_f$ is (Lyapunov) stable if, given $\varepsilon > 0$, there exists a $\delta > 0$ such that, for any other trajectory  $y(t)$ satisfying $|x_f-y(t_0)| < \delta$, then $|x_f-y(t)| < \varepsilon$ for $t>t_0$, $t_0 \in \mathbb{R}$. 
+\bd{Lyapunov Stability}\index{Lyapunov stability} The fixed point $\vec{x}_f$ is (Lyapunov) stable if, given $\varepsilon > 0$, there exists a $\delta > 0$ such that, for any other trajectory  $y(t)$ satisfying $|\vec{x}_f-\vec{y}(t_0)| < \delta$, then $|\vec{x}_f-\vec{y}(t)| < \varepsilon$ for $t>t_0$, $t_0 \in \mathbb{R}$. 
 \ed
 
-\bd{Asymptotic  Stability}\index{asymptotic stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|x_f-y(t_0)| < b$, then  $\lim_{t \rightarrow \infty} |x_f-y(t)| = 0$. 
+\bd{Asymptotic  Stability}\index{asymptotic stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|\vec{x}_f-\vec{y}(t_0)| < b$, then  $\lim_{t \rightarrow \infty} |\vec{x}_f-\vec{y}(t)| = 0$. 
 \ed
 
 \bcd
@@ -94,12 +94,12 @@ Consider again the motivating example with the ice sheets. Are the fixed points 
 In this section we develop a technical notion to deal wit the notions of "long term" and "observable" behaviours of _orbits_\index{orbit} of _dynamical systems_. This will later allow us to develop the notions of _attracting sets_ and _attractors_. Again, we  restrict the discussion to dynamical systems in the form of vector fields, that is: 
 
 \begin{equation}\label{eq:diff2}
-\ddt x = f(x,t),\text{ with }x \in \Omega
+\ddt \vec{x} = f(\vec{x},t),\text{ with }\vec{x} \in \Omega
 \end{equation}
 
-and, again, for simplicity, we will admit that $\Omega = \mathbb{R}^n$. Here, we further suppose that $f(x,t)$ is $\mathbf{C}^r$-differentiable, with $r \geq 1$ on the open set $U \subset \mathbb{R}^n\times \mathbb{R}$. 
+and, again, for simplicity, we will admit that $\Omega = \mathbb{R}^n$. Here, we further suppose that $\vec{f}(\vec{x},t)$ is $\mathbf{C}^r$-differentiable, with $r \geq 1$ on the open set $U \subset \mathbb{R}^n\times \mathbb{R}$. 
 
-\bt{Existence} Let $(x_0,t_0)\in U$. Then, there _exists_ a solution of \eqref{eq:diff2} through the point $x_0$ at $t=t_0$, denoted $x(t,t_0,x_0)$ for $|t-t_0|$ sufficiently small. The solution is unique. Moreover, $x(t,t_0,x_0)$ is a $\mathbb{C}^r$ function of $t$, $t_0$, and $x_0$. 
+\bt{Existence} Let $(\vec{x}_0,t_0)\in U$. Then, there _exists_ a solution of \eqref{eq:diff2} through the point $\vec{x}_0$ at $t=t_0$, denoted $\vec{x}(t,t_0,\vec{x}_0)$ for $|t-t_0|$ sufficiently small. The solution is unique. Moreover, $\vec{x}(t,t_0,\vec{x}_0)$ is a $\mathbb{C}^r$ function of $t$, $t_0$, and $\vec{x}_0$. 
 \et
 
 The proof is available in specialised books \cite[e.g.][chap. 6 for linear systems and chap. 17 for more general systems]{hirsh13aa}.  
@@ -110,33 +110,33 @@ It has also been proved that the unique solution can be (uniquely)  _extended_ t
 Consider the following example: $\ddt x = x^2,\quad x\in \mathbb{R}$. Find the analytical solution, and show that the solution blows up and that the interval of existence of solutions through $x_0$ at $t=0$ depends on $x_0$. Tip: use the methods of variable separation. 
 \ecd 
 
-There in another handy theorem, that says that if $f(x,t,\psi)$ is differentiable with respect to the parameter $\psi$, then the solution is also differentiable with respect to that parameter. 
+There in another handy theorem, that says that if $\vec{f}(\vec{x},t,\psi)$ is differentiable with respect to the parameter $\psi$, then the solution is also differentiable with respect to that parameter. 
 
 ## Special properties of autonomous fields 
 
 We now consider two important propositions that apply to autonomous dynamical systems, and that we will e able to prove. For simplicity, we consider a dynamical system admitting solutions over all times.
 
 \bt{Time shifted trajectories are trajectories in autonomous fields.} 
-If $x(t)$ is a solution of $\ddt x = f(x)$, then $x(t+\tau)$ is also a solution of that equation for any $\tau$. 
+If $\vec{x}(t)$ is a solution of $\ddt \vec{x} = \vec{f}(\vec{x})$, then $\vec{x}(t+\tau)$ is also a solution of that equation for any $\tau$. 
 \et 
 
-Proof: By definition, $\ddt {x(t)} = f\left( x \left(t\right) \right).$ Hence, we have
+Proof: By definition, $\ddt {\vec{x}(t)} = \vec{f}\left( \vec{x} \left(t\right) \right).$ Hence, we have
 
 \begin{displaymath}
-\left. \ddt {x(t+\tau)}\right|_{t=t_0} = 
-\left. \ddt {x(t)}\right|_{t=t_0+\tau} = 
-f\left( x \left (t_0 + \tau \right) \right) =  
-\left. f\left( x \left (t + \tau \right) \right) \right|_{t=t_0}.  
+\left. \ddt {\vec{x}(t+\tau)}\right|_{t=t_0} = 
+\left. \ddt {\vec{x}(t)}\right|_{t=t_0+\tau} = 
+\vec{f}\left( \vec{x} \left (t_0 + \tau \right) \right) =  
+\left. f\left( \vec{x} \left (t + \tau \right) \right) \right|_{t=t_0}.  
 \end{displaymath}
 
 To pack this up: 
 
-$\left. \ddt {x(t+\tau)}\right|_{t=t_0} = 
-\left. f\left( x \left (t + \tau \right) \right) \right|_{t=t_0}$ is true for any $t_0\in\mathbb{R}$. In other words, $x(t+\tau)$ is a solution of the dynamical system. \hfill $\square$ 
+$\left. \ddt {\vec{x}(t+\tau)}\right|_{t=t_0} = 
+\left. \vec{f}\left( \vec{x} \left (t + \tau \right) \right) \right|_{t=t_0}$ is true for any $t_0\in\mathbb{R}$. In other words, $\vec{x}(t+\tau)$ is a solution of the dynamical system. \hfill $\square$ 
 
 The formal maths make it a bit confusing, but the intuition is reasonably  clear: two time-shifted trajectories that pass through the same point _correspond to the same orbit_ ! 
 
-This has an important implication: in an autonomous dynamical system, there is _one single_ orbit that passes through any point $x_0$. There is a more formal proof in @Wiggins03aa, but the intuition seems to be reasonably clear from the uniqueness theorem.
+This has an important implication: in an autonomous dynamical system, there is _one single_ orbit that passes through any point $\vec{x}_0$. There is a more formal proof in @Wiggins03aa, but the intuition seems to be reasonably clear from the uniqueness theorem.
 
 In other words, 
 
@@ -152,10 +152,10 @@ Consider the following diagram. This is a phase portrait\index{phase portrait}: 
 
 ## Flows
 
-At this point, we have understood (at least intuitively) that the future fate a point in the phase space, in an autonomous system, does not depend on the time at which the snapshot has been taken. This is after all consistent  with the definition of an autonomous system (the evolution dictated by $f$ does not depend explicitly on time). In other words, for any point $(x_0,t_0)$, the point of the trajectory $x(t,t_0,x_0)$ reached at time $t$ depends only on the initial condïton $t_0$, and the time elapsed $\tau = t - t_0$. We can thus define a function $\phi(t-t_0, x_0)=x(t,t_0,x_0)$. 
+At this point, we have understood (at least intuitively) that the future fate a point in the phase space, in an autonomous system, does not depend on the time at which the snapshot has been taken. This is after all consistent  with the definition of an autonomous system (the evolution dictated by $\vec{f}$ does not depend explicitly on time). In other words, for any point $(\vec{x}_0,t_0)$, the point of the trajectory $\vec{x}(t,t_0,\vec{x_0})$ reached at time $t$ depends only on the initial condïton $t_0$, and the time elapsed $\tau = t - t_0$. We can thus define a function $\phi(t-t_0, \vec{x_0})=\vec{x}(t,t_0,\vec{x_0})$. 
 
 
-We proceed in two steps. First, we denote the family of functions $\phi^\tau$, defined such that $\phi^\tau(x_0)=x(t_0+\tau, t_0, x_0)$ which, we have seen, is independent of $t_0$. 
+We proceed in two steps. First, we denote the family of functions $\phi^\tau$, defined such that $\phi^\tau(\vec{x_0})=x(t_0+\tau, t_0, \vec{x_0})$ which, we have seen, is independent of $t_0$. 
 We observe the following properties: 
 
 - $\phi^0$ is the identify function;
@@ -163,7 +163,7 @@ We observe the following properties:
 - $\phi^t \in \mathbb{C}^r$.
 
 \bd{Flow of an autonomous differential equation}\index{flow}
-The family of functions $\phi\tau$ associated with the differential equation $\dot x = f(x)$, $f\in\mathbb C^r$,  which satisfy the above properties, is called a flow. 
+The family of functions $\phi\tau$ associated with the differential equation $\dot{\vec{x}} = \vec{f}(\vec{x})$, $\vec{f}\in\mathbb C^r$,  which satisfy the above properties, is called a flow. 
 \ed
 
 In our notation we have been a little ambiguous about the domain of $\phi$. Above we have applied $\phi^\tau$ to elements of the phase-space domain. However, we could also map the function on subsets $U$ of this domain, as illustrated on the figure below:
@@ -175,7 +175,7 @@ $$\phi^{\tau_1+\tau_2}(U) = \phi^{\tau_2} \circ \phi^{\tau_1} (U).$$ Again, this
 
 \label{subsect:flow}
 
-Given that we have required the vector field defined by $f$ to be continuous and differentiable, the mapping defined by the flow $\phi$ also inherits some nice properties as we have seen it: it is invertible and differentiable. Therefore, it turns out that the flow generated by the vector field defined on $\mathbb{R}^n$ belongs to a wider class of mathematical objects called _diffeomorphism_\index{diffeomorphism}, which are continuous, invertible mappings of so-called "differential manifolds". The vector space defined on $\mathbb{R}^n$ is a particular case of differential manifold. This establishes a link between ordinary differential equations and differential geometry. The term "diffeomorphism" will therefore appear from time to time in some of the definitions below, specifically in section \label{sect:lyapunov} where we define attractors and attracting sets. 
+Given that we have required the vector field defined by $\vec{f}$ to be continuous and differentiable, the mapping defined by the flow $\phi$ also inherits some nice properties as we have seen it: it is invertible and differentiable. Therefore, it turns out that the flow generated by the vector field defined on $\mathbb{R}^n$ belongs to a wider class of mathematical objects called _diffeomorphism_\index{diffeomorphism}, which are continuous, invertible mappings of so-called "differential manifolds". The vector space defined on $\mathbb{R}^n$ is a particular case of differential manifold. This establishes a link between ordinary differential equations and differential geometry. The term "diffeomorphism" will therefore appear from time to time in some of the definitions below, specifically in section \label{sect:lyapunov} where we define attractors and attracting sets. 
 
 The flow\index{flow} provides an intuitive impression that is reminiscent of a fluid flow. It may be converging; diverging but streamlines never cross each other. 
 
@@ -191,7 +191,7 @@ The latter category represents the class of _Hamiltonian flows_\index{hamiltonia
 \label{bcd:Ham1}
 \ecd 
 
-At this point we may already have some intuitions which will be generalised in the coming chapters. The stability or instability of fixed points in an autonomous system is related to the overall structure of the vector field defined by the function $f$ (which is here a vector). If it is rather diverging around the fixed point we expect instability; if it is converging, stability.  In a 2-dimensional vector field, divergence and convergence can be assessed with the divergence operator $\nabla\cdot f$. This is the trace of the Jacobian of the vector field, and it  measures the overall compression of the flow.  However, we may also anticipate that we might have divergence in one direction, and perhaps compression in another. These directions, as we will find out, are the eigenvectors of the Jacobian, and the relatad stability are given by the related eigenvalues. 
+At this point we may already have some intuitions which will be generalised in the coming chapters. The stability or instability of fixed points in an autonomous system is related to the overall structure of the vector field defined by the function $\vec{f}$ (which is here a vector). If it is rather diverging around the fixed point we expect instability; if it is converging, stability.  In a 2-dimensional vector field, divergence and convergence can be assessed with the divergence operator $\nabla\cdot \vec{f}$. This is the trace of the Jacobian of the vector field, and it  measures the overall compression of the flow.  However, we may also anticipate that we might have divergence in one direction, and perhaps compression in another. These directions, as we will find out, are the eigenvectors of the Jacobian, and the relatad stability are given by the related eigenvalues. 
 
 
 

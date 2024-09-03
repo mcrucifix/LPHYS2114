@@ -26,7 +26,7 @@ int main() {
   label(P(0,1.4), P(5,0),"$x$", r);
   label(P(1.1,0), P(5,0),"$\\psi$", l);
 
-  bbold();
+  bbold(Blue(1.0));
   solid();
   line(P(-1,0), P(0,0));
   line(P(0,0), P(1,1));

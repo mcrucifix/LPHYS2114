@@ -1,4 +1,4 @@
-MKD=$(wildcard *.mkd)
+MKD=$(wildcard Md/*.mkd)
 XP=$(wildcard Figures/*.xp)
 IPYNB=$(wildcard Jupyter/*.ipynb)
 TIKZ=$(wildcard Figures/*.tikz)
@@ -21,7 +21,7 @@ handouts: lphys2114.tex $(TEX) $(PDF)
 
 .mkd.tex:
 	@echo processing $< to $@
-	pandoc --natbib $< -o $@; sed -i '1 i\%\n% AUTOMATICALLY GENERATED  WITH PANDOC DO NOT EDIT\n%' $@
+	pandoc --natbib $< -f markdown  -o $@; sed -i '1 i\%\n% AUTOMATICALLY GENERATED  WITH PANDOC DO NOT EDIT\n%' $@ && mv $@ . 
 
 .xp.eepic:
 	@echo processing $< to $@

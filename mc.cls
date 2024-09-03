@@ -35,6 +35,15 @@
 
 \renewcommand\labelitemi{$\triangleright$}
 
+% \newcommand{\efigure}[1]{\begin{figure}[h]{\input{Figures/#1.eepic}\caption{}}\end{figure}}
+
+
+\newcommand{\efigure}[1]{
+\stepcounter{figure}
+\hspace{-6.0em}%
+\begin{tabular}{@{}l@{\hspace{1.0em}}@{}l@{}}
+\parbox[b]{5em}{\textbf{Fig. \thefigure}}&\parbox[t]{\textwidth}{\input{Figures/#1.eepic}}\end{tabular}}
+
 
 \tcbset{discussionbox/.style={enhanced,colback=white,colframe=green!65!black,
 enlarge top by=10mm,

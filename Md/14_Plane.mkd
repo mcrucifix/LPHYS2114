@@ -8,7 +8,7 @@ We consider the vector field defined in $\mathbb{R}^2\rightarrow \mathbb{R}^2$, 
 Before we start anything, we will have to define the notion of invariant set. 
 
 \bd{Invariant set}
-A set $S$ is said to be invariant _under the vector field_ $\dot \vec{x} = \vec{f}(\vec{x},t)$ if for any $\vec{x}_0\in S$, its trajectory $\vec{x}(t,t_0,x_0) $\in S$ (see def. of trajectory in sect.  \ref{def:trajectory})
+A set $S$ is said to be invariant _under the vector field_ $\dot{\vec{x}} = \vec{f}(\vec{x},t)$ if for any $\vec{x}_0\in S$, its trajectory $\vec{x}(t,t_0,x_0) \in S$ (see def. of trajectory in sect.  \ref{def:trajectory})
 \ed
 
 Technically, much of what follows here actually applies to _invariant manifolds_, which are invariant sets that that are locally differentiable (you can describe them locally as a vector space. We will not insist on this difference here. Note that, by definition, an _orbit_ is an invariant set, but an invariant set is not necessarily an orbit.
@@ -254,12 +254,13 @@ $$ \Dif \vec{f}(p)=\begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix},
 
 Then, $\exists \varepsilon >0$ and $B=]-\varepsilon,\varepsilon[ \cross ]-\varepsilon,\varepsilon[$ such that:
 
-- $S_B = \left\{ (x, s(x)) \text{with} x\in]-\varepsilon,\varepsilon[\right\}$ where $s(x)$ is $\mathbf{C}^k$ and $s^\prime(0) = 0$; 
-- $U_B = \left\{ (u(y), y) \text{with} y\in]-\varepsilon,\varepsilon[\right\}$ where $u(y)$ is $\mathbf{C}^k$ and $u^\prime(0) = 0$; 
-
+\begin{itemize}[leftmargin=0em]
+\item $S_B = \left\{ (x, s(x)) \text{with} x\in]-\varepsilon,\varepsilon[\right\}$ where $s(x)$ is $\mathbf{C}^k$ and $s^\prime(0) = 0$; 
+\item $U_B = \left\{ (u(y), y) \text{with} y\in]-\varepsilon,\varepsilon[\right\}$ where $u(y)$ is $\mathbf{C}^k$ and $u^\prime(0) = 0$; 
+\end{itemize}
 \et 
 
-Let's try to put this in plain text. If we have a hyperbolic saddle, then there is a neighbourhood where the stable manifold through the point has a functional form, tangent to the axis corresponding to the stable direction of the linearised system; and there is a  _also_ a neighbourhood where the unstable manifold has a functional form, tangent to the axis corresponding to the unstable direction of the linearised system. It results from this theorem that the stable and unstable manifolds are locally orthogonal to each other ! So this is big. 
+Let us put this in plain text. If we have a hyperbolic saddle, then there is a neighbourhood where the stable manifold through the point has a functional form, tangent to the axis corresponding to the stable direction of the linearised system; and there is a  _also_ a neighbourhood where the unstable manifold has a functional form, tangent to the axis corresponding to the unstable direction of the linearised system. It results from this theorem that the stable and unstable manifolds are locally orthogonal to each other. 
 
 The consequences are pretty wild. Indeed, suppose again that the system has been put such that the eigenvectors correspond to the $x$ and $y$ axes (as above), with $x=0$ (the $y-$axis) the unstable manifold through the origin. 
 

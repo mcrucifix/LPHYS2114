@@ -1,20 +1,24 @@
+\label{sect:lyapunov}
+
 
 ## Lyapunov functions
 
-(cf. Wiggins chap 2)
-
-The method of Lyapunov functions can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by Wiggins, the Lyapunov theory is a large area, and we examine here a very small part of it. Furthermore, while it is presented here in a chapter about vector fields in $\mathbb{R}^2$, it is in fact valid in any dimension, but so much easier to visualise on the plane. 
+The method of Lyapunov functions can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by \cite[][ch.2 ]{Wiggins03aa}, the Lyapunov theory is a large area, and we examine here a very small part of it. Furthermore, while it is presented here in a chapter about vector fields in $\mathbb{R}^2$, it is in fact valid in any dimension, but so much easier to visualise on the plane. 
 
 The basic idea is to find, in a neighbourhood of the fixed point, a function of the state that is positive, zero at the fixed point, and known to decay strictly monotonously over time. In which case, quite intuitively, the fixed point is asymptotically stable. 
 
-More specifically, consider the following vector field: 
+More specifically, consider the following set of differential equations. 
 
 \begin{align*}
 \dot x &= f(x,y) \\
 \dot y &= g(x,y),\quad (x,y)\in\mathbb{R}^2,
 \end{align*}
 
-with fixed point $(x_f,y_f)$. Let $V(x,y)$ a scalar-valued function on $\mathbb{R}^2$ that is at least $\mathbf{C}^1$, such that $V(x_f,y_f)=0$.
+with fixed point $(x_f,y_f)$.
+We have explained in sec. \label{subsect:flow} that if $f$ and $g$ are differentiable enough, th
+
+
+Let $V(x,y)$ a scalar-valued function on $\mathbb{R}^2$ that is at least $\mathbf{C}^1$, such that $V(x_f,y_f)=0$.
 
 
 \includegraphics[page=19, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}

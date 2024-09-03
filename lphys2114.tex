@@ -79,7 +79,6 @@
          }
        }{0em}{}
 
- 
 
       % for some reason the color title causes an color stock error
 
@@ -148,7 +147,6 @@
        {\rotatebox{90}{\parbox{1.5cm}{%
          \centering\textcolor{white}{\sffamily\thesection}}}};
        \end{tikzpicture}}
- 
  
 
 \usepackage{silence}
@@ -484,6 +482,11 @@
 %\usepackage{multicol}
 %\renewcommand\cftdotfill[1]{, }
 %\renewcommand\cftafterloftitle{\twocolumns}
+
+
+\counterwithin{figure}{section}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
 \begin{document}
 % \raggedright
 \titlepage

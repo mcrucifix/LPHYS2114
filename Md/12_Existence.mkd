@@ -9,13 +9,13 @@ Consider the following dynamical system:
 \end{equation}
 
 \bd{Autonomous dynamical system}
-The system is said to be _autonomous_ if there is no explicit dependence of $f$ on $t$, and non-autonomous otherwise. 
+The system is said to be _autonomous_\index{autonomous} if there is no explicit dependence of $f$ on $t$, and non-autonomous otherwise. 
 \ed
 
 For simplicity, we will admit that $\Omega = \mathbb{R}^n$, where $n$ is the phase-space dimension. 
 
 \bd{Trajectory}\label{def:trajectory}
-A _trajectory_ $x(t, t_0, x_0)$ (or _phase curve_), for $t\in I$ is a solution of the differential equation \eqref{eq:diff}, passing through $x_0$ at time $t_0$ over an interval of existence $I$. 
+A _trajectory_\index{trajectory} $x(t, t_0, x_0)$ (or _phase curve_), for $t\in I$ is a solution of the differential equation \eqref{eq:diff}, passing through $x_0$ at time $t_0$ over an interval of existence $I$. 
 \ed
 
 \bd{Orbit}
@@ -24,7 +24,7 @@ An orbit through $x_0$ is the set of points in phase space passing of a trajecto
 
 ## Equilibrium solutions, stability and asymptotic stability
 
-In this section we briefly formalise and extend notions that have already been covered in the _Motivating example_ section. 
+In this section we briefly formalise and extend notions that have already been introduced in the motivating chapter (section \ref{sect:icesheet}). 
 
 We consider an _autonomous_ vector field
 
@@ -32,14 +32,14 @@ We consider an _autonomous_ vector field
 \ddt x = f(x), \quad x \in \mathbb{R}^n
 \end{displaymath}
 
-A fixed point (also said: _equilibrium solution_) is a point $x_f \in \mathbb{R}^n$ such that $f(x_f)=0$. 
+A fixed point\index{fixed point} (also said: _equilibrium solution_) is a point $x_f \in \mathbb{R}^n$ such that $f(x_f)=0$. 
 
 We distinguish the Lyapunov stability from the asymptotic stability. Roughly speaking, $x_f$ is _stable_ (shorthand for _Lyapunov stable_) if solutions starting close enough to $x_f$ remain near it. It is _asymptotically stable_ if these solutions eventually converge to $x_f$. 
 
-\bd{Lyapunov Stability} The fixed point $x_f$ is (Lyapunov) stable if, given $\varepsilon > 0$, there exists a $\delta > 0$ such that, for any other trajectory  $y(t)$ satisfying $|x_f-y(t_0)| < \delta$, then $|x_f-y(t)| < \varepsilon$ for $t>t_0$, $t_0 \in \mathbb{R}$. 
+\bd{Lyapunov Stability}\index{Lyapunov stability} The fixed point $x_f$ is (Lyapunov) stable if, given $\varepsilon > 0$, there exists a $\delta > 0$ such that, for any other trajectory  $y(t)$ satisfying $|x_f-y(t_0)| < \delta$, then $|x_f-y(t)| < \varepsilon$ for $t>t_0$, $t_0 \in \mathbb{R}$. 
 \ed
 
-\bd{Asymptotic  Stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|x_f-y(t_0)| < b$, then  $\lim_{t \rightarrow \infty} |x_f-y(t)| = 0$. 
+\bd{Asymptotic  Stability}\index{asymptotic stability} A fixed point $x_f$ is asymptotically stable if it is Lyapunov stable _and_ for any other solution $y(t)$ there exists a constant $b>0$ such that, if $|x_f-y(t_0)| < b$, then  $\lim_{t \rightarrow \infty} |x_f-y(t)| = 0$. 
 \ed
 
 \bcd
@@ -91,7 +91,7 @@ Consider again the motivating example with the ice sheets. Are the fixed points 
 ## Properties of vector fields: existence, uniqueness, differentiability and flows
 
 
-In this section we develop a technical apparatus to deal wit the notions of "long term" and "observable" behaviours of _orbits_ of _dynamical systems_. This will later allow us to develop the notions of _attracting sets_ and _attractors_. Again, we  restrict the discussion to dynamical systems in the form of vector fields, that is: 
+In this section we develop a technical notion to deal wit the notions of "long term" and "observable" behaviours of _orbits_\index{orbit} of _dynamical systems_. This will later allow us to develop the notions of _attracting sets_ and _attractors_. Again, we  restrict the discussion to dynamical systems in the form of vector fields, that is: 
 
 \begin{equation}\label{eq:diff2}
 \ddt x = f(x,t),\text{ with }x \in \Omega
@@ -104,7 +104,7 @@ and, again, for simplicity, we will admit that $\Omega = \mathbb{R}^n$. Here, we
 
 The proof is available in specialised books \cite[e.g.][chap. 6 for linear systems and chap. 17 for more general systems]{hirsh13aa}.  
 
-It has also been proved that the  unique solution can be (uniquely)  _extended_ to the boundaries of any closed, compact subset of $U$. However, this says nothing about what is going on once the solution has reached the boundaries ! 
+It has also been proved that the unique solution can be (uniquely)  _extended_ to the boundaries of any closed, compact subset of $U$. However, this says nothing about what is going on once the solution has reached the boundaries.  
 
 \bcd
 Consider the following example: $\ddt x = x^2,\quad x\in \mathbb{R}$. Find the analytical solution, and show that the solution blows up and that the interval of existence of solutions through $x_0$ at $t=0$ depends on $x_0$. Tip: use the methods of variable separation. 
@@ -144,7 +144,7 @@ In other words,
 \et 
 
 \bcd
-Consider the following diagram. As we will see later this is called a phase portrait: a diagram which qualitatively represents some trajectories such as to provide a general idea of the behavour of trajectories in the phase spaced. In this case, several trajectories seem to converge to a same point.  How would you prove that the intersection is necessarily a fixed point? What does it say about the time a trajectory will need to reach the fixed point? 
+Consider the following diagram. This is a phase portrait\index{phase portrait}: a diagram which qualitatively represents some trajectories such as to provide a general idea of the behavour of trajectories in the phase spaced. In this case, several trajectories seem to converge to a same point.  How would you prove that the intersection is necessarily a fixed point? What does it say about the time a trajectory will need to reach the fixed point? 
 
 \includegraphics[page=4, angle=90, scale=0.7, trim={0 0 0 3cm}, clip]{lphys2114-figures}
 
@@ -152,7 +152,7 @@ Consider the following diagram. As we will see later this is called a phase port
 
 ## Flows
 
-At this point, we have understood (at least intuitively) that the future fate a point in the phase space, in an autonomous system, does not depend on the time at which the snapshot has been taken. This is after all quite straightforward given the definition of an autonomous system (the evolution dictated by $f$ does not depend explicitly on time). In other words, for any point $(x_0,t_0)$, the point of the trajectory $x(t,t_0,x_0)$ reached at time $t$ depends only on the initial condïton $t_0$, and the time elapsed $\tau = t - t_0$. We can thus define a function $\phi(t-t_0, x_0)=x(t,t_0,x_0)$. 
+At this point, we have understood (at least intuitively) that the future fate a point in the phase space, in an autonomous system, does not depend on the time at which the snapshot has been taken. This is after all consistent  with the definition of an autonomous system (the evolution dictated by $f$ does not depend explicitly on time). In other words, for any point $(x_0,t_0)$, the point of the trajectory $x(t,t_0,x_0)$ reached at time $t$ depends only on the initial condïton $t_0$, and the time elapsed $\tau = t - t_0$. We can thus define a function $\phi(t-t_0, x_0)=x(t,t_0,x_0)$. 
 
 
 We proceed in two steps. First, we denote the family of functions $\phi^\tau$, defined such that $\phi^\tau(x_0)=x(t_0+\tau, t_0, x_0)$ which, we have seen, is independent of $t_0$. 
@@ -162,7 +162,7 @@ We observe the following properties:
 - $\left(\phi^{\tau}\right )^{-1} = \phi^{-\tau}:$ $\phi_\tau$ is thus an invertible function. 
 - $\phi^t \in \mathbb{C}^r$.
 
-\bd{Flow of an autonomous differential equation}
+\bd{Flow of an autonomous differential equation}\index{flow}
 The family of functions $\phi\tau$ associated with the differential equation $\dot x = f(x)$, $f\in\mathbb C^r$,  which satisfy the above properties, is called a flew
 \ed
 
@@ -173,19 +173,19 @@ $$\phi^{\tau_1+\tau_2}(U) = \phi^{\tau_2} \circ \phi^{\tau_1} (U).$$ Again, this
 <!--\includegraphics[page=5, angle=90, scale=0.7]{lphys2114-figures}-->
 \input{Figures/flow.tikz}
 
-So the flow function provides an intuitive impression that is reminiscent of a fluid flow. It may be converging; diverging but streamlines never cross each other. At this point, we may already perceive that dynamical systems will fall in different categories. A bit informally, we will mainly encounter and distinguish
+So the flow\index{flow} provides an intuitive impression that is reminiscent of a fluid flow. It may be converging; diverging but streamlines never cross each other. At this point, we may already perceive that dynamical systems will fall in different categories. A bit informally, we will mainly encounter and distinguish
 
-1. Those associated with flow functions that (on average) diverge. Trajectories tend to spread over. Such flows can be considered to be globally unstable because trajectories tend to grow towards the limits of the domain; such dynamical systems have only local validity: they cannot be used to study asymptotic behaviours as time unfolds.
-2. Those associated with flow functions that (on average) converge. Trajectories tend to cluster towards attracting regions (a notion that still needs to be formalised). These flows are called _dissipative_ : information about initial is, in practice, lost because a potentially large volume of initial conditions gets collapsed into a small volume of possible final states (the attractor);
-3. Those associated with flow functions that neither diverge nor converge. The phase-space volume of $U$ is conserved through time. 
+1. Those associated with flow which (on average) diverge. Trajectories tend to spread over. Such flows can be considered to be globally unstable because trajectories tend to grow towards the limits of the domain; such dynamical systems have only local validity: they cannot be used to study asymptotic behaviours as time unfolds.
+2. Those associated with flows that (on average) converge. Trajectories tend to cluster towards attracting regions (a notion that still needs to be formalised). These flows are called _dissipative_ \index{dissipative}: information about initial is, in practice, lost because a potentially large volume of initial conditions gets collapsed into a small volume of possible final states (the attractor);
+3. Those associated with flow that neither diverge nor converge. The phase-space volume of $U$ is conserved through time. 
 
 \bcd
-The latter category represents the class of _Hamiltonian flows_. Can you guess why?  Tip: think of Liouville's theorem. 
+The latter category represents the class of _Hamiltonian flows_\index{hamiltonian flow}. Can you guess why?  Tip: think of Liouville's theorem. 
 \label{bcd:Ham1}
 \ecd 
 
 \bcd
-At this point we may already have some intuitions about how the eigenvectors and eigenvalues of the Jacobian of $f$ governs the properties of the flow.  Which conditions do we expect for a converging flow? What happens if at least one eigenvalue is positive? The eigenvalues of the Jacobian are the _Lyapunov spectrum_ and the individual values are called the _Lyapunov exponents_. Why this term: "exponent"? In non-linear dynamics we tend to pay attention to the _largest Lyapunov exponent_. Can you guess why? 
+At this point we may already have some intuitions about how the eigenvectors and eigenvalues of the Jacobian of $f$ governs the properties of the flow.  Which conditions do we expect for a converging flow? What happens if at least one eigenvalue is positive? The eigenvalues of the Jacobian are the _Lyapunov spectrum_ and the individual values are called the _Lyapunov exponents_\index{Lyapunov exponents}. Why this term: "exponent"? In non-linear dynamics we tend to pay attention to the _largest Lyapunov exponent_. Can you guess why? 
 \ecd
 
 As we will make it clear in the following, _dissipative flows_ are characterised by a _negative Jacobian trace_: the sum of eigenvalues is negative; $\sum\lambda_i < 0$.  

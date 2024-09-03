@@ -34,7 +34,7 @@ The limit cycle persists outside the slow-fast regime, and $y$ then moves more s
 
 ## Bendixson's criterion
 
-Consider again our classical diffeomorphism on the plane:
+Consider again a flow on the plane, defined by:
 
 \begin{equation} \label{eq:ddb}
 \begin{split}

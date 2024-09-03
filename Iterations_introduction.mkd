@@ -145,7 +145,7 @@ Given a metric in domain $\Omega$ (usually $\Omega=\mathbb{R}^n$), we can charac
 Again, similarly to the _hyperbolic_ character of a fixed point in a diffeomorphism \index{diffeomorphism}:
 
 \bd{Hyperbolic fixed point}
-The fixed point of an iteration is _hyperbolic_ if all eigenvalues of its Jacobian are on the unit circle. 
+The fixed point of an iteration is _hyperbolic_ if all eigenvalues of its Jacobian lie outside the unit circle. 
 \ed 
 
 We anticipate a similar connection between eigenvalues of the Jacobian and the locally attracting - repelling properties of the fixed point, but we leave the demonstration for the next section. 

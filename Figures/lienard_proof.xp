@@ -1,0 +1,123 @@
+#include "epix.h"
+#include "stdio.h"
+
+#define delta 0.12
+
+using namespace ePiX;
+
+// double ux (double x) {  return (1./3.*x*x + x*x*x/6. + x*x*x*x/30.) ;}
+float F(float y){ return ( - y + y*y*y ); }
+
+P ds (P xy){
+  float dx = -xy.x2();
+  float dy = xy.x1() - F(xy.x2());
+  return(P(dx,dy));
+}
+
+float alpha = 1;
+
+P EulerOneStep (P ds, float dt){
+  return(P(ds.x1()*dt, ds.x2()*dt));
+}
+
+int main() {
+
+  bounding_box(P(-2.0,-2.0), P(2.0,2.0));
+  picture(4,4);
+  unitlength("2cm");
+
+  begin();
+
+  arrow(P(0,-0.2), P(0,1.6));
+  arrow(P(-1.8,0), P(1.8,0));
+
+  label(P(1.8,0), P(0,2), "$x$", t);
+  label(P(0,1.6), P(2,0), "$y$", r);
+  float x0;
+  float x,y;
+
+  bbold(Red(1.0));
+  for (int ii=0; ii<2; ii++){
+
+  x0 = 1.5 - float(ii)*1.0;
+  P xy = P(x0,0);
+  path orbit;
+  orbit.pt(xy);
+  float dt=0.1;
+  P xytemp;
+  int iflag=1;
+  P p1,p2,p3, p4, gammapoint, gnext;
+  p1 = xy;
+  float diffF; float newdiffF; float dttemp;
+
+  for (int i=0; ((i < 45) && (iflag == 1)); i++){
+    diffF = xy.x1()-F(xy.x2());
+    xytemp = xy + EulerOneStep(ds(xy), dt);
+    newdiffF = xytemp.x1()-F(xytemp.x2());
+    // not very optimal but will run only a couple of times
+    //
+    // I am saving programmer's time
+
+    if ((xy.x2() > 0) && (xytemp.x2() <= 0)){
+      dttemp = dt*((xy.x2())/(xy.x2()-xytemp.x2()));
+      xytemp = xy + EulerOneStep(ds(xy), dttemp);
+      p4 = P(xytemp);
+      iflag = 0;
+    }
+
+    if (i == 10) {arrow(xy,xytemp);}
+    xy = xytemp;
+    if (i == 3) {gammapoint=xy;}
+    if (i == 4) {gnext=xy;}
+    orbit.pt(xy);
+
+  }
+
+  xy = P(-x0,0);
+  orbit.pt(xy);
+  iflag = 1;
+
+  for (int i=0; ((i < 45) && (iflag == 1)); i++){
+    diffF = xy.x1()-F(xy.x2());
+    xytemp = xy + EulerOneStep(ds(xy), dt);
+    newdiffF = xytemp.x1()-F(xytemp.x2());
+    // not very optimal but will run only a couple of times
+    //
+    // I am saving programmer's time
+
+    if ((xy.x2() < 0) && (xytemp.x2() >= 0)){
+      dttemp = dt*((xy.x2())/(xy.x2()-xytemp.x2()));
+      xytemp = xy + EulerOneStep(ds(xy), dttemp);
+      p4 = P(xytemp);
+      iflag = 0;
+    }
+
+    if (i == 10) {arrow(xy,xytemp);}
+    xy = xytemp;
+    orbit.pt(xy);
+
+  }
+
+
+  xy = P(x0,0);
+  orbit.pt(xy);
+
+  orbit.draw();
+
+  }
+
+
+  for (int ii=0;ii<4; ii++){
+    if( ii != 1){
+   float x = 1.4-ii*0.27;
+   arrow(P(x,-0.2), P(x, +0.2));
+   arrow(P(-x,+0.2), P(-x, -0.2));
+    }
+     }
+
+  P xstar = P(1.27,0);
+  dot(xstar);
+  label(xstar, P(4,0), "$x^\\star$", b);
+  tikz_format();
+  end();
+}

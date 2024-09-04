@@ -82,7 +82,7 @@ It is common to map a continuous dynamical system on an iteration to understand 
 - _Numerical iteration_ is perhaps the most common case. The _Euler_, _Runge Kutta_ schemes are example of iterations extracted from a continuous dynamical system. 
 - The _Poincaré_ map is the cross section of a n-dimensional continuous orbit onto a lower-dimensional section, typically a plane. For example, the Poincaré map of a limit cycle is a point; that of a torus: a circle. 
 - The _stroboscopic map_ is obtained as the sample of a continuous orbit at fixed intervals $T$. It is particularly usefuf to study synchronisation in forced  systems with period $T$.  
-- In some cases, authors have been more creative. We have seen how Lorenz interpreted the behaviour Saltzman-Lorenz by plotting successive local maxima in the $z-$coordinate with the tent map. We comen now to another example.
+- In some cases, authors have been more creative. We have seen how Lorenz interpreted the behaviour Saltzman-Lorenz by plotting successive local maxima in the $z-$coordinate with the tent map. We come now to another example.
 
 ### The Hénon map
 

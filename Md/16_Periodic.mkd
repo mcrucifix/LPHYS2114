@@ -209,12 +209,4 @@ The case for $\beta=0.98$, $\alpha=10$ is shown below, for illustration
 
 \efigure{canard}
 
-## Further remarks about periodic orbits
-
-<!-- - closing lemmas
-- dynamic averaging
--->
-- characterization of chaos (unstable periodic orbits)
-- mathematical biology (limit cycles / synchronisation)
-- time series analysis
 

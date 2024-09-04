@@ -1,4 +1,5 @@
-\begin{thebibliography}{BGGS80}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{GAD{\etalchar{+}}02}
 
 \bibitem[BGGS80]{benettin80aa}
 G.~Benettin, L.~Galgani, A.~Giorgilli, and J.~Strelcyn.
@@ -6,10 +7,22 @@ G.~Benettin, L.~Galgani, A.~Giorgilli, and J.~Strelcyn.
   for hamiltonian systems; a method for computing all of them. part 1: Theory.
 \newblock {\em Meccanica}, 15(1):9–20, 1980.
 
+\bibitem[GAD{\etalchar{+}}02]{Ghil02aa}
+M.~Ghil, M.~R. Allen, M.~D. Dettinger, K.~Ide, D.~Kondrashov, M.~E. Mann, A.~W.
+  Robertson, A.~Saunders, Y.~Tian, F.~Varadi, and P.~Yiou.
+\newblock Advanced spectral methods for climatic time series.
+\newblock {\em Reviews of Geophysics}, 40:769--794, 2002.
+
 \bibitem[HD13]{hirsh13aa}
 M.~W. Hirsh and R.~L. Devaney.
 \newblock {\em Dynamical Systems, and an Introduction to Chaos}.
 \newblock Elsevier, 2013.
+
+\bibitem[Hil00]{hilborn00aa}
+R.~C. Hilborn.
+\newblock {\em {Chaos and Nonlinear Dynamics: An Introduction for Scientists
+  and Engineers}}.
+\newblock Oxford University Press, 2000.
 
 \bibitem[HJ90]{horn90aa}
 R.~A. Horn and C.~R. Johnson.
@@ -25,6 +38,12 @@ Y.~A. Kuznetsov.
 E.~N. Lorenz.
 \newblock Deterministic non-periodic flow.
 \newblock {\em Journal of the Atmospheric Sciences}, 20:130--141, 1963.
+
+\bibitem[MCA15]{Mitsui15ad}
+T.~Mitsui, M.~Crucifix, and K.~Aihara.
+\newblock Bifurcations and strange nonchaotic attractors in a phase oscillator
+  model of glacial--interglacial cycles.
+\newblock {\em Physica D: Nonlinear Phenomena}, 306:25 -- 33, 2015.
 
 \bibitem[MOF05]{maasch05aa}
 K.~A. Maasch, R.~J. Oglesby, and A.~Fournier.
@@ -46,6 +65,12 @@ K.~Ramasubramanian and M.~S. Sriram.
 B.~Saltzman.
 \newblock Finite amplitude free convection as an initial value problem---i.
 \newblock {\em Journal of the Atmospheric Sciences}, 19(4):329--341, 1962.
+
+\bibitem[Str14]{strogatz14aa}
+S.~Strogatz.
+\newblock {\em Nonlinear Dynamics and Chaos: With Applications to Physics,
+  Biology, Chemistry, and Engineering}.
+\newblock Studies in Nonlinearity. Avalon Publishing, 2014.
 
 \bibitem[Tuc02]{tucker02lorenz}
 W.~Tucker.

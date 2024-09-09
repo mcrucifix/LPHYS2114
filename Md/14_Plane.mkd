@@ -8,7 +8,7 @@ We consider the vector field defined in $\mathbb{R}^2\rightarrow \mathbb{R}^2$, 
 Before we start anything, we will have to define the notion of invariant set. 
 
 \bd{Invariant set}
-A set $S$ is said to be invariant _under the vector field_ $\dot x = f(x,t)$ if for any $x_0\in S$, its trajectory $x(t,t_0,x_0) $\in S$ (see def. of trajectory in sect.  \ref{def:trajectory})
+A set $S$ is said to be invariant _under the vector field_ $\dot{\vec{x}} = \vec{f}(\vec{x},t)$ if for any $\vec{x}_0\in S$, its trajectory $\vec{x}(t,t_0,x_0) \in S$ (see def. of trajectory in sect.  \ref{def:trajectory})
 \ed
 
 Technically, much of what follows here actually applies to _invariant manifolds_, which are invariant sets that that are locally differentiable (you can describe them locally as a vector space. We will not insist on this difference here. Note that, by definition, an _orbit_ is an invariant set, but an invariant set is not necessarily an orbit.
@@ -17,7 +17,7 @@ Now, this chapter is specifically dedicated to linear, autonomous dynamical syst
 
 $$ \dot{\vec{x}}  = A \vec{x}.$$
 
-The flow associated with such linear fields are called linear diffeomorphisms (the space is deformed linearly). 
+The flow\index{flow} associated with such linear fields are linear diffeomorphisms\index{diffeomorphism} (the space is deformed continuously and linearly). 
 
 The Jordan canonical form theorem tells [^Jordan] us that, if $A$ is a real two by two matrix, there is a non-singular real matrix $T$ such that $A=TJT^{-1}$, and $T$ is made of the column vectors $\vec{u}$ and $\vec{v}$.  Depending on the eigenvalue and eigenvectors of $A$, $J$ will be of one of three forms:
 
@@ -64,7 +64,7 @@ However, these are particular cases: even when both eigenvalues are real, the or
 
 A further counter-intuitive behaviour may occur in the case $\vec{u}$ and $\vec{v}$ are non-orthogonal. As the $u$-component quickly vanishes (in this example), the _norm_ of the vector $$\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} +  C_2 e^{\lambda_2 t} \vec{v},$$ may display a _transient growth_. This phenomenon, called _non-normal growth_ is common in fluid dynamics and has been suggested to be important in the early phases of the dynamics of the ocean-atmosphere phenomenon El-Nino [^1].
 
-\input{Figures/nonnormal.eepic}
+\efigure{nonnormal}
 
 [^1]:Von der Heydt and Dijkstra, \url{https://dspace.library.uu.nl/bitstream/handle/1874/314407/naw5_2013_14_3_195.pdf?sequence=1}
 
@@ -95,8 +95,8 @@ As we see it, the _conservative_ harmonic oscillator is associated with a non-hy
 
 In this case, the general solution of the trajectories is $\vec{x}(t) = (C_1 e^{\lambda t} + C_2 t e^{\lambda t}) \vec{u} +  C_2 e^{\lambda t} \vec{v}$. 
 
-\scalebox{0.8}{ \input{Figures/jordan.eepic}}
-\scalebox{0.8}{ \input{Figures/jordan05.eepic}}
+\efigure{jordan}
+\efigure{jordan05}
 
 
 \bcd
@@ -254,12 +254,13 @@ $$ \Dif \vec{f}(p)=\begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix},
 
 Then, $\exists \varepsilon >0$ and $B=]-\varepsilon,\varepsilon[ \cross ]-\varepsilon,\varepsilon[$ such that:
 
-- $S_B = \left\{ (x, s(x)) \text{with} x\in]-\varepsilon,\varepsilon[\right\}$ where $s(x)$ is $\mathbf{C}^k$ and $s^\prime(0) = 0$; 
-- $U_B = \left\{ (u(y), y) \text{with} y\in]-\varepsilon,\varepsilon[\right\}$ where $u(y)$ is $\mathbf{C}^k$ and $u^\prime(0) = 0$; 
-
+\begin{itemize}[leftmargin=0em]
+\item $S_B = \left\{ (x, s(x)) \text{with} x\in]-\varepsilon,\varepsilon[\right\}$ where $s(x)$ is $\mathbf{C}^k$ and $s^\prime(0) = 0$; 
+\item $U_B = \left\{ (u(y), y) \text{with} y\in]-\varepsilon,\varepsilon[\right\}$ where $u(y)$ is $\mathbf{C}^k$ and $u^\prime(0) = 0$; 
+\end{itemize}
 \et 
 
-Let's try to put this in plain text. If we have a hyperbolic saddle, then there is a neighbourhood where the stable manifold through the point has a functional form, tangent to the axis corresponding to the stable direction of the linearised system; and there is a  _also_ a neighbourhood where the unstable manifold has a functional form, tangent to the axis corresponding to the unstable direction of the linearised system. It results from this theorem that the stable and unstable manifolds are locally orthogonal to each other ! So this is big. 
+Let us put this in plain text. If we have a hyperbolic saddle, then there is a neighbourhood where the stable manifold through the point has a functional form, tangent to the axis corresponding to the stable direction of the linearised system; and there is a  _also_ a neighbourhood where the unstable manifold has a functional form, tangent to the axis corresponding to the unstable direction of the linearised system. It results from this theorem that the stable and unstable manifolds are locally orthogonal to each other. 
 
 The consequences are pretty wild. Indeed, suppose again that the system has been put such that the eigenvectors correspond to the $x$ and $y$ axes (as above), with $x=0$ (the $y-$axis) the unstable manifold through the origin. 
 
@@ -336,6 +337,6 @@ Attention, there is a small difficulty: the roles of $x$ and $y$ are inverted co
 The graph below represents sample orbits (red) and the approximate stable and unstable manifolds (blue), the
 computed stable and unstable manifolds (green), and the flow direction (arrows)
 
-\input{Figures/stable.eepic}
+\efigure{stable}
 
 

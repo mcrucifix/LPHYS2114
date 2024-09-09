@@ -1,0 +1,136 @@
+
+## Lyapunov functions
+
+(cf. Wiggins chap 2)
+
+The method of Lyapunov functions can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by Wiggins, the Lyapunov theory is a large area, and we examine here a very small part of it. Furthermore, while it is presented here in a chapter about vector fields in $\mathbb{R}^2$, it is in fact valid in any dimension, but so much easier to visualise on the plane. 
+
+The basic idea is to find, in a neighbourhood of the fixed point, a function of the state that is positive, zero at the fixed point, and known to decay strictly monotonously over time. In which case, quite intuitively, the fixed point is asymptotically stable. 
+
+More specifically, consider the following vector field: 
+
+\begin{align*}
+\dot x &= f(x,y) \\
+\dot y &= g(x,y),\quad (x,y)\in\mathbb{R}^2,
+\end{align*}
+
+with fixed point $(x_f,y_f)$. Let $V(x,y)$ a scalar-valued function on $\mathbb{R}^2$ that is at least $\mathbf{C}^1$, such that $V(x_f,y_f)=0$.
+
+
+\includegraphics[page=19, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
+
+Suppose also that the locus of points satisfying $V(x,y)=C$ (constant) forms closed curves for different values of $C$ encircling $(x_f,y_f)$. Now, recall that the gradient of $V$, $\nabla V$, is a vector perpendicular to the tangent of the curves, pointing to the direction of increasing $V$. If this vector is always pointing outwards (decreasing values of $C$ as we get closer to $(x_f,y_f)$, then we get $\nabla V(x,y)\cdot (\dot x, \dot y) \leq 0$. Now we can state the general theorem
+
+\bt{Existence of Lyapunov function implies stability}
+In the conditions stated above, with $V(x_f,y_f) = 0$ and $V(x,y) > 0$ if $(x,y)\neq(x_f,y_f)$, there exists a neighbourhood $U$ around $(x_f,y_f)$ such that:
+
+- $\dot V(x,y) \leq 0$ in  $U\backslash \{(x_f,y_f)\}$ : $(x_f,y_f)$ is stable
+- $\dot V(x,y) < 0$ in  $U \backslash \{(x_f,y_f)\}$ : $(x_f,y_f)$ is _asymptotically_ stable
+
+\et 
+
+Although quite intuitive, the proof is not quite straightforward and will only be discussed during the lecture time permitting. It is available in @Wiggins03aa, p. 24. 
+
+More insightful for the physicist is the physical meaning attached to $V$. In a conservative (Hamiltonian system), the Hamiltonian would actually satisfy the definition of a Lyapunov function, although this is a limit case, where $\dot V(x,y)=0$. In a thermodynamic system, then the Free Energy (at constant temperature) or the Gibbs free energy (at constant pressure) work as Lyapunov functions. In the simpler case of a near Hamiltonian system (e.g. pendulum with friction), then the potential + kinetic energy $V$ satisfy the definition of a Lyapunov function near the fixed point. 
+
+
+Hence, we seem to have a good method for proving the stability of a fixed point; in practice, finding $V$ is not always as straightforward as in the cases above. There is no miracle receipt. 
+
+## Trapping regions and attracting sets
+
+Again, the evolution of the Lyapunov function must be (strictly) monotonous in a neighbourhood of the fixed point. The latter may be arbitrarily small to satisfy the mathematical definition of an asymptotically stable fixed point, though of course, for physical significance, we might want a large neighbourhood !
+
+Indeed, as we see it, a contour $C$ within which $\dot V(x,y) \leq 0$ will effectively define a _trapping region_, that is defined as a region that contains all its future states.
+
+\bd{Trapping region}
+A trapping region $U$ relative to a diffeomorphism is a compact set such that $\phi^t(U) \subset U\ \forall t >0$. 
+\ed
+
+The property $\phi^t(U) \subset U\ \forall t >0$ is the property of _positive invariance_. Thus, a trapping region is a compact positive invariant set. As we move time forward, the trapping region, which keeps containing itself, can be made smaller and smaller until it asymptotically becomes the _attracting set_:
+
+\bd{Attracting set}
+An attracting set is a closed invariant set that can be defined as $\bigcap\limits_{t>0}^\infty \phi^t(U)$.
+\ed
+
+\footnote{Wiggins requires the set $U$ to be open but not Guckenheimer and Holmes 1983}
+
+On the other hand, the _basin_ of attraction relative to the attracting set $A$ is the set of initial conditions that eventually falls into it, and it can be recovered by travelling backwards in time. 
+
+\bd{Basin of attraction}
+The basin of attraction (or _domain_) of an attracting set $A$ is  $\bigcup\limits_{t\leq 0}^\infty \phi^t(U)$, where $U$ is an open neighbourhood acting as a trapping region leading to $A$. The alternative (equivalent) definition is $\bigcup\limits_{t\geq 0}^\infty \phi^{-t}(U)$. 
+\ed
+
+Below is an example of basins of attractions of two sinks. The sinks act as two individual _attracting sets_. We will later identify this dynamical system as the Duffing oscillator. 
+
+\efigure{poincare}
+
+<!--\includegraphics[page=20, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}-->
+
+
+## The attractor as a topologically transitive attracting set
+
+Intuitively, the attracting set is related to the asymptotic destination of orbits starting within its basin of attraction. But perversely, it does not quite work. 
+
+Consider the following system: 
+
+\begin{align*}
+\dot x &= x - x^3, \\
+\dot y &= -y. 
+\end{align*}
+
+We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can define a trapping region as an ellipse encompassing the three fixed points. It turns out the whole compact interval $[-1,1]$ on the $x$ axis is the attracting set obtained from that trapping region. Indeed, for any point $p$ on the segment, and for _any_ time $t$, you can find an initial condition (close enough to the unstable fixed point, presumably) within the attracting set (it is indeed invariant) that reaches $p$ precisely at time $t$. So this interval is really the limit of self-evolving trapping regions. (see Figure)
+
+\efigure{attractingSet}
+
+But clearly this is not the idea that we might have of an attractor. Technically, we say that the attracting set that we obtained in the above example contains many "wandering points". Such point leave definitively their own neighbourhood as time continues, so we do not want to say that they are part of an "attractor". When you are on such points, you do not stay there. 
+
+There are different ways to mend the above definition and better capture the notion af attractor. The  literature on this topic is not always very easy to follow.
+One approach is to require topological transitivity.
+
+\bd{Attractor}
+An attractor $A$ is an attracting set that is topologically transitive. That means that it contains at least one point $p$ such that the orbit passing through $p$ is $A$. 
+\ed
+
+In other words, and to make it short, when you are on the attractor, you will visit all of its points in a finite amount of time. 
+
+Another approach is to require the attracting set to be _minimal_, i.e., it does not include any subset that is also an attracting set: 
+
+\bd{Attractor (alt.)}
+An attractor is a  minimal attracting set. 
+\ed
+
+In the abover example, both will generate the same result: we have two attractors, one on $(1,0)$, and one on $(-1,0)$. There is yet another approach, as we now see. 
+
+## Limit set
+
+The notion of attractor is very much linked to the notion of limit set, which considers the asymptotic behaviour of _individual_ orbits. 
+
+\bd{$\omega$ limit points of a trajectory}A point $x_0$ in the domain of dynamical system is called an $\omega$ _limit point_ of $x$ if there exists a sequence $\{t_i\}$, $t_i\rightarrow\infty$, such that $\phi^{t_i}(x) \rightarrow x_0$.
+\ed
+
+In other words, there is a sequence of times, towards infinity, that brings asymptotically the state towards this limit point. If we reverse the direction, and flow backwards, then $x_0$ is called an $\alpha$ limit point. We see the idea: a trajectory could flow asymptotically from the $\alpha$ (time $-\infty$) to the $\omega$ (time $+\infty$). 
+
+By extending the notation,  we will note $\omega(p)$ as the set of limit points of orbits passing through $p$, and $\omega(U)$ the _limit set of $U$_ which contains the union of the $\omega(p)$ for all $p\in U$. 
+
+It can be proved (Wiggins, Proposition 8.1.3.) that within a trapping region, all points $p$ (thus,  in the trapping region) can be attached to a limit set that is non-empty, closed, invariant under the flow, and connected.
+
+Hence, we could also have defined an attractor as a topologically transitive set $A$ that admits a neighbourhood $U$ such that $\omega(U)=A$. This definition of the attractor can also be found in the literature, and I need more research to determine to what extent these different definitions overlap / are compatible / can contradict each other. 
+
+
+A final note about the notion of the  Lyapunov function.  We need to confess that we have been a little bit brutal. 
+Indeed, we first defined the Lyapunov function as being defined on a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-countour of the Lyapunov function, in this neighbourhood. 
+
+Now, later in this chapter, we admitted that finding a Lyapunov function is also a good approach for determining a trapping region. To this end, we implicitly  relaxed the condition that we have a fixed point. We just need isocontours with the flow pointing inwards. As we will see, this helps us to see also the kind of solutions we expect within the trapping region. 
+
+\bcd
+To anticipate a bit on what is coming, consider the following configuration: 
+
+
+\includegraphics[page=21, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
+
+The two iso-countours, of same value, define a trapping region. What sort of scenario do we expect there? Perhaps your intuition already foresees some possibilities: either orbits land on a fixed point, either they keep looping around a so-called "limit cycle"... or ? 
+
+\ecd
+
+The Poincaré-Bendixson theorem, which we will see in section \label{sect:poincare} the possibilities
+

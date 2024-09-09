@@ -39,18 +39,17 @@ Consider again the motivating example with the ice sheets. Are the fixed points 
 
 ## The saddle-node bifurcation
 
-We now consider changes in $\psi$ that may affect the existence or the _nature_ of the fixed point. To this end, consider the following example: $f(x;\psi) = \psi - x - e^{-x}$. 
+We now consider changes in $\psi$ that may affect the existence or the _nature_ of the fixed point. To this end, consider the following example: $f(x;\psi) = x + e^{-x} - \psi$. 
 
-The fixed point may be visualised graphically, with the equation $e^{-x} = \psi - x$. 
+The fixed point may be visualised graphically, using the fixed point equationt $e^{-x} = \psi - x$. 
 
 
-\input{Figures/phaseprotrait.eepic}
+\efigure{phaseprotrait}
 
 
 The arrows in blue represent the flow with arrows, which converge or diverge from the fixed points depending on their stability. This is the _phase portrait_ which, in this case, is one dimensional. We will see, later, 2-d or even higher dimensional phase portraits. 
 
-
-As is clear from the phase portraits, the number of fixed points changes for 2 hyperbolic fixed points for $\psi >1$, to one non-hyperbolic fixed point at $\psi = 1$, to zero for $\psi < 1$. Hence, the parameter $\psi = 1$ marks a change in the topology of the flow. This is a singularity that is called a _bifurcation point_. 
+As is clear from the phase portraits, the number of fixed points changes from 2 hyperbolic fixed points for $\psi > 1$, to one non-hyperbolic fixed point at $\psi = 0$, to zero for $\psi - 1$. Hence, the parameter $\psi = 1$ marks a qualitative change in the flow. This is a singularity, which is called a _bifurcation point_. 
 
 In this section we will learn to _detect_ bifurcation points in vector fields on the line and classify them. 
 
@@ -72,9 +71,22 @@ f(x_0;\psi_0) +
 \end{split}
 \end{displaymath}
 
-Hence, if we develop the vector field around the bifurcation point, it takes a specific form that depends on the first and second-order derivatives on $x$ and $\psi$. This specific form is called a _normal form_, and the normal form characterises the bifurcation. 
+Hence, if we develop the vector field around the bifurcation point, it takes a specific form that depends on the first and second-order derivatives on $x$ and $\psi$. This specific form is called a _normal form_\index{normal form}, and the normal form characterises the bifurcation. In general you need some linear transformation of the variable and the parameter to find the text book normal form. In this case, we need $\psi^\prime = \psi-1$, $x^\prime = x / \sqrt{2}$ and also invert time $t^\prime = -t$ to obtain the normal form 
 
-Specifically, the normal form $f(x;\psi^\prime)=\psi^\prime - \frac{1}{2} x^2$ ($\psi^\prime := \psi-1$) is characteristic of the _saddle-node_ bifurcation (also called a _fold bifurcation_): it is the collision of a stable and an unstable fixed point, with both vanishing beyond the bifurcation point. We have met this exact bifurcation in the motivating example. 
+\begin{displaymath}
+\od{x^\prime}{ t^\prime} = \psi^\prime + {x^\prime}^2. 
+\end{displaymath}
+
+This is the normal form of the  _saddle-node_ bifurcation (also called a _fold bifurcation_)\index{fold bifurcation}: it is the collision of a stable and an unstable fixed point, with both vanishing beyond the bifurcation point. We have met this exact bifurcation in the motivating example. 
+
+The position of stable and unstable fixed points, as a function of the parameter $\psi$ is summarised by the  _stability_ diagram. The set of fixed point solutions are organised as branches, which may be stable  (solid lines), or unstable (dashed lines). 
+
+
+\efigure{fold}
+
+
+The classical convention for the normal form makes it that the solutions disappear for $\psi^\prime$ positive and, and the stable branch is obtained for negative $x$; however any affine transforation of this graph will atually represent a saddle-node bifurcation. This leads to the following theorem. 
+
 
 \bt{Sufficient conditions for a  saddle-node bifurcation on the line.} A saddle-node bifurcation occurs on $x_0,\psi_0$ when:
 
@@ -111,15 +123,11 @@ The assumptions (1) and (4) imply that $\od{\psi}{x}=0$.  And
 which then must be different from zero from (3) and (4). 
 Both indicate that the solution curve $\psi(x)$ has a minimum or a local maximum in $x=x_0$ and therefore must bear the characteristic of a saddle-node bifurcation. 
 
-The situation can be summarised on a _stability_ diagram, which represents the evolution of the stable (solid lines) and unstable (dashed lines) fixed points as a function of the bifurcation parameter $\psi$:
-
-
-\includegraphics[page=10, angle=90, scale=0.5, trim={2cm 2cm  2cm 2cm}, clip]{lphys2114-figures} \hfill$\square$
 
 ## The fork bifurcation
 
 
-The normal form for the pitchfork bifurcation (or simply: fork bifurcation) is 
+The normal form for the pitchfork bifurcation\index{fork bifurcation} (or simply: fork bifurcation) is 
 
 \begin{displaymath}
 f(x;\psi) = \psi x + \sigma x^3,
@@ -127,19 +135,20 @@ f(x;\psi) = \psi x + \sigma x^3,
 
 where $\sigma$ is either $-1$ or $1$. $\sigma=-1$. We consider both. 
 
-### $\sigma=-1$ The super-critical fork bifurcation
+### $\sigma=-1$ The supercritical fork bifurcation
 
-The super-critical fork bifurcation is the one which is most commonly introduced. It admits the trivial solution $x_f=0$ throughout the entire real line. The stability of the solution is directly given by the sign of $\psi$: stable for negative $\psi$, and stable for positive. 
+The supercritical fork bifurcation is the one which is most commonly introduced. It admits the trivial solution $x_f=0$ throughout the entire real line. The stability of the solution is directly given by the sign of $\psi$: stable for negative $\psi$, and stable for positive. 
 
 For $\psi\gt0$, it also admits the solutions $x_f=\pm\sqrt{\psi}$, which is stable. 
 
 The bifurcation diagram clearly reveals how, going from negative to positive values of the parameter $\psi$, the bifurcation at  $\psi=0$ consists in a loss of stability of the trivial solution, and the emergence of two stable solutions of distance gently growing from the zero-line as $\psi$ increases.  Here is the stability diagram\index{stability diagram}:
 
-\input{Figures/supercritical_pitchfork.eepic}
+\efigure{supercritical_pitchfork}
 
-### $\sigma=1$ The sub-critical pitchfork bifuration
+### $\sigma=1$ The subcritical pitchfork bifuration
 
-Compared to the super-critical case, nothing changes for the stability along the $x=0$ line: stable for negative $\psi$, unstable for positive ones. 
+\label{sect:subcritical}
+Compared to the supercritical case, nothing changes for the stability along the $x=0$ line: stable for negative $\psi$, unstable for positive ones. 
 
 $f(x;\psi) = \psi x + \sigma x^3$,
 
@@ -149,16 +158,16 @@ Now, the side solutions only exist for _negative_ $\psi$, at $x_f=\pm\sqrt{|\psi
 \left.\pd{f(x;\psi)}{x}\right|_{x=\pm\sqrt{|\psi|}} =  2|\psi|
 \end{displaymath}
 
-is positive (use $\sqrt{\psi}^2=|\psi|$). That solution is unstable. 
+is positive (use $\sqrt{\psi^2}=|\psi|$). That solution is unstable. 
 
 Hence, going from negative to positive $\psi$, we have, on the negative side, three solutions but only the central is stable, and on the positive side, only the trivial solution that is unstable, that is, the flow escaping that solution. 
 
 This is how the normal form works, but we understand that in practice, it will only be a local description of the flow because we do not expect, in a physical system, the state variable to run away to infinity. Hence, in practical applications, higher order terms are expected to catch up the solution. 
-
-A classical scenario is found by adding a fourth-order term as:
+u
+A classical scenario is found by adding a fifth-order term as:
 
 \begin{displaymath}
-f(x;\psi) = \psi x + x^3 + \delta x^4
+f(x;\psi) = \psi x + x^3 - x^5
 \end{displaymath}
 
 Consider the particular case $\sigma=1$. We find that, in addition to the trival solution $x=0$, we have now two to four additional solutions, depending on what comes under the square root: 
@@ -172,11 +181,11 @@ where all combinations of $+$ and $-$ are potentially admitted, with the restric
 Specifically, considering real solutions only, we have four solutions for $\frac{1}{4}\leq\psi\leq 0$. It may be verified (exercise) that, they come as two  symmetric groups of two around the zero axis, and they are successively stabel and unstable. 
 One thus finds two fold bifurcations at $\psi=\frac{1}{4}$. Then, for $\psi>0$, the only two _stable_ solutions. 
 
-Hence, as one moves from negative to positive $\psi$, we see here a sceanario quite different from the super-critical bifurcation. The stable trivial solution vanishes, and the only place to land is already located at a distance $\frac{1}{2}\sqrt{1+\sqrt{2}}$ of the origin. 
+Hence, as one moves from negative to positive $\psi$, we see here a sceanario quite different from the supercritical bifurcation. The stable trivial solution vanishes, and the only place to land is already located at a distance $\frac{1}{2}\sqrt{1+\sqrt{2}}$ of the origin. 
 
-This would be the typical scenario, in physics, of a stick being compressed, and suddenly benging towards a new stable state, either on the left or on the right. This will be a case of spontaneous symmetry breaking, since once a stable state has been found, it is hard to come back to the original solution, and even harder to reach to other solution. 
+This would be the typical scenario, in physics, of a stick being compressed, and suddenly bending towards a new stable state, either on the left or on the right. This will be a case of spontaneous symmetry breaking, since once a stable state has been found, it is hard to come back to the original solution, and even harder to reach to other solution. 
 
-\input{Figures/subcritical_pitchfork.eepic}
+\efigure{subcritical_pitchfork}
 
 ## Transcritical solution
 
@@ -189,10 +198,13 @@ f(x;\psi) &= \psi x - x^2
 Again, besides the trivial solution, the stability of which is given by the sign of $\psi$, we have one additional solution $x_f=\psi$, which is unstable for negative $\psi$, and stable for positive $\psi$. The stability diagram thus makes it clear how 'stabilities' are exchanged at the bifurcation point $(x;\psi)=(0,0)$.
 
 
+\efigure{transcritical}
+
 ## Summary of the bifurcations on the line
  - saddle node: two fixed points collapsing and annihilating each other
- - trans-critical: two fixed points exchanging stability
- - fork : one fixed point losing stability, sending trajectories towards two adjacent fixed points. 
+ - transcritical: two fixed points exchanging stability
+ - supercritical fork : one fixed point losing stability, sending trajectories towards two adjacent fixed points. 
+ - subcritical fork : one fixed point losing stability, but nearby solutions (which were unstable) also vanish. Trajectories will generally reach more remote fixed points. 
 
 
 

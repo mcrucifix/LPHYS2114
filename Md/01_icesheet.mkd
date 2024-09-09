@@ -4,7 +4,7 @@ An ice sheet is a large accumulation of ice. The largest ice sheets take thousan
 
 This equilibrium results from a balance between _accumulation_ of snow above the _snowline_ (which is determined by the external climate conditions), and the _ablation_ of ice that is being pushed below the snow line. 
 
-\input{Figures/icesheet.eepic}
+\efigure{icesheet}
 
 Intuitively, we may perceive that
 if climate warms  a little, the altitude of the ice sheet will decrease (implying less net accumulation), but the flow of ice towards the ice sheet will be reduced as well, so that a new balance will be reached. 
@@ -69,7 +69,7 @@ Reconsider the solutions of the bifurcation diagram. Which ones are stable, and 
 \ecd 
 
 
-\input{Figures/glacial_bifurcation.eepic}
+\efigure{glacial_bifurcation}
 
 <!--\includegraphics[page=3, angle=90, scale=0.7]{lphys2114-figures}-->
 

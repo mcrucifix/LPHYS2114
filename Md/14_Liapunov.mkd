@@ -1,20 +1,24 @@
+\label{sect:lyapunov}
+
 
 ## Lyapunov functions
 
-(cf. Wiggins chap 2)
-
-The method of Lyapunov functions can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by Wiggins, the Lyapunov theory is a large area, and we examine here a very small part of it. Furthermore, while it is presented here in a chapter about vector fields in $\mathbb{R}^2$, it is in fact valid in any dimension, but so much easier to visualise on the plane. 
+The method of Lyapunov functions can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by \cite[][ch.2 ]{Wiggins03aa}, the Lyapunov theory is a large area, and we examine here a very small part of it. Furthermore, while it is presented here in a chapter about vector fields in $\mathbb{R}^2$, it is in fact valid in any dimension, but so much easier to visualise on the plane. 
 
 The basic idea is to find, in a neighbourhood of the fixed point, a function of the state that is positive, zero at the fixed point, and known to decay strictly monotonously over time. In which case, quite intuitively, the fixed point is asymptotically stable. 
 
-More specifically, consider the following vector field: 
+More specifically, consider the following set of differential equations. 
 
 \begin{align*}
 \dot x &= f(x,y) \\
 \dot y &= g(x,y),\quad (x,y)\in\mathbb{R}^2,
 \end{align*}
 
-with fixed point $(x_f,y_f)$. Let $V(x,y)$ a scalar-valued function on $\mathbb{R}^2$ that is at least $\mathbf{C}^1$, such that $V(x_f,y_f)=0$.
+with fixed point $(x_f,y_f)$.
+We have explained in sec. \label{subsect:flow} that if $f$ and $g$ are differentiable enough, th
+
+
+Let $V(x,y)$ a scalar-valued function on $\mathbb{R}^2$ that is at least $\mathbf{C}^1$, such that $V(x_f,y_f)=0$.
 
 
 \includegraphics[page=19, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
@@ -62,7 +66,7 @@ The basin of attraction (or _domain_) of an attracting set $A$ is  $\bigcup\limi
 
 Below is an example of basins of attractions of two sinks. The sinks act as two individual _attracting sets_. We will later identify this dynamical system as the Duffing oscillator. 
 
-\input{Figures/poincare.eepic}
+\efigure{poincare}
 
 <!--\includegraphics[page=20, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}-->
 
@@ -80,7 +84,7 @@ Consider the following system:
 
 We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can define a trapping region as an ellipse encompassing the three fixed points. It turns out the whole compact interval $[-1,1]$ on the $x$ axis is the attracting set obtained from that trapping region. Indeed, for any point $p$ on the segment, and for _any_ time $t$, you can find an initial condition (close enough to the unstable fixed point, presumably) within the attracting set (it is indeed invariant) that reaches $p$ precisely at time $t$. So this interval is really the limit of self-evolving trapping regions. (see Figure)
 
-\input{Figures/attractingSet.eepic}
+\efigure{attractingSet}
 
 But clearly this is not the idea that we might have of an attractor. Technically, we say that the attracting set that we obtained in the above example contains many "wandering points". Such point leave definitively their own neighbourhood as time continues, so we do not want to say that they are part of an "attractor". When you are on such points, you do not stay there. 
 

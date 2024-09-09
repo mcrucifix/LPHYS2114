@@ -91,5 +91,5 @@ The chaotic character may be defined as the sensitive dependence on initial cond
 
 <!--The next figure provides a view on the attractor, and shows the sensitive dependence. However, to further develop our intuition about how chaos emerges, we need idealised models, and this will be the object of studying dynamical systems as iterations. -->
 
-<!--\input{Figures/lorenz.eepic}-->
+<!--\efigure{lorenz}-->
 

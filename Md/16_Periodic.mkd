@@ -28,13 +28,14 @@ It is a _stable_ limit cycle in the sense that it is a periodic orbit, that is r
 
 The limit cycle persists outside the slow-fast regime, and $y$ then moves more softly from negative to positive values. 
 
-\input{Figures/vanderpol.eepic}
-\input{Figures/vanderpol_01.eepic}
+\efigure{vanderpol}
+
+\efigure{vanderpol_01}
 
 
 ## Bendixson's criterion
 
-Consider again our classical diffeomorphism on the plane:
+Consider again a flow on the plane, defined by:
 
 \begin{equation} \label{eq:ddb}
 \begin{split}
@@ -174,22 +175,18 @@ Consider first the trivial fixed point for $r$, $r=0$. It is stable for $\beta<0
 The zero fixed point is stable for $\beta<0$.
 The radius $r$ admits a second fixed point when the sign of $\sigma$ and $\beta$ are opposite to each other. 
 
-- ( $\sigma \neq 1$) : In the _supercritical_ bifurcation, one finds a stable limit cycle (fixed point for $r$) for positive values of $\beta$, and growing as ($\sqrt \beta$). In other words, the limit cycle grows from zero and reaches a finite amplitude as $\beta$ increases. 
+- ( $\sigma = -1$) : In the _supercritical_ bifurcation, one finds a stable limit cycle (fixed point for $r$) for positive values of $\beta$, and growing as ($\sqrt \beta$). In other words, the limit cycle grows from zero and reaches a finite amplitude as $\beta$ increases. 
 
 - ( $\sigma = 1$) :  In the  _subcritical_, an _unstable_ limit cycle exists in the negative domain of $\beta$, and then disappears as $\beta$ is positive. That is, for positive $\beta$, the only invariant form is the unstable fixed point. 
 
-As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of fixed point. What happens is not predicted by the normal form: higher order terms must be taken into account. It may land on a fixed point or, more likely, on another limit cycle.  A typical scenario is obtained when the unstable limit cycle for negative $\beta$ regains stability and continues towards positive values of $\beta$, in which case the period of the stable limit cycle is often not very different from that of the unstable limite cycle near the bifurcation point. 
+As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of fixed point. What happens is not predicted by the normal form: higher order terms must be taken into account. It msay land on a fixed point or, more likely, on another limit cycle.  A typical scenario is obtained when the unstable limit cycle for negative $\beta$ regains stability and continues towards positive values of $\beta$, in which case the period of the stable limit cycle is often not very different from that of the unstable limite cycle near the bifurcation point. 
 
-For example, a fifth-order term, such as:
+Similar to what we have found when studying pitchfork bifurcations (section \ref{sect:subcritical}), adding a fourth-order term produces stable limit cycles to land on:
 \begin{align*}
-  \dot r &= \beta r +  r^3 - r^5  \\
+  \dot r &= \beta r +  r^3 - r^5. 
 \end{align*}
 
-will generate, in addition to the trivial $r=0$ and keeping only positive, real $r$, the solutions $r=\frac{1}{\sqrt 2}\sqrt(1\pm\sqrt{4\beta+1})$, that is, 2 solutions for $-\frac{1}{4}\leq \beta \leq 0$ and one solution for $\beta>0$. 
-
-(to do: make figure)
-
-Determining whether a given Hopf bifurcation is subcritical or supercritical is therefore a quite tedious process, by which one must develop the function $f$ and $g$ in Taylor series, and then (when possible) making a change of variables to diagonalise the Jacobian, and then mapping the non-linear terms to the normal form. In practice, bifurcation software (AUTO, MATCONT) can do this for you. Furthermore, criteria have been worked out for specific dynamical systems (e.g.  Kuznetzov, Elements of applied bifurcation theory, Springer,  \S 3.5)
+Determining whether a given Hopf bifurcation is subcritical or supercritical can be a tedious process, especially if you can't find a polar-coordinate expression that can then be transformed into a normal form.  In practice, bifurcation software (AUTO, MATCONT) can do this for you. Furthermore, criteria have been worked out for specific dynamical systems \cite[e.g.][section 3.5]{kuznetsov23aa}. 
 
 For example, for the generic form that concerns us here: 
 
@@ -200,24 +197,16 @@ x_2 &= a(x_1 - b)
 
 (we recognise $x_2=x$; $y_2=y$, $b=0$, $a=1$, $F(y)=y-y^3$), the sign of $\sigma$ is given by $F^{\prime\prime\prime}$ at the bifurcation point. It is here _negative_, so we have a _supercritical_ Hopf bifurcation. 
 
-The above equation is the FithHugh-Nagumo equation, and your professor has used it to study the dynamics of ice ages. 
+The above equation is the FithHugh-Nagumo equation. 
 
 Below the limit cycles found in the van der Pol oscillator with $\alpha=1$, for $\beta=0.98$ (grey), $\beta=0.95$ (black), $\beta=0.9$ (blue) and $\beta=0.8$ (green). We recognise the (reasonably) smooth growth of the cycle as $\beta$ gets away from the bifurcation point, as predicted by the theory. 
 
-\input{Figures/fn.eepic}
+\efigure{fn}
 
 In some more pathological cases, however, the limit cycle may grow quite quickly and reach saturation, even though the bifurcation is supercritical. This is a case of supercritical, explosive Hopf bifurcation. This is found in the above case, but in the slow-fast regime, with  $\alpha \gg 1$. The behaviour of Hopf bifurcations is  slow-fast systems is a field of research on its own, and gives rises to curious orbits termed "Canard". 
 
 The case for $\beta=0.98$, $\alpha=10$ is shown below, for illustration
 
-\input{Figures/canard.eepic}
+\efigure{canard}
 
-## Further remarks about periodic orbits
-
-<!-- - closing lemmas
-- dynamic averaging
--->
-- characterization of chaos (unstable periodic orbits)
-- mathematical biology (limit cycles / synchronisation)
-- time series analysis
 

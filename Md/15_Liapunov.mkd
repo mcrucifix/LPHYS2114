@@ -1,9 +1,7 @@
 
 ## Lyapunov functions
 
-(cf. Wiggins chap 2)
-
-The method of Lyapunov functions can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by Wiggins, the Lyapunov theory is a large area, and we examine here a very small part of it. Furthermore, while it is presented here in a chapter about vector fields in $\mathbb{R}^2$, it is in fact valid in any dimension, but so much easier to visualise on the plane. 
+The method of Lyapunov functions can be used to determine the stability of fixed points when the information obtained from the linearisation is inconclusive (e.g. non-hyperbolic fixed points). As noted by \cite[][Chap. 2]{Wiggins03aa}, the Lyapunov theory is a large area, and we examine here a very small part of it. Furthermore, while it is presented here in a chapter about vector fields in $\mathbb{R}^2$, it is in fact valid in any dimension, but so much easier to visualise on the plane. 
 
 The basic idea is to find, in a neighbourhood of the fixed point, a function of the state that is positive, zero at the fixed point, and known to decay strictly monotonously over time. In which case, quite intuitively, the fixed point is asymptotically stable. 
 
@@ -31,7 +29,7 @@ In the conditions stated above, with $V(x_f,y_f) = 0$ and $V(x,y) > 0$ if $(x,y)
 
 Although quite intuitive, the proof is not quite straightforward and will only be discussed during the lecture time permitting. It is available in @Wiggins03aa, p. 24. 
 
-More insightful for the physicist is the physical meaning attached to $V$. In a conservative (Hamiltonian system), the Hamiltonian would actually satisfy the definition of a Lyapunov function, although this is a limit case, where $\dot V(x,y)=0$. In a thermodynamic system, then the Free Energy (at constant temperature) or the Gibbs free energy (at constant pressure) work as Lyapunov functions. In the simpler case of a near Hamiltonian system (e.g. pendulum with friction), then the potential + kinetic energy $V$ satisfy the definition of a Lyapunov function near the fixed point. 
+More insightful for the physicist is the physical meaning attached to $V$. In a conservative (Hamiltonian system), the Hamiltonian would actually satisfy the definition of a Lyapunov function, although this is a limit case, where $\dot V(x,y)=0$. In a thermodynamic system, then the Free energy (at constant temperature) or the Gibbs free energy (at constant pressure) work as Lyapunov functions. In the simpler case of a near Hamiltonian system (e.g. pendulum with friction), then the potential + kinetic energy $V$ satisfy the definition of a Lyapunov function near the fixed point. 
 
 
 Hence, we seem to have a good method for proving the stability of a fixed point; in practice, finding $V$ is not always as straightforward as in the cases above. There is no miracle receipt. 

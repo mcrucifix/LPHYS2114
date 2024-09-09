@@ -57,7 +57,9 @@ In other words, the lines defined respectively  by $\alpha \vec{u}$ and $\beta \
 At this point we can already have some intuitive grasp on what is going on.
 Some of these lines are associated with an exponentially growing solution (the associated  $\lambda$ is positive): This is an _unstable_ manifold. Some, to the contrary, bring you asymptotically to the fixed point $(0,0)$. They are _stable_. Whether they are stable or unstable depends on the eigenvalue. 
 
-\includegraphics[page=15, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
+\efigure{plane_convergence}
+
+<!-- \includegraphics[page=15, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures} -->
 
 However, these are particular cases: even when both eigenvalues are real, the orbit is _not_ a line. Consider the case of a hyperbolic sink ($\lambda_1,\lambda_2<0$). One can view that $-\lambda_1$ and $-\lambda_2$ act as the inverse of attracting time scales. For example,  |$\lambda_1| \gg |\lambda_2|$ imply that the trajectory will be quickly attracted towards the $u-$component of the trajectory will vanish quickly, so that it will be quickly attracted towards the manifold associated with the second eigenvalue. The $\beta \vec{v}$ will act as a _slow manifold_. 
 
@@ -158,8 +160,7 @@ with $\Dif_{(f,g)}(x_0,y_0)$ the Jacobian of $(f,g)$ evaluated at the fixed poin
 $$\Dif_{(f,g)}(x_0,y_0) = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.$$ It is already diagonal, with eigenvectors along the $x$ and $y$ axes, and eigenvalues $\lambda_1=1$ and $\lambda_2=-1$.
 The phase portrait is thus fairly straightforward: 
 
-
-\includegraphics[page=13, angle=90, scale=0.7, trim={0cm 0 0 0cm}, clip]{lphys2114-figures}
+\hfill\efigure{saddle_plane}
 
 You identify without much difficulty the stable and unstable manifolds. 
 
@@ -192,8 +193,7 @@ However, if we are a tiny bit smarter and arrange for $C_1$ to be $0$, that is, 
 on which the relationship $x_0 + \frac{1}{3}y_0^2=0$ is maintained. In other words, the curve defined by 
 $x + \frac{1}{3}y^2=0$ is the stable invariant manifold. 
 
-
-\includegraphics[page=14, angle=90, scale=0.7, trim={0cm 0 0 0cm}, clip]{lphys2114-figures}
+\efigure{non_linear_plane}
 
 
 With this particular non-linear system, about which we could find the analytical solution, we observe that the invariant manifolds of the linear system are _tangent_ and have the same stability characteristics as those of the linear tangent system. This is great news, because it suggests that we can learn quite a great deal about the non-linear system from inspection of the much simpler linear system, near the fixed point. 

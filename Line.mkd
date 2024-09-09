@@ -133,7 +133,7 @@ The super-critical fork bifurcation is the one which is most commonly introduced
 
 For $\psi\gt0$, it also admits the solutions $x_f=\pm\sqrt{\psi}$, which is stable. 
 
-The bifurcation diagram clearly reveals how, going from negative to positive values of the parameter $\psi$, the bifurcation at  $\psi=0$ consists in a loss of stability of the trivial solution, and the emergence of two stable solutions of distance gently growing from the zero-line as $\psi$ increases.  Here is the stability diagram:
+The bifurcation diagram clearly reveals how, going from negative to positive values of the parameter $\psi$, the bifurcation at  $\psi=0$ consists in a loss of stability of the trivial solution, and the emergence of two stable solutions of distance gently growing from the zero-line as $\psi$ increases.  Here is the stability diagram\index{stability diagram}:
 
 \input{Figures/supercritical_pitchfork.eepic}
 

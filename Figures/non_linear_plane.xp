@@ -1,0 +1,101 @@
+
+#include "epix.h"
+#include "stdio.h"
+using namespace ePiX;
+
+
+// double ux (double x) {  return (1./3.*x*x + x*x*x/6. + x*x*x*x/30.) ;}
+P traj(double t, double C1, double C2) { 
+  return (
+      P(
+        - (C1 * exp(t) -1./3. * C2*C2*( exp(-2.*t))), 
+        C2 * exp(-t)
+        ))
+       ; } 
+
+
+
+
+ void plot_traj(double C1, double C2, double t1, double t2) {
+   path Ptraj;
+   double t;
+   int b1 = int(t1*10);
+   int b2 = int(t2*10);
+    for (int i=b1; i<=b2; ++i) {
+      t = i/10.;
+      Ptraj.pt(traj(t,C1,C2)); // works in all angle modes
+    }
+   Ptraj.draw();
+   arrow(
+      traj(-0.10,C1,C2), 
+      traj(0.00,C1,C2));
+   arrow(
+      traj(0.50,C1,C2), 
+      traj(0.60,C1,C2));
+}
+
+
+
+int main() {
+
+
+//
+// \begin{align*}
+//\dot x &= x + y^3 \\
+//\dot y &= -y + 2xy + x^2
+//\end{align*}
+
+
+  bounding_box(P(-1.2,-1.5), P(1.2,1.5));
+  picture(2.4,3);
+  unitlength("60pt");
+
+  begin();
+
+  arrow(P(-1.2,0), P(1.2,0));
+  arrow(P(0,-1.2), P(0,1.2));
+ 
+  label(P(1.3,0), P(0,4), "$x$");
+  label(P(0,1.3), P(0,4), "$y$");
+ 
+
+//  for (int i=0; i<=2; ++i) {
+  plain(Blue(1.0));
+  plot_traj(0.5, 1.,  -0.5, 1.0);
+  plot_traj(0.5, 0.,  -0.5, 1.0);
+  plot_traj(0.5, -1., -0.5, 1.0);
+
+
+  plot_traj(-0.5, 1.,  -0.5,1.3);
+  plot_traj(-0.5, 0.,  -0.5,1.3);
+  plot_traj(-0.5, -1., -0.5,1.3);
+
+
+  bbold();
+  plain(Green(-1.3));
+  plot_traj(0., 1.,  -0.5, 3.);
+//  plot_traj(0., 0.,  -0.5, 3.);
+  plot_traj(0., -1., -0.5, 3.);
+  label_color(Blue(1.0));
+  dot(P(0,0));
+
+//  plot_traj(0., 1);
+//  plot_traj(0., -1);
+//  plot_traj(-1.,-1);
+//  }
+
+//  char buffer[50];
+//  sprintf(buffer, "$\\lambda_1 < \\lambda_2 < 0$", mylambda);
+//  sprintf(buffer, "$\\lambda_1 < \\lambda_2 < 0$");
+//  label(P(0,1.7), P(0,0), buffer,b);
+
+//  plain(Red(1.0));
+//  bold();
+//  label_color(Red(1.0));
+//  arrow(P(0,0), P(0,1)); label(P(0,1),P(6,2),"$\\vec{v}$", b);
+//  arrow(P(0,0), P(1,0)); label(P(1,0),P(2,8),"$\\vec{u}$", r);
+
+  tikz_format();
+
+  end();
+}

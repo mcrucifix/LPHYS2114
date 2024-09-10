@@ -1,3 +1,85 @@
-\begin{thebibliography}{}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{GAD{\etalchar{+}}02}
+
+\bibitem[BGGS80]{benettin80aa}
+G.~Benettin, L.~Galgani, A.~Giorgilli, and J.~Strelcyn.
+\newblock Lyapunov characteristic exponents for smooth dynamical systems and
+  for hamiltonian systems; a method for computing all of them. part 1: Theory.
+\newblock {\em Meccanica}, 15(1):9–20, 1980.
+
+\bibitem[GAD{\etalchar{+}}02]{Ghil02aa}
+M.~Ghil, M.~R. Allen, M.~D. Dettinger, K.~Ide, D.~Kondrashov, M.~E. Mann, A.~W.
+  Robertson, A.~Saunders, Y.~Tian, F.~Varadi, and P.~Yiou.
+\newblock Advanced spectral methods for climatic time series.
+\newblock {\em Reviews of Geophysics}, 40:769--794, 2002.
+
+\bibitem[HD13]{hirsh13aa}
+M.~W. Hirsh and R.~L. Devaney.
+\newblock {\em Dynamical Systems, and an Introduction to Chaos}.
+\newblock Elsevier, 2013.
+
+\bibitem[Hil00]{hilborn00aa}
+R.~C. Hilborn.
+\newblock {\em {Chaos and Nonlinear Dynamics: An Introduction for Scientists
+  and Engineers}}.
+\newblock Oxford University Press, 2000.
+
+\bibitem[HJ90]{horn90aa}
+R.~A. Horn and C.~R. Johnson.
+\newblock {\em Matrix Analysis}.
+\newblock Cambridge University Press, 1990.
+
+\bibitem[Kuz23]{kuznetsov23aa}
+Y.~A. Kuznetsov.
+\newblock {\em Elements of Applied Bifurcation Theory}.
+\newblock Springer International Publishing, 2023.
+
+\bibitem[Lor63]{lorenz63}
+E.~N. Lorenz.
+\newblock Deterministic non-periodic flow.
+\newblock {\em Journal of the Atmospheric Sciences}, 20:130--141, 1963.
+
+\bibitem[MCA15]{Mitsui15ad}
+T.~Mitsui, M.~Crucifix, and K.~Aihara.
+\newblock Bifurcations and strange nonchaotic attractors in a phase oscillator
+  model of glacial--interglacial cycles.
+\newblock {\em Physica D: Nonlinear Phenomena}, 306:25 -- 33, 2015.
+
+\bibitem[MOF05]{maasch05aa}
+K.~A. Maasch, R.~J. Oglesby, and A.~Fournier.
+\newblock Barry saltzman and the theory of climate.
+\newblock {\em Journal of Climate}, 18(13):2141–2150, 2005.
+
+\bibitem[Per01]{perko01aa}
+L.~Perko.
+\newblock Differential equations and dynamical systems.
+\newblock 2001.
+
+\bibitem[RS00]{Ramasubramanian200072}
+K.~Ramasubramanian and M.~S. Sriram.
+\newblock A comparative study of computation of lyapunov spectra with different
+  algorithms.
+\newblock {\em Physica D: Nonlinear Phenomena}, 139(1-2):72 -- 86, 2000.
+
+\bibitem[Sal62]{Saltzman62aa}
+B.~Saltzman.
+\newblock Finite amplitude free convection as an initial value problem---i.
+\newblock {\em Journal of the Atmospheric Sciences}, 19(4):329--341, 1962.
+
+\bibitem[Str14]{strogatz14aa}
+S.~Strogatz.
+\newblock {\em Nonlinear Dynamics and Chaos: With Applications to Physics,
+  Biology, Chemistry, and Engineering}.
+\newblock Studies in Nonlinearity. Avalon Publishing, 2014.
+
+\bibitem[Tuc02]{tucker02lorenz}
+W.~Tucker.
+\newblock A rigorous ode solver and smale's 14th problem.
+\newblock {\em Found. Comput. Math.}, 2:53--117, 2002.
+
+\bibitem[Wig03]{Wiggins03aa}
+S.~Wiggins.
+\newblock {\em Introduction to Applied Nonlinear Dynamical Systems and Chaos}.
+\newblock 2003.
 
 \end{thebibliography}

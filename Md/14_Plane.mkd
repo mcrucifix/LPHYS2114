@@ -72,30 +72,50 @@ A further counter-intuitive behaviour may occur in the case $\vec{u}$ and $\vec{
 
 ### Case B: Complex eigenvalues : spiral and center 
 
-The frictionless, linear harmonic oscillator is defined by (after a suitable choice of length and time units):
+The frictionless, linear harmonic oscillator is defined by (after a suitable choice of length unit):
 
-$$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -1 & 0 \end{pmatrix} \vectort{q}{p}.$$ 
-This is a typical example of linear vector field with purely imaginary eigenvalues $\lambda_{1,2}= \pm i$. 
+$$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -\omega^2 & 0 \end{pmatrix} \vectort{q}{p}.$$ 
+This is a typical example of linear vector field with purely imaginary eigenvalues $\lambda_{1,2}= \pm i\omega$, $i=\sqrt{-1}$. 
 
+The set of eigenvectors are $(1,i\omega)$ and $(1,-i\omega)$ so that the general solution is
 
-The general solution is $q = C_0 e^{i(t+\phi_0)}$ and $p=\dot q$. 
+\begin{displaymath}
+\vectort{q}{p} = A e^{i\omega t}\vectort{1}{i\omega} + B e^{-i\omega t}\vectort{1}{-i\omega}\text{; }A, C\in \mathbb{C}. 
+\end{displaymath}
+
+Requiring $q$ and $p$ to be real imposes $2A=2B=C=C_0e^{i\phi_0}$, where $C\in\mathbb{C}$ and $C_0$, $\phi_0\in \mathbb{R}$. 
+After some algebra it turns out that  $q$ and $p/\omega$ can be interpreted as the real and imaginary parts of a same phasor $\mathbf{q}$ animated by  a clockwise motion of constant radius. 
+
+\begin{displaymath}
+\mathbf{q} = q+i\left(\frac{p}{\omega}\right) = C_0 e^{-i\omega(t-\phi_0)}. 
+\end{displaymath}
+
 
 \bcd
 Can you see that you now have an _infinity_ of orbits which can are arbritarily far apart from each other ?  Which are they ? How can you say that this property must be specifific of non-dissipative systems ? (Class discussion sect. \ref{bcd:Ham1})
 \ecd 
-Now consider the slightly more realistic case of a harmonic oscillator with friction coefficient $\nu$.
+Now consider the slightly more realistic case of a harmonic oscillator with friction coefficient $\nu$, but for easier computation we assume a time-scale redimensionalisation such that $\omega=1$:
 
 $$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -1 & -\nu \end{pmatrix} \vectort{q}{p}  $$
 
-The eigenvalues are found with the characteristic equation $\lambda^2+\lambda\nu-1=0$. The eigenvalues are  $\lambda = \frac{1}{2} ( -\nu \pm \sqrt{\nu^2 - 4 })$. The weakly damped harmonic oscillator $\nu<2$ will thus be characterised by a damped oscillation, associated with two eigenvalues that are complex conjugate. 
+The eigenvalues are found with the characteristic equation $\lambda^2+\lambda\nu-1=0$. The eigenvalues are  $\lambda = \frac{1}{2} ( -\nu \pm \sqrt{\nu^2 - 4 })$. The weakly damped harmonic oscillator $\nu<2$ will thus be characterised by a damped oscillation, associated with two eigenvalues that are complex conjugate. We let $\lambda = \lambda_r \pm i \omega_e$, with $\lambda_r$ and $\omega_e$ real. 
 
-As we see it, the _conservative_ harmonic oscillator is associated with a non-hyperbolic fixed point that is a _center_. The more general damped oscillator is associated with a hyperbolic fixed point, asymptotically attracting, that is _spiraling_. 
+This gives two time scales: the rotation ($\omega_e$) and the decay ($-\lambda_r=\nu/2$). 
 
-\includegraphics[page=16, angle=90, scale=0.7, trim={1cm 0 2cm 0cm}, clip]{lphys2114-figures}
+The general solution is now:
+
+\begin{displaymath}
+\mathbf{q} = \left(q+\frac{\lambda_r}{\lambda_r^2+\omega_e^2} p\right) + i\left(p\frac{\omega_e}{\lambda_r^2+\omega_e^2}\right) = C_0 e^{\lambda_r t } e^{-i(\omega_e t-\phi_0)}. 
+\end{displaymath}
+
+
+As we see it, the _dissipative oscillator_ is associated with a non-hyperbolic fixed point that is a _center_, asymptotically attracting, with _spiraling_ trajectories. The phase-space interpretation is a bit less straigtforward than in the harmonic oscillator because the real and imaginary parts of the phasor are not just $q$ and $p$ but an affine transformation of them. This is the affine tranformation which was needed to actually give the matrix a canonical form.
+
+\efigure{spiral_inwards}
 
 ### Case C: Jordan form matrix
 
-In this case, the general solution of the trajectories is $\vec{x}(t) = (C_1 e^{\lambda t} + C_2 t e^{\lambda t}) \vec{u} +  C_2 e^{\lambda t} \vec{v}$. 
+In this case, the general solution of the trajectories is $\vec{x}(t) = (C_1 e^{\lambda t} + C_2 t e^{\lambda t}) \vec{u} +  C_2 e^{\lambda t} \vec{v}$. Again,  $\vec{u}$ and $\vec{v}$ are the columns of the matrix $T$ needed to bring $A$ into canonical form (here, for illustration, they are orthogonal, but they do not need be. 
 
 \efigure{jordan}
 \efigure{jordan05}

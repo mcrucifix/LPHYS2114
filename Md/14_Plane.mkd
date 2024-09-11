@@ -22,7 +22,7 @@ The flow\index{flow} associated with such linear fields are linear diffeomorphis
 The Jordan canonical form theorem tells [^Jordan] us that, if $A$ is a real two by two matrix, there is a non-singular real matrix $T$ such that $A=TJT^{-1}$, and $T$ is made of the column vectors $\vec{u}$ and $\vec{v}$.  Depending on the eigenvalue and eigenvectors of $A$, $J$ will be of one of three forms:
 
 - _Case A_: Two independent eigenvectors ($\vec{u}$ and $\vec{v}$), real eigenvalues : $A = \begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix}$;
-- _Case B_: Complex eigenvalues $\alpha \pm i \beta$: $A = \begin{pmatrix} \alpha & \beta \\ -\beta & \alpha \end{pmatrix}$;
+- _Case B_: Complex eigenvalues $\lambda_r \pm i \omega$: $A = \begin{pmatrix} \lambda_r & \omega \\ -\omega & \lambda_r \end{pmatrix}$;
 - _Case C_: A single independent eigenvector ($\vec{u}$), with one single real eigenvalue $A = \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix}$. 
 
 
@@ -72,24 +72,38 @@ A further counter-intuitive behaviour may occur in the case $\vec{u}$ and $\vec{
 
 ### Case B: Complex eigenvalues : spiral and center 
 
+The eigenvectors associated with the matrix form $B$ are $(1, i)$ and $(1, -i)$ $i=\sqrt{-1}$. 
+Thus, the general solution reads (with $x$, $y$ the components of the solution):
+
+\begin{displaymath}
+\vectort{x}{y} = A e^{\lambda_r + i\omega t}\vectort{1}{i\omega} + 
+                 B e^{\lambda_r - i\omega t}\vectort{1}{i\omega} 
+\end{displaymath}
+
+Requiring $x$ and $y$ to be real imposes $2A=2B=C=C_0e^{i\phi_0}$, where $C\in\mathbb{C}$ and $C_0$, $\phi_0\in \mathbb{R}$. 
+
+We then observe that $x+iy$ behaves as a phasor, with amplitude growing or shrinking exponentially depending on the sign of $\lambda_r$, and rotating clockwise with $\omega$:
+
+\begin{displaymath}
+x+iy = C e^{\lambda_r} e^{ - i\omega t}
+\end{displaymath}
+
+
+\efigure{spiral_inwards}
+
+Two more examples:
+
 The frictionless, linear harmonic oscillator is defined by (after a suitable choice of length unit):
 
 $$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -\omega^2 & 0 \end{pmatrix} \vectort{q}{p}.$$ 
 This is a typical example of linear vector field with purely imaginary eigenvalues $\lambda_{1,2}= \pm i\omega$, $i=\sqrt{-1}$. 
 
-The set of eigenvectors are $(1,i\omega)$ and $(1,-i\omega)$ so that the general solution is
 
-\begin{displaymath}
-\vectort{q}{p} = A e^{i\omega t}\vectort{1}{i\omega} + B e^{-i\omega t}\vectort{1}{-i\omega}\text{; }A, C\in \mathbb{C}. 
-\end{displaymath}
-
-Requiring $q$ and $p$ to be real imposes $2A=2B=C=C_0e^{i\phi_0}$, where $C\in\mathbb{C}$ and $C_0$, $\phi_0\in \mathbb{R}$. 
-After some algebra it turns out that  $q$ and $p/\omega$ can be interpreted as the real and imaginary parts of a same phasor $\mathbf{q}$ animated by  a clockwise motion of constant radius. 
+With a development similar to above, the couple  $q$ and $p/\omega$ can be interpreted as the real and imaginary parts of a same phasor $\mathbf{q}$ animated by  a clockwise motion of constant radius. 
 
 \begin{displaymath}
 \mathbf{q} = q+i\left(\frac{p}{\omega}\right) = C_0 e^{-i\omega(t-\phi_0)}. 
 \end{displaymath}
-
 
 \bcd
 Can you see that you now have an _infinity_ of orbits which can are arbritarily far apart from each other ?  Which are they ? How can you say that this property must be specifific of non-dissipative systems ? (Class discussion sect. \ref{bcd:Ham1})
@@ -111,7 +125,6 @@ The general solution is now:
 
 As we see it, the _dissipative oscillator_ is associated with a non-hyperbolic fixed point that is a _center_, asymptotically attracting, with _spiraling_ trajectories. The phase-space interpretation is a bit less straigtforward than in the harmonic oscillator because the real and imaginary parts of the phasor are not just $q$ and $p$ but an affine transformation of them. This is the affine tranformation which was needed to actually give the matrix a canonical form.
 
-\efigure{spiral_inwards}
 
 ### Case C: Jordan form matrix
 

@@ -99,11 +99,12 @@ $$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -\omega^2 & 0 \end{pmatri
 This is a typical example of linear vector field with purely imaginary eigenvalues $\lambda_{1,2}= \pm i\omega$, $i=\sqrt{-1}$. 
 
 
-With a development similar to above, the couple  $q$ and $p/\omega$ can be interpreted as the real and imaginary parts of a same phasor $\mathbf{q}$ animated by  a clockwise motion of constant radius. 
+With a development similar to above, the couple  $q$ and $p/\omega$ can be interpreted as the real and imaginary parts of a same phasor $\mathbf{q}$ animated by  a clockwise motion of constant radius
 
 \begin{displaymath}
-\mathbf{q} = q+i\left(\frac{p}{\omega}\right) = C_0 e^{-i\omega(t-\phi_0)}. 
+\mathbf{q} = q+i\left(\frac{p}{\omega}\right) = C_0 e^{-i\omega(t-\phi_0)}, 
 \end{displaymath}
+where $C_0$ and $\phi_0$ are real and set by the initial condition:
 
 \bcd
 Can you see that you now have an _infinity_ of orbits which can are arbritarily far apart from each other ?  Which are they ? How can you say that this property must be specifific of non-dissipative systems ? (Class discussion sect. \ref{bcd:Ham1})
@@ -112,18 +113,16 @@ Now consider the slightly more realistic case of a harmonic oscillator with fric
 
 $$\vectort{\dot q}{\dot p} = \begin{pmatrix}  0 & 1 \\ -1 & -\nu \end{pmatrix} \vectort{q}{p}  $$
 
-The eigenvalues are found with the characteristic equation $\lambda^2+\lambda\nu-1=0$. The eigenvalues are  $\lambda = \frac{1}{2} ( -\nu \pm \sqrt{\nu^2 - 4 })$. The weakly damped harmonic oscillator $\nu<2$ will thus be characterised by a damped oscillation, associated with two eigenvalues that are complex conjugate. We let $\lambda = \lambda_r \pm i \omega_e$, with $\lambda_r$ and $\omega_e$ real. 
-
-This gives two time scales: the rotation ($\omega_e$) and the decay ($-\lambda_r=\nu/2$). 
+The eigenvalues are found with the characteristic equation $\lambda^2+\lambda\nu-1=0$. The eigenvalues are  $\lambda = \frac{1}{2} ( -\nu \pm \sqrt{\nu^2 - 4 })$, which are complex conjugate with negative real part for $\nu<2$. We anticipate a damped oscillation. We still use the convention $\lambda = \lambda_r \pm i \omega$, with $\lambda_r$ and $\omega$ real. 
 
 The general solution is now:
 
 \begin{displaymath}
-\mathbf{q} = \left(q+\frac{\lambda_r}{\lambda_r^2+\omega_e^2} p\right) + i\left(p\frac{\omega_e}{\lambda_r^2+\omega_e^2}\right) = C_0 e^{\lambda_r t } e^{-i(\omega_e t-\phi_0)}. 
+\mathbf{q} = \left(q+\frac{\lambda_r}{\lambda_r^2+\omega_e^2} \right) + i\left(p\frac{\omega_e}{\lambda_r^2+\omega_e^2}\right) = C_0 e^{\lambda_r t } e^{-i(\omega_e t-\phi_0)}. 
 \end{displaymath}
 
 
-As we see it, the _dissipative oscillator_ is associated with a non-hyperbolic fixed point that is a _center_, asymptotically attracting, with _spiraling_ trajectories. The phase-space interpretation is a bit less straigtforward than in the harmonic oscillator because the real and imaginary parts of the phasor are not just $q$ and $p$ but an affine transformation of them. This is the affine tranformation which was needed to actually give the matrix a canonical form.
+This _dissipative oscillator_ is thus associated with a non-hyperbolic fixed point that is a _center_, asymptotically attracting, with _spiraling_ trajectories. The phase-space interpretation is a bit less straigtforward than in the harmonic oscillator because the real and imaginary parts of the phasor are not just $q$ and $p$ but an affine transformation of them. This is the affine tranformation which was needed to give the matrix a canonical form.
 
 
 ### Case C: Jordan form matrix

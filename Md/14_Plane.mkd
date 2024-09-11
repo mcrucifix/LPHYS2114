@@ -82,10 +82,10 @@ Thus, the general solution reads (with $x$, $y$ the components of the solution):
 
 Requiring $x$ and $y$ to be real imposes $2A=2B=C=C_0e^{i\phi_0}$, where $C\in\mathbb{C}$ and $C_0$, $\phi_0\in \mathbb{R}$. 
 
-We then observe that $x+iy$ behaves as a phasor, with amplitude growing or shrinking exponentially depending on the sign of $\lambda_r$, and rotating clockwise with $\omega$:
+We then observe that $x+iy$ behaves as a complex phasor $\mathbf{q}$, with amplitude growing or shrinking exponentially depending on the sign of $\lambda_r$, and rotating clockwise with $\omega$:
 
 \begin{displaymath}
-x+iy = C e^{\lambda_r} e^{ - i\omega t}
+\mathbf{q} = x+iy = C e^{\lambda_r} e^{ - i\omega t}
 \end{displaymath}
 
 

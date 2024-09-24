@@ -81,19 +81,21 @@ int main() {
   double root1 = findRoot(psi, -1);
   double root2 = findRoot(psi, 5);
   pen(Blue(1.0));
-  fill(Black(0.0));
-  circle(P(root1, expmx(root1)), 0.05);
   fill(Blue(1.0));
+  circle(P(root1, expmx(root1)), 0.05);
+  fill(Black(0.0));
   circle(P(root2, expmx(root2)), 0.05);
 
 
   pen(Blue(1.0));
-  aarrow(P(-1.0,-0.3), P(0.2, -0.3));
-  line(P(0.2, -0.3), P(1.2, -0.3));
-  arrow(P(1.8, -0.3), P(1.2, -0.3));
-  fill(Black(0.0));
-  circle(P(root1, -0.3), 0.05);
+  arrow(P(0.5, -0.3), P(1.3, -0.3));
+  line(P(1.3,-0.3), P(1.8, -0.3));
+  arrow(P(0.5, -0.3), P(0.2, -0.3));
+  line(P(0.2, -0.3), P(-0.7, -0.3));
+  arrow(P(-0.9, -0.3), P(-0.7, -0.3));
   fill(Blue(1.0));
+  circle(P(root1, -0.3), 0.05);
+  fill(Black(0.0));
   circle(P(root2, -0.3), 0.05);
 
   inset(P(-1.0,0.),P(0.0,1.0));
@@ -109,19 +111,20 @@ int main() {
 
   root1 = 0.0;
   pen(Blue(1.0));
-  fill(Black(0.0));
-  circle_right(P(root1, expmx(root1)), 0.05);
   fill(Blue(1.0));
+  circle_right(P(root1, expmx(root1)), 0.05);
+  fill(Black(0.0));
   circle_left(P(root1, expmx(root1)), 0.05);
 
 
   pen(Blue(1.0));
-  arrow(P(0.2,-0.3), P(-0.8, -0.3));
-  arrow(P(1.2, -0.3), P(0.7, -0.3));
-  line(P(0.2, -0.3), P(0.7, -0.3));
-  fill(Black(0.0));
-  circle_right(P(root1, -0.3), 0.05);
+  arrow(P(-0.8, -0.3), P(-0.6, -0.3));
+  arrow(P(-0.6, -0.3), P(1.3, -0.3));
+  line(P(1.3, -0.3), P(1.8, -0.3));
+ 
   fill(Blue(1.0));
+  circle_right(P(root1, -0.3), 0.05);
+  fill(Black(0.0));
   circle_left(P(root1, -0.3), 0.05);
 
   inset(P(-0.0,0.),P(1.0,1.0));
@@ -139,10 +142,10 @@ int main() {
 
 
   pen(Blue(1.0));
-  arrow(P(0.2,-0.3), P(-0.8, -0.3));
-  arrow(P(1.2, -0.3), P(0.7, -0.3));
-  line(P(0.2, -0.3), P(0.7, -0.3));
 
+  arrow(P(-0.8, -0.3), P(-0.6, -0.3));
+  arrow(P(-0.6, -0.3), P(1.3, -0.3));
+  line(P(1.3, -0.3), P(1.8, -0.3));
   inset(P(1.0,0.),P(2.0,1.0));
   deactivate(subfig3);
 

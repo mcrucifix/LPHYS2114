@@ -114,7 +114,7 @@ There in another handy theorem, that says that if $\vec{f}(\vec{x},t,\psi)$ is d
 
 ## Special properties of autonomous fields 
 
-We now consider two important propositions that apply to autonomous dynamical systems, and that we will e able to prove. For simplicity, we consider a dynamical system admitting solutions over all times.
+We now consider two important propositions that apply to autonomous dynamical systems, and that we will be able to prove. For simplicity, we consider a dynamical system admitting solutions over all times.
 
 \bt{Time shifted trajectories are trajectories in autonomous fields.} 
 If $\vec{x}(t)$ is a solution of $\ddt \vec{x} = \vec{f}(\vec{x})$, then $\vec{x}(t+\tau)$ is also a solution of that equation for any $\tau$. 
@@ -152,7 +152,7 @@ Consider the following diagram. This is a phase portrait\index{phase portrait}: 
 
 ## Flows
 
-At this point, we have understood (at least intuitively) that the future fate a point in the phase space, in an autonomous system, does not depend on the time at which the snapshot has been taken. This is after all consistent  with the definition of an autonomous system (the evolution dictated by $\vec{f}$ does not depend explicitly on time). In other words, for any point $(\vec{x}_0,t_0)$, the point of the trajectory $\vec{x}(t,t_0,\vec{x_0})$ reached at time $t$ depends only on the initial condïton $t_0$, and the time elapsed $\tau = t - t_0$. We can thus define a function $\phi(t-t_0, \vec{x_0})=\vec{x}(t,t_0,\vec{x_0})$. 
+At this point, we have understood (at least intuitively) that the future fate a point in the phase space, in an autonomous system, does not depend on the time at which the snapshot has been taken. This is after all consistent  with the definition of an autonomous system (the evolution dictated by $\vec{f}$ does not depend explicitly on time). In other words, for any point $(\vec{x}_0,t_0)$, the point of the trajectory $\vec{x}(t,t_0,\vec{x_0})$ reached at time $t$ depends only on the initial condition $t_0$, and the time elapsed $\tau = t - t_0$. We can thus define a function $\phi(t-t_0, \vec{x_0})=\vec{x}(t,t_0,\vec{x_0})$. 
 
 
 We proceed in two steps. First, we denote the family of functions $\phi^\tau$, defined such that $\phi^\tau(\vec{x_0})=x(t_0+\tau, t_0, \vec{x_0})$ which, we have seen, is independent of $t_0$. 

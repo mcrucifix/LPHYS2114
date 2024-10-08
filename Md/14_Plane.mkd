@@ -19,14 +19,14 @@ $$ \dot{\vec{x}}  = A \vec{x}.$$
 
 The flow\index{flow} associated with such linear fields are linear diffeomorphisms\index{diffeomorphism} (the space is deformed continuously and linearly). 
 
-The Jordan canonical form theorem tells [^Jordan] us that, if $A$ is a real two by two matrix, there is a non-singular real matrix $T$ such that $A=TJT^{-1}$, and $T$ is made of the column vectors $\vec{u}$ and $\vec{v}$.  Depending on the eigenvalue and eigenvectors of $A$, $J$ will be of one of three forms:
+The Jordan canonical form theorem tells [^Jordan] us that, if $A$ is a real two by two matrix, there is a non-singular real matrix $T$ such that $A=TJT^{-1}$, and $T$ is made of two  columns with vectors $\vec{u}$ and $\vec{v}$.  Depending on the eigenvalue and eigenvectors of $A$, $J$ will be of one of three forms:
 
-- _Case A_: Two independent eigenvectors ($\vec{u}$ and $\vec{v}$), real eigenvalues : $A = \begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix}$;
-- _Case B_: Complex eigenvalues $\lambda_r \pm i \omega$: $A = \begin{pmatrix} \lambda_r & \omega \\ -\omega & \lambda_r \end{pmatrix}$;
-- _Case C_: A single independent eigenvector ($\vec{u}$), with one single real eigenvalue $A = \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix}$. 
+- _Case A_: Two independent eigenvectors ($\vec{u}$ and $\vec{v}$), real eigenvalues : $J = \begin{pmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{pmatrix}$;
+- _Case B_: Complex eigenvalues $\lambda_r \pm i \omega$: $J = \begin{pmatrix} \lambda_r & \omega \\ -\omega & \lambda_r \end{pmatrix}$;
+- _Case C_: A single independent eigenvector ($\vec{u}$), with one single real eigenvalue $J = \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix}$. 
 
 
-[^Jordan]:More on this \ref{sect:Jordan}. 
+[^Jordan]:More on this \ref{sect:Jordan}. The relevant intuition is that the original space is deformed and rotated so that the vectors $\vec{u}$ and $\vec{v}$ are aligned on the $x-$ and $y-$axes. We can see this as follows. The original equation $\dot{ \vec{x}} = A\vec{x}$ can be rewritten as $T^{-1}\dot{\vec{x}} =  JT^{-1}\vec{x}$. So this is an linear equation with operator $J$ for the vector $T^{-1}\dot{\vec{x}}$. When $\vec{x}$ is $\vec{u}$, then $T^{-1}\vec{x} = (1   0)^{\mathsf{T}}$ (verify this by mulitplying both sides by $T$ and replace $\vec{x}$ by $\vec{u}$; the index $\mathsf{T}$ on the right-hand-side is there to denote a column matrix). 
 
 Geometrically, $T$ is the composition of a rotation, dilation and reflection around the origin.
 Vectors $\vec{u}$ and $\vec{v}$ are not necessarily orthogonal. We only have this guarantee when the matrix $A$ is symmetric. 
@@ -306,7 +306,7 @@ Then, we can as we have done already linearise the system:
 \end{equation}
 
 
-The non-linear terms contain second-order terms and more, so by definition $lim_{(x,y)\rightarrow (0,0)} \frac{N_{x,y}(x,y)}{x^2+y^2} = 0$.
+The non-linear terms contain second-order terms and more, so by definition $\lim_{(x,y)\rightarrow (0,0)} \frac{N_{x,y}(x,y)}{x^2+y^2} = 0$.
 
 So, consider now $(x(t),y(t))$ an orbit of the stable manifold that passes through $x,s(x)$. It must remain on the stable manifold, and we find that $y(t)=s(x(t))$. We can re-write system \eqref{eq:manifold} as follows:
 

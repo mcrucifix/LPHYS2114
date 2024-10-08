@@ -103,9 +103,12 @@ The intuition beyond this theorem is reasonably clear. The first condition impos
 
 More formally, from the implicit function theorem, (1) and (4) imply that there must exist a function $\psi(x)$ on an interval $I\subset\mathbb{R}$ such that $f(x,\psi(x)) = 0$ and $\psi(x_0)=\psi_0$.
 
-This is the curve of fixed points, as a function of $\psi$. Furthermore, its derivatives are:
+This is the curve of fixed points, as a function of $\psi$. On a branch of solution parameterised as ($x, \psi(x)$), by definiton, $f=0$, so that $\dif f$ is also zero along the branch:
 
-
+\begin{displaymath}
+\dif f = \pd{f(x,\psi(x))}{x}\dif x + \pd{f(x,\psi(x))}{\psi}\dif \psi, 
+\end{displaymath}
+leading
 \begin{displaymath}
 \od{\psi}{x} = - \frac {\pd{f(x, \psi(x))}{x}}{\pd{f(x, \psi(x))}{\psi}};
 \end{displaymath}

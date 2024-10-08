@@ -8,7 +8,7 @@ using namespace ePiX;
 P traj(double t, double C1, double C2) { 
   return (
       P(
-        - (C1 * exp(t) -1./3. * C2*C2*( exp(-2.*t))), 
+        (C1 * exp(t) -1./3. * C2*C2*( exp(-2.*t))), 
         C2 * exp(-t)
         ))
        ; } 

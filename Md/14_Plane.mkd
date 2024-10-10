@@ -77,7 +77,7 @@ Thus, the general solution reads (with $x$, $y$ the components of the solution):
 
 \begin{displaymath}
 \vectort{x}{y} = A e^{(\lambda_r + i\omega) t}\vectort{1}{i} + 
-                 B e^{(\lambda_r - i\omega)t}\vectort{1}{i} 
+                 B e^{(\lambda_r - i\omega)t}\vectort{1}{-i} 
 \end{displaymath}
 
 Requiring $x$ and $y$ to be real imposes $2A=2B=C=C_0e^{i\phi_0}$, where $C\in\mathbb{C}$ and $C_0$, $\phi_0\in \mathbb{R}$. 

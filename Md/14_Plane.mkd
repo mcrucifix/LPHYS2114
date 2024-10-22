@@ -26,7 +26,7 @@ The Jordan canonical form theorem tells [^Jordan] us that, if $A$ is a real two 
 - _Case C_: A single independent eigenvector ($\vec{u}$), with one single real eigenvalue $J = \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix}$. 
 
 
-[^Jordan]:More on this \ref{sect:Jordan}. The relevant intuition is that the original space is deformed and rotated so that the vectors $\vec{u}$ and $\vec{v}$ are aligned on the $x-$ and $y-$axes. We can see this as follows. The original equation $\dot{ \vec{x}} = A\vec{x}$ can be rewritten as $T^{-1}\dot{\vec{x}} =  JT^{-1}\vec{x}$. So this is an linear equation with operator $J$ for the vector $T^{-1}\dot{\vec{x}}$. When $\vec{x}$ is $\vec{u}$, then $T^{-1}\vec{x} = (1   0)^{\mathsf{T}}$ (verify this by mulitplying both sides by $T$ and replace $\vec{x}$ by $\vec{u}$; the index $\mathsf{T}$ on the right-hand-side is there to denote a column matrix). 
+[^Jordan]:More on this \ref{sect:Jordan}. The relevant intuition is that the original space is deformed and rotated so that the vectors $\vec{u}$ and $\vec{v}$ are aligned on the $x-$ and $y-$axes. We can see this as follows. The original equation $\dot{ \vec{x}} = A\vec{x}$ can be rewritten as $T^{-1}\dot{\vec{x}} =  JT^{-1}\vec{x}$. So this is an linear equation with operator $J$ for the vector $T^{-1}\dot{\vec{x}}$. When $\vec{x}$ is $\vec{u}$, then $T^{-1}\vec{x} = (1   0)^{\mathsf{T}}$ (verify this by multiplying both sides by $T$ and replace $\vec{x}$ by $\vec{u}$; the index $\mathsf{T}$ on the right-hand-side is there to denote a column matrix). 
 
 Geometrically, $T$ is the composition of a rotation, dilation and reflection around the origin.
 Vectors $\vec{u}$ and $\vec{v}$ are not necessarily orthogonal. We only have this guarantee when the matrix $A$ is symmetric. 
@@ -107,7 +107,7 @@ With a development similar to above, the couple  $q$ and $p/\omega$ can be inter
 where $C_0$ and $\phi_0$ are real and set by the initial condition:
 
 \bcd
-Can you see that you now have an _infinity_ of orbits which can are arbritarily far apart from each other ?  Which are they ? How can you say that this property must be specifific of non-dissipative systems ? (Class discussion sect. \ref{bcd:Ham1})
+Can you see that you now have an _infinity_ of orbits which can are arbitrarily far apart from each other ?  Which are they ? How can you say that this property must be specific of non-dissipative systems ? (Class discussion sect. \ref{bcd:Ham1})
 \ecd 
 Now consider the slightly more realistic case of a harmonic oscillator with friction coefficient $\nu$, but for easier computation we assume a time-scale redimensionalisation such that $\omega=1$:
 
@@ -122,7 +122,7 @@ The general solution is now:
 \end{displaymath}
 
 
-This _dissipative oscillator_ is thus associated with a non-hyperbolic fixed point that is a _center_, asymptotically attracting, with _spiraling_ trajectories. The phase-space interpretation is a bit less straigtforward than in the harmonic oscillator because the real and imaginary parts of the phasor are not just $q$ and $p$ but an affine transformation of them. This is the affine tranformation which was needed to give the matrix a canonical form.
+This _dissipative oscillator_ is thus associated with a non-hyperbolic fixed point that is a _center_, asymptotically attracting, with _spiraling_ trajectories. The phase-space interpretation is a bit less straigttforward than in the harmonic oscillator because the real and imaginary parts of the phasor are not just $q$ and $p$ but an affine transformation of them. This is the affine transformation which was needed to give the matrix a canonical form.
 
 
 ### Case C: Jordan form matrix

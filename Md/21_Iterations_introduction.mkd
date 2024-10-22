@@ -81,7 +81,7 @@ It is common to map a continuous dynamical system on an iteration to understand 
 
 - _Numerical iteration_ is perhaps the most common case. The _Euler_, _Runge Kutta_ schemes are example of iterations extracted from a continuous dynamical system. 
 - The _Poincaré_ map is the cross section of a n-dimensional continuous orbit onto a lower-dimensional section, typically a plane. For example, the Poincaré map of a limit cycle is a point; that of a torus: a circle. 
-- The _stroboscopic map_ is obtained as the sample of a continuous orbit at fixed intervals $T$. It is particularly usefuf to study synchronisation in forced  systems with period $T$.  
+- The _stroboscopic map_ is obtained as the sample of a continuous orbit at fixed intervals $T$. It is particularly useful to study synchronisation in forced  systems with period $T$.  
 - In some cases, authors have been more creative. We have seen how Lorenz interpreted the behaviour Saltzman-Lorenz by plotting successive local maxima in the $z-$coordinate with the tent map. We come now to another example.
 
 ### The Hénon map
@@ -123,7 +123,7 @@ A fixed point is a 1-periodic point, $f(p)=p$.
 The positive orbit $\theta^\plus$ of a $k-$periodic point is thus an ensemble of $k$ points $\{f(p) \ldots f^k(p)\}$. 
 It happens that the $k-$periodic character of an orbit  develops after a finite number of iterations given an initial condition. This will be the case, for example, for $f(x)=2x \mathop{mod} x$ ($\mathop{mod}$ is the modulus). 
 
-The inital condition $\frac{1}{14}$ ends up in a periodic orbit (show this). 
+The initial condition $\frac{1}{14}$ ends up in a periodic orbit (show this). 
 
 \bd{Finally periodic points}
 A point $p\in\Omega$ in the domain of the iteration $f$ is said to be _finally_ $k-$periodic if $\exists m\in\mathbb{N}_0$ such that $f^m(p)$ is $k-$periodic. 

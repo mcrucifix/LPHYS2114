@@ -41,8 +41,10 @@ Again, the evolution of the Lyapunov function must be (strictly) monotonous in a
 Indeed, as we see it, a contour $C$ within which $\dot V(x,y) \leq 0$ will effectively define a _trapping region_, that is defined as a region that contains all its future states.
 
 \bd{Trapping region}
-A trapping region $U$ relative to a diffeomorphism is a compact set such that $\phi^t(U) \subset U\ \forall t >0$. 
+A trapping region $U$ relative to a diffeomorphism is a compact [^2] set such that $\phi^t(U) \subset U\ \forall t >0$. 
 \ed
+
+[^2:] A compact set is closed (in contains the limit of its converging sequences), and bounded. A dense disc (with its boundary) and a ring are two examples of closed sets in $\mathbb{R}^2$. 
 
 The property $\phi^t(U) \subset U\ \forall t >0$ is the property of _positive invariance_. Thus, a trapping region is a compact positive invariant set. As we move time forward, the trapping region, which keeps containing itself, can be made smaller and smaller until it asymptotically becomes the _attracting set_:
 
@@ -82,14 +84,14 @@ We have a saddle at $(0,0)$ and two stable fixed points at $(\pm 1, 0)$. We can 
 
 But clearly this is not the idea that we might have of an attractor. Technically, we say that the attracting set that we obtained in the above example contains many "wandering points". Such point leave definitively their own neighbourhood as time continues, so we do not want to say that they are part of an "attractor". When you are on such points, you do not stay there. 
 
-There are different ways to mend the above definition and better capture the notion af attractor. The  literature on this topic is not always very easy to follow.
+There are different ways to mend the above definition and better capture the notion of attractor. The  literature on this topic is not always very easy to follow.
 One approach is to require topological transitivity.
 
 \bd{Attractor}
-An attractor $A$ is an attracting set that is topologically transitive. That means that it contains at least one point $p$ such that the orbit passing through $p$ is $A$. 
+An attractor $A$ is an attracting set that is topologically transitive. In relaxed terms, it means that you always find an orbit that goes from one arbitrary (open) set of $A$ to another one. 
 \ed
 
-In other words, and to make it short, when you are on the attractor, you will visit all of its points in a finite amount of time. 
+In other words, and to make it short, when you are on the attractor, you will pass near all of its points in a finite amount of time. 
 
 Another approach is to require the attracting set to be _minimal_, i.e., it does not include any subset that is also an attracting set: 
 
@@ -97,7 +99,7 @@ Another approach is to require the attracting set to be _minimal_, i.e., it does
 An attractor is a  minimal attracting set. 
 \ed
 
-In the abover example, both will generate the same result: we have two attractors, one on $(1,0)$, and one on $(-1,0)$. There is yet another approach, as we now see. 
+In the above example, both will generate the same result: we have two attractors, one on $(1,0)$, and one on $(-1,0)$. There is yet another approach, as we now see. 
 
 ## Limit set
 
@@ -116,9 +118,9 @@ Hence, we could also have defined an attractor as a topologically transitive set
 
 
 A final note about the notion of the  Lyapunov function.  We need to confess that we have been a little bit brutal. 
-Indeed, we first defined the Lyapunov function as being defined on a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-countour of the Lyapunov function, in this neighbourhood. 
+Indeed, we first defined the Lyapunov function as being defined on a _neighbourhood_ around a fixed point. It had to be zero on the fixed point, and organised such that the flow points inwards the iso-contour of the Lyapunov function, in this neighbourhood. 
 
-Now, later in this chapter, we admitted that finding a Lyapunov function is also a good approach for determining a trapping region. To this end, we implicitly  relaxed the condition that we have a fixed point. We just need isocontours with the flow pointing inwards. As we will see, this helps us to see also the kind of solutions we expect within the trapping region. 
+Now, later in this chapter, we admitted that finding a Lyapunov function is also a good approach for determining a trapping region. To this end, we implicitly  relaxed the condition that we have a fixed point. We just need iso-contours with the flow pointing inwards. As we will see, this helps us to see also the kind of solutions we expect within the trapping region. 
 
 \bcd
 To anticipate a bit on what is coming, consider the following configuration: 
@@ -126,7 +128,7 @@ To anticipate a bit on what is coming, consider the following configuration:
 
 \includegraphics[page=21, angle=90, scale=0.7, trim={1cm 0 0 0cm}, clip]{lphys2114-figures}
 
-The two iso-countours, of same value, define a trapping region. What sort of scenario do we expect there? Perhaps your intuition already foresees some possibilities: either orbits land on a fixed point, either they keep looping around a so-called "limit cycle"... or ? 
+The two iso-contours, of same value, define a trapping region. What sort of scenario do we expect there? Perhaps your intuition already foresees some possibilities: either orbits land on a fixed point, either they keep looping around a so-called "limit cycle"... or ? 
 
 \ecd
 

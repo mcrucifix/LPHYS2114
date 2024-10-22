@@ -4,6 +4,8 @@
 - modify the sentence that having an infinity of invariante manifolds is characteristics of a Hamiltionian orbit (Plane.mkd) --> done
 
 
+!!! erreur à corriger sur la définition d'attracteur
+
 Preciser ce qu'est une fonction de Lyapunov 
 
 a long term: ajouter resonance et "circle map" (qui peut etre forc,ee, et meme devenir chaotique)
@@ -15,3 +17,13 @@ dire quelque part que le theoreme de poincare de bendixon a pour idee de projete
 verifier ce qu'on dit a propos de la section de pointcare
 
 
+A long terme:
+
+  - faire plus d'examples et diminuer l'importance des théorèmes. E.g. : Hartman - Grobman: on peut passer vite. 
+  - diminuer fortement la section sur les attracteurs et attracting set
+  - simplement contraster le point de vue du 'flot' (attracteur / basin d'attraction) et de la trajectoire (alpha et omega sets). Tout ce temps passé à faire des maths ce fait au détriment de l'intuition physique
+  - se contenter simplement de mentionner qu'un attracteure est un attracting set qui est topologically mixing, en disant cependant que ce sont des domaines assez avancés et que la litérature n'est pas tjs claire
+  - synchronisation
+  - TROUVER PLUS D'EXEMPLES PHYSIQUES : rester sur mon business. 
+
+  - TROUVER LES MOYENS DE LES FAIRE TRAVAILLER EN CLASSE !!!! !

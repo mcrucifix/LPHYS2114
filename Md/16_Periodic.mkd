@@ -78,7 +78,7 @@ The left-hand-side term is the contour integral we just computed (you must use: 
 The Bendixson theorem can be generalised so that is also works by monitoring $\pd{(Bf)}{x}+\pd{(Bg)}{y}$ for any $B(x,y)$ of class $\mathbf{C}^1$. The generalisation is due to Henri Dulac. 
 
 \bcd
-Check that the Duffing oscillator
+Check that the Duffing oscillator[^dn]
 
 \begin{displaymath}
 \spalignsys{
@@ -90,6 +90,9 @@ has no closed orbit for $\gamma \neq 0$.
 \ecd 
 
 The next example (taken form Wiggins, sect. 4.1) shows how the Bendixson' criterion allows us to restrict regions in the plane where closed orbits _might_ exist. Consider this modification of the Duffing oscillator: 
+
+[^dn]: The definition of the Duffing oscillator involves $\gamma \geq 0$, but this is not needed here. 
+
 
 
 \begin{displaymath}
@@ -130,7 +133,7 @@ We will now explore _one_ mechanism by which orbits emerge. Consider again the v
 We study the stability of the fixed point $(\beta - \beta^3 /3, \beta)$ with the Jacobian:
 
 \begin{displaymath}
-  D_{f,g}(\beta, \beta - \beta^3) = \begin{pmatrix}
+  D_{f,g}(\beta, \beta - \beta^3/3) = \begin{pmatrix}
     0&1\\-1&1-\beta^2 \end{pmatrix}
 \end{displaymath}
 
@@ -179,7 +182,7 @@ The radius $r$ admits a second fixed point when the sign of $\sigma$ and $\beta$
 
 - ( $\sigma = 1$) :  In the  _subcritical_, an _unstable_ limit cycle exists in the negative domain of $\beta$, and then disappears as $\beta$ is positive. That is, for positive $\beta$, the only invariant form is the unstable fixed point. 
 
-As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of fixed point. What happens is not predicted by the normal form: higher order terms must be taken into account. It msay land on a fixed point or, more likely, on another limit cycle.  A typical scenario is obtained when the unstable limit cycle for negative $\beta$ regains stability and continues towards positive values of $\beta$, in which case the period of the stable limit cycle is often not very different from that of the unstable limite cycle near the bifurcation point. 
+As we see it, the Hopf bifurcation is a _local_ mechanism for the generation of a limit cycle. It is local, because it emerges out of the loss of (local) stability of a fixed point. The imaginary part of the eigenvalue are finite, so that the new born orbit, near the bifurcation point, is generally associated with a finite period. It will definitely be associated with a finite period if the bifurcation is supercritical; what happens with a subcritical bifurcation is less certain because the system moves out of the domain of fixed point. What happens is not predicted by the normal form: higher order terms must be taken into account. It may land on a fixed point or, more likely, on another limit cycle.  A typical scenario is obtained when the unstable limit cycle for negative $\beta$ regains stability and continues towards positive values of $\beta$, in which case the period of the stable limit cycle is often not very different from that of the unstable limit cycle near the bifurcation point. 
 
 Similar to what we have found when studying pitchfork bifurcations (section \ref{sect:subcritical}), adding a fourth-order term produces stable limit cycles to land on:
 \begin{align*}
@@ -188,16 +191,19 @@ Similar to what we have found when studying pitchfork bifurcations (section \ref
 
 Determining whether a given Hopf bifurcation is subcritical or supercritical can be a tedious process, especially if you can't find a polar-coordinate expression that can then be transformed into a normal form.  In practice, bifurcation software (AUTO, MATCONT) can do this for you. Furthermore, criteria have been worked out for specific dynamical systems \cite[e.g.][section 3.5]{kuznetsov23aa}. 
 
-For example, for the generic form that concerns us here: 
+For example, it may be shown that  for the generic form :  
 
 \begin{align*}
-x_1 &= F(x_1) - x_2 \\
-x_2 &= a(x_1 - b)
+\dot x &= a(y-b)  \\
+\dot y &= F(y) - x
 \end{align*}
 
-(we recognise $x_2=x$; $y_2=y$, $b=0$, $a=1$, $F(y)=y-y^3$), the sign of $\sigma$ is given by $F^{\prime\prime\prime}$ at the bifurcation point. It is here _negative_, so we have a _supercritical_ Hopf bifurcation. 
 
-The above equation is the FithHugh-Nagumo equation. 
+the sign of $\sigma$ is given by $F^{\prime\prime\prime}$ at the bifurcation point. It is here _negative_, so we have a _supercritical_ Hopf bifurcation. 
+The above equation gives the FitzHugh-Nagumo equation ($\alpha=1$) with $F(y) = y-y^3/3$, and the van der Pol oscillator 
+by furher setting $b=0$. 
+
+
 
 Below the limit cycles found in the van der Pol oscillator with $\alpha=1$, for $\beta=0.98$ (grey), $\beta=0.95$ (black), $\beta=0.9$ (blue) and $\beta=0.8$ (green). We recognise the (reasonably) smooth growth of the cycle as $\beta$ gets away from the bifurcation point, as predicted by the theory. 
 

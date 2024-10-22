@@ -104,7 +104,7 @@ and, again, for simplicity, we will admit that $\Omega = \mathbb{R}^n$. Here, we
 
 The proof is available in specialised books \cite[e.g.][chap. 6 for linear systems and chap. 17 for more general systems]{hirsh13aa}.  
 
-It has also been proved that the unique solution can be (uniquely)  _extended_ to the boundaries of any closed, compact subset of $U$. However, this says nothing about what is going on once the solution has reached the boundaries.  
+It has also been proved that the unique solution can be (uniquely)  _extended_ to the boundaries of any  compact subset (closed and bounded) of $U$. However, this says nothing about what is going on once the solution has reached the boundaries.  
 
 \bcd
 Consider the following example: $\ddt x = x^2,\quad x\in \mathbb{R}$. Find the analytical solution, and show that the solution blows up and that the interval of existence of solutions through $x_0$ at $t=0$ depends on $x_0$. Tip: use the methods of variable separation. 

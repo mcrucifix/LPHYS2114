@@ -29,7 +29,7 @@ Consider $x_f$ a fixed point, so that by definition $f(x_f)=0$. Suppose first th
 By the same token, one verifies asymptotic _instability_ when $\od{f}{x}|_{x=x_f}>0$. \eop
 
 
-Hyperbolic fixed points with negative derivative are a _sink_; those with positve derivative are a _source_. 
+Hyperbolic fixed points with negative derivative are a _sink_; those with positive derivative are a _source_. 
 
 Stability is no-longer trivial for non-hyperbolic fixed points, since one cannot affirm that $\od{f}{x}$ changes sign. We show an example below. 
 
@@ -41,7 +41,7 @@ Consider again the motivating example with the ice sheets. Are the fixed points 
 
 We now consider changes in $\psi$ that may affect the existence or the _nature_ of the fixed point. To this end, consider the following example: $f(x;\psi) = x + e^{-x} - \psi$. 
 
-The fixed point may be visualised graphically, using the fixed point equationt $e^{-x} = \psi - x$. 
+The fixed point may be visualised graphically, using the fixed point equation $e^{-x} = \psi - x$. 
 
 
 \efigure{phaseprotrait}
@@ -85,7 +85,7 @@ The position of stable and unstable fixed points, as a function of the parameter
 \efigure{fold}
 
 
-The classical convention for the normal form makes it that the solutions disappear for $\psi^\prime$ positive and, and the stable branch is obtained for negative $x$; however any affine transforation of this graph will atually represent a saddle-node bifurcation. This leads to the following theorem. 
+The classical convention for the normal form makes it that the solutions disappear for $\psi^\prime$ positive and, and the stable branch is obtained for negative $x$; however any affine transformation of this graph will actually represent a saddle-node bifurcation. This leads to the following theorem. 
 
 
 \bt{Sufficient conditions for a  saddle-node bifurcation on the line.} A saddle-node bifurcation occurs on $x_0,\psi_0$ when:
@@ -103,7 +103,7 @@ The intuition beyond this theorem is reasonably clear. The first condition impos
 
 More formally, from the implicit function theorem, (1) and (4) imply that there must exist a function $\psi(x)$ on an interval $I\subset\mathbb{R}$ such that $f(x,\psi(x)) = 0$ and $\psi(x_0)=\psi_0$.
 
-This is the curve of fixed points, as a function of $\psi$. On a branch of solution parameterised as ($x, \psi(x)$), by definiton, $f=0$, so that $\dif f$ is also zero along the branch:
+This is the curve of fixed points, as a function of $\psi$. On a branch of solution parameterised as ($x, \psi(x)$), by definition, $f=0$, so that $\dif f$ is also zero along the branch:
 
 \begin{displaymath}
 \dif f = \pd{f(x,\psi(x))}{x}\dif x + \pd{f(x,\psi(x))}{\psi}\dif \psi, 
@@ -166,14 +166,14 @@ is positive (use $\sqrt{\psi^2}=|\psi|$). That solution is unstable.
 Hence, going from negative to positive $\psi$, we have, on the negative side, three solutions but only the central is stable, and on the positive side, only the trivial solution that is unstable, that is, the flow escaping that solution. 
 
 This is how the normal form works, but we understand that in practice, it will only be a local description of the flow because we do not expect, in a physical system, the state variable to run away to infinity. Hence, in practical applications, higher order terms are expected to catch up the solution. 
-u
+ 
 A classical scenario is found by adding a fifth-order term as:
 
 \begin{displaymath}
 f(x;\psi) = \psi x + x^3 - x^5
 \end{displaymath}
 
-Consider the particular case $\sigma=1$. We find that, in addition to the trival solution $x=0$, we have now two to four additional solutions, depending on what comes under the square root: 
+Consider the particular case $\sigma=1$. We find that, in addition to the trivial solution $x=0$, we have now two to four additional solutions, depending on what comes under the square root: 
 
 \begin{displaymath}
 x_f(\psi) = \pm\frac{1}{\sqrt 2}\sqrt{1\pm\sqrt{4\psi+1}},  
@@ -181,10 +181,10 @@ x_f(\psi) = \pm\frac{1}{\sqrt 2}\sqrt{1\pm\sqrt{4\psi+1}},
 
 where all combinations of $+$ and $-$ are potentially admitted, with the restriction of keeping real solutions only. 
 
-Specifically, considering real solutions only, we have four solutions for $\frac{1}{4}\leq\psi\leq 0$. It may be verified (exercise) that, they come as two  symmetric groups of two around the zero axis, and they are successively stabel and unstable. 
+Specifically, considering real solutions only, we have four solutions for $\frac{1}{4}\leq\psi\leq 0$. It may be verified (exercise) that, they come as two  symmetric groups of two around the zero axis, and they are successively stable and unstable. 
 One thus finds two fold bifurcations at $\psi=\frac{1}{4}$. Then, for $\psi>0$, the only two _stable_ solutions. 
 
-Hence, as one moves from negative to positive $\psi$, we see here a sceanario quite different from the supercritical bifurcation. The stable trivial solution vanishes, and the only place to land is already located at a distance $\frac{1}{2}\sqrt{1+\sqrt{2}}$ of the origin. 
+Hence, as one moves from negative to positive $\psi$, we see here a scenario quite different from the supercritical bifurcation. The stable trivial solution vanishes, and the only place to land is already located at a distance $\frac{1}{2}\sqrt{1+\sqrt{2}}$ of the origin. 
 
 This would be the typical scenario, in physics, of a stick being compressed, and suddenly bending towards a new stable state, either on the left or on the right. This will be a case of spontaneous symmetry breaking, since once a stable state has been found, it is hard to come back to the original solution, and even harder to reach to other solution. 
 

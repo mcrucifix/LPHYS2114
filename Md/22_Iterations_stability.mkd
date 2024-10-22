@@ -213,7 +213,7 @@ This is called the Feigenbaum number, who observed it in other iterations (e.g. 
 
 ### Chaotic behaviour for $r_\infty < r < 4$
 
-In this regime, the orbits have mostly  the characteristics of chaos that we further define in section \label{sect:chaos}. Numerical analysis shows however some suprising windows of periodic behaviour (look again at the orbit diagram in section \ref{sect:lgrowth}, and of _intermittent_ behaviour, where the system seems to hesitate between different periods. 
+In this regime, the orbits have mostly  the characteristics of chaos that we further define in section \label{sect:chaos}. Numerical analysis shows however some surprising windows of periodic behaviour (look again at the orbit diagram in section \ref{sect:lgrowth}, and of _intermittent_ behaviour, where the system seems to hesitate between different periods. 
 
 ### Fractal set of diverging orbits  for $r>4$
 

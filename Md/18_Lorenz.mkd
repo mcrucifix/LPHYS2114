@@ -20,7 +20,7 @@ The parameters $\sigma$ is the Prandtl number defined as the ratio of momentum d
 
 Whether this highly truncated model keeps producing realistic results for $\rho>1$ is contentious and might have been a moot point between Saltzman and Lorenz. Lorenz claimed that [his] "Equations may give realistic results when the Rayleigh number is slightly supercritical, but their solutions cannot be expected to resemble those of [Saltzman's] when strong convection occurs, in view of the extreme truncation". 
 
-This is a fascinating case where a model that his too idealised to still be realistic, proved to be highly insightful. In his acknowledgements, Ed Lorenz writes: "The writer is indebted to Dr. Barry Saltzman for brining to his attention the existence of nonperiodic solutions". This is a big statement, because this is the core of the paper. Yet, Saltzman may have done even more, as explained by @maasch05aa: 
+This is a fascinating case where a model that is too idealised to still be realistic, proved to be highly insightful. In his acknowledgements, Ed Lorenz writes: "The writer is indebted to Dr. Barry Saltzman for brining to his attention the existence of nonperiodic solutions". This is a big statement, because this is the core of the paper. Yet, Saltzman may have done even more, as explained by @maasch05aa: 
 
 \begin{quote}
 Lorenz (1993) recalls that he had “tried to simplify the model \ldots with no luck” and so he was “indebted to Dr. Barry Saltzman for bringing to his attention the existence of nonperiodic solutions of the convection equations” (Lorenz 1963). Indeed, with Saltzman providing such a low-order system [“whose existence Lorenz had begun to doubt” (Lorenz 1993)]
@@ -84,7 +84,7 @@ In other words $\dot U$ is strictly negative for $\rho X^2 +Y^2 + (Z-\rho)^2 - b
 
 ## The Lorenz attractor 
 
-An animation of the Lorenz attractor with the canonical parameters $\sigma=10$, $\rho=28$, $\beta=8/3$ is available on Moodle. Demonstrating the "strange" character of the geometry was considered as one of the great challenges of the mathematics and was formally achieved by  @tucker02lorenz). However, Lorenz already provided an intuitive approach for showing the chaotic character of his system by constructing a tent map, as shown in Appendix \ref{appendix:tent}. 
+An animation of the Lorenz attractor with the canonical parameters $\sigma=10$, $\rho=28$, $\beta=8/3$ is available on Moodle. Demonstrating the "strange" character of the geometry was considered as one of the great challenges of the mathematics and was formally achieved by  @tucker02lorenz. However, Lorenz already provided an intuitive approach for showing the chaotic character of his system by constructing a tent map, as shown in Appendix \ref{appendix:tent}. 
 
 The chaotic character may be defined as the sensitive dependence on initial conditions, and expressed by the mean value of the greatest Lyapunov exponent along the trajectory to be positive. The Benettin algorithm (@benettin80aa, see also @Ramasubramanian200072) for the computation of the mean value of the greatest Lyapunov exponent, and its dependency on $\rho$ is provided in Appendix \ref{appendix:lyapunov}. As can be seen, chaos emerges for $\rho > \rho_H$. 
 

@@ -148,7 +148,7 @@ First, observe that the differential for $H$ can be written in different equival
 
 \begin{subequations}
 \begin{align}
-\dif H &= y F(y) \dif t, \label{eq:form1} \\
+\dif H &= -y F(y) \dif t, \label{eq:form1} \\
 \dif H &= F(y) \dif x, \label{eq:form2} \\
 \dif H &= \frac{-yF(y)}{x-F(y)} \dif  y \label{eq:form3}
 \end{align}
@@ -199,7 +199,7 @@ We now consider the (somewhat artificial) system:
 \end{equation}
 
 
-This time, $\dot H = \lambda H ((\pd{H}{x})^2 + (\pd{H}{y})^2)$, still with $H=V(x)+y^2/2$, $V(x)=x^4/4-x^2/2$.  We have already studied the (conservative) $\lambda=0$ case. If $\lambda \neq 0$, the fixed points $p(\pm 1, 0)$ and $p(0,0)$ persist. The first two points are centres; the $p(0,0)$ is a saddle. The iso-contours $H=C$ are generally not orbits, _except_ the very particular case $H=0$. 
+This time, $\dot H = \lambda H ((\pd{H}{x})^2 + (\pd{H}{y})^2)$, still with $H=V(x)+y^2/2$, $V(x)=x^4/4-x^2/2$ (do not confuse with the $H$ we used for Liénard systems).  We have already studied the (conservative) $\lambda=0$ case. If $\lambda \neq 0$, the fixed points $p(\pm 1, 0)$ and $p(0,0)$ persist. The first two points are centres; the $p(0,0)$ is a saddle. The iso-contours $H=C$ are generally not orbits, _except_ the very particular case $H=0$. 
 
 We now concentrate on the curves defined by $H=0$, which separate negative (inside) from positive (outside) values. 
 

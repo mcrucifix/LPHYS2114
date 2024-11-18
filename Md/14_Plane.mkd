@@ -327,8 +327,8 @@ s^\prime (x) (\lambda_1 x + N_x(x,s(x))) =
 Similarly, for the unstable form, you would get: 
 
 \begin{equation}
-(\lambda_1 u(y)x + N_x(u(y),y)) = 
-u^\prime (\lambda_2 u(y) + N_y(u(y),y))
+(\lambda_1 u(y) + N_x(u(y),y)) = 
+u^\prime(y) (\lambda_2 y + N_y(u(y),y))
 \end{equation}
 
 We will now show how we can use these developments. Consider again the system that  we have been playing with already, but we just swap the $x$ and $y$ directions to comply with the condition $\lambda_1 < 0 < \lambda_2$:

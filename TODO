@@ -12,18 +12,24 @@ a long term: ajouter resonance et "circle map" (qui peut etre forc,ee, et meme d
 verifier que le 'phase portrait' est correctement d,efini (flow map) (ok mais ajouter un index)
 verifier que le 'diagramme de stabilite' est correctement defini   (ok mais ajouter un index)
 
-dire quelque part que le theoreme de poincare de bendixon a pour idee de projeter sur la dynamique d'une orbit sur l'idee d'une iteration.
+dire quelque part que le theoreme de poincare de bendixon a pour idee de projeter sur la dynamique d'une orbit sur l'idee d'une iteration. Simplement dire l'importance d'etre dans le plan et le 'non-intersection theorem'. 
 
 verifier ce qu'on dit a propos de la section de pointcare
 
 
 A long terme:
 
-  - faire plus d'examples et diminuer l'importance des théorèmes. E.g. : Hartman - Grobman: on peut passer vite. 
-  - diminuer fortement la section sur les attracteurs et attracting set
-  - simplement contraster le point de vue du 'flot' (attracteur / basin d'attraction) et de la trajectoire (alpha et omega sets). Tout ce temps passé à faire des maths ce fait au détriment de l'intuition physique
+  - faire plus d'examples et diminuer l'importance des théorèmes. E.g. : Hartman - Grobman: on peut passer vite. --> voir l'exemple (extreme) du Hilborn: il n'en parle meme pas. 
+  - diminuer fortement la section sur les attracteurs et attracting set [supprimer le chapitre et mettre dans une annexe ?]
+  - simplement contraster le point de vue du 'flot' (attracteur / basin d'attraction) et de la trajectoire (alpha et omega sets -- dans le Hilborn, il parle simplement de la limite d'une trajectoire). Tout ce temps passé à faire des maths ce fait au détriment de l'intuition physique
+  - ajouter demonstration de l'évolution du volume - trace
   - se contenter simplement de mentionner qu'un attracteure est un attracting set qui est topologically mixing, en disant cependant que ce sont des domaines assez avancés et que la litérature n'est pas tjs claire
-  - synchronisation
-  - TROUVER PLUS D'EXEMPLES PHYSIQUES : rester sur mon business. 
 
-  - TROUVER LES MOYENS DE LES FAIRE TRAVAILLER EN CLASSE !!!! !
+  - synchronisation
+  - TROUVER PLUS D'EXEMPLES PHYSIQUES : rester sur mon business. Parler aussi de la biologie mathematique
+ - TROUVER LES MOYENS DE LES FAIRE TRAVAILLER EN CLASSE !!!! ! (voir mon idée plus bas)
+ 
+  - circle map
+  - eventuellement fournir des exemples d'ordinateur (le code est en ligne). Se contenter de Julia et Python et leur demander d'executer les codes en ligne et qu'ils viennent au cours avec deja une idee
+
+  - routes to chaos et universality (Hilborn)

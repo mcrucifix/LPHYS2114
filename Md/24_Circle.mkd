@@ -1,0 +1,92 @@
+## Circle map
+
+(These notes are in draft mode. -- there are many shortcuts and this is only support to more developed explanation given in class. This is not exam material. )
+
+The circle map provides an model to study and understand flow which display limit cycles. The circle map may be understood as the Poincaré section of a continuous dynamical system: we observe the position the position of the system everytime one of the control angles of the system has been one rotation (it has progressed by an angle $2\pi$). Alternatively, the circle map may be understood as a stroboscopic map: the system position is fixed every time interval. 
+
+A circle map  maps the interval $[0,1]$ onto itself. It is a convention to name the variable $\theta$, which symbolises the number of rotations (an angle divided by $2\pi$). 
+
+In its simplest version, the circle map reads
+
+\begin{equation} \label{eq:simplemap}
+ \theta_{n+1} = f(\theta_n) = \theta_n + \omega \mathrm{mod} 1
+\end{equation}
+
+$\omega$ is thus a simple rotation, which, typically, can be understood as an external periodic force perturbing the system. 
+
+The operator $\mathrm{mod} 1$ effectively keeps $\theta$ in the $[0,1]$ interval. 
+
+Below we represent cobweb diagrams, for $\omega=0.2$ and $\omega=0.6$, respectively. 
+
+\efigure{../Figures/circle_map}
+
+
+As long as $\omega$ is a rational number $p/q$, the system will be periodic with period $q$ (here, respectively, q=5 and 3). Later in this chapter, we will sometimes call $\omega$ the \emph{input} frequency, or, more properly, the input frequency $\ratio$, in the sense that everything here is expressed in terms of adimensional units. 
+
+The \emph{winding number} is the average number of rotations achieved by the system between two observations. 
+
+It is defined as, 
+
+\begin{equation}
+ w = \lim_{n\rightarrow \infty}  \frac{f^n(\theta_0) - \theta_0}{n}
+\end{equation}
+
+
+assuming that the limit exist for any initial condition $\theta_0$.
+For the simple map given in Eq. \eqref{eq:simplemap}, $w=\Omega$. 
+
+Now we consider a more complex example, when the simple map is further perturbed by a nonlinearity of amplitude $K$:
+
+\begin{equation}
+ \theta_{n+1} = \theta_n + \omega - \frac{K}{2\pi} \mathrm{mod} 1. 
+\end{equation}
+
+
+When $\Omega$ is small enough, the system may admit fixed points. This is obtained with the following condition is fulfilled: 
+
+\begin{displaymath}
+  \theta = \theta + \Omega - \frac{K}{2\pi}\sin(2\pi\theta)
+\end{displaymath}
+
+As a general rule, we may expect at least one fixed point when $K \geq 2\pi\Omega$, but further inspection of $f^\prime(\theta)$ will show that stability is lost when $K$ gets too large (stability requires $0 < K \cos 2\pi\theta < 2$). 
+
+The fixed point obtained when $\Omega$ is small is called a $0:1$ synchronisation. Indeed, we see that the non-linear perturbation is distributed with a period $1$ along $\theta$. Hence the number $1$. On the other hand, input (driving) force materialised by $\Omega$ is close to zero. This is where the $0:1$ notation comes from. The non-linear perturbation has stopped the natural progression of $\theta$. 
+
+However, identical behaviours would be obtained for $\Omega$ slightly smaller than 1: indeed, $\Omega = 0$ and $\Omega  = 1$ act in fact very similarly because of the $\emph{modulo} 1$ in the equation. This phenomenon is called \emph{aliasing}. 
+
+So far, we identified two synchronisation regimes should appear for $\Omega$ near zero and near 1. Chances of synchronisation increase as $K$ increases, as long as it is not too large. 
+
+(diagram to be drawn in class). 
+
+
+Now, as the input frequency $\Omega$ increases, other synchronisation are possible. Below is an example with 
+$K=0.9$ and $\Omega=0.65$ : we represent, on the left-hand-side, the map with a Cobweb diagram, and, on the right-hand-side, the $f^3$ map, which clearly has three stable fixed points, corresponding to the three points being visited by the 3-periodic iteration. 
+
+In this case, we have a $\frac{2}{3}$ synchronisation: the action of $\Omega$ is to increase, at every time step, the number of rotation by $\frac{2}{3}$ (which is the same as decreasing it by $\frac{1}{3}$), enough to fall in a potential well of the third-order non-linear perturbation. 
+
+Again, even though it is not straighforward to prove, one can sense that a larger $K$ generates larger deviations of the perturbation with respect to the $\theta_n = \theta_{n+3}$ line. Thus, we can expect that for a given value of $\omega$ near enough to $1:3$ or $2:3$, the chances of synchronisation increase with the increasing $K$. 
+
+
+\efigure{../Figures/circle_map_3}
+
+Concretely, it is common to represent frequency-locking regimes on a diagram of $\Omega$ vs $K$. Frequency-locking regimes are organised in so-called \emph{Arnold tongues}, named after the Russian mathematician who studied the circle map. The diagram of Arnold tongues is symmetric around $\Omega=0.5$.  Outside the synchronisation regime, $\theta$ is non-periodic, and it will therefore meet all values in the interval $[0,1]$. 
+
+Remember that we defined the circle map as a sketch of what could be the Poincaré section of a continuous dynamical system. If there is synchronisation, the full, continuous system, will appear as periodic, crossing the Poincaré section at a (small) number of points. If there is no synchronisation, then the circle map will appear as the Poincaré section of a torus,  and the corresponding trajectories of the continuous dynamical system will be quasi-periodic. 
+
+
+FIGURE OF ARNOLD TONGUES TO BE DRAWN
+
+With this reasoning, one might think any bare winding number that is rational $p/q$ can be synchronised as long as $K$ is large enough. This actually is what happens for $K=1$. 
+
+There is, for that particular value of $K$, an infinite number of synchronisation regimes, which can be seen as an infinite number of small steps n the diagram of the measured winding number  (the \emph{output} frequency) and the \emph{input} frequency ratio $\Omega$.  This is a particular case where the length of the interval of $\Omega$ occupied by synchronisation regime is indeed equal to 1. 
+
+
+\Jupyterimport{devils}
+
+When $K>1$, the map ceases to be invertible, in the sense that for a given value of $\theta_{n+1}$, two values of $\theta_n$, in the interval of $[0,1]$ are possible. Synchronisation regimes remain possible, but it may be shown that they gradually loose stability. 
+
+\efigure{../Figures/circle_map_sin}
+
+
+Similar to what has been observed in the logistic map, the stable orbits undergo a succession of bifurcations which are increasingly close to each other, forming the \emph{quasi-period route} to chaos. 
+

@@ -74,7 +74,7 @@ Now, we consider separately the attractor and the sink.
 If $|f^\prime (p) |<1$, we can find $\epsilon$ such that $|f^\prime(p)| + \epsilon < 1$, and  we can find $\delta$ with $|x-p|<\delta$ such that
 
 \begin{equation}\label{eq:it1}
-|f(x) -  p| < (|f^\prime(p)| + \epsilon) |x-p|  < 1 \delta < \delta. 
+|f(x) -  p| < (|f^\prime(p)| + \epsilon) |x-p|  < 1 \delta = \delta. 
 \end{equation}
 
 We proceed by successive iterations. Indeed, we now know that the point $f(x)$ is also close to $p$, with a distance less than $\delta$. Hence, the above relationship also applies to this point, i.e., 

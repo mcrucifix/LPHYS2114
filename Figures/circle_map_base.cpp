@@ -12,11 +12,11 @@ void preparePlot (){
   v_axis_labels(P(0.,0.), P(0.,1.0), 5,  P(-5,0), l); 
   
   label(P(1,0), P(4,0), "$\\theta_n$", r);
-  label(P(0,1), P(0,4), "$\\theta_{n+1}$", t);
   plain(Black(1.0));
   line(P(0.,0.), P(1.,1.));
   
 }
+
 
 double itenerary(double x, double omega){
   dashed();
@@ -49,7 +49,7 @@ double itenerarysin(double x, double omega, double K){
 
 
 
-void sinmap (double OMEGA, double K, int n, int order ) {
+void sinmap (double OMEGA, double K, int n, int order, double init = 0.3 ) {
   plain(Blue(1.0));
   bold();
   int wind = 0;
@@ -87,13 +87,21 @@ void sinmap (double OMEGA, double K, int n, int order ) {
 //  delete[] curve;
 
   plain(Black(1.0));
-  double x0=0.3;
+  double x0=init;
   char buffer[50];
   for (int i=0; i<n; i++) {
     sprintf(buffer, "$x_%d$", i);
     label(P(x0,x0), P(0,6), buffer,t);
     x0 = itenerarysin(x0, OMEGA, K); 
   }
+  
+  sprintf(buffer, "$K=%.2f \\quad \\Omega=%.2f$", K, OMEGA) ;
+  label (P(0.5, 1.1), P(0,2), buffer, c);
+
+
+  sprintf(buffer, "$\\theta_{n+%d}$", order) ;
+  label(P(0,1), P(0,4), buffer, t);
+
 }
  
 
@@ -110,35 +118,15 @@ void simpleomega (double OMEGA, int n ) {
     label(P(x0,x0), P(0,6), buffer,t);
     x0 = itenerary(x0, OMEGA); 
   }
+
+
+  sprintf(buffer, "$\\Omega=%.2f$", OMEGA) ;
+  label (P(0.5, 1.1), P(0,2),  buffer, c);
+
+  sprintf(buffer, "$\\theta_{n+%d}$", 1) ;
+  label(P(0,1), P(0,4), buffer, t);
 }
  
 
 
-int main() {
 
-  bounding_box(P(-0.2,-0.2), P(3.2,1.2));
-  picture(3.4, 1.4);
-  unitlength("6cm");
-
-  begin();
-  screen subfig(P(0.,0.), P(1., 1.)); 
-  activate(subfig);
-  preparePlot();
-  simpleomega(0.2, 5);
-  deactivate(subfig);
-  inset(subfig, P(0,0), P(1,1));
-
-  screen subfig2(P(0.,0.), P(1., 1.)); 
-  activate(subfig2);
-  preparePlot();
-  simpleomega(0.6, 3);
-//  sinmap(0.65,0.9, 12, 3);
-  deactivate(subfig2);
-  inset(subfig2, P(1.3,0), P(2.3,1));
-
-
-
-  tikz_format();
-
-  end();
-}

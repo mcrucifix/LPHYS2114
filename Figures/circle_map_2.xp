@@ -3,6 +3,7 @@
 #include "circle_map_base.cpp"
 using namespace ePiX;
 
+ 
 
 
 int main() {
@@ -16,17 +17,17 @@ int main() {
   activate(subfig);
   preparePlot();
 //  simpleomega(0.2, 5);
-  sinmap(0.03,0.3, 12, 1);
+  sinmap(0.49,0.8, 9, 1, 0.46);
   deactivate(subfig);
   inset(subfig, P(0,0), P(1,1));
 
-//  screen subfig2(P(0.,0.), P(1., 1.)); 
-//  activate(subfig2);
-//  preparePlot();
+  screen subfig2(P(0.,0.), P(1., 1.)); 
+  activate(subfig2);
+  preparePlot();
 //  simpleomega(0.6, 3);
-//  sinmap(0.50,0.9, 12, 3);
-//  deactivate(subfig2);
-//  inset(subfig2, P(1.3,0), P(2.3,1));
+  sinmap(0.49,0.8, 9, 2, 0.46);
+  deactivate(subfig2);
+  inset(subfig2, P(1.3,0), P(2.3,1));
 
 
 

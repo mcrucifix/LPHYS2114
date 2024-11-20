@@ -27,6 +27,8 @@ handouts: lphys2114.tex $(TEX) $(PDF)
 	@echo processing $< to $@
 	pandoc --natbib $< -f markdown  -o $@; sed -i '1 i\%\n% AUTOMATICALLY GENERATED  WITH PANDOC DO NOT EDIT\n%' $@ 
 
+$(wildcard Figures/circle_map_*.eepic): Figures/circle_map_base.cpp
+
 .xp.eepic:
 	@echo processing $< to $@
 	cd Figures; CPLUS_INCLUDE_PATH=. epix `basename $<` ; cd ..

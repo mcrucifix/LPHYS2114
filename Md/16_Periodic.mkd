@@ -133,7 +133,7 @@ We will now explore _one_ mechanism by which orbits emerge. Consider again the v
 We study the stability of the fixed point $(\beta - \beta^3 /3, \beta)$ with the Jacobian:
 
 \begin{displaymath}
-  D_{f,g}(\beta, \beta - \beta^3/3) = \begin{pmatrix}
+  D_{f,g}(\beta - \beta^3/3, \beta) = \begin{pmatrix}
     0&1\\-1&1-\beta^2 \end{pmatrix}
 \end{displaymath}
 

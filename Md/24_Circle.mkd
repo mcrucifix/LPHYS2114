@@ -82,7 +82,7 @@ It is common to represent frequency-locking regimes on a diagram of $\Omega$ vs 
 Remember that we defined the circle map as a sketch of what could be the Poincaré section of a continuous dynamical system. If there is synchronisation, the full, continuous system, will appear as periodic, crossing the Poincaré section at a (small) number of points. If there is no synchronisation, then the circle map will appear as the Poincaré section of a torus,  and the corresponding trajectories of the continuous dynamical system will be quasi-periodic. 
 
 
-FIGURE OF ARNOLD TONGUES TO BE DRAWN
+(Arnold tongues at the end of the Jupyter-notebook demo, see below)
 
 With this reasoning, one might think any bare winding number that is rational $p/q$ can be synchronised as long as $K$ is large enough. This actually is what happens for $K=1$. 
 

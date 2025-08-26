@@ -122,7 +122,7 @@ The general solution is now:
 \end{displaymath}
 
 
-This _dissipative oscillator_ is thus associated with a non-hyperbolic fixed point that is a _center_, asymptotically attracting, with _spiraling_ trajectories. The phase-space interpretation is a bit less straigttforward than in the harmonic oscillator because the real and imaginary parts of the phasor are not just $q$ and $p$ but an affine transformation of them. This is the affine transformation which was needed to give the matrix a canonical form.
+This _dissipative oscillator_ is thus associated with a non-hyperbolic fixed point that is a _center_, asymptotically attracting, with _spiraling_ trajectories. The phase-space interpretation is a bit less straigtforward than in the harmonic oscillator because the real and imaginary parts of the phasor are not just $q$ and $p$ but an affine transformation of them. This is the affine transformation which was needed to give the matrix a canonical form.
 
 
 ### Case C: Jordan form matrix

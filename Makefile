@@ -57,5 +57,5 @@ figures_handrown:
    
 upload: lphys2114.pdf lphys2114_corrections.pdf
 	scp lphys2114.pdf aurora:/elic/web/crucifix/direct
-	scp lphys2114_corrections.pdf aurora:/elic/web/crucifix/direct
+# scp lphys2114_corrections.pdf aurora:/elic/web/crucifix/direct
 	

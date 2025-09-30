@@ -117,7 +117,7 @@ leading
 The assumptions (1) and (4) imply that $\od{\psi}{x}=0$.  And
 
 \begin{displaymath}
-\od[2]{\psi}{x} = - 
+\od[2]{\psi}{x} = + 
 \frac {
 \pd[2]{f(x, \psi(x))}{x} \pd{f\left(x; \psi\left(x\right)\right)}{\psi} + 
 \pd{f(x, \psi(x))}{x} \frac{\partial^2 f(x; \psi(x))}{\partial \psi \partial x} }{ \left( \pd{f\left(x;\psi\left(x\right)\right)}{\psi}\right)^2}, 

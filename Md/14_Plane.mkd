@@ -11,7 +11,7 @@ Before we start anything, we will have to define the notion of invariant set.
 A set $S$ is said to be invariant _under the vector field_ $\dot{\vec{x}} = \vec{f}(\vec{x},t)$ if for any $\vec{x}_0\in S$, its trajectory $\vec{x}(t,t_0,x_0) \in S$ (see def. of trajectory in sect.  \ref{def:trajectory})
 \ed
 
-Technically, much of what follows here actually applies to _invariant manifolds_, which are invariant sets that that are locally differentiable (you can describe them locally as a vector space. We will not insist on this difference here. Note that, by definition, an _orbit_ is an invariant set, but an invariant set is not necessarily an orbit.
+Technically, much of what follows here actually applies to _invariant manifolds_, which are invariant sets that that are locally differentiable (you can describe them locally as a vector space). We will not insist on this difference here. Note that, by definition, an _orbit_ is an invariant set, but an invariant set is not necessarily an orbit.
 
 Now, this chapter is specifically dedicated to linear, autonomous dynamical systems. In other words, they can be written in matrix notation:
 

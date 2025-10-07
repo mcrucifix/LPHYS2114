@@ -8,7 +8,7 @@ using namespace ePiX;
 P traj(double t, double C1, double C2) { 
   return (
       P(
-        (C1 * exp(t) +1./3. * C2*C2*( exp(-2.*t))), 
+        (C1 * exp(t)  - 1./3. * C2*C2*( exp(-2.*t))), 
         C2 * exp(-t)
         ))
        ; } 
@@ -39,15 +39,8 @@ P traj(double t, double C1, double C2) {
 int main() {
 
 
-//
-// \begin{align*}
-//\dot x &= x + y^3 \\
-//\dot y &= -y + 2xy + x^2
-//\end{align*}
-
-
-  bounding_box(P(-1.2,-1.5), P(1.2,1.5));
-  picture(2.4,3);
+  bounding_box(P(-2.2,-1.5), P(1.2,1.5));
+  picture(3.4,3);
   unitlength("60pt");
 
   begin();
@@ -78,22 +71,6 @@ int main() {
   plot_traj(0., -1., -0.5, 3.);
   label_color(Blue(1.0));
   dot(P(0,0));
-
-//  plot_traj(0., 1);
-//  plot_traj(0., -1);
-//  plot_traj(-1.,-1);
-//  }
-
-//  char buffer[50];
-//  sprintf(buffer, "$\\lambda_1 < \\lambda_2 < 0$", mylambda);
-//  sprintf(buffer, "$\\lambda_1 < \\lambda_2 < 0$");
-//  label(P(0,1.7), P(0,0), buffer,b);
-
-//  plain(Red(1.0));
-//  bold();
-//  label_color(Red(1.0));
-//  arrow(P(0,0), P(0,1)); label(P(0,1),P(6,2),"$\\vec{v}$", b);
-//  arrow(P(0,0), P(1,0)); label(P(1,0),P(2,8),"$\\vec{u}$", r);
 
   tikz_format();
 

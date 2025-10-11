@@ -17,9 +17,9 @@ The standard theory is the theory of _dynamical systems_. In essence, a dynamica
 
 This is perhaps a bit abstract, so consider again our ice sheet example. 
 
-Call the altitude of the summit of the ice sheet $x$. This is positive real number, so $x \in \mathbb{R}^+$. The altitude of the snowline is $S$. We consider that it is constant, so in the following we will view it as a _parameter_. 
+Call the altitude of the summit of the ice sheet $x$. This is a positive real number, so $x \in \mathbb{R}^+$. The altitude of the snowline is $S$. We consider that it is constant, so in the following we will view it as a _parameter_. 
 
-Here, we have _summarised_ the state of our real-world system (the ice sheet) with a single variable $x$. That variable evolves in $\mathbb{R}^+$. So in our case the $\Omega$ space is $\mathbb{R}^+$. Now we need a rule for the evolution of an ice sheet that would have an altitude $x$. 
+Here, we have _summarised_ the state of our real-world system (the ice sheet) with a single variable $x$. That variable evolves in $\mathbb{R}^+$. In our case the $\Omega$ space is $\mathbb{R}^+$. Now we need a rule for the evolution of an ice sheet that would have an altitude $x$. 
 
 One (standard) approach is to write a _differential equation_. Simply, we equate $\dt x$ with a function of the state $x$, and the parameter $S$. At this point, we need a bit of physical intuition. $x$ will evolve as a balance between accumulation and ablation. The difference between accumulation and ablation is called _net accumulation_. One (simplistic) way of putting it, is that net accumulation is proportional to the distance between $x$ and $S$. It would be an equation of the kind
 

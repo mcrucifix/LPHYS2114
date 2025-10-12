@@ -1,0 +1,198 @@
+%
+%
+%
+%
+
+\documentclass{article}
+         
+\usepackage{graphicx,xcolor}
+\usepackage[load-headings]{exsheets}
+%\usepackage{bbding, skull}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{enumitem}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,left=4cm,right=4cm]{geometry}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+
+\usetikzlibrary{arrows,decorations,calc}
+\usetikzlibrary{decorations.pathmorphing,patterns,decorations.pathreplacing,decorations.markings}
+
+\usepgflibrary{arrows}
+
+\tikzset{
+  % style to apply some styles to each segment of a path
+  on each segment/.style={
+    decorate,
+    decoration={
+      show path construction,
+      moveto code={},
+      lineto code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+      curveto code={
+        \path [#1] (\tikzinputsegmentfirst)
+        .. controls
+        (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
+        ..
+        (\tikzinputsegmentlast);
+      },
+      closepath code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+    },
+  },
+  % style to add an arrow in the middle of a path
+  mid arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .55 with {\arrow[#1]{stealth}}
+      }}},
+}
+
+
+
+\renewcommand{\i}{\mathrm{i}}
+\newcommand{\diff}{\text{d}}
+
+
+
+\begin{document}
+\noindent
+{\textsc{Universit\'e catholique de Louvain}} \hfill \'Ecole de Physique\\
+Facult\'e des Sciences \hfill 14 November 2021\\
+\hrule
+
+\bigskip
+
+\begin{center}
+  \textbf{LPHYS2114 Non-linear Dynamics}\\
+  \textbf{S\'erie 7 -- Maps} 
+\end{center}
+
+%\bigskip
+\SetupExSheets{headings=runin-fixed-nr}
+
+\begin{question}
+  \textbf{Simple maps.} We consider the map $x_{n+1} = f(x_n),\,n\geqslant 0,$ with $f(x) = \lambda x+\mu$ where $\lambda,\mu$ are constants. This map can be considered as a discrete projection of a linear differential equation of first order approximation.
+  \begin{enumerate}[label=(\alph*)]
+    \item For $\lambda \neq 1$, show that the map of $x_0 \in \mathbb R$ is given by: 
+    \begin{equation}
+      x_n = \lambda^n x_0 + \left(\frac{\lambda^n - 1}{\lambda -1}\right)\mu
+    \end{equation}
+    \item Study the behaviour of the map for $n\to \infty$ in the case \textit{(i)} $\lambda = 1/2$, \textit{(ii)} $\lambda =2$ et \textit{(iii)} $\lambda = -1$.
+    \item Compare the results of this map by graphically analysing the iterations using ``cobweb plots''.
+    \item Analyse for the case $\lambda=1$.
+  \end{enumerate}
+\end{question}
+
+\begin{question}
+  \textbf{Newton-Raphson Iterations.} The Newton-Raphson method provides a way to find zeros of a differentiable function $f$ for real values by constructing an iterative approximation $x_0,x_1,x_2,\dots$
+  
+  \medskip
+  \noindent
+  To calculate $x_{n+1}$ given $x_n$, we consider the Taylor polynomial of order 1 in $x_n$. The iteration $x_{n+1}$ is defined as the unique zero of this Taylor polynomial.
+  
+   \begin{enumerate}[label=(\alph*)]
+    \item Determine $x_{n+1} = g(x_n)$ by writing $g$ in terms of the function $f$ and its derivative $f'$.
+    \item Write the map for $f(x) = x^2-2$. Calculate the first iterations given initial conditions $x_0=1$ et $x_0=-1$. 
+    \item Compare the approximation for the roots of $f$ and estimate the nature of convergence of the map towards the roots.
+   \end{enumerate}
+\end{question}
+
+\begin{question}
+\textbf{Discretisation of a Differential Equation.} We want to calculate the solution $x(t)$ of a differential equation $\dot x = f(x)$ with $x(0)=x_0$ for $0\leqslant t \leqslant T$ using numerical approximation.
+
+\medskip
+\noindent
+To find the approximation we fix an integer $N\geqslant 1$ and let $h= T/N$. Next we determine the values $x_n = x(t_n)$ of the solution with time $t_n = nh$, and we replace the derivative $\dot x(t_n)$ in the equation by $(x(t_{n+1})-x(t_n))/h$.
+\begin{enumerate}[label=(\alph*)]
+    \item  Show the approximation given by $x_{n+1} = g(x_n),\,0\leqslant n \leqslant N-1,$ with a function $g$ which we will determine as a function of $f$.
+    \item Write the iteration for the logistic equation $f(x) = a x(1-x),\,a>0$.  
+    \item Find $\lambda$ such that the change of variables $y_n = \lambda x_n$ gives the logistic map $y_{n+1} = \bar a y_n(1-y_n)$.
+   \end{enumerate}
+\end{question}
+
+
+\begin{question} \textbf{Fibonacci Sequence.} The Fibonacci sequence is given by $0,1,1,2,3,5,8,13,21,34,55\dots$ They are determined by the iterations $x_{n+2} = x_{n+1}+x_n, \, n\geqslant 0,$ with initial conditions $x_{0}=0$ et $x_1=1$.
+
+\begin{enumerate}[label=(\alph*)]
+\item Show that the map can be given in the form
+\begin{equation}
+  \begin{pmatrix}
+    x_{n+2}\\
+    x_{n+1}
+  \end{pmatrix}
+  = A
+  \begin{pmatrix}
+    x_{n+1}\\
+    x_{n}
+  \end{pmatrix}
+\end{equation}
+  where $A$ is a $2\times 2$ matrix which is to be found.
+  \item Find the eigan values and vectors of this matrix. Find the values of  $x_n$.
+  \item Find the limit $ \lim_{n\to \infty} x_n/\lambda^n=\alpha$ with constants $\lambda,\alpha \neq 0$ which are to be found.
+
+\end{enumerate}
+
+
+\end{question}
+
+\begin{question}
+  \textbf{Circular Billiard Table.} We consider a point particle that is confined in a unit circle of radius 1. In the interior of the domain the particle moves in uniform straight lines. The collisions with the boundary are assumed to be perfectly elastic. Figure \ref{fig:Billard}(a) show an example of a particular trajectories.
+  
+  \begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+      \draw (0,0) node {\includegraphics[width=.475\textwidth]{billard2}};
+       \draw (0,-3.5) node {(a)};
+    
+      \begin{scope}[xshift=6.5cm]
+      \draw (0,0) node{\includegraphics[width=.475\textwidth]{billard1}};
+
+      \draw[->] (1,0) arc [start angle=0,end angle = 49, radius = 1cm];
+      \draw[->] (1.1,0) arc [start angle=0,end angle = 155, radius = 1.1cm];
+            \draw (0,-3.5) node {(b)};
+
+      
+      % The following is shitty adjustment
+      \begin{scope}[xshift = 1.9cm,yshift=2.25cm]
+        \fill (0,0) circle (1pt);
+        \draw[<-,rotate=193] (1.4,0) arc [start angle=0,end angle = 35, radius = 1.4cm];
+      \end{scope}
+      
+      \begin{scope}[xshift = -2.675cm,yshift=1.25cm]
+        \fill (0,0) circle (1pt);
+       \draw[<-,rotate=-61] (1.4,0) arc [start angle=0,end angle = 35, radius = 1.4cm];
+      \end{scope}
+
+      \draw (.6,.3) node {$\theta_n$};
+      \draw (1.05,1.75) node {$\psi_n$};
+      \draw (-1.9,.6) node {$\psi_{n+1}$};
+
+
+      \draw (0,.7) node {$\theta_{n+1}$};
+       \end{scope}
+    \end{tikzpicture}
+    \caption{(a) Trajectory of a circular billiard with $n=50$ rebounds. (b) Two consecutive rebounds  of a circular billiard and the angles: $\theta_n,\theta_{n+1},\psi_n,\psi_{n+1}$.}
+    \label{fig:Billard}
+  \end{figure}
+  
+  To describe the dynamics we consider the position of the particle after the $n$-th rebound and the direction of travel after the collision. These directions are given by the angles $0\leqslant \theta_n < 2\pi $ et $-\pi/2< \psi_n<\pi/2$ given in Figure \ref{fig:Billard}(b). 
+  \begin{enumerate}[label=(\alph*)]
+  \item Show that the angles are given by
+   $ \theta_{n+1}  = \theta_n +\pi-2\psi_n\,\, \text{mod}\, 2\pi,\,\psi_{n+1} = \psi_n$ 
+  for all $n\geqslant 0$.\footnote{Here, $x\,\,\text{mod}\, 2\pi = x-2\pi k$ where $k$ is a unique integer such that $2\pi k \leqslant x < 2\pi(k+1)$.}
+   \item Deduce that $\theta_n=\theta_0 + n \alpha \,\,\text{mod}\, 2\pi$ where $\alpha = \pi -2\psi_0$.
+   \item Use this result to determine the condition required for a closed trajectory.
+  \end{enumerate}
+\end{question}
+
+
+
+ 
+\end{document}
+

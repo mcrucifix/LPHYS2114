@@ -1,0 +1,175 @@
+%
+%
+%
+%
+
+\documentclass{article}
+         
+\usepackage{graphicx,xcolor}
+\usepackage[load-headings]{exsheets}
+\usepackage{bbding, skull}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{enumitem}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,left=4cm,right=4cm]{geometry}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+
+\usetikzlibrary{arrows,decorations,calc}
+\usetikzlibrary{decorations.pathmorphing,patterns,decorations.pathreplacing,decorations.markings}
+
+\usepgflibrary{arrows}
+
+\tikzset{
+  % style to apply some styles to each segment of a path
+  on each segment/.style={
+    decorate,
+    decoration={
+      show path construction,
+      moveto code={},
+      lineto code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+      curveto code={
+        \path [#1] (\tikzinputsegmentfirst)
+        .. controls
+        (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
+        ..
+        (\tikzinputsegmentlast);
+      },
+      closepath code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+    },
+  },
+  % style to add an arrow in the middle of a path
+  mid arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .55 with {\arrow[#1]{stealth}}
+      }}},
+}
+
+
+
+\renewcommand{\i}{\mathrm{i}}
+\newcommand{\diff}{\text{d}}
+
+
+
+\begin{document}
+\noindent
+{\textsc{Universit\'e catholique de Louvain}} \hfill \'Ecole de Physique\\
+Facult\'e des Sciences \hfill 24 October 2024\\
+\hrule
+
+\bigskip
+
+\begin{center}
+  \textbf{LPHYS2114 Non-linear dynamics}\\
+  \textbf{S\'erie 4 -- Vari\'et\'e stable-unstable and Lyapunov Functions} 
+\end{center}
+
+%\bigskip
+\SetupExSheets{headings=runin-fixed-nr}
+
+\begin{question}
+  \textbf{Phase portrait of two dimensional systems.} Given the two dimensional system
+  \begin{equation}
+    \dot x = - x(1+y), \quad \dot y = y+x^2.
+    \label{eqn:2DSystem}
+  \end{equation}
+  \begin{enumerate}[label=(\alph*)]
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \item Show that the system is invariant under the transformation $(x,y)\mapsto (-x,y)$. What does this tell us about the phase space of the system?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \item Find and classify all the equilibria of the system. Qualitatively describe the dynamics in the neighbourhood of these equilibria.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \item Approximately calculate the stable and unstable local manifolds of the saddle point equilibria by developing the Taylor series up to order $4$. \textit{Hint:} Use the symmetry of the system found in part (a) to simplify the calculation.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \item Sketch the dynamics of the system.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{enumerate}
+\end{question}
+
+\begin{question} \textbf{Stable and unstable manifold.} Given the system of ODEs
+\begin{equation}
+  \dot x = x(4-x-y), \quad \dot y = y(x-2).
+\end{equation}
+\begin{enumerate}[label=(\alph*)]
+  \item Show that the system has saddle point two equilibria at $\bm p=(0,0)$ and $\bm p = (4,0)$, and a single attractor at $\bm p=(2,2)$.
+  \item Determine the unstable and stable manifolds in the neighbourhood of the saddle points by developing the Taylor series up to $3$.
+  
+  \item Sketch the phase portrait of the system.
+\end{enumerate}
+
+\end{question}
+
+\begin{question} \textbf{A Lyapunov function for the Lorenz 63 system.} The famous Lorenz 1963 system of ODEs is given by:
+\begin{equation}
+  \dot x = \sigma (y-x), \quad \dot y = r x - y - xz,\quad \dot z = xy-b z.
+\end{equation}
+Where, $\sigma,r,b>0$ are parameters. In this exercise we are interested in one of the equilibria:
+\begin{enumerate}[label=(\alph*)]
+  \item Show that $\bm p =(0,0,0)$ is an equilibria of the system for all $\sigma,r,b$.
+  \item Show that $E(x,y,z)=\sigma^{-1}x^2+y^2+z^2$ is a strict Lyapunov function for this equilibria for $0< r < 1$.
+  \item Describe the basin of attraction of this equilibria. (The basin of attraction of a equilibria is a collection of points that converge to the equilibria under the flow.)
+\end{enumerate}
+\end{question}
+
+\begin{question}
+ \textbf{Ideal pendulum with friction.} THe ideal pendulum, is a rigid pendulum of length $\ell$ under the influence of gravity and a friction force such as air pressure. The equation of motion is given by:
+ \begin{equation}
+   \ddot \theta + 2\gamma \dot \theta + \omega^2 \sin \theta = 0.
+ \end{equation}
+Here, $\gamma>0$ is the coefficient of friction and $\omega = \sqrt{g/\ell}$.
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[>=stealth]
+    \draw (-2,0)--(2,0);
+    \draw (0,2) -- (0,-2);
+    \draw (0,0) circle (1.5);
+   
+    \draw[rotate=-90] (1.,0) arc [start angle=0,end angle = 40, radius=1.cm];
+    \draw (0.2,-.65) node {$\theta$};
+   
+    \draw[->] (2,-.5) -- (2,-1.5);
+    \draw (2,-1) node [right] {$\bm g$};
+
+    
+    \begin{scope}[rotate=40]
+    \draw[densely dashed] (0,0) -- (0,-1.5);
+    \fill (0,-1.5) circle (1.5pt);
+    \end{scope}
+    \draw (.45,-.45) node[right] {$\ell$};
+
+  \end{tikzpicture}
+  \caption{Sketch of the idealised pendulum.}
+\end{figure}
+
+ \begin{enumerate}[label=(\alph*)]
+   \item Write the equations of movement as a two dimensional system where $x_1 = \theta$ and $x_2 =\dot \theta$.
+    \item Show that the equilibria of the system are of the form $\bm p = (n\pi,0),\,n\in \mathbb Z$. Why is it sufficient to consider only the points described by $n=0$ et $n=1$. Distinguish the physical meaning of these two equilibria.
+    \item Show that the energy function $E = \frac12 x_2^2 + \omega^2(1-\cos x_1)$ is a Lyapunov function of the equilibria $\bm p=(0,0)$. Deduce that this equilibria is stable.
+    \item Can we also deduce that $\bm p=(0,0)$ is asymptotically stable? Conclude about the dynamics of the system.
+    \end{enumerate}
+\end{question}
+
+\begin{question}
+  \textbf{Bendixson Criteria.} Show that the ODE $\ddot x = x - x^3 + (b-x^2)\dot x$ does not have periodic solutions for $b<0$.
+  
+\end{question}
+
+ 
+\end{document}
+

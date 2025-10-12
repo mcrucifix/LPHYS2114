@@ -1,0 +1,181 @@
+%
+%
+%
+%
+
+\documentclass{article}
+         
+\usepackage{graphicx,xcolor}
+\usepackage[load-headings]{exsheets}
+%\usepackage{bbding, skull}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{enumitem}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,left=4cm,right=4cm]{geometry}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+
+\usetikzlibrary{arrows,decorations,calc}
+\usetikzlibrary{decorations.pathmorphing,patterns,decorations.pathreplacing,decorations.markings}
+
+\usepgflibrary{arrows}
+
+\tikzset{
+  % style to apply some styles to each segment of a path
+  on each segment/.style={
+    decorate,
+    decoration={
+      show path construction,
+      moveto code={},
+      lineto code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+      curveto code={
+        \path [#1] (\tikzinputsegmentfirst)
+        .. controls
+        (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
+        ..
+        (\tikzinputsegmentlast);
+      },
+      closepath code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+    },
+  },
+  % style to add an arrow in the middle of a path
+  mid arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .55 with {\arrow[#1]{stealth}}
+      }}},
+}
+
+
+
+
+\newcommand{\diff}{\text{d}}
+
+
+
+\begin{document}
+\noindent
+{\textsc{Universit\'e catholique de Louvain}} \hfill \'Ecole de Physique\\
+Facult\'e des Sciences \hfill 10 October 2024\\
+\hrule
+
+\bigskip
+
+\begin{center}
+  \textbf{LPHYS2114 Non linear dynamics}\\
+  \textbf{Exercise 2 -- Bifurcations. Linear systems.}
+\end{center}
+
+%\bigskip
+\SetupExSheets{headings=runin-fixed-nr}
+
+\subsection*{Bifurcations}
+
+\begin{question}
+  \textbf{Evolution of fish populations.} We will start by looking at a simple model of a fish population. If there is no fishing, the population $P=P(t)\geqslant 0$ follows the logistic model.
+  
+  \subsubsection*{Simplistic model}
+  
+  The impacts of fishing is modelled by the term $-H$, added to the logistic equation where $H>0$ is a constant removal of fish from the population:
+  \begin{equation}
+    \label{eqn:LogisticHarvesting}
+    \dot P = a P\left(1-\frac{P}{N}\right)-H.
+  \end{equation}
+  where $a>0$ is the growth rate of the population and $N>0$ is the population saturation.
+
+\begin{enumerate}[label=(\alph*)]
+  \item We will make a change of variables $P(t) = \mu x(\tau = \lambda t)$ to simplify the equation for further analysis, show this results in:
+  \begin{equation}
+    \dot x = x(1-x) -h.
+  \end{equation}
+  and find $\mu,\lambda$ et $h$.
+  \item Graphically analyse this ODE as a function of $h$.
+  \item Show there is a bifurcation at a critical value $h=h_c$ which we will determine. What kind of bifurcation is this?
+  \item Discuss the evolution of the fish population over the long term for $h<h_c$ and $h>h_c$. 
+  \item Discuss the weaknesses of this model.
+\end{enumerate}
+
+\subsubsection*{Improved model}
+
+To improve the original model \eqref{eqn:LogisticHarvesting}, we will consider a model where the decrease of the population through fishing varies with $P$. We will model this by ensuring the deduction goes to zero as $P$ goes to zero, and reaches a constant $-H$ for large $P$. A possible model is given by:
+\begin{equation}
+    \label{eqn:LogisticHarvestingImproved}
+    \dot P = a P\left(1-\frac{P}{N}\right)-\frac{H P}{B+P}.
+  \end{equation}
+  with $B\geqslant 0$.
+\begin{enumerate}[label=(\alph*),resume]
+  \item Discuss the importance of parameter $B$.
+  \item Show that there is a change of variables that allow the equation to be re-written as:
+  \begin{equation}
+    \dot x = x(1-x) -\frac{hx}{b+x}
+  \end{equation}
+  where $b$ and $h$ are to be determined.
+  \item Show that the ODE can have two or three equilibria depending on the values of $b$ and $h$. Determine their stability. Remember that: $x\geqslant 0$.
+  \item Analyse the dynamics in a neighbourhood of $x=0$.  Determine that a bifurcation takes place at $h = b$.
+  \item Show that another bifurcation occurs when $h=\frac{1}{4}(1+b)^2$ at a value $b < b_c$ where $b_c$ is to be determined.
+   \item Analyse the stability of the system on a $b-h$ diagram.
+\end{enumerate}
+\end{question}
+
+\subsubsection*{Linear systems on the plane}
+
+\begin{question}
+  \textbf{Solutions of linear systems.} For the matrices
+  \begin{equation}
+    \textit{(i)}\,\, A =
+    \begin{pmatrix}
+      -1 & 0\\
+      1 & -2
+    \end{pmatrix}
+    \quad\text{et}\quad
+    \textit{(ii)}\,\,
+    A =
+    \begin{pmatrix}
+      1 & 1\\
+      -1 & 0
+    \end{pmatrix}
+  \end{equation}
+  Find the following:
+  \begin{enumerate}[label=(\alph*)]
+    \item Find the eigan values and eigan vectors of $A$.
+    \item Find the matrix $T$ such that $\bar A= TAT^{-1}$ is a normal form.
+    \item Find the general solution of $\dot {\bm{\bar x}} = \bar A\bm{\bar x}$ and $\dot {\bm{x}} = A\bm{x}$.
+    \item Sketch the phase portrait of the two systems.
+      \end{enumerate}
+\end{question}
+
+\begin{question}
+  \textbf{Harmonic oscillator with friction.}
+  We take the equations of a harmonic oscillator
+  \begin{equation}
+    \ddot x + 2\gamma \dot x + \omega^2 x = 0, \quad \omega > 0, \gamma \geqslant 0.
+  \end{equation}
+  \begin{enumerate}[label=(\alph*)]
+    \item Write the equation in the form a a linear 2-dimensional ODE $\dot {\bm x} = A \bm x$.
+    \item For what values of $\omega$ and $\gamma$, the matrix $A$ has eigan values that are \textit{(i)} complex, \textit{(ii)} real and distinct values, and \textit{(iii)} repeating values?
+    \item Find the general solution of the system in any of the cases \textit{(i)}, \textit{(ii)}, and \textit{(iii)}. Sketch the phase portraits for each case and describe the movement of the oscillator. 
+    \end{enumerate}
+\end{question}
+
+\begin{question}
+\textbf{Classification of 2-dimensional linear systems.} 
+We take a generalised 2-dimensional linear system:
+\begin{equation}
+  \dot {\bm{x}} = A\bm{x},\quad \bm{x} \in \mathbb R^2.
+\end{equation}
+where, $A$ is a $2\times 2$ real valued matrix. Let $D=\det A$ and $T = \text{tr}\,A$.
+\begin{enumerate}[label=(\alph*)]
+  \item Find the eigan values of $A$ in terms of $D$ and $T$. Describe the valye of the eigan values according to the sign of $T,D$ and $T^2-4D$.
+  \item On the $T$-$D$ plane, sketch a typical phase portrait in each of the regions that are separated by the curves $D=0$, $T=0$, and $T^2-4D = 0$.
+  \end{enumerate}
+\end{question}
+ 
+\end{document}
+

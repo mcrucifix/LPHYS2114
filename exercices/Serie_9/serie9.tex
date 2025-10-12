@@ -1,0 +1,200 @@
+%
+%
+%
+%
+
+\documentclass{article}
+         
+\usepackage{graphicx,xcolor}
+\usepackage[load-headings]{exsheets}
+%\usepackage{bbding, skull}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath,amssymb,amsthm,bm}
+\usepackage{enumitem}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,left=4cm,right=4cm]{geometry}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+
+\usetikzlibrary{arrows,decorations,calc}
+\usetikzlibrary{decorations.pathmorphing,patterns,decorations.pathreplacing,decorations.markings}
+
+\usepgflibrary{arrows}
+
+\tikzset{
+  % style to apply some styles to each segment of a path
+  on each segment/.style={
+    decorate,
+    decoration={
+      show path construction,
+      moveto code={},
+      lineto code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+      curveto code={
+        \path [#1] (\tikzinputsegmentfirst)
+        .. controls
+        (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
+        ..
+        (\tikzinputsegmentlast);
+      },
+      closepath code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+    },
+  },
+  % style to add an arrow in the middle of a path
+  mid arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .55 with {\arrow[#1]{stealth}}
+      }}},
+}
+
+
+
+\renewcommand{\i}{\mathrm{i}}
+\newcommand{\diff}{\text{d}}
+
+
+
+\begin{document}
+\noindent
+{\textsc{Universit\'e catholique de Louvain}} \hfill \'Ecole de Physique\\
+Facult\'e des Sciences \hfill 21 November 2021\\
+\hrule
+
+\bigskip
+
+\begin{center}
+  \textbf{LPHYS2114 Non-linear Dynamics}\\
+  \textbf{S\'erie 9 -- Chaotic Maps} 
+\end{center}
+
+%\bigskip
+\SetupExSheets{headings=runin-fixed-nr}
+
+\subsection*{One dimensional Maps}
+
+\begin{question}
+  $\bm{p x \mod 1}  $. Given $\Omega = [0,1[$ and $f:\Omega \to \Omega$ defined by $f(x) = px \mod 1$ where $p\geqslant 2$ is an integer.
+  \begin{enumerate}[label=(\alph*)]
+    \item Study the map map by using the $p$-adique representation for $x\in \Omega$:
+    \begin{equation}
+      x = .b_1b_2b_3\cdots = \sum_{n=1}^\infty \frac{b_n}{p^n}, \quad b_n\in \{0,1,\dots,p-1\}.
+    \end{equation}
+    \item Show that the map $f$ is chaotic.
+  \end{enumerate}
+\end{question}
+
+\begin{question}
+  \textbf{} $\bm{(x+\alpha) \mod 1}  $. We will look at the interval $\Omega = [0,1[$. To measure the distance between two points $x,y\in \Omega$, we use the metric $d(x,y) = \min(|x-y|,1-|x-y|)$. We can visualise $\Omega$ as a circle and $d$ as the length of an arc (\`a un facteur pr\`es).
+  
+  \medskip
+  \noindent Given $f:\Omega \to \Omega$ the map defined by $f(x) = (x+\alpha) \mod 1$ where $0\leqslant \alpha < 1$ is a real number.
+  \begin{enumerate}[label=(\alph*)]
+    \item Show that if $\alpha$ is rational then the points in $\Omega$ are periodic. Deduce that there are no dense orbits in $\Omega$.
+    \item Show that if $\alpha$ is irrational then all the points have a dense orbit. Show that $f$ does not have periodic points.
+    \item Show that for all $\alpha$, the map $f$ does not have the property of sensitivity to initial conditions and conclude.
+  \end{enumerate}
+\end{question}
+
+\subsection*{Maps in two dimensions}
+\begin{question}
+\textbf{Bakers Map.} Given $\Omega=[0,1[\times [0,1[$. We denote $\bm x = (x_1,x_2) \in \Omega$ are points. The map $f:\Omega\to \Omega$ of the Baker Map is given by $\bm x' = f(\bm x)$ with
+\begin{equation}
+  x'_1 = 2x_1 \mod 1, \quad x'_2 = \frac{1}{2}(x_2 +[2x_1]) 
+\end{equation}
+where $[\xi]$ is a est la partie enti\`ere de $\xi\in \mathbb R$. 
+\medskip
+
+\noindent
+Geometrically, the map can be visualised in two steps: \textit{(i)} We transform $\Omega$ a rectangle of length $2$ and height $1/2$ by the transformation $(x_1,x_2)\to (2x_1,x_2/2)$. \textit{(ii)} We cut the rectangle vertically into two rectangles of length $1$ and height $1/2$ and combine the two halves to regather the original square $\Omega$. An illustration is given in Figure \ref{fig:BakersMap}.
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[>=stealth,scale=.75]
+    \draw[->] (2.75,0)--(4.25,0);
+    \draw (3.5,0) node[above] {$f$};
+    \draw[->] (0,-2.25)--(0,-2.75);
+    \draw[->] (7,-2.75)--(7,-2.25);
+    \draw (0,-2.5) node[right]{\textit{(i)}};
+    \draw (7,-2.5) node[left]{\textit{(ii)}};
+
+
+    \begin{scope}
+      \draw[dotted] (-2,-2) rectangle (2,2);
+      \fill[fill=blue!50!white!30] (0,0) circle [radius=1cm];
+    \end{scope}
+    
+    \begin{scope}[xshift=3.5cm,yshift=-4cm]
+      \fill[fill=blue!50!white!30] (0,0) ellipse [x radius=2cm,y radius = .5 cm];
+ 
+      \draw[dotted] (-4,-1) rectangle (4,1);
+      \draw[dotted](0,1)--(0,-1);
+    \end{scope}
+    
+    \begin{scope}[xshift=7cm]
+      \draw[dotted](-2,-2) rectangle (2,2);
+      \draw[dotted](-2,0)--(2,0);
+
+      \clip (-2,-2) rectangle (2,2);
+
+      \fill[fill=blue!50!white!30] (-2,1) ellipse [x radius=2cm,y radius = .5 cm];
+      \fill[fill=blue!50!white!30] (2,-1) ellipse [x radius=2cm,y radius = .5 cm];
+
+    \end{scope}
+  \end{tikzpicture}
+    \caption{An image of a disk of radius $r=1/4$ centred on the square $\Omega$ under one transformation of the bakers map.}
+    \label{fig:BakersMap}
+
+\end{figure}
+
+\begin{enumerate}[label=(\alph*)]
+  \item Why is $f$ called the ``bakers map"?
+\end{enumerate}
+
+  
+  \subsubsection*{Dyadic Representation}
+ \noindent
+  We are interested in the map defined by this method. As the map $2x \mod 1$ on the interval, it is convenient to focus on $f$ and use a dyadic representation. For $x_1=.b_0b_1b_2\cdots$ and $x_2 = .b_{-1}b_{-2}b_{-3}\cdots$ we write:
+    \begin{equation}
+       \bm x = (x_1,x_2) = \cdots b_{-3}b_{-2}b_{-1}.b_0b_1b_2\cdots
+       \label{eqn:BinaryRepresentation}
+    \end{equation}
+    In the series Dans la suite on \'ecrira \'egalement $b_n = b_n(\bm x)$ for the binary digits of $\bm x$.
+    \begin{enumerate}[label=(\alph*)]
+      \item Find $(x'_1,x'_2)$ and deduce that the action of $f$ in this representation.
+      \item Show that $f$ is invertible on $\Omega$ and show that the action of $f^{-1}$ in the representation \eqref{eqn:BinaryRepresentation}. And deduce $f^{-1}$ in cartesian coordinates.
+    \end{enumerate}
+    \subsubsection*{Norm}
+    \noindent To show that $f$ is chaotic we must introduce a norm on the interval $\Omega$ which allows us to measure distances. We can recall that all on the plane all norms are equivalent. It is convenient to choose the Manhattan norm:
+    \begin{equation}
+      ||\bm x|| = |x_1| + |x_2| ,\quad \bm x = (x_1,x_2)\in \Omega.
+    \end{equation}
+   
+   \begin{enumerate}[label=(\alph*),resume] 
+     \item Given $\bm x,\bm x' \in \Omega$ and $N> 0$ an integer. Show that if $b_n(\bm x) = b_n(\bm x')$ for all $-N \leqslant n \leqslant N-1$ then $||\bm x - \bm x'|| \leqslant 2^{-(N-1)}$.
+     \item Given $E$ a sub-set of $\Omega$. Show that $E$ is dense in $\Omega$ if for all $\bm x\in \Omega,\,N>0$ an integer, there exists $\bm x'\in E$ such that $b_n(\bm x) = b_n(\bm x')$ for all $-N \leqslant n \leqslant N-1$.
+   \end{enumerate}
+   
+   \subsubsection*{Chaos}
+
+   \begin{enumerate}[label=(\alph*),resume] 
+    \item Show that the bakers map is chaotic.
+   \end{enumerate}
+
+\end{question}
+
+ 
+\end{document}
+

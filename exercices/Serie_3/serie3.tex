@@ -1,0 +1,163 @@
+%
+%
+%
+%
+
+\documentclass{article}
+         
+\usepackage{graphicx,xcolor}
+\usepackage[load-headings]{exsheets}
+\usepackage{bbding, skull}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{enumitem}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,left=4cm,right=4cm]{geometry}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+
+\usetikzlibrary{arrows,decorations,calc}
+\usetikzlibrary{decorations.pathmorphing,patterns,decorations.pathreplacing,decorations.markings}
+
+\usepgflibrary{arrows}
+
+\tikzset{
+  % style to apply some styles to each segment of a path
+  on each segment/.style={
+    decorate,
+    decoration={
+      show path construction,
+      moveto code={},
+      lineto code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+      curveto code={
+        \path [#1] (\tikzinputsegmentfirst)
+        .. controls
+        (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
+        ..
+        (\tikzinputsegmentlast);
+      },
+      closepath code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+    },
+  },
+  % style to add an arrow in the middle of a path
+  mid arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .55 with {\arrow[#1]{stealth}}
+      }}},
+}
+
+
+
+\renewcommand{\i}{\mathrm{i}}
+\newcommand{\diff}{\text{d}}
+
+
+
+\begin{document}
+\noindent
+{\textsc{Universit\'e catholique de Louvain}} \hfill \'Ecole de Physique\\
+Facult\'e des Sciences \hfill 17 October 2024\\
+\hrule
+
+\bigskip
+
+\begin{center}
+  \textbf{LPHYS2114 Non-linear Dynamics}\\
+  \textbf{S\'erie 3 -- Non-linear Equilibriums} 
+\end{center}
+
+%\bigskip
+\SetupExSheets{headings=runin-fixed-nr}
+
+\begin{question}
+  \textbf{The Lotka-Volterra Model - A Species Competition Model.} We will analyse a system the describes the competition between two species. We let $x_1$ and $x_2$ gives the population levels of the two species. To simplify this we assume $x_1$ and $x_2$ are given by real, positive values. According to the competition model of Lotka-Volterra the growth rates of the two populations are given by:
+  \begin{equation}
+    \frac{\dot x_1}{x_1} = a(1-x_1) - b x_2, \quad \frac{\dot x_2}{x_2} = c(1-x_2) - d x_1.
+    \label{eqn:LotkaVolterra}
+  \end{equation}
+  where $a,b,c,d>0$ are parameters.
+  \begin{enumerate}[label=(\alph*)]
+    \item Interpret the different terms in this system of differential equations.
+  \end{enumerate}
+  It is more convenient to write the ODEs in the form $\dot x_1 = f_1(\bm x),\,\dot x_2=f_2(\bm x)$. For fixed $j=1,2$. We call the curve where $\dot x_j = 0$ the $x_j$-\textit{nullcline}.
+  \begin{enumerate}[label=(\alph*),resume]
+    \item For a general $f_1(\bm x),~f_2(\bm x)$ characterise the flow crossing the nullclines. Show that the equilibriums are found at the intersections of the $x_1$-nullcline and the $x_2$-nullcline.
+   \end{enumerate}
+  
+  \subsubsection*{Extinction of a species}
+  We want to study the competition model of Lotka-Volterra for a particular case: 
+  \begin{equation}
+    a=1,\quad b=2,\quad c=1,\quad d=3.
+  \end{equation}
+  \begin{enumerate}[label=(\alph*),resume]
+     \item Determine the nullclines of the system. Sketch the phase portrait.
+     \item Describe the dynamics of the system in the long term, can the two species co-exist? 
+  \end{enumerate}
+  
+  \subsubsection*{Extinction or coexistence?}
+  We now consider the general case where $a,b,c,d>0$. We want to determine if there are values of these parameters where the coexistence of the species is possible, or if one species goes extinct over time.
+  \begin{enumerate}[label=(\alph*),resume]
+    \item Determine the nullclines. Find that there is one equilibrium with both populations having a non-zero population if \textit{(i)} $a/b>1$ and $c/d>1$ where \textit{(ii)} $a/b<1$ and $c/d<1$.
+     \item Show that the positive equilibrium is not an attractor (sink) if we have the case given in \textit{(i)}.
+  \end{enumerate}
+    
+\end{question}
+
+\begin{question}
+  \textbf{Hopf bifurcations.} We consider the system of ODEs:
+  \begin{equation}
+    \dot x_1 = a x_1 - x_2 -x_1(x_1^2+x_2^2),\quad \dot x_2 = x_1+ a x_2 -x_2(x_1^2+x_2^2),
+  \end{equation}
+  where $a \in \mathbb R$ is a parameter.
+  \begin{enumerate}[label=(\alph*)]
+    \item Show that for all $a\in \mathbb R$, the system has only one equilibrium, which we will determine.
+    \item Study the linearised system around this equilibrium for $a<0,a=0,a>0$. Show there is a bifurcation at $a=0$.
+    
+    \item Analyse the bifurcation in the non-linear system, write the equaionts in polar coordinates $r,\theta$.
+    
+   \item Show that if we pass from $a<0$ to $a>0$ a periodic solution appears. Determine the orbit.
+   
+   \item This orbit is an example of a \textit{limit cycle}. Justify this terminology. We call the bifurcation where limit cycles appear \textit{Hopf bifurcations}.
+   
+   \item Sketch the phase portrait and describe the dynamics of the solutions in the long term for $a<0$, $a=0$ and $a>0$.
+   \end{enumerate}
+\end{question}
+
+\begin{question}
+  \textbf{Hamiltonian Systems.} A Hamiltonian system in 2D is one that can be written in the form
+  \begin{equation}
+    \dot x_1 = \frac{\partial H(\bm x) }{\partial x_2}, \quad  \dot x_2 = -\frac{\partial H(\bm x) }{\partial x_1}
+  \end{equation}
+  where $H : \mathbb R^2 \to \mathbb R$ is a function of class $C^2$ called the \textit{Hamiltonian function}.
+ \begin{enumerate}[label=(\alph*)]
+  \item Find all the matricies $\bm A$ such that the linearised system $\dot{\bm x} = \bm A \bm x$ is Hamiltonian. Determine a Hamiltonian function for the given $\bm A$.
+  \item Show that the eigan-values of $\bm A$ are of the form $\pm \lambda$ (saddle point) where $\pm \i \lambda$ (centre) with $\lambda \in \mathbb R$. Find the phase portraits for these two cases.
+    
+  \item Let $\bm p$ is a equilibrium of the general Hamiltonian system. Characterise the eigan-values of $\diff H(\bm p)$. Deduce the dynamics of the system in the neighbourhood of $p$.
+ \end{enumerate}
+
+\end{question}
+
+\begin{question}
+  \textbf{Reversible Systems.} A 2 dimensional system $\dot{\bm x} = \bm f(\bm x),\,\bm x \in \mathbb R^2$, is called \textit{reversible} if it is invariant under the changes $t\to -t,\, x_2 \to -x_2$.
+  \begin{enumerate}[label=(\alph*)]
+    \item Show the reversibility implies $f_1(x_1,-x_2)=-f_1(x_1,x_2)$ and $f_2(x_1,-x_2)=f_2(x_1,x_2)$.
+    \item Find that if $\bm p = (x_1^\ast,x_2^\ast)$ is an equilibrium of the system, then $\bm p' = (x_1^\ast,-x_2^\ast)$ is also an equilibrium.
+    \item Show that if $\bm p = (x_1^\ast,x_2^\ast)$ is an equilibrium with $x_2^\ast =0$ the eigan values of $\diff f(\bm p)$ are of the form $\pm \lambda$ (saddle point) or $\pm \i \lambda$ (centre) with $\lambda \in \mathbb R$. Can we deduce the dynamics of the system in the neighbourhood of $\bm p$?
+  \end{enumerate}
+  We can demonstrait that if $\bm p$ is a centre of a reversible system, there exists a neighbourhood $B$ of $\bm p$ such that all the orbits of the solutions in $B\backslash \{\bm p\}$ are closed curves. 
+  \begin{enumerate}[label=(\alph*),resume]
+    \item Give an intuitive explanation for establishing this property of reversible systems.
+  \end{enumerate}
+  
+  \end{question}
+ 
+\end{document}
+

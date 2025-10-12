@@ -1,0 +1,171 @@
+%
+%
+%
+%
+
+\documentclass{article}
+         
+\usepackage{graphicx,xcolor}
+\usepackage[load-headings]{exsheets}
+%\usepackage{bbding, skull}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{enumitem}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,left=4cm,right=4cm]{geometry}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+
+\usetikzlibrary{arrows,decorations,calc}
+\usetikzlibrary{decorations.pathmorphing,patterns,decorations.pathreplacing,decorations.markings}
+
+\usepgflibrary{arrows}
+
+\tikzset{
+  % style to apply some styles to each segment of a path
+  on each segment/.style={
+    decorate,
+    decoration={
+      show path construction,
+      moveto code={},
+      lineto code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+      curveto code={
+        \path [#1] (\tikzinputsegmentfirst)
+        .. controls
+        (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
+        ..
+        (\tikzinputsegmentlast);
+      },
+      closepath code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+    },
+  },
+  % style to add an arrow in the middle of a path
+  mid arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .55 with {\arrow[#1]{stealth}}
+      }}},
+}
+
+
+
+
+\newcommand{\diff}{\text{d}}
+
+
+
+\begin{document}
+\noindent
+{\textsc{Universit\'e catholique de Louvain}} \hfill \'Ecole de Physique\\
+Facult\'e des Sciences \hfill 23 septembre 2021\\
+\hrule
+
+\bigskip
+
+\begin{center}
+  \textbf{LPHYS2114 Introduction to non-linear dynamics}\\
+  \textbf{Exercise 1 - One dimensional ODEs}
+\end{center}
+
+%\bigskip
+\SetupExSheets{headings=runin-fixed-nr}
+
+\subsubsection*{ODE properties}
+\begin{question}
+\textbf{The flow of a differential equation.} Determine a one dimensional ODE which has the flow diagram given by:
+\begin{equation}
+\begin{tikzpicture}[>=stealth,baseline]
+   \draw[postaction={on each segment={mid arrow}}] (0,0) -- (1,0)--(2,0);
+   \draw[postaction={on each segment={mid arrow}}] (4,0) -- (3,0)--(2,0);
+   \draw[postaction={on each segment={mid arrow}}] (4,0) -- (5,0);
+   \fill (2,0) circle (2pt);
+   \draw[dotted] (5,0) -- (5.5,0);
+    \draw[dotted] (-.5,0) -- (0,0);
+
+   \draw[fill=white] (4,0) circle (2pt);
+   \draw[fill=white] (1,0) circle (2pt);
+   \draw[fill=black] (1,2pt) arc [start angle=90, end angle=270, radius=2pt];
+   \draw (1,-.4) node {$-1$};
+   \draw (2,-.4) node {$0$};
+   \draw (4,-.4) node {$2$};
+\end{tikzpicture}
+\end{equation}
+
+\end{question}
+
+\begin{question}
+\textbf{Finding ODEs with given properties.}
+For each case below, find an example of an ODE $\dot x =  f(x)$ that has the corresponding property. If no example exists, justify why. Assume that in all cases the function $f(x)\in C^1$.
+  \begin{enumerate}[label=(\alph*)]
+    \item All real numbers are equilibria.
+    \item All integers, but only integers, are equilibria.
+    \item There are exactly three equilibria.
+    \item There are exactly three equilibria, and all three are stable.
+    \item There are no equilibria.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+\textbf{Gradient systems.} The aim of this exercise is to prove that one dimensional ODEs do not have periodic solutions. To do this we will use a more general result about \textit{gradient systems}. A gradient system is an ODE with the form:
+\begin{equation}
+  \dot{\bm x} = -\bm \nabla V(\bm x), \quad \bm x\in \mathbb R^n,
+  \label{eqn:ODE}
+\end{equation}
+where $V: \mathbb R^n \to \mathbb R$  is a function of class $C^2$, which we call the potential. A periodic solution exists there exists a function $\bm x = \bm x(t)$ of class $C^1$ and there exists a time $T>0$ minimal, where $\bm x(t+T) = \bm x(t)$.
+\begin{enumerate}[label=(\alph*)]
+  \item Assume that $\bm x(t)$ is a solution of the differential equation in \eqref{eqn:ODE}. Show that:
+  \begin{equation}
+    V(\bm x(t)) = V(\bm x(0))-\int_0^t ||\bm\nabla V(\bm x(s))||^2\diff s
+    \label{eqn:VEvolution}
+  \end{equation}
+  where $||\cdot ||$ denotes the Euclidean norm $\mathbb R^n$.
+
+  \item Prove that \eqref{eqn:ODE} does not have periodic solutions.
+    \item \textbf{Application 1 :} Show that any one dimensional differential equation $\dot x = f(x)$, $f$ of class $C^1$, can be written as a gradient system, and conclude about the existence of periodic solutions.
+  \item \textbf{Application 2 :} Does the following system permit periodic solutions? 
+  \begin{equation}
+    \dot x_1 =x_2+2x_1x_2, \quad \dot x_2 = x_1 - x_2+x_1^2.
+  \end{equation}
+  \end{enumerate}
+
+\end{question}
+
+\subsubsection*{Applications}
+\begin{question} \textbf{A leaky bucket.}
+There is a bucket of water with a hole at the bottom. Let $h(t)$ be the height of the remaining water in the bucket at time $t$. Let $a$ be the area of the hole and $A$ be the area of a horizontal cross-section of the bucket (assume constant). Lastly, let $v(t)$ be the speed of the water passing through the hole.
+
+\begin{enumerate}[label=(\alph*)]
+\item Using conservation of mass, show that $av(t) = A \dot h(t)$.
+\item Using conservation of energy, show that $v(t)^2=2gh(t)$. Derive the equation:
+\begin{equation}
+   \dot h(t) = -{a\over A} \sqrt{2g h(t)}.
+\end{equation}
+\item Given the initial condition $h(0)=0$ (meaning the bucket is empty at time $t=0$), show that the solution is not unique for $t<0$. Is this result intuitive? Why does the theorem of uniqueness of solutions not apply in this case?
+\end{enumerate}
+\end{question}
+
+
+\begin{question}
+\textbf{Population growth model.} We want to model the growth of a population of organisms. Say that $N=N(t)$ is the number of organisms at time $t$. For certain species the rate of growth is maximal for intermediate values of $N$. This could be because a low population number it could be difficult to find a partner, and competition for food increases when $N$ is large.
+\begin{enumerate}[label=(\alph*)]
+\item Show that the ODE
+\begin{equation}
+  \frac{\dot N}{N} = r-a(N-b)^2
+\end{equation}
+provides a model that satisfies these properties, provided the constants $r,\ a$ and $b$ satisfy certain constraints which you should determine.
+\item Find the equilibria of the system and classify their stability.
+\item Sketch the shape of the solutions for different initial conditions.
+\item Compare the solutions $N(t)$ against those of the logistic equation. Are there qualitative differences?
+\end{enumerate}
+\end{question}
+
+ 
+\end{document}
+

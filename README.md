@@ -3,7 +3,7 @@
 **Note:** To build the notes, simply run `make`. All compilation steps are handled automatically.
 
 These are the working course notes for the UCLouvain course  
-**LPHYS2114 – Climatology and Climate Physics**  
+**LPHYS2114 – Nonlinear dynamics **
 ➡ https://uclouvain.be/cours-2024-lphys2114
 
 ---

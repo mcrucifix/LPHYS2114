@@ -1,0 +1,114 @@
+---
+title: "Fixed Points and Stability of the Lorenz–63 System"
+format: html
+jupyter: python3
+---
+
+## 1. Introduction
+
+The **Lorenz–63 system** is a classic nonlinear dynamical system introduced by Edward Lorenz (1963) to model simplified atmospheric convection.  
+It is defined by the following set of ordinary differential equations:
+
+\[
+\begin{cases}
+\dot{x} = \sigma (y - x), \\
+\dot{y} = x(\rho - z) - y, \\
+\dot{z} = xy - \beta z.
+\end{cases}
+\]
+
+Here, \( \sigma \), \( \rho \), and \( \beta \) are positive real parameters controlling the system’s dynamics.  
+We shall use **SymPy** to derive the fixed points and analyse their linear stability.
+
+---
+
+## 2. Define the system and compute equilibria
+
+```{python}
+import sympy as sp
+
+# Define symbols
+x, y, z, sigma, rho, beta = sp.symbols('x y z sigma rho beta', real=True)
+
+# Define the Lorenz-63 system
+dx = sigma * (y - x)
+dy = x * (rho - z) - y
+dz = x * y - beta * z
+
+# Solve for fixed points: dx = dy = dz = 0
+fixed_points = sp.solve([dx, dy, dz], (x, y, z), dict=True)
+
+# Simplify
+fixed_points = [{k: sp.simplify(v) for k, v in fp.items()} for fp in fixed_points]
+
+print("Fixed points of the Lorenz–63 system:")
+for i, fp in enumerate(fixed_points, 1):
+    print(f"  Point {i}: {fp}")
+```
+
+---
+
+## 3. Compute the Jacobian matrix
+
+```{python}
+# Define the vector field and variables
+f = sp.Matrix([dx, dy, dz])
+vars = (x, y, z)
+
+# Jacobian matrix
+J = f.jacobian(vars)
+
+print("Jacobian matrix J(x, y, z):")
+sp.pprint(J)
+```
+
+---
+
+## 4. Evaluate the Jacobian at each fixed point
+
+```{python}
+for i, fp in enumerate(fixed_points, 1):
+    J_fp = J.subs(fp)
+    eigs = J_fp.eigenvals()
+    print(f"\n=== Fixed point {i} ===")
+    print(f"Coordinates: {fp}")
+    print("Jacobian:")
+    sp.pprint(J_fp)
+    print("Eigenvalues:")
+    sp.pprint(eigs)
+```
+
+---
+
+## 5. Discussion
+
+At the **origin** \((0,0,0)\), the Jacobian is
+
+\[
+J_0 =
+\begin{pmatrix}
+ -\sigma & \sigma & 0 \\
+ \rho & -1 & 0 \\
+ 0 & 0 & -\beta
+\end{pmatrix},
+\]
+
+whose eigenvalues are
+
+\[
+\lambda_1 = -\beta, \\
+\lambda_{2,3} = \frac{1}{2}\left[-(\sigma + 1) \pm \sqrt{(\sigma - 1)^2 + 4\sigma\rho}\right].
+\]
+
+This fixed point is **stable** when \( \rho < 1 \) and becomes **unstable** for \( \rho > 1 \).
+
+The other two equilibria (symmetric about the origin) appear only when \( \rho > 1 \); they are stable for intermediate parameter values and lose stability through a Hopf bifurcation as \( \rho \) increases.
+
+---
+
+## 6. Conclusion
+
+This example demonstrates how **SymPy** can be used to:
+- Symbolically derive fixed points of nonlinear systems,
+- Compute Jacobians,
+- Analyse local stability through eigenvalues.

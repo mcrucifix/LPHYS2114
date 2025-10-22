@@ -166,7 +166,8 @@ Rushing through the theory, it may be shown that if some generic non-degeneracy 
 
 The bifurcation is found at $\beta=0$. 
 
-The system of equations may be rewritten in polar coordinates, in which case we find
+The system of equations may be rewritten in polar coordinates\footnote{Conversion in polar coordinates is covered in the exercises. If $x=r\cos\theta$, $y=r\sin\theta$, then  $r^2=x^2+y^2$ and $\tan\theta = y/x$, from which it follows that $2r\dot r = 2 y \dot x - 2 x \dot y$ and $\dot\theta / \cos^2 \theta = x\dot y  - y\dot x / (r^2\cos\theta)$.}%
+, in which case we find
 
 \begin{align*}
   \dot r &= \beta r + \sigma r^3,  \\

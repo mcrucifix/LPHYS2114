@@ -16,7 +16,7 @@ In these notes, we will only provide the theorem result, and some elements of th
 
  - one fixed point
  - a closed orbit
- - a finite number of fixed points $p_1\ldots p_n$ and orbits  $\gamma$ linking these fixed points with $\alpha(\gamma)=p_i$ and $\alpha(\gamma)=p_j$, $i,j \in 1 \ldots n$. 
+ - a finite number of fixed points $p_1\ldots p_n$ and orbits  $\gamma$ linking these fixed points with $\alpha(\gamma)=p_i$ and $\omega(\gamma)=p_j$, $i,j \in 1 \ldots n$. 
 
 \et
 
@@ -33,7 +33,7 @@ Then, the proof goes on by steps:
 
 - _Lemma 1_: the positive orbit through $p$ cuts the transverse $\Sigma$ in a monotone sequence of $p_i$ (the points of the intersection are ordered on the sequence). (The Lemma is proved by constructing a positively invariant region)
 - _Lemma 2_: The limit set of $p$ crosses $\Sigma$ at at most one point. (this is a consequence of the monotonous character of the sequence of $p_i$)
-- _Lemma 3_: If $\omega(p)$ contains _no_ fixed point, then it is a closed orbit. This is the vanilla-version of the Poincaré-Bendixson theorem. It is proved by contradiction. To make it short and a bit rough, we take $q \in \omega(p)$ and draw a section such that $q$ is on it. Given that $q$ is _not_ a fixed point, it crosses the section, and it has a positive orbit that will cut the section through a monotone sequence. But as we now that $\omega(p)$ crosses the section at only one point, the monotone sequence is made of $q$ only. This is an closed orbit. 
+- _Lemma 3_: If $\omega(p)$ contains _no_ fixed point, then it is a closed orbit. This is the vanilla-version of the Poincaré-Bendixson theorem. It is proved by contradiction. To make it short and a bit rough, we take $q \in \omega(p)$ and draw a section such that $q$ is on it. Given that $q$ is _not_ a fixed point, it crosses the section, and it has a positive orbit that will cut the section through a monotone sequence. But as we now that $\omega(p)$ crosses the section at only one point, the monotone sequence is made of $q$ only. This is a closed orbit. 
 - _Lemma 4_ : if $p_1$ and $p_2$ are distinct fixed points contained in $\omega(p)$; then there exists at most _one_ orbit linking asymptotically $p_1$ ($\alpha$-point) from $p_2$ ($\omega$-point). The proof is made by contradiction. The idea is that the orbit passing by $p$ would need to pass nearby $\gamma_1$ and $\gamma_2$, two hypothetical distinct orbits. We consider two transverses that are linking our hypothetical orbit with $\gamma_1$ and $\gamma_2$ and observe that it produces a topological absurdity (you can't both get nearby the two orbits at two distinct times, and have both of them as  limit sets). 
 
 We now show how to use this theorem, with examples. 

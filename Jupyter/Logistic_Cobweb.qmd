@@ -1,0 +1,47 @@
+---
+jupyter:
+  kernelspec:
+    display_name: Julia 1.11.4
+    language: julia
+    name: julia-1.11
+---
+
+```{julia}
+# using InteractiveDynamics, GLMakie
+using DynamicalSystems
+using Plots
+
+r=3.2
+lo = Systems.logistic(0.1; r=3)
+
+# interactive_cobweb(lo, rrange, 5)
+```
+
+```{julia}
+N=30; 
+traj=vec(trajectory(lo,N)[1]); 
+```
+
+```{julia}
+tt=zip(traj[1:(N-1)],traj[2:(N)]);
+```
+
+```{julia}
+Cobweb = collect(Iterators.flatten(map(x -> [[x[1][1],x[1][1]],[x[1][1],x[2][1]]], tt)));
+```
+
+```{julia}
+f(x) = x*(1-x)*r; id(x)=x;
+```
+
+```{julia}
+using LaTeXStrings
+plot!(vec(map(x->x[1],Cobweb)), vec(map(x->x[2], Cobweb))) # , xlabel=L"x_i", ylabel=L"x_{i+1}");
+print(vec(Cobweb)[1])
+```
+
+```{julia}
+plot!(f, 0,1); plot!(id,0,1)
+```
+
+

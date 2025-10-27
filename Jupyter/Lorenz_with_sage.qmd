@@ -1,0 +1,107 @@
+---
+jupyter:
+  kernelspec:
+    display_name: SageMath 9.5
+    language: sage
+    name: sagemath
+---
+
+```{sage}
+x, y, z, sigma, rho, b= var('x y z sigma rho beta')
+dx = sigma * (y - x)
+dy = x * (rho-z) - y
+dz = x * y - beta * z
+assume(sigma>0., beta>0., sigma > 0.)
+```
+
+```{sage}
+sols = solve([dx, dy, dz], x, y,z)
+pretty_print(sols)
+```
+
+```{sage}
+J = jacobian([dx,dy,dz],[x,y,z])
+print(J)
+```
+
+```{sage}
+J0 = J.subs(sols[2])
+print(J0)
+```
+
+```{sage}
+eJ0 = J0.eigenvalues();
+pretty_print(eJ0)
+```
+
+```{sage}
+pretty_print(solve(eJ0[1], rho))
+```
+
+```{sage}
+assume(rho > 1)
+```
+
+```{sage}
+J1 = J.subs(sols[1])
+pretty_print(J1)
+```
+
+```{sage}
+λ = var('λ')
+carpol = (J1 - matrix.identity(3)*λ).determinant()
+test = SR[λ](carpol)
+pretty_print(test)
+```
+
+```{sage}
+dcarpol = diff(carpol, λ )
+print ( dcarpol.parent() )
+pretty_print(dcarpol)
+```
+
+```{sage}
+SS = solve(dcarpol, λ )
+pretty_print(SS)
+```
+
+```{sage}
+S3 = carpol.subs(SS[1]).subs(sigma=10, beta = 8/3)
+pretty_print(S3)
+```
+
+```{sage}
+r1 = S3.find_root(1,3)
+```
+
+```{sage}
+P1 = plot(carpol.subs(sigma=10, beta = 8/3, rho = 0.9), -10, 0 , color='red')
+P2 = plot(carpol.subs(sigma=10, beta = 8/3, rho = 1.7), -10, 0, color = 'blue' )
+P3 = plot(carpol.subs(sigma=10, beta = 8/3, rho = r1), -10, 0, color = 'green')
+P1 + P2 + P3
+```
+
+```{sage}
+𝜔 = var('𝜔')
+eqw = carpol.subs( λ = - sqrt(-1)* 𝜔)
+pretty_print(eqw.expand())
+```
+
+```{sage}
+SOL = solve([real_part(eqw), imag_part(eqw)], [rho, 𝜔])
+pretty_print(SOL)
+```
+
+```{sage}
+rh = SOL[1][0].subs(sigma=10, beta = 8/3)
+```
+
+```{sage}
+print(rh)
+```
+
+```{sage}
+print(RDF(rh.rhs()))
+```
+
+

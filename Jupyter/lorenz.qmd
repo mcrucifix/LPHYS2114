@@ -1,0 +1,146 @@
+---
+jupyter: maxima
+---
+
+Here we analyse the fixed points and their stability of the Lorenz - Saltzman model using a symbolic mathematical software  [Maxima](https://maxima.sourceforge.io/Maxima). It is based on the functional programming language [lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)). This is not the only software around. Wolfram Mathematica is a well-known, very powerful software under paid licence. Matlab also has a symbolic maths package; [SymPy](https://www.sympy.org/en/index.html) has reached a good level of maturity and presents the huge advantage to be in Python, giving access to the `Jupyter` notebook interface and the `matplotib`  interface. This is probably the recommended alternative for someone starting from scratch. Some more discussion of SymPy vs Maxima is available at https://github.com/sympy/sympy/wiki/SymPy-vs.-Maxima. 
+
+We first define the system with the three time derivatives:
+
+```{maxima}
+dX(X,Y,Z):=sigma * (Y-X);
+dY(X,Y,Z):=X*(r - Z) - Y;
+dZ(X,Y,Z):=X*Y - beta * Z;
+assume(sigma>0, r>0, m>0);
+```
+
+Solving for all derivatives to be zero generates the fixed points.
+
+```{maxima}
+eq1: dX(X,Y,Z)=0;
+eq2: dY(X,Y,Z)=0;
+eq3: dZ(X,Y,Z)=0;
+```
+
+```{maxima}
+sols:solve([eq1,eq2,eq3],[X,Y,Z]);
+```
+
+We recognize the trivial fixed point, as well as the two symmetric fixed points on both sides of the $z-$axis, which  take real values only for $\rho>1$. 
+
+The Jacobian of the derivatives is computed as follows:
+
+```{maxima}
+J:jacobian([dX(X,Y,Z),dY(X,Y,Z),dZ(X,Y,Z)],[X,Y,Z]);
+```
+
+We first evaluated the Jacobian at the trivial fixed point and consider its eigenvalues. `Maxima` gives us the three eigenvalues and their multiplicity. The `rhs` and `lhs` functions return the right-hand-side and left-hand-side of an expression, respectively
+
+```{maxima}
+J0:psubst(sols[3],J);
+```
+
+```{maxima}
+simp:true$
+eJ0:eigenvalues(J0);
+```
+
+We recognise the double root (first and second solutions), and the $-\beta$ eigenvalue along the $z$ axis. The trivial fixed point becomes a saddle when the first (and second) eigenvalue reach zero:
+
+```{maxima}
+solve(eJ0[1][2],r);
+```
+
+Consider now the non-trivial fixed point, which become real for $r>1$.
+
+```{maxima}
+assume(r>1);
+```
+
+```{maxima}
+J1:psubst(sols[1],J);
+```
+
+We could repeat the approach for the non-trivial fixed points and also ask `maxima` to compute the eigenvalues but this is unwise. The expressions are very heavy and we can do better. Heaving a computer algebra system should not stop us from thinking. Indeed, consider rather the characteristic polynomial $P(\lambda; \beta, \sigma, \rho)$, defined as the determinant $\text{det}(\lambda 1 - J)$ matrix. 
+
+```{maxima}
+carpol:rat(determinant(diagmatrix(3,lambda)-J1), lambda);
+```
+
+```{maxima}
+dcarpoldl:diff(carpol,lambda);
+```
+
+For positive values of the parameters, all coefficients of the polynomial are positive, and the theory of cubic equations tells us that, in this case, all roots _must_ be either real negative, or complex. It is easy enough to consider the case $r=1$, at which the roots are all real, and negative. By continuity, we expect all roots to be real negatives for $r$ slightly above 1. But they could become imaginary. 
+
+This transition from negative real to imaginary roots occurs when two roots merge, and occur at an extrema of the $P(\lambda)$. Assuming $\beta$ and $\sigma$ given, the critical value of the parameter $r$ (called $r_1$) at which roots become complex must therefore satisfy $P(\lambda;r)=P^\prime(\lambda;r)=0$ (where the $^\prime$ symbol denotes a derivative with respect to $\lambda$). So we first solve $P^\prime(\lambda;r)$. 
+
+```{maxima}
+#| scrolled: true
+SS:solve(dcarpoldl, lambda)$
+SS[1];
+SS[2];
+```
+
+The roots naturally have the form $\lambda_\pm=a\pm \sqrt{b}$ and we inspect here the $\lambda_+$ solution (this is the solution for the local minimum, which comes as the second root; see graph below). We substitute this solution in the expression for $P(\lambda;r)$:
+
+```{maxima}
+S3:ev(subst(SS[2], carpol), sigma=10, beta=8/3);
+```
+
+And the critical value for $r$ that we are looking for is the one that will make this expression equal to zero. As the algebraic expression is involved, we provide here a numerical estimate of the root. 
+
+```{maxima}
+r1 : find_root(S3, r, 1, 3);
+```
+
+We show the behaviour of $P(\lambda)$ for different values of $r$ and this will help us to visualise the specific behaviour at $r$:
+
+```{maxima}
+#| scrolled: true
+#| tags: []
+r1;
+setoption(legend, "r=0.9","r=1.3456","r=1.7")$
+plot2d([ev(carpol, sigma=10, beta=8/3, r=0.9), 
+        ev(carpol, sigma=10, beta=8/3, r=r1), 
+        ev(carpol, sigma=10, beta=8/3, r=1.7)], 
+        [lambda,-12,0], [legend,"r=0.9","r=r_crit","r=1.7"], 
+        [gnuplot_term,png])$ 
+```
+
+![](./carpol.pdf)
+
+All we can say at this point is that for $r>r_1$ the roots  are complex, but numerical inspection shows that the points still act as attracting centers. They become repellers when the real part of the eigenvalue becomes positive. The critical value of the parameter $r$ from where instability emerges, called $r_H$, must then satisfy $P(i\omega;r)=0$, for real, non-zero $\omega$. This will be the boundary between negative and positive real parts.  The correspoding equation reads:
+
+```{maxima}
+eqw:subst([lambda=sqrt(-1)*omega], carpol);
+```
+
+And given that all parameters are real, it actually generates two equations by considering together the real and imaginary parts.  Solving the combination gives:
+
+```{maxima}
+
+SOL:solve([realpart(eqw), imagpart(eqw)], [r,omega])$
+SOL[1];
+SOL[2];
+```
+
+Again we have two roots but the trivial one $\omega=0$ does not interest us. The second is the relevant one, which we evaluate for the canonical parameers of the Lorenz model:
+
+```{maxima}
+rh:ev(rhs(SOL[2][1]), sigma=10, beta=8/3);
+```
+
+```{maxima}
+float(rh);
+```
+
+And allows us to conclude about the critical parameter $r_H$. 
+
+
+```{maxima}
+plot2d(x, [x, 1,2]);
+```
+
+
+
+

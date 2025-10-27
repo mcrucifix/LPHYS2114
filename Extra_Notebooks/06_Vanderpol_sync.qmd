@@ -1,0 +1,63 @@
+---
+title: "Synchronisation in the Forced van der Pol Oscillator"
+format: html
+jupyter: python3
+---
+
+```{python}
+# ==============================================================
+# Imports and setup
+# ==============================================================
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+import ipywidgets as widgets
+from ipywidgets import interact
+
+plt.rcParams['figure.figsize'] = (6, 4)
+plt.rcParams['axes.grid'] = True
+
+# ==============================================================
+# Define the forced Van der Pol system
+# ==============================================================
+def vdp_forced(t, state, alpha, F, omega):
+    x, y = state
+    dxdt = y
+    dydt = alpha * (y - y**3 / 3 - x) + F * np.sin(omega * t)
+    return [dxdt, dydt]
+
+# ==============================================================
+# Simulation and plotting function
+# ==============================================================
+def simulate_vdp(F=0.0, omega=1.0, alpha=1.0):
+    t_span = (0, 100)
+    t_eval = np.linspace(*t_span, 20000)
+    y0 = [1.0, 0.0]
+
+    sol = solve_ivp(vdp_forced, t_span, y0, t_eval=t_eval, args=(alpha, F, omega), rtol=1e-6)
+    x, y = sol.y
+    t = sol.t
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+
+    axes[0].plot(t, x, lw=0.8)
+    axes[0].set_xlabel("Time")
+    axes[0].set_ylabel("x(t)")
+    axes[0].set_title("Time series")
+
+    axes[1].plot(x, y, lw=0.8)
+    axes[1].set_xlabel("x")
+    axes[1].set_ylabel("y")
+    axes[1].set_title("Phase portrait")
+
+    plt.tight_layout()
+    plt.show()
+
+# ==============================================================
+# Interactive exploration
+# ==============================================================
+interact(simulate_vdp,
+         F=widgets.FloatSlider(value=0.0, min=0.0, max=1.5, step=0.05, description="F"),
+         omega=widgets.FloatSlider(value=1.0, min=0.5, max=3.0, step=0.05, description="ω"),
+         alpha=widgets.fixed(1.0))
+```

@@ -87,10 +87,10 @@ we may substitute $f(x)$ to $x$, to find:
 and then substitute the result of \eqref{eq:it1}. Iteration after iteration we eventually find
 
 \begin{displaymath}
-|f^n(x) -  (p)| < (|f^\prime(x)| + \varepsilon)^n |x-p|  < \delta, 
+|f^n(x) -  (p)| < (\underbrace{|f^\prime(p)| + \varepsilon}_{<1})^n |x-p|  < \delta, 
 \end{displaymath}
 
-and this  $\forall n>0$. This is exactly the attractor property. There is a $\delta$ such that $\lim_{n\rightarrow\infty}|f^n(x)-p|=0$. 
+and this is true for $\forall n>0$. We can thus find a $\delta$ such that $\lim_{n\rightarrow\infty}|f^n(x)-p|=0$, and this is exactly the attractor property. 
 
 Now, we consider the source case. We know that we can find  $\epsilon >0$ such
 that $|f^\prime(x)|-\epsilon >1$. But from what we have already learned,  there is also a $\delta$ such that, for $|x-p|<\delta$, 

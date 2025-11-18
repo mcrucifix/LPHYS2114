@@ -1,4 +1,4 @@
-## Chaos of the 2 $\mod$ 1 map
+## Chaos of the 2 $\mod$ 1 map 
 
 We consider an iteration similar to the tent map, but a little bit simpler:
 

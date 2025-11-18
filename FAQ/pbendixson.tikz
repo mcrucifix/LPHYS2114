@@ -1,0 +1,21 @@
+\begin{tikzpicture}[>=Stealth]
+
+% Points
+\node[circle, draw, fill=black, inner sep=1.5pt, label=above:$p_1$] (p1) at (0,0) {};
+\node[circle, draw, fill=black, inner sep=1.5pt, label=right:$p_2$] (p2) at (4,1) {};
+\node[circle, draw, fill=black, inner sep=1.5pt, label=left:$p_3$] (p3) at (3,-2) {};
+
+% Define control points to set in/out angles
+\coordinate (cp1) at (-2,2); % control point for leaving p1
+\coordinate (cp2) at (2,2);  % control point for returning to p1
+
+% Draw the loop
+\draw[->, thick] (p1) .. controls (cp1) and (cp2) .. (p1);
+
+
+% Heteroclinic connections
+\draw[->, bend left=25] (p2) to (p3);
+\draw[->, bend left=25] (p3) to (p2);
+
+\end{tikzpicture}
+

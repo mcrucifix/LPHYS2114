@@ -82,14 +82,56 @@ define $U=\rho X^2 + \sigma Y^2 + \sigma (Z-2\rho)^2$. Observe that this time de
 
 In other words $\dot U$ is strictly negative for $\rho X^2 +Y^2 + (Z-\rho)^2 - b\rho^2 > 0$, that is, any point outside the ellipsoid defined by $\rho X^2 +Y^2 + (Z-\rho)^2 = b\rho^2$. Outside that ellipsoid, any isocontour of $U$ acts as a trapping region. Trajectories will not fly to infinity as time goes by. 
 
+
+
 ## The Lorenz attractor 
 
 An animation of the Lorenz attractor with the canonical parameters $\sigma=10$, $\rho=28$, $\beta=8/3$ is available on Moodle. Demonstrating the "strange" character of the geometry was considered as one of the great challenges of the mathematics and was formally achieved by  @tucker02lorenz. However, Lorenz already provided an intuitive approach for showing the chaotic character of his system by constructing a tent map, as shown in Appendix \ref{appendix:tent}. 
 
 The chaotic character may be defined as the sensitive dependence on initial conditions, and expressed by the mean value of the greatest Lyapunov exponent along the trajectory to be positive. The Benettin algorithm (@benettin80aa, see also @Ramasubramanian200072) for the computation of the mean value of the greatest Lyapunov exponent, and its dependency on $\rho$ is provided in Appendix \ref{appendix:lyapunov}. As can be seen, chaos emerges for $\rho > \rho_H$. 
+\begin{figure}
+\includegraphics{Figures/lorenz_structure.png}
+\caption{This bifurcation diagram was  generated using the continuation software "auto" \url{https://github.com/auto-07p/auto-07p}, with the Python interface "auto2" \url{https://oisinhamilton.com/_publications/2025-02-28_auto-AUTO}. It shows, for standard parameter $\beta=8/3$ and $\sigma=10$, the bifurcation point at $\rho=1$ in which the center point loses its stability, and the two Hopf bifurcation at $\rho=\rho_H$. }
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=8cm]{Figures/homoclinic_bifurc.png}
+\caption{On both sides of the Hopf bifurcation accurring at $\rho_H$ auto allows to follow the unstable periodic orbits (the "L2-norm" is $X^2+Y^2+Z^2$, and the unstable periodic orbits are those represented by the dashed lines in the bifrucation diagram (top). The unstable periodic orbit for $\rho_H$ terminates as a \emph{homoclinic bifurctation} for $\rho\simeq 13.29$.  This is a new type of bifurcation that we haven't met so far, in which the orbit has as infinite period, and touches the center point (which is then acts both as as $\alpha-$ and $\omega-$ point. Homoclinic orbits can also be found by varying $\sigma$. The full demo is available at \supp{09_lrz_auto_auto.html}. The lower figures show the unstable periodic orbits for $\rho=22$. 
+}. 
+\end{figure}
+
 
 
 <!--The next figure provides a view on the attractor, and shows the sensitive dependence. However, to further develop our intuition about how chaos emerges, we need idealised models, and this will be the object of studying dynamical systems as iterations. -->
 
 <!--\efigure{lorenz}-->
 
+## The Rössler system
+
+The Saltzman-Lorenz '63 is paradigmatic for showing how chaos emerges out of unstable periodic orbits. It may be further be shown that it displays intermittent behaviour, or "transient chaos" for $24.06 < \rho < \rho_H$, a regime for which it  oscillates between the strange attractor and the two unstable periodic orbits. This occasional activity is called \emph{intermittency} (see further at \url{https://www.math.fsu.edu/~bertram/lectures/Chaos.pdf}). 
+
+In order to better understand this "intermittency route" to chaos, Otto Rössler published in 1976 a simpler model which, as we will see, clearly demonstrates the intermittency route to chaos. 
+
+\begin{equation}
+\begin{split}
+  \dot X &= - Y - Z \\
+  \dot Y &= - X + a Y \\
+  \dot Z &=  b + Z(X-C) \\
+\end{split}
+\label{rossler}
+\end{equation}
+
+
+The equations have some similarity with the Lorenz '63, but there is only one non-linear system. The $x$ and $y$ components are determined by linear equations. 
+
+Let us  briefly introduce here the principle of a Poincaré section : every time the system crosses the line $y=0$, we record the values of $x$ and $z$. The diagram below shows the gradual complexification of the Poincaré section as $c$ increases. It follows a "period-doubling" route to chaos with \emph{intermittent} zones of order, until fully-developed chaos. 
+
+\begin{figure}
+\includegraphics{Figures/rossler.png}
+\caption{Poincaré section of the $x,z$ plane (showing $x$), as a function of $c$. }
+\end{figure}
+
+For those having a `jupyter-notebook` installation with working Python and `sci-py`, a notebook featuring some aspects of the Rössler attractor are available at \supp{08_rossler.ipynb}. 
+
+
+This figure is intriguingly similar to the period-doubling route which we will discover in the logistic equation model section \ref{sect:lgrowth}. This is a clue to the existence of a limited number of possible \emph{routes to chaos}. 

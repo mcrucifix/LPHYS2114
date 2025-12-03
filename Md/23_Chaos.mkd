@@ -1,4 +1,5 @@
 ## Chaos of the 2 $\mod$ 1 map 
+\label{sect:chaos}
 
 We consider an iteration similar to the tent map, but a little bit simpler:
 
@@ -41,7 +42,7 @@ More surprising perhaps, observe that the set of points with a finite binary rep
 - Enumerable: one can enumerate these numbers one by one, by growing $n$ and, for fixed $n$, by enumerating them by lexicographic order;
 - Dense: I can find such a number in any finite, closed interval of the domain. 
 
-This, the set of points with finite binary representation $E=\{f_i, i\in\mathbb{N}\}$. 
+So, let us consider the set of points with finite binary representation $E=\{f_i, i\in\mathbb{N}\}$. 
 
 Now, construct the number made of concatenating all these numbers in the binary representation (possibly with filling in zeros so that every number appears with any desired floating point accuracy). This one does have an infinity of digits in the binary representation, but its positive orbit passes close to any number in $E$ as close as one wants, and given that $E$ is dense in $\Omega$, we have generated an orbit that passes close to any number in $\Omega$. 
 
@@ -74,7 +75,7 @@ As a general rule, we expect some information loss when we express the original 
 
 Now, consider the tent map. We expect that it behaves somehow similarly to the $(2 \mod 1)$ map but we need the right trick to prove it. This is what itineraries are for. In (very) brief: 
 
- - we can find a mapping between the set of itineraries of the tent map, and the ensemble $\Omega$. Again, we consider the binary representation of numbers, i.e., for $x\in\Omega$, with its binary representation $.b_1b_2b_3\ldots$, one can show (in very brief) thats its itinerary will be $s_0=b_1$ and $s_n=|b_n - b_{n+1}|$. The demonstration (skipped here) consists in demonstrating that any distinct itinerary generates a specific series of $b_1$, thus a unique number in $\Omega$. In other words, any number in $\Omega$ can be denoted by its equivalent itinerary, which we could note $\sim s_1s_2s_3\ldots$. 
+ - we can find a mapping between the set of itineraries of the tent map, and the ensemble $\Omega$. Again, we consider the binary representation of numbers, i.e., for $x\in\Omega$, with its binary representation $.b_1b_2b_3\ldots$, one can show (in very brief) that its itinerary will be $s_0=b_1$ and $s_n=|b_n - b_{n+1}|$. The demonstration (skipped here) consists in demonstrating that any distinct itinerary generates a specific series of $b_1$, thus a unique number in $\Omega$. In other words, any number in $\Omega$ can be denoted by its equivalent itinerary, which we could note $\sim s_1s_2s_3\ldots$. 
 
  - We then observe that the action of the iteration $f$ on $\sim s_1s_2s_3\ldots$ is similar to the action of the $(2 \mod 1)$ map on the binary representation $.b_1b_2b_3\ldots$. All the demonstrations made for the $(2 \mod 1)$ map will work here. The two systems behave similarly. 
 

@@ -8,7 +8,7 @@
 
 Preciser ce qu'est une fonction de Lyapunov 
 
-a long term: ajouter resonance et "circle map" (qui peut etre forc,ee, et meme devenir chaotique)
+a long term: ajouter resonance et "circle map" (qui peut etre forc,ee, et meme devenir chaotique)  -> FaIT
 verifier que le 'phase portrait' est correctement d,efini (flow map) (ok mais ajouter un index)
 verifier que le 'diagramme de stabilite' est correctement defini   (ok mais ajouter un index)
 
@@ -30,7 +30,18 @@ A long terme:
     - un exemple de système de Liénard pour cycles G/I ? 
  - TROUVER LES MOYENS DE LES FAIRE TRAVAILLER EN CLASSE !!!! ! (voir mon idée plus bas)
  
-  - circle map
-  - eventuellement fournir des exemples d'ordinateur (le code est en ligne). Se contenter de Julia et Python et leur demander d'executer les codes en ligne et qu'ils viennent au cours avec deja une idee
+  - modélisation physique : adimensionalisation et nombres caractéristiques . Quelques réflexions sur la pertinence des systèmes dyinamiques en physique.
 
-  - routes to chaos et universality (Hilborn)
+  - circle map
+  - eventuellement fournir des exemples d'ordinateur (le code est en ligne). Se contenter de Julia et Python et leur demander d'executer les codes en ligne et qu'ils viennent au cours avec deja une idee [en cours]
+
+  - routes to chaos et universality (Hilborn) [a ce stade simplement dit au cours ]
+
+TODO: 
+
+ - CORRIGER LA DEF D'ATTRACTEUR POUR k-periodics. C'est complètement messy. En fait autant supprimer. 
+ - Corriger les notions d'attracteur / attracting set. Rendre + compact et simplement insister sur la dualité raisonnement 'flux' vs raisonnement 'point limite'. 
+
+ - animation de la contraction du la trapping région dans l'attracteur de Duffing. 
+ - mettre les animations en quarto sur le site web. 
+

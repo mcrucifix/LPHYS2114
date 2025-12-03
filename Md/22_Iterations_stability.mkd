@@ -219,7 +219,14 @@ In this regime, the orbits have mostly  the characteristics of chaos that we fur
 
 The maximum of $rx(1-x)$ occurs at $x=\frac{1}{2}$ and is $r/4$. Hence, for $r>4$ there is an interval $A$ comprised between $x\mp = \frac{1}{2} ( 1 \mp \sqrt {1-\frac{4}{r}})$ that ejects the points out of the safe interval $[0,1]$, from where trajectories diverge towards $-\infty$. 
 
-However, outside $A$, there are also smaller intervals that will drive $x$ into $A$ at the next iteration(here, denoted $B_1$ and $B_2$), so that their positive orbits also diverge.  This reasoning leads us to the construction of an ensemble of diverging orbits that is a Cantor set, made of the union of disjoint sets that have a self-similarity property. 
+However, outside $A$, there are also smaller intervals that will drive $x$ into $A$ at the next iteration(here, denoted $B_1$ and $B_2$), so that their positive orbits also diverge.  This reasoning leads us to the construction of an ensemble of diverging orbits. Its complement, the ensemble of non-diverging orbits, is a Cantor set. 
+
+This property teaches us a few things. 
+
+- The Cantor set has a Lebesgue measure zero. In other words, if you should "at random" in the $[0,1]$, you are almost certain to hit an initial condition causing a diverging orbit. In other words, divergence prevails; 
+- Yet, there is an infinite, uncountable number of initial conditions with non-diverging orbits. They form a dense, compact set, and every of such initial condition acts as a  boundary between two diverging orbits. The Cantor, self-similar nature of this set reflects the geometrical complexity of the structure of trajectories; 
+
+
 
 \efigure{logistic_fractal}
 

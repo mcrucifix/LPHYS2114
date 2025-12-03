@@ -21,7 +21,7 @@ Below we represent cobweb diagrams, for $\Omega=0.2$ and $\Omega=0.6$, respectiv
 \efigure{../Figures/circle_map_0}
 
 
-As long as $\Omega$ is a rational number $p/q$, the system will be periodic with period $q$ (here, respectively, q=5 and 3). Later in this chapter, we will sometimes call $\Omega$ the \emph{input} frequency, or, more properly, the input frequency $\ratio$, in the sense that everything here is expressed in terms of adimensional units. 
+As long as $\Omega$ is a rational number $p/q$, the system will be periodic with period $q$ (here, respectively, q=5 and 3). Later in this chapter, we will sometimes call $\Omega$ the \emph{input} frequency, or, more properly, the input frequency \emph{ratio}, in the sense that everything here is expressed in terms of adimensional units. 
 
 The \emph{winding number} is the average number of rotations achieved by the system between two observations. 
 
@@ -38,11 +38,10 @@ For the simple map given in Eq. \eqref{eq:simplemap}, $w=\Omega$.
 Now we consider a more complex example, when the simple map is further perturbed by a nonlinearity of amplitude $K$:
 
 \begin{equation}
- \theta_{n+1} = \theta_n + \Omega - \frac{K}{2\pi} \mathrm{mod} 1. 
+ \theta_{n+1} = \theta_n + \Omega - \frac{K}{2\pi} \sin(2\pi\theta)\ \mathrm{mod} 1. 
 \end{equation}
 
-
-When $\Omega$ is small enough, the system may admit fixed points. This is obtained with the following condition is fulfilled: 
+When $\Omega$ is small enough, the system may admit fixed points. This is obtained when the following condition is fulfilled: 
 
 \begin{displaymath}
   \theta = \theta + \Omega - \frac{K}{2\pi}\sin(2\pi\theta)
